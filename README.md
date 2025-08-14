@@ -8,32 +8,14 @@ Recommended template for theses submitted at [Faculty of Information Technology]
 
 ## 🐳 Docker Setup (Recommended)
 
-This project includes a Docker-based LaTeX environment for easy setup across all devices.
+This project includes a Devcontainer LaTeX environment for easy setup across all devices.
 
 ### Quick Start
 
-1. **Install Docker Desktop** and ensure it's running
-2. **Install LaTeX Workshop extension** in VS Code
-3. **Start the LaTeX environment:**
-   ```bash
-   docker-compose up -d
-   ```
-4. **Open your thesis file** in VS Code
-5. **Start writing!** - It will auto-build on save using XeLaTeX
-
-### Features
-
-- ✅ **XeLaTeX** for Unicode and font support
-- ✅ **Biber** for bibliography processing
-- ✅ **Arara** for automated compilation
-- ✅ **Auto-build** on save
-- ✅ **Portable** across all devices
-
-### Commands
-
-- **Start:** `docker-compose up -d`
-- **Stop:** `docker-compose down`
-- **Rebuild:** `docker-compose up --build -d`
+1. **Install Dev Containers Extension** and ensure it's running
+2. **Run Dev Containers: Rebuild and Reopen in Container** in VS Code
+3. **Open your thesis file** in VS Code
+4. **Start writing!** - It will auto-build on save using XeLaTeX
 
 ## Version
 
