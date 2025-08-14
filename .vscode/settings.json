@@ -10,6 +10,8 @@
         "-synctex=1",
         "-interaction=nonstopmode",
         "-file-line-error",
+        "-shell-escape",
+        "-output-driver=xdvipdfmx -z 0",
         "%DOC%"
       ],
       "env": {}
@@ -41,7 +43,7 @@
       "tools": ["arara"]
     }
   ],
-  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.recipe.default": "xelatex -> biber -> xelatex",
   "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.autoClean.run": "onBuilt",
   "latex-workshop.latex.outDir": "%DIR%",
