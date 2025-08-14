@@ -1,0 +1,33 @@
+# Git
+.git/
+.gitignore
+.gitlab-ci.yml
+
+# Documentation
+README.md
+changelog.md
+LICENSE
+
+# LaTeX outputs
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# VS Code
+.vscode/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Temporary files
+.latex-workshop/
+_minted*/

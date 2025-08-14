@@ -31,3 +31,9 @@ _minted/
 
 example-asssignment-include.pdf
 ctufit-thesis.pdf
+
+# Docker
+latex-workshop/
+
+# VS Code LaTeX Workshop
+.latex-workshop/
