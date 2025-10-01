@@ -1,3 +1,63 @@
 %---------------------------------------------------------------
 \chapter{Analýza}
 %---------------------------------------------------------------
+
+V této kapitole se nejprve zaměřím na analýzu již existující aplikace. V analýze se budu věnovat zejména tomu, jakými způsoby lze zdokonalit existující funkce a jaké nové funkce by bylo vhodné přidat. Dále se zaměřím na to, jakým zůsobem by bylo možné zlepšit kvalitu kódu aplikace a obecně její architekturu a vývoj. Při analýze budu také vycházet z výsledků uživatelských testů této aplikace, které jsem provedl v rámci mé bakalářské práce. %% write - přidat citaci
+
+%% write - do předchozího odstavce asi přidat i informaci, že budu v analýze brát v potaz i ostatní části projektu, které nejsou součástí této diplomové práce (např. marketing atd.) - abych si obhájil, že mám vytvářet design system
+
+Na základě této analýzy budu následně pokračovat vytvořením specifických požadavků na rozšíření této aplikace v obecnější a robustnější vzdělávací systém.
+
+\section{Analýza existujícího řešení}
+
+Existující řešení je webová aplikace zaměřena na výuku anglického jazyka. Frontendová část aplikace je naprogramována pomocí technologií NextJS a React. Dále využívá knihovny, jako například Material UI. Celé uživatelské rozhraní je navrženo v nástroji Figma. %% write - přidat citaci na bakalářku
+
+S backendovou částí frontend komunikuje přes REST API. Kromě aplikace existuje i kompletní mock backendového REST API, který byl vytvořen pomocí nástroje Mockoon. %% write - tady asi zacitovat bakalářku
+
+V následujících částech textu se zaměřím nejprve na analýzu existujícího kódu a architektury a následně na jednotlivé funkcionality aplikace.
+
+\subsection{Analýza kódu a architektury}
+
+%% Momentální stav
+
+\subsubsection{Design system}
+
+Aplikace využívá knihovnu Material UI, %% write - přidat citaci
+která poskytuje základní komponenty uživatelského rozhraní. Komponenty jsou přizpůsobeny především globálními styly tak, aby odpovídaly navrženému designu v nástroji Figma. Ze základních komponentů jsou následně sestaveny komplexnější komponenty, které jsou využívány v aplikaci. 
+
+V kódu je také zavedena knihovna Storybook, která umožňuje snadné prohlížení, dokumentaci a testování jednotlivých komponentů.
+
+Celková struktura komponentů je přehledná, nicméně stojí za úvahu zdokonalit tuto strukturu vytvořením samostatného systému komponentů, který by byl oddělen od aplikace a to hlavně z následujících důvodů.
+
+Hlavním důvodem pro vytvoření samostatné knihovny komponentů je fakt, že růstem projektu je třeba zachovat konzistenci vzhledu značky a uživatelského rozhraní napříč různými částmi projektu, kterými jsou kromě této aplikace i například webové stránky a vzdělávací a marketingové materiály. Jelikož projekt v rámci marketingu využívá videa a materiály, která jsou také vytvářena pomocí React komponentů, začíná být centrální systém komponentů nutný.
+
+Díky vytvoření samostatného deisgn systému by bylo možné izolovat základní komponenty a jejich styly od zbytku aplikace. To by umožnilo snadnější návrh, verzování a údržbu designu celé aplikace. Navíc by se zajistila konzistence vzhledu a funkčnosti komponentů napříč všemi částmi projektu.
+
+\subsubsection{Kvalita kódu}
+
+Při analýze jsem nalezl několik příležitostí ke zlepšení celkové kvality kódu. V průběhu let používané knihovny a nástroje prošly aktualizacemi na nové verze, které nabízejí nové funkce a možností. Jejich aktualizace by mohla přispět ke zvýšení kvality kódu, bezpečnosti, výkonu a celkové udržitelnosti celé aplikace.
+
+Společně s knihovnami by bylo vhodné aktualizovat konvence a pravidla pro knihovny ESLint a Prettier a provést refaktoring kódu tak, aby odpovídal novým pravidlům.
+
+Nakonec by bylo vhodné zvážit dockerizaci projektu, která by mohla přispět ke zjednodušení vývoje a zajištění konzistence vývojových prostředí.
+
+\subsubsection{Zavedení umělé inteligence pro vývoj}
+
+V průběhu posledních let došlo k výraznému rozvoji nástrojů využívajících umělou inteligenci k vývoji softwaru. Jelikož aplikace vznikala v době, kdy tyto nástroje nebyly zdaleka tak rozšířené, nejsou v aplikaci vůbec zavedeny. Proto by bylo vhodné tyto nástroje zavést do projektu tak, aby se zefektivnil celkový vývoj aplikace.
+
+\section{Analýza požadavků}
+
+\subsection{Nefunkční požadavky}
+
+\subsubsection{NP-1 – Vytvoření design systému}
+
+V rámci práce by měla být vytvořena samostatná knihovna komponentů, která bude využívána napříč celou aplikací a dalšími částmi projektu. Tato knihovna by měla stavět na již existujících komponentech a měla by být navržena tak, aby umožňovala snadné přidávání nových komponentů a jejich údržbu. Knihovna by měla využívat již zavedené technologie, tedy knihovny React, TypeScript, Storybook a Material UI.
+
+\subsubsection{NP-2 –  Zvýšení kvality kódu a vývoje}
+
+V kódu by měly být provedeny změny s cílem zvýšit jeho kvalitu a udržitelnost. Součástí těchto změn by měla být aktualizace používaných knihoven, nástrojů a jejich konfigurací. Následně by měla být také provedena dockerizace vývojového prostředí. 
+
+\subsubsection{NP-3 –  Zavedení nástrojů umělé inteligence pro podporu vývoje}
+
+Do projektu by měly být zavedeny nástroje využívající umělou inteligenci s cílem podpořit vývoj aplikace a zvýšit tak efektivitu práce vývojářů. Tyto nástroje by měly být využity především pro generaci kódu, dokumentace a testů.
+
