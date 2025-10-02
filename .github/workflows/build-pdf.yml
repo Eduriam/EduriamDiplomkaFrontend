@@ -27,3 +27,19 @@ jobs:
           name: thesis-pdf
           path: ctufit-thesis.pdf
           retention-days: 90
+
+      - name: Setup Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/configure-pages@v3
+
+      - name: Upload to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./
+          name: github-pages
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        id: deployment
+        uses: actions/deploy-pages@v2
