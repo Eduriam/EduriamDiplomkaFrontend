@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4.6.0
-      
-    - name: Setup TeX Live
-      uses: xu-cheng/latex-action@v3.0.0
-      with:
-        root_file: ctufit-thesis.tex
-        latexmk_use_xelatex: true
-        args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Checkout repository
+        uses: actions/checkout@v4.6.0
+
+      - name: Setup TeX Live
+        uses: xu-cheng/latex-action@v3.0.0
+        with:
+          root_file: ctufit-thesis.tex
+          latexmk_use_xelatex: true
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4.6.0
