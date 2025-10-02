@@ -28,23 +28,23 @@ jobs:
           path: ctufit-thesis.pdf
           retention-days: 30
 
-    - name: Delete existing latest release (if exists)
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: |
-        gh release delete latest --yes || true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-    - name: Create Release (only on main branch)
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: |
-        gh release create latest \
-          --title "Latest Thesis PDF" \
-          --notes "Latest build of the thesis PDF from commit ${{ github.sha }}
-        
-        **Commit:** ${{ github.sha }}
-        **Date:** ${{ github.event.head_commit.timestamp }}
-        **Author:** ${{ github.event.head_commit.author.name }}" \
-          ctufit-thesis.pdf
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete existing latest release (if exists)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          gh release delete latest --yes || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release (only on main branch)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          gh release create latest \
+            --title "Latest Thesis PDF" \
+            --notes "Latest build of the thesis PDF from commit ${{ github.sha }}
+
+          **Commit:** ${{ github.sha }}
+          **Date:** ${{ github.event.head_commit.timestamp }}
+          **Author:** ${{ github.event.head_commit.author.name }}" \
+            ctufit-thesis.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
