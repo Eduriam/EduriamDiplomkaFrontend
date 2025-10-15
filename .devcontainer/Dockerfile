@@ -11,6 +11,7 @@
     
     # Verify git and needed tools are installed
     RUN apt-get install --no-install-recommends -y git procps
+    RUN apt-get update && apt-get install -y --no-install-recommends openssh-client
     
     # Install Tex Live with XeLaTeX support
     RUN apt-get update && apt-get -y upgrade \
