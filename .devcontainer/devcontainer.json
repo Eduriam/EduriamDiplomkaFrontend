@@ -3,9 +3,13 @@
   "dockerFile": "Dockerfile",
   "customizations": {
     "vscode": {
-      "extensions": ["james-yu.latex-workshop",     "streetsidesoftware.code-spell-checker-czech",
-      "streetsidesoftware.code-spell-checker",
-      "aaron-bond.better-comments"]
+      "extensions": [
+        "james-yu.latex-workshop",
+        "streetsidesoftware.code-spell-checker-czech",
+        "streetsidesoftware.code-spell-checker",
+        "aaron-bond.better-comments",
+        "vivaxy.vscode-conventional-commits"
+      ]
     }
   }
 }

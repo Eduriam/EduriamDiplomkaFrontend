@@ -341,13 +341,21 @@
 \def\frontsubsectionfont{\large}
 \def\frontsubsubsectionfont{\bfseries}
 
-\setcounter{secnumdepth}{\@ctufitsecdepth} % numbering sections
+\setcounter{secnumdepth}{\@ctufitsecdepth}
+
+% my variable for table of contents depth
+\makeatletter
+\def\@mytocdepth{2}
+\typeout{\@mytocdepth}
+\makeatletter
+
+% numbering sections
 \newcommand{\stopTOCentries}{
   \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 }
 
 \newcommand{\resumeTOCentries}{
-  \addtocontents{toc}{\protect\setcounter{tocdepth}{\@ctufitsecdepth}} % table of content depth
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{\@mytocdepth}} % table of content depth
 }
 % frontmatter headings end
 % frontmatter pseudochapters: named part without printing actual chapter heading
