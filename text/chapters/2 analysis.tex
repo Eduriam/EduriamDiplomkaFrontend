@@ -279,10 +279,23 @@ Do frontendové části aplikace by měly být zavedeny automatizované testy s 
 % Review
 Tento požadavek vychází jednak z analýzy existujícího řešení a jednak z návrhu úprav do budoucna v mé bakalářské práci zabývající se zmíněným řešením. % Write - přidat referenci na bakalářskou práci
 
+% Review
 \subsubsection{NP-5 Odstranění přebytečných funkcí}
 
-% write - sepsat seznam odstraněných funkcí
-% - odstranit /search (vocabulary)
+% Review
+Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, bude třeba odstranit funkce týkající se původní domény výuky jazyků. Mezi tyto funkce patří následující.
+
+% Review
+\begin{itemize}
+    \item Vyhledávání slovíček
+    \item Přidávání slovíček do seznamu oblíbených slovíček
+    \item Cvičení zaměřená na výuku jazyků a která nejsou využitelná pro výuku softwarového inženýrství
+    \item Rozdělení typů lekcí dle aspektu výuky jazyků, například gramatické lekce, lekce slovní zásoby apod.
+    \item Stránka slovíčka
+    \item Výběr preferovaných témat kurzu. Tato funkce v původní aplikaci sloužila jako způsob přeskočení skupin lekcí slovíček, které se netýkaly zájmů a cílů uživatele. Uživatel tak například mohl vypnutím tématu "Příroda a životní prostřední" jednoduše ze svého učení vyřadit všechny lekce týkající se tohoto tématu. V nové aplikaci ovšem bude struktura kurzů a domény změněna natolik, že tato funkce již nebude relevantní a její ponechání by mohlo mít za následek značné navýšení komplexity celého systému.
+    \item Přidávání lekcí do seznamu oblíbených lekcí. Žádná z analyzovaných aplikací tuto funkci nenabízí. Tato funkce měla sloužit jako jednoduchý způsob, jak uživatel mohl % Write - tohle ještě dopsat.. najít nějaký dobrý argument nebo to v aplikaci ponechat
+    \item Vytváření vlastních lekcí slovíček. Původní aplikace umožňovala uživatelům seskupovat slovíčka v aplikaci do vlastních lekcí. Tato funkce již není relevantní z důvodu nové domény a struktury kurzů.
+\end{itemize}
 
 \subsubsection{NP-6 Změna datového modelu}
 
