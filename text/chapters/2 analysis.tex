@@ -57,59 +57,131 @@ V rámci analýzy funkčních požadavků se budu zaměřovat zejména na nové 
 % Review
 V kapitole návrhu se pak budu věnovat podrobnému popsání případů užití, které budou jednotlivé funkce přesněji definovat.
 
+% Review
 \subsubsection{FP-1 Úvodní stránka aplikace}
 
-% write - vytvořit úvodní stránku aplikace, která by měla zachytit pozornost uživatele a umožňit mu vybrat si jestli se chce přihlásit nebo registrovat
+% Review
+Aplikace by měla mít úvodní stránku, která bude zobrazena, když uživatel otevře aplikaci a není přihlášen. Tato stránka by měla upoutat pozornost uživatele a umožnit mu vybrat si, jestli se chce přihlásit nebo registrovat.
 
+% Review
+Tento požadavek vychází z analýzy konkurence, kde většina aplikací má kromě stánky pro přihlášení a registraci i úvodní stránku s poutavou grafikou či textem, který prezentuje hlavní přínosy aplikace pro uživatele.
+
+% Review
 \subsubsection{FP-1 Stránka kurzu}
 
-% write - každý kurz by měl mít vlastní stránku s přehledem lekcí a co v něm je
-% uživatel by se měl moci odhlásit z kurzu
-% uživatel by měl moct kurz aktivovat nebo deaktivovat
+% Review
+Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem lekcí, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit nebo se z něj odhlásit. Dále by měl uživatel mít možnost u kurzu zvolit, zda se ho chce momentálně učit nebo ne. Na základě této volby by aplikace měla uživateli zobrazovat cvičení při učení.
 
+Tento požadavek vychází z analýzy konkurence, kde ve většině aplikací mají kurzy vlastní stránku.
+
+% Review
 \subsubsection{FP-2 Prohlížení kurzů}
 
-% write - Byla by to stránka, kde si člověk může procházet dostupné kurzy a prokliknout si na jejich stránku.
+% Review
+Uživatel by měl mít v aplikaci možnost zobrazit přehled jednotlivých kurzů a jednoduše prohledávat dostupné kurzy. U každého kurzu by měl mít možnost se přesunout na stránku daného kurzu.
 
-\subsubsection{FP-3 Nová cvičení}
+% Review - zde upřesnit podle toho, na co se appka bude zaměřovat - třeba na výuku webového inženýrství
+\subsubsection{FP-3 Cvičení pro výuku softwarového inženýrství}
+
+% Review
+Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, měla by obsahovat cvičení na toto téma, která se budou uživateli zobrazovat při učení.
+
+% Review
+Konkrétně by aplikace měla obsahovat následující cvičení:
 
 % write - sepsat seznam nových cvičení, které by mělo být možné v aplikaci vytvořit
+\begin{itemize}
+    \item Cvičení 1
+    \item Cvičení 2
+    \item Cvičení 3
+\end{itemize}
 
-\subsubsection{FP-3 Zlepšení průběhu učení}
+% Review
+\subsubsection{FP-3 Nová struktura učení}
 
-% write - struktura učení by se měla změnit - kombinace explanations a exercises - dříve to jen hodilo popis lekce, což není vhodné pro komplikovanější látku
-% write - při učení by mělo být možné poslouchat audio, které vysvětluje danou látku, aby uživatel nemusel číst text, ale aby to bylo skutečně interaktivní (aby to celý bylo jako interaktivní video)
+% Review
+Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tento způsob výuky je inspirován analyzovanými aplikacemi Mimo a Duolingo, které podobnou formu výuky využívají.
 
+% Review - zde nakonec ověřit, jestli sedí typy komponentů 
+Při učení by aplikace měla uživateli vysvětlovat látku a zadávat cvičení pomocí audio nahrávky, která bude doplněna o další komponenty, které pomohou uživateli lépe porozumět dané látce. Těmito komponenty mohou být například texty, ukázky kódu, tabulky, obrázky nebo vizualizace. Díky tomu bude aplikace kombinovat přístup konkurenční aplikace Mimo, která využívá různé komponenty pro vysvětlení látky, a přístup konkurenční aplikace Scrimba, v níž je látka vyučována pomocí interaktivního prostředí s audio nahrávkou vysvětlující danou látku.
+
+% Review
+Aplikace by měla brát v potaz situaci, kdy uživatel nebude moci poslouchat audio a měla by uživateli umožnit se učit i bez něj.
+
+% Review
+Tato struktura učení se zásadně liší od struktury učení v původní aplikaci, kde probíraná látka nebyla uživateli při učení vysvětlena a učení nebylo doplněno o audio nahrávku vysvětlující danou látku.
+
+% Review
 \subsubsection{FP-4 Učení se napříč kurzy}
 
-% write - aplikace by měla umožňovat uživateli se jednoduše učit látku napříč kurzy
+% Review
+Uživatel by měl mít možnost se jednoduše učit látku napříč všemi aktivními kurzy bez nutnosti přepínání mezi jednotlivými kurzy.
 
-\subsubsection{FP-5 Registrace pomocí účtu Google}
+% Review
+Tento požadavek vychází z analýzy konkurence, kde žádná z analyzovaných aplikací neobsahuje jednoduchý způsob, jak se učit látku napříč více kurzy bez nutnosti přepínání mezi danými kurzy. Pokud se uživatel chce učit více kurzů současně, je nucen tak neustále mezi kurzy přepínat, což může mít negativní vliv na uživatelskou zkušenost.
 
-% write - aby se uživatel mohl registrovat pomocí účtu google
+% Review
+Tento požadavek je dále inspirován design principem "micro interactions", jehož cílem je umožnit uživateli, aby mohl kdykoliv aplikaci zapnout a okamžitě ji začít používat k jejímu hlavnímu účelu. % Write - zde přidat referenci - možná z té knížky o UI designu
 
-\subsubsection{FP-6 Přihlášení pomocí účtu Google}
+% Review
+\subsubsection{FP-5 Registrace a přihlášení pomocí účtu Google}
 
-% write - aby se uživatel mohl přihlásit pomocí účtu google
+% Review
+Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí účtu Google. 
 
-\subsubsection{FP-7 Nový úvodní dotazník}
+% Review
+Tento požadavek vychází z analýzy konkurence, kde většina konkurenčních aplikací tuto možnost nabízí.
 
-% write - dotazník by měl být použití pro sbírání dat o  uživatelích a k přizpůsobení doporučování obsahu
+% Review
+\subsubsection{FP-7 Nový úvodní dotazník a doporučování kurzů}
 
-% write - doporučování obsahu by mělo být také založeno na kurzech, které si uživatel sám zapsal
+% Review
+Aplikace by měla obsahovat úvodní dotazník zaměřený na získání informací o uživateli. Tyto informace by se měly týkat zejména cílů uživatele a jeho zkušeností s programováním. Na základě dotazníku by měla aplikace přizpůsobit uspořádání nabídky kurzů tak, aby odpovídala cílům uživatele.
 
+% Review
+Doporučování kurzů by mělo být také založeno na kurzech, které si uživatel sám zapsal.
+
+% Review
+Tato funkce je inspirována konkurenční aplikací Code Academy, která využívá úvodní dotazník pro doporučování kurzů uživateli.
+
+% Review
+\subsubsection{FP-8 Připomínání učení}
+
+% Review
+Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má v určitý čas učit. Aplikace by pak měla uživateli posílat push notifikace, které ho na učení upozorní, pokud se ještě v daný den neučil. Tato funkce je inspirována konkurenčními aplikacemi Mimo a Duolingo, které umožňují uživateli si nastavit každodenní připomenutí učení.
+
+% Write - tohle se ještě rozhodnout, jestli tam chci mít nebo ne
+Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". Pokud uživatel tuto funkci zapne, nebude mu aplikace připomínat učení podle nastaveného času, ale na základě předchozího používání aplikace. Tato funkce je inspirována aplikací Duolingo, která podobnou funkci nabízí.
+
+% Review
 \subsubsection{FP-8 Push Notifikace}
 
-% write - todo
+% Review
+Aplikace by měla být schopna uživateli posílat push notifikace. % Write - zde přidat referenci na vysvětlení pojmu push notifikace
+Tyto notifikace by měly uživatele upozorňovat v následujících situacích:
+
+% Review
+\begin{itemize}
+    \item Pokud si uživatel nastavil každodenní připomenutí učení a ještě se v daný den neučil.
+    \item Pokud se uživatel delší dobu v aplikaci nic neučil.
+    \item Pokud uživateli končí předplatné aplikace a ještě ho neobnovil.
+\end{itemize}
+
+% Review
+V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace. % Write - přidat referenci na backendovou diplomku 
 
 \subsubsection{FP-9 Premium systém}
 
 % write - zlepšit informování uživatele o tom, které části aplikace jsou dostupné v premium verzi (např. když uživatel klikne na tlačítko, které by mělo být dostupné pouze v premium verzi, aby ho to informovalo)
 % apod. sepsat podrobnější požadavky
 
+
+
 \subsection{Nefunkční požadavky}
 
 \subsubsection{NP-1 Vytvoření design systému}
+
+% Write zde bych měl možná spíš napsat, že nechci nutně "vytvořit design systém", ale že chci navrhnout styly uživatelského rozhraní (prostě chci v návrhu projít NI-NUR přednášky a projít barvy, branding, persony a všechno co jsme brali v přednáškách). 
 
 V rámci práce by měla být vytvořena samostatná knihovna komponentů, která bude využívána napříč celou aplikací a dalšími částmi projektu. Tato knihovna by měla stavět na již existujících komponentech a měla by být navržena tak, aby umožňovala snadné přidávání nových komponentů a jejich údržbu. Knihovna by měla využívat již zavedené technologie, tedy knihovny React, TypeScript, Storybook a Material UI.
 
