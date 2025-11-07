@@ -8,6 +8,8 @@ V této kapitole se nejprve zaměřím na analýzu již existující aplikace. V
 
 Na základě této analýzy budu následně pokračovat vytvořením specifických požadavků na rozšíření této aplikace v obecnější a robustnější vzdělávací systém.
 
+\section{Analýza konkurenčních řešení}
+
 \section{Analýza existujícího řešení}
 
 Existující řešení je webová aplikace zaměřena na výuku anglického jazyka. Frontendová část aplikace je naprogramována pomocí technologií NextJS a React. Dále využívá knihovny, jako například Material UI. Celé uživatelské rozhraní je navrženo v nástroji Figma. %% write - přidat citaci na bakalářku
@@ -35,6 +37,8 @@ Díky vytvoření samostatného deisgn systému by bylo možné izolovat základ
 
 \subsubsection{Kvalita kódu}
 
+% Write - sem někam napsat, že v kódu nejsou žádné automatizované testy
+
 Při analýze jsem nalezl několik příležitostí ke zlepšení celkové kvality kódu. V průběhu let používané knihovny a nástroje prošly aktualizacemi na nové verze, které nabízejí nové funkce a možností. Jejich aktualizace by mohla přispět ke zvýšení kvality kódu, bezpečnosti, výkonu a celkové udržitelnosti celé aplikace.
 
 Společně s knihovnami by bylo vhodné aktualizovat konvence a pravidla pro knihovny ESLint a Prettier a provést refaktoring kódu tak, aby odpovídal novým pravidlům.
@@ -44,6 +48,10 @@ Nakonec by bylo vhodné zvážit dockerizaci projektu, která by mohla přispět
 \subsubsection{Zavedení umělé inteligence pro vývoj}
 
 V průběhu posledních let došlo k výraznému rozvoji nástrojů využívajících umělou inteligenci k vývoji softwaru. Jelikož aplikace vznikala v době, kdy tyto nástroje nebyly zdaleka tak rozšířené, nejsou v aplikaci vůbec zavedeny. Proto by bylo vhodné tyto nástroje zavést do projektu tak, aby se zefektivnil celkový vývoj aplikace.
+
+% Write - přidat se subsubsection o tom, že v aplikaci je Mock API a že by mohlo být vhodnější napojit na skutečné testovací API a že by API mohlo být generování automaticky podle openapi specifikace API - formulovat to jako "příležitost ke zlepšení" a říct proč mi to přijde lepší než mock API
+
+\section{Analýza forem gamifikace}
 
 \section{Analýza požadavků}
 
@@ -79,6 +87,21 @@ Tento požadavek vychází z analýzy konkurence, kde ve většině aplikací ma
 
 % Review
 Uživatel by měl mít v aplikaci možnost zobrazit přehled jednotlivých kurzů a jednoduše prohledávat dostupné kurzy. U každého kurzu by měl mít možnost se přesunout na stránku daného kurzu.
+
+% Review
+\subsubsection{FP-3 Kariérní cesty}
+
+% Review
+Aplikace by kromě kurzů měla nabízet tzv. kariérní cesty, které sdružují jednotlivé kurzy do skupin podle určitého tématu. Každá kariérní cesta reprezentuje určitou profesi. Každá kariérní cesta by měla mít vlastní stránku s popisem a přehledem kurzů, které jsou součástí dané kariérní cesty.
+
+% Review
+Uživatel by měl mít možnost si kariérní cestu zapsat a také mít možnost se od ní odhlásit.
+
+% Review
+Dále by měl mít uživatel možnosti si zvolit, zda se chce danou cestu momentálně učit nebo ne. Na základě této volby by aplikace měla uživateli zobrazovat cvičení při učení.
+
+% Review
+Tento požadavek vychází z analýzy konkurence, kde většina analyzovaných aplikací nabízí určitou formu kariérních cest, díky kterým se uživatel může učit témata týkající se konkrétní profese.
 
 % Review - zde upřesnit podle toho, na co se appka bude zaměřovat - třeba na výuku webového inženýrství
 \subsubsection{FP-3 Cvičení pro výuku softwarového inženýrství}
@@ -125,6 +148,8 @@ Tento požadavek je dále inspirován design principem "micro interactions", jeh
 
 % Review
 \subsubsection{FP-5 Registrace a přihlášení pomocí účtu Google}
+
+% Write - zde zvážit další formy přihlášení - podle konkurenčních aplikací
 
 % Review
 Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí účtu Google. 
@@ -175,7 +200,46 @@ V rámci této práce se budu zabývat pouze zprovozněním zobrazování push n
 % write - zlepšit informování uživatele o tom, které části aplikace jsou dostupné v premium verzi (např. když uživatel klikne na tlačítko, které by mělo být dostupné pouze v premium verzi, aby ho to informovalo)
 % apod. sepsat podrobnější požadavky
 
+% Review
+\subsubsection{FP-10 Přizpůsobení avatara uživatele}
 
+% Review
+Uživatel by měl možnost si přizpůsobit svého avatara, neboli postavu na profilovém obrázku, pomocí položek zakoupených v obchodě aplikace za virtuální měnu. Pro naplnění tohoto požadavku bude třeba upravit stránku obchodu tak, aby umožňovala přehledné prohlížení položek napříč více kategoriemi. Dále bude třeba upravit vzhled profilové stránky, aby byl profilový obrázek uživatele viditelnější. % Write - tohle nevím, jestli to mám psát do požadavků.. ale podle mě bych to měl mít někde napsaný
+
+% Review
+Aplikace by měla nabízet přizpůsobení avatara uživatele pomocí následujících položek:
+
+% Write - zde ještě rozhodnout, které položky chceme a které ne. Tehle seznam byl sepsaný podle toho, co má Duolingo, ale v něčem bychom se mohli třeba přiblížit tomu, jak to má třeba Habitica nebo Eatventure
+% Write tohle nedávat jako itemize, ale napsat to jako text za sebe, protože to zabírá celou stránku
+\begin{itemize}
+    \item Barva pleti
+    \item Velikost těla
+    \item Obličej
+    \item Barva očí
+    \item Vlasy
+    \item Barva vlasů
+    \item Doplňky, jako například brýle, vrásky, náušnice
+    \item Barva brýlí
+    \item Vousy
+    \item Barva vousů   
+    \item Pokrývka hlavy
+    % Write - barva pokrývky hlavy - tohle má Duolingo, ale nevím jestli to chcem taky
+    \item Oblečení % Tohle Duolingo nemá
+    \item Barva oblečení % Tohle má Duolingo
+    \item Barvu pozadí profilového obrázku
+\end{itemize}
+
+% Review
+Tento požadavek vychází zejména z analýzy forem gamifikace a také analýzy konkurenční aplikace Duolingo, která podobnou funkci přizpůsobení si avatara uživatele nabízí.
+
+% Review
+\subsubsection{FP-11 Profilové odznaky}
+
+% Review
+Uživatel by měl mít možnost za určité aktivity v aplikaci získat odznaky, které reprezentují jeho úspěchy. Na profilu uživatele by se pak měl zobrazovat zkrácený seznam těchto odznaků s možností přesunutí se na stránku všech odznaků daného uživatele. Aplikace by měla také umožnit uživatelům si zobrazit podrobnější informace o jednotlivých odznacích, jako například název odznaku nebo jakým způsobem byl získán.
+
+% Review
+Tento požadavek vychází z analýzy konkurenční aplikace Duolingo, která tyto odznaky využívá, a dále z analýzy forem gamifikace.
 
 \subsection{Nefunkční požadavky}
 
@@ -187,18 +251,33 @@ V rámci práce by měla být vytvořena samostatná knihovna komponentů, kter�
 
 % Write - tady popsat důvody, proč je třeba vytvořit zvlášť knihovnu komponentů - že se to používá i v ostatních částech projektu
 
-\subsubsection{NP-2 Zvýšení kvality kódu a vývoje}
 
-V kódu by měly být provedeny změny s cílem zvýšit jeho kvalitu a udržitelnost. Součástí těchto změn by měla být aktualizace používaných knihoven, nástrojů a jejich konfigurací. Následně by měla být také provedena dockerizace vývojového prostředí. 
+% Write - tohle možná přejmenovat na něco lepšího
+\subsubsection{NP-2 Aktualizace kódu}
 
-\subsubsection{NP-3 Zavedení nástrojů umělé inteligence pro podporu vývoje}
+% Review
+V kódu aplikace by měly být provedeny následující změny se záměrem zvýšit jeho kvalitu a udržitelnost a zjednodušit vývoj:
 
-Do projektu by měly být zavedeny nástroje využívající umělou inteligenci s cílem podpořit vývoj aplikace a zvýšit tak efektivitu práce vývojářů. Tyto nástroje by měly být využity především pro generaci kódu, dokumentace a testů.
+% Review
+\begin{itemize}
+    \item Aktualizace používaných knihoven, nástrojů a jejich konfigurací.
+    \item Aktualizace používaných formatterů a linterů.
+    \item Dockerizace frontendové části aplikace.
+    \item Zavedení pravidel a konvencí pro nástroje, které využívají umělou inteligenci pro generaci kódu, dokumentačních komentářů a testů, s cílem podpoření vývoje aplikace a zvýšení efektivity práce.
+    \item Odstranění existujícího mocku API, místo kterého by měla aplikace využívat testovací prostředí poskytované backendovou částí aplikace.
+\end{itemize}
 
+% Review
+Tento požadavek byl vytvořen na základě výstupů analýzy existujícího řešení.
+
+% Review
 \subsubsection{NP-4 Zavedení automatizovaných testů}
 
-% write - napsat, že to vychází z Návrhu úprav do budoucna z mé bakalářské práce + přidat referenci
-% zaměřit se na klíčové funkce, jako payment system a učení
+% Review
+Do frontendové části aplikace by měly být zavedeny automatizované testy s cílem zajištění správného fungování aplikace a zvýšení její stability. Automatizované testy by se měly zaměřit na klíčové části aplikace, kterými jsou proces učení, registrace a přihlášení uživatele, výběr a zápis kurzů, a kupování předplatného. % Write - sem později sepsat, jaké testy jsem zaváděl do aplikace
+
+% Review
+Tento požadavek vychází jednak z analýzy existujícího řešení a jednak z návrhu úprav do budoucna v mé bakalářské práci zabývající se zmíněným řešením. % Write - přidat referenci na bakalářskou práci
 
 \subsubsection{NP-5 Odstranění přebytečných funkcí}
 
@@ -209,9 +288,15 @@ Do projektu by měly být zavedeny nástroje využívající umělou inteligenci
 
 % write - tady se odkázat na to, že tomu se věnuje víc kolega v backendové části projektu, ale že novým datovým modelům je třeba přizpůsobit i celou frontendovou část aplikace
 
-\subsubsection{NP-7 Automaticky generované API}
+% Review
+\subsubsection{NP-7 Automaticky generované třídy API}
 
-% write - že chci odstranit starý Mock API a nahradit ho automaticky generovaným API na základě swagger specifikace
+% Review
+V rámci kódu frontendu by měly být automaticky generovány třídy reprezentující backendové API na základě openapi % Write - zjistit jak se píše správně open api specifikace
+specifikace poskytované backendovou částí aplikace.
+
+% Review
+Požadavek vychází z analýzy existujícího řešení. Jeho cílem je zjednodušení implementace a zajištění konzistence mezi frontendovou a backendovou částí aplikace.
 
 \subsubsection{NP-8 Animace a mikro interakce}
 
