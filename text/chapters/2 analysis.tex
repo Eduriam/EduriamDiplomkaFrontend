@@ -75,7 +75,7 @@ Aplikace by měla mít úvodní stránku, která bude zobrazena, když uživatel
 Tento požadavek vychází z analýzy konkurence, kde většina aplikací má kromě stánky pro přihlášení a registraci i úvodní stránku s poutavou grafikou či textem, který prezentuje hlavní přínosy aplikace pro uživatele.
 
 % Review
-\subsubsection{FP-1 Stránka kurzu}
+\subsubsection{FP-1 Stránka s přehledem kurzu}
 
 % Review
 Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem lekcí, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit nebo se z něj odhlásit. Dále by měl uživatel mít možnost u kurzu zvolit, zda se ho chce momentálně učit nebo ne. Na základě této volby by aplikace měla uživateli zobrazovat cvičení při učení.
@@ -102,6 +102,18 @@ Dále by měl mít uživatel možnosti si zvolit, zda se chce danou cestu moment
 
 % Review
 Tento požadavek vychází z analýzy konkurence, kde většina analyzovaných aplikací nabízí určitou formu kariérních cest, díky kterým se uživatel může učit témata týkající se konkrétní profese.
+
+% Review
+\subsubsection{FP-4 Hlavní stránka kurzu}
+
+% Review
+Stávající aplikace zobrazuje na hlavní stránce v kurzu lekce daného kurzu na tzv. mapě učení. Na ní jsou lekce vyobrazeny jako body na čáře připomínající cestu, po které se uživatel při postupování kurzem pohybuje.
+
+% Review - tyhle argumenty bych možná přehodil do analýzy stávajícího řešení
+Tato mapa sice může zachytit svým vzhledem pozornost uživatele, nicméně má několik zásadních nevýhod z hlediska použitelnosti. Lekce jsou na mapě reprezentovány pouze ikonou a zkráceným názvem. Kvůli tomu může být pro uživatele obtížné na první pohled poznat, co je obsahem dané lekce. Dále, pokud se uživatel snaží najít konkrétní lekci v aplikaci, může to pro něj být velice obtížné, pokud mapa učení obsahuje větší množství lekcí.
+
+% Review
+Z těchto důvodů je třeba do aplikace upravit hlavní stránku kurzu tak, aby umožňovala uživateli lépe se orientovat v kurzu, jednodušeji procházet jednotlivé lekce a jednodušeji najít konkrétní lekci.
 
 % Review - zde upřesnit podle toho, na co se appka bude zaměřovat - třeba na výuku webového inženýrství
 \subsubsection{FP-3 Cvičení pro výuku softwarového inženýrství}
@@ -133,6 +145,9 @@ Aplikace by měla brát v potaz situaci, kdy uživatel nebude moci poslouchat au
 
 % Review
 Tato struktura učení se zásadně liší od struktury učení v původní aplikaci, kde probíraná látka nebyla uživateli při učení vysvětlena a učení nebylo doplněno o audio nahrávku vysvětlující danou látku.
+
+% Review
+Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. To bude třeba zohlednit při návrhu a implementaci nového způsobu učení.
 
 % Review
 \subsubsection{FP-4 Učení se napříč kurzy}
@@ -170,13 +185,20 @@ Doporučování kurzů by mělo být také založeno na kurzech, které si uživ
 Tato funkce je inspirována konkurenční aplikací Code Academy, která využívá úvodní dotazník pro doporučování kurzů uživateli.
 
 % Review
-\subsubsection{FP-8 Připomínání učení}
+\subsubsection{FP-8 Zpřehlednění navigace v aplikaci}
 
 % Review
-Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má v určitý čas učit. Aplikace by pak měla uživateli posílat push notifikace, které ho na učení upozorní, pokud se ještě v daný den neučil. Tato funkce je inspirována konkurenčními aplikacemi Mimo a Duolingo, které umožňují uživateli si nastavit každodenní připomenutí učení.
+Aplikace by měla poskytovat uživateli přehlednější a jednodušší způsob navigace mezi jednotlivými stránkami. Z výsledků uživatelského testování v mé bakalářské práci, zabývající se stávající aplikací, vyplynulo, že mají uživatelé problém s navigací mezi jednotlivými stránkami aplikace, zejména mezi jednotlivými úrovněmi mapy učení v daném kurzu. Dále také z důvodu přidání nových stránek do aplikace v rámci této práce, bude třeba zajistit, aby navigační prvky v aplikaci byly pro uživatel přehledné a snadné na používání.
 
-% Write - tohle se ještě rozhodnout, jestli tam chci mít nebo ne
-Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". Pokud uživatel tuto funkci zapne, nebude mu aplikace připomínat učení podle nastaveného času, ale na základě předchozího používání aplikace. Tato funkce je inspirována aplikací Duolingo, která podobnou funkci nabízí.
+% Review
+Mezi tyto prvky patří zejména:
+
+% Write - tohle ještě dovymyslet
+\begin{itemize}
+    \item Hlavní navigační lišta
+    \item Boční navigační panel
+    \item Stránka přepínání mezi jednotlivými kurzy
+\end{itemize}
 
 % Review
 \subsubsection{FP-8 Push Notifikace}
@@ -193,7 +215,37 @@ Tyto notifikace by měly uživatele upozorňovat v následujících situacích:
 \end{itemize}
 
 % Review
-V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace. % Write - přidat referenci na backendovou diplomku 
+V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace. % Write - přidat referenci na backendovou diplomku
+
+% Review
+\subsubsection{FP-8 Připomínání učení}
+
+% Review
+Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má v určitý čas učit. Aplikace by pak měla uživateli posílat push notifikace, které ho na učení upozorní, pokud se ještě v daný den neučil. Tato funkce je inspirována konkurenčními aplikacemi Mimo a Duolingo, které umožňují uživateli si nastavit každodenní připomenutí učení.
+
+% Write - tohle se ještě rozhodnout, jestli tam chci mít nebo ne
+Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". Pokud uživatel tuto funkci zapne, nebude mu aplikace připomínat učení podle nastaveného času, ale na základě předchozího používání aplikace. Tato funkce je inspirována aplikací Duolingo, která podobnou funkci nabízí.
+
+% Review
+\subsubsection{FP-8 Systém zobrazování reklam}
+
+% Review
+Ve stávající aplikaci se reklamy zobrazují pouze po úspěšném dokončení učení a to pouze tzv. bannerové reklamy. % Write - tady ověřit název reklam
+
+% Review
+Nově by aplikace měla umožňovat zobrazování dalších typů reklam, konkrétně full screen reklam a ... (tohle ještě dovymyslím) % Write - zde zjistit, jaké přesně typy reklam chceme nabízet
+
+% Review
+Dále by aplikace měla nově zobrazovat reklamy v těchto případech:
+
+\begin{itemize}
+    \item Po skončení učení, ať už po úspěšném dokončení nebo po předčasném ukončení učení uživatelem.
+    \item Pokud chce uživatel na účtu doplnit body energie.
+    % Write - zde ještě vymyslet nějaký case, kdy uživatel třeba otevře truhlu a může získat dvojnásobek toho 
+\end{itemize}
+
+% Write - tohle napsat více specificky a lépe to odůvodnit
+Tento požadavek je inspirován analýzou konkurenčních aplikaci, kde většina aplikací zobrazuje reklamy v průběhu používání aplikace.
 
 \subsubsection{FP-9 Premium systém}
 
