@@ -92,7 +92,25 @@ Uživatel by měl mít v aplikaci možnost zobrazit přehled jednotlivých kurz�
 \subsubsection{FP-4 Správa zapsaných kurzů}
 
 % Review
-Uživatel by měl mít možnost si zobrazit seznam zapsaných kurzů. U každého kurzu by měl uživatel vidět jeho pokrok v rámci daného kurzu. Dále by u každého kurzu by mělo být zřejmé, zda je kurz aktivní nebo neaktivní. Uživatel by měl mít také možnost se přesunout na stránku daného kurzu.
+Uživatel by měl mít možnost si zobrazit přehled zapsaných kurzů. U každého kurzu by měl uživatel vidět jeho pokrok a úroveň v rámci daného kurzu. 
+
+% Review
+Dále by u každého kurzu mělo být zobrazeno, v jakém režimu se daný kurz nachází. Režimy jsou popsány v požadavku FP-5 Učení se napříč kurzy. % Write - zde přidat odkaz na požadavek
+
+% Review
+Uživatel by měl mít také možnost se z přehledu kurzů přesunout na stránku daného kurzu.
+
+% Review
+\subsubsection{FP-5 Nastavení cílové úrovně kurzu}
+
+% Review
+Aplikace by měla umožnit uživateli si nastavit cílovou úroveň kurzu, tedy úroveň, které chce v uživatel daném kurzu dosáhnout. Po dosažení této úrovně by měl být kurz přepnut do režimu, v němž se uživateli bude při učení zobrazovat pouze látka k zopakování a žádné nové lekce. Uživatel si tak bude moci u každého kurzu nastavit, jaké úrovně chce dosáhnout, což mu může usnadnit učení, pokud má v aplikaci zapsaných více kurzů.
+
+% Review
+Možnost nastavení cílové úrovně by měla být k dispozici jednak při zápisu kurzu a jednak na stránce nastavení kurzu, kterou bude třeba v rámci tohoto požadavku také implementovat.
+
+% Review
+Pokud uživatel dosáhne cílové úrovně daného kurzu, mělo by se mu zobrazit oznámení, že v daném kurzu dosáhnul svého cíle a že bude kurz přepnut do režimu, v němž si uživatel bude pouze opakovat danou látku. Dále by se mu měla zobrazit informace, že režim kurzu může kdykoliv změnit v nastavení.
 
 % Review
 \subsubsection{FP-4 Kariérní cesty}
@@ -120,6 +138,22 @@ Tato mapa sice může zachytit svým vzhledem pozornost uživatele, nicméně m�
 
 % Review
 Z těchto důvodů je třeba do aplikace upravit hlavní stránku kurzu tak, aby umožňovala uživateli lépe se orientovat v kurzu, jednodušeji procházet jednotlivé lekce a jednodušeji najít konkrétní lekci.
+
+% Write - vymyslet lepší název pro "Učení se napříč kurzy"
+\subsubsection{FP-5 Učení se napříč kurzy}
+
+% Review
+Uživatel by měl mít možnost spustit učení, které bude obsahovat vybranou látku ze všech kurzů. Aplikace bude vybírat látku podle toho, jakou látku se v poslední době učil a v jakém režimu se dané kurzy nachází.
+
+% Review
+Každý kurz se bude moci nacházet v následujících režimech učení:
+
+% Review
+\begin{itemize}
+    \item \textbf{Zapnutý} -- uživateli bude aplikace zobrazovat z daného kurzu novou látku k učení i látku k zopakování
+    \item \textbf{Pouze opakování} -- uživateli bude aplikace zobrazovat pouze látku k zopakování z daného kurzu
+    \item \textbf{Vypnutý} -- aplikace nebude uživateli zobrazovat žádnou látku z daného kurzu
+\end{itemize}
 
 % Review - zde upřesnit podle toho, na co se appka bude zaměřovat - třeba na výuku webového inženýrství
 \subsubsection{FP-6 Cvičení pro výuku softwarového inženýrství}
@@ -265,6 +299,8 @@ Uživatel by měl možnost si přizpůsobit svého avatara, neboli postavu na pr
 % Review
 Aplikace by měla nabízet přizpůsobení avatara uživatele pomocí následujících položek:
 
+% Write - tady se ještě rozhodnout, jestli chci mít samostatnou stránku na vytvoření avatara (jako v Duolingu), nebo jestli to budu vytvářet pouze tím, že budu equipovat věci v obchodě. Ta první varianta je podle mě lepší, protože to je přehlednější.
+
 % Write - zde ještě rozhodnout, které položky chceme a které ne. Tehle seznam byl sepsaný podle toho, co má Duolingo, ale v něčem bychom se mohli třeba přiblížit tomu, jak to má třeba Habitica nebo Eatventure
 % Write tohle nedávat jako itemize, ale napsat to jako text za sebe, protože to zabírá celou stránku
 \begin{itemize}
@@ -314,6 +350,20 @@ Uživatel by měl mít možnost za určité aktivity v aplikaci získat odznaky,
 % Review
 Tento požadavek vychází z analýzy konkurenční aplikace Duolingo, která tyto odznaky využívá, a dále z analýzy forem gamifikace.
 
+% Review
+\subsubsection{FP-18 Uživatelský profil}
+
+% Review
+V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje základní informace o daném uživateli. Po zavedení nových funkcí do aplikace je třeba tuto stránku aktualizovat tak, aby kromě již zobrazovaných informací o uživateli přehledně zobrazovala i následující informace.
+
+% Review
+\begin{itemize}
+    \item Avatar uživatele, popsaný v požadavku FP-16 Přizpůsobení avatara uživatele. % Write - přidat odkaz na požadavek
+    \item Liga, ve které se uživatel nachází. Popis lig je popsán v požadavku FP-19 Liga učení. % Write - přidat odkaz na požadavek
+    \item Odznaky, které jsou podrobněji popsány v požadavku FP-18 Profilové odznaky. % Write - přidat odkaz na požadavek
+    \item Kurzy, které má uživatel zapsané a přehled, jaké úrovně v nich uživatel dosáhl.
+\end{itemize}
+
 \subsubsection{FP-18 Zmražení streaku}
 
 % Review
@@ -345,6 +395,24 @@ Po dokončení učení by uživateli měla být zobrazena stránka s truhlou, kt
 
 % Write - ujistit se, že jsem dělal analýzu gamifikace
 Tento požadavek vychází z analýzy gamifikace a analýzy konkurenční aplikace Duolingo, která tuto funkci nabízí.
+
+% Review
+\subsubsection{FP-19 Denní výzvy}
+
+% Review
+Aplikace by měla uživateli každý den zobrazit několik denních výzev, které uživatel může splnit pro získání truhly s odměnou (vizte požadavek FP-19 Truhla s odměnou). % Write - přidat odkaz na požadavek
+Tyto výzvy mají za cíl motivovat uživatele, aby se učil nad rámec jeho základního učení, aby vyzkoušel různé funkce aplikace, a aby si rozšířil svoje znalosti napříč různými kurzy a nejen v kurzech, které má zapsané.
+
+% Write - zde ještě dopsat další, co mě napadnou
+V aplikaci by měly být následující typy denních výzev:
+\begin{itemize}
+    \item Naučení se určitého počtu nových lekcí
+    \item Získání určitého počtu bodů XP
+    \item Učení se po určitý čas
+    \item Naučení se jedné lekce z určitého kurzu
+    \item Použití určité funkce aplikace, jako například učení se pomocí učení se napříč kurzy (vizte požadavek FP-5 Učení se napříč kurzy) % Write - přidat odkazy na požadavky
+    nebo přizpůsobení avatara uživatele (vizte požadavek FP-16 Přizpůsobení avatara uživatele) % Write - přidat odkazy na požadavky
+\end{itemize}
 
 \subsection{Nefunkční požadavky}
 
@@ -418,6 +486,8 @@ Požadavek vychází z analýzy existujícího řešení. Jeho cílem je zjednod
 
 \subsubsection{NP-8 Animace a mikro interakce}
 
+% Write - Udělat několik nefunčních požadavků, které jakoby zahrnují "Zlepšení UI a UX", takže třeba jeden požadavek na animace a mikro interakce. Jeden požadavek na přizpůosbení vzhledu aplikace cílovému uživateli atd. Vzít to z toho, co bych měl dělat v rámci UI/UX návrhu podle NUR
+% Write - zde místo toho udělat obecný požadavek "
 % write - že je cílem zvýšit požitek uživatele při používání aplikace. Cílem je vyloženě, aby se uživatel cítil lépe při používání aplikace, aby mu aplikace připadala "cool".
 
 \subsubsection{NP-8 Vytváření a nasazování PWA}
