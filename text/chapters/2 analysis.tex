@@ -75,7 +75,7 @@ Aplikace by měla mít úvodní stránku, která bude zobrazena, když uživatel
 Tento požadavek vychází z analýzy konkurence, kde většina aplikací má kromě stánky pro přihlášení a registraci i úvodní stránku s poutavou grafikou či textem, který prezentuje hlavní přínosy aplikace pro uživatele.
 
 % Review
-\subsubsection{FP-1 Stránka s přehledem kurzu}
+\subsubsection{FP-2 Stránka s přehledem kurzu}
 
 % Review
 Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem lekcí, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit nebo se z něj odhlásit. Dále by měl uživatel mít možnost u kurzu zvolit, zda se ho chce momentálně učit nebo ne. Na základě této volby by aplikace měla uživateli zobrazovat cvičení při učení.
@@ -83,13 +83,19 @@ Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehled
 Tento požadavek vychází z analýzy konkurence, kde ve většině aplikací mají kurzy vlastní stránku.
 
 % Review
-\subsubsection{FP-2 Prohlížení kurzů}
+\subsubsection{FP-3 Prohlížení kurzů}
 
 % Review
 Uživatel by měl mít v aplikaci možnost zobrazit přehled jednotlivých kurzů a jednoduše prohledávat dostupné kurzy. U každého kurzu by měl mít možnost se přesunout na stránku daného kurzu.
 
 % Review
-\subsubsection{FP-3 Kariérní cesty}
+\subsubsection{FP-4 Správa zapsaných kurzů}
+
+% Review
+Uživatel by měl mít možnost si zobrazit seznam zapsaných kurzů. U každého kurzu by měl uživatel vidět jeho pokrok v rámci daného kurzu. Dále by u každého kurzu by mělo být zřejmé, zda je kurz aktivní nebo neaktivní. Uživatel by měl mít také možnost se přesunout na stránku daného kurzu.
+
+% Review
+\subsubsection{FP-4 Kariérní cesty}
 
 % Review
 Aplikace by kromě kurzů měla nabízet tzv. kariérní cesty, které sdružují jednotlivé kurzy do skupin podle určitého tématu. Každá kariérní cesta reprezentuje určitou profesi. Každá kariérní cesta by měla mít vlastní stránku s popisem a přehledem kurzů, které jsou součástí dané kariérní cesty.
@@ -104,7 +110,7 @@ Dále by měl mít uživatel možnosti si zvolit, zda se chce danou cestu moment
 Tento požadavek vychází z analýzy konkurence, kde většina analyzovaných aplikací nabízí určitou formu kariérních cest, díky kterým se uživatel může učit témata týkající se konkrétní profese.
 
 % Review
-\subsubsection{FP-4 Hlavní stránka kurzu}
+\subsubsection{FP-5 Hlavní stránka kurzu}
 
 % Review
 Stávající aplikace zobrazuje na hlavní stránce v kurzu lekce daného kurzu na tzv. mapě učení. Na ní jsou lekce vyobrazeny jako body na čáře připomínající cestu, po které se uživatel při postupování kurzem pohybuje.
@@ -116,7 +122,7 @@ Tato mapa sice může zachytit svým vzhledem pozornost uživatele, nicméně m�
 Z těchto důvodů je třeba do aplikace upravit hlavní stránku kurzu tak, aby umožňovala uživateli lépe se orientovat v kurzu, jednodušeji procházet jednotlivé lekce a jednodušeji najít konkrétní lekci.
 
 % Review - zde upřesnit podle toho, na co se appka bude zaměřovat - třeba na výuku webového inženýrství
-\subsubsection{FP-3 Cvičení pro výuku softwarového inženýrství}
+\subsubsection{FP-6 Cvičení pro výuku softwarového inženýrství}
 
 % Review
 Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, měla by obsahovat cvičení na toto téma, která se budou uživateli zobrazovat při učení.
@@ -132,7 +138,7 @@ Konkrétně by aplikace měla obsahovat následující cvičení:
 \end{itemize}
 
 % Review
-\subsubsection{FP-3 Nová struktura učení}
+\subsubsection{FP-7 Nová struktura učení}
 
 % Review
 Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tento způsob výuky je inspirován analyzovanými aplikacemi Mimo a Duolingo, které podobnou formu výuky využívají.
@@ -150,19 +156,17 @@ Tato struktura učení se zásadně liší od struktury učení v původní apli
 Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. To bude třeba zohlednit při návrhu a implementaci nového způsobu učení.
 
 % Review
-\subsubsection{FP-4 Učení se napříč kurzy}
+\subsubsection{FP-8 Stav energie}
 
 % Review
-Uživatel by měl mít možnost se jednoduše učit látku napříč všemi aktivními kurzy bez nutnosti přepínání mezi jednotlivými kurzy.
+Aplikace by měla uživateli zobrazovat jeho stav energie, který je reprezentovaný body energie.
+Učením se budou body energie snižovat. Pokud uživatel všechny body energie spotřebuje, nebude mu umožněno se dále učit. Body energie se budou v průběhu času obnovovat. Uživatelé s premium účtem budou mít neomezené množství energie, tedy učení nebude body energie snižovat.
 
 % Review
-Tento požadavek vychází z analýzy konkurence, kde žádná z analyzovaných aplikací neobsahuje jednoduchý způsob, jak se učit látku napříč více kurzy bez nutnosti přepínání mezi danými kurzy. Pokud se uživatel chce učit více kurzů současně, je nucen tak neustále mezi kurzy přepínat, což může mít negativní vliv na uživatelskou zkušenost.
+Tento požadavek je inspirován analyzovanou aplikací Duolingo, která podobnou funkci nabízí. Tato funkce slouží primárně k motivaci uživatele, aby se učil pravidelně každý den a dále také k tomu, aby byl uživatel motivován si zakoupit premium účet.
 
 % Review
-Tento požadavek je dále inspirován design principem "micro interactions", jehož cílem je umožnit uživateli, aby mohl kdykoliv aplikaci zapnout a okamžitě ji začít používat k jejímu hlavnímu účelu. % Write - zde přidat referenci - možná z té knížky o UI designu
-
-% Review
-\subsubsection{FP-5 Registrace a přihlášení pomocí účtu Google}
+\subsubsection{FP-9 Registrace a přihlášení pomocí účtu Google}
 
 % Write - zde zvážit další formy přihlášení - podle konkurenčních aplikací
 
@@ -173,7 +177,7 @@ Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí
 Tento požadavek vychází z analýzy konkurence, kde většina konkurenčních aplikací tuto možnost nabízí.
 
 % Review
-\subsubsection{FP-7 Nový úvodní dotazník a doporučování kurzů}
+\subsubsection{FP-10 Nový úvodní dotazník a doporučování kurzů}
 
 % Review
 Aplikace by měla obsahovat úvodní dotazník zaměřený na získání informací o uživateli. Tyto informace by se měly týkat zejména cílů uživatele a jeho zkušeností s programováním. Na základě dotazníku by měla aplikace přizpůsobit uspořádání nabídky kurzů tak, aby odpovídala cílům uživatele.
@@ -185,7 +189,7 @@ Doporučování kurzů by mělo být také založeno na kurzech, které si uživ
 Tato funkce je inspirována konkurenční aplikací Code Academy, která využívá úvodní dotazník pro doporučování kurzů uživateli.
 
 % Review
-\subsubsection{FP-8 Zpřehlednění navigace v aplikaci}
+\subsubsection{FP-11 Zpřehlednění navigace v aplikaci}
 
 % Review
 Aplikace by měla poskytovat uživateli přehlednější a jednodušší způsob navigace mezi jednotlivými stránkami. Z výsledků uživatelského testování v mé bakalářské práci, zabývající se stávající aplikací, vyplynulo, že mají uživatelé problém s navigací mezi jednotlivými stránkami aplikace, zejména mezi jednotlivými úrovněmi mapy učení v daném kurzu. Dále také z důvodu přidání nových stránek do aplikace v rámci této práce, bude třeba zajistit, aby navigační prvky v aplikaci byly pro uživatel přehledné a snadné na používání.
@@ -201,7 +205,7 @@ Mezi tyto prvky patří zejména:
 \end{itemize}
 
 % Review
-\subsubsection{FP-8 Push Notifikace}
+\subsubsection{FP-12 Push Notifikace}
 
 % Review
 Aplikace by měla být schopna uživateli posílat push notifikace. % Write - zde přidat referenci na vysvětlení pojmu push notifikace
@@ -218,7 +222,7 @@ Tyto notifikace by měly uživatele upozorňovat v následujících situacích:
 V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace. % Write - přidat referenci na backendovou diplomku
 
 % Review
-\subsubsection{FP-8 Připomínání učení}
+\subsubsection{FP-13 Připomínání učení}
 
 % Review
 Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má v určitý čas učit. Aplikace by pak měla uživateli posílat push notifikace, které ho na učení upozorní, pokud se ještě v daný den neučil. Tato funkce je inspirována konkurenčními aplikacemi Mimo a Duolingo, které umožňují uživateli si nastavit každodenní připomenutí učení.
@@ -227,7 +231,7 @@ Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má
 Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". Pokud uživatel tuto funkci zapne, nebude mu aplikace připomínat učení podle nastaveného času, ale na základě předchozího používání aplikace. Tato funkce je inspirována aplikací Duolingo, která podobnou funkci nabízí.
 
 % Review
-\subsubsection{FP-8 Systém zobrazování reklam}
+\subsubsection{FP-14 Systém zobrazování reklam}
 
 % Review
 Ve stávající aplikaci se reklamy zobrazují pouze po úspěšném dokončení učení a to pouze tzv. bannerové reklamy. % Write - tady ověřit název reklam
@@ -247,13 +251,13 @@ Dále by aplikace měla nově zobrazovat reklamy v těchto případech:
 % Write - tohle napsat více specificky a lépe to odůvodnit
 Tento požadavek je inspirován analýzou konkurenčních aplikaci, kde většina aplikací zobrazuje reklamy v průběhu používání aplikace.
 
-\subsubsection{FP-9 Premium systém}
+\subsubsection{FP-15 Premium systém}
 
 % write - zlepšit informování uživatele o tom, které části aplikace jsou dostupné v premium verzi (např. když uživatel klikne na tlačítko, které by mělo být dostupné pouze v premium verzi, aby ho to informovalo)
 % apod. sepsat podrobnější požadavky
 
 % Review
-\subsubsection{FP-10 Přizpůsobení avatara uživatele}
+\subsubsection{FP-16 Přizpůsobení avatara uživatele}
 
 % Review
 Uživatel by měl možnost si přizpůsobit svého avatara, neboli postavu na profilovém obrázku, pomocí položek zakoupených v obchodě aplikace za virtuální měnu. Pro naplnění tohoto požadavku bude třeba upravit stránku obchodu tak, aby umožňovala přehledné prohlížení položek napříč více kategoriemi. Dále bude třeba upravit vzhled profilové stránky, aby byl profilový obrázek uživatele viditelnější. % Write - tohle nevím, jestli to mám psát do požadavků.. ale podle mě bych to měl mít někde napsaný
@@ -285,13 +289,62 @@ Aplikace by měla nabízet přizpůsobení avatara uživatele pomocí následuj�
 Tento požadavek vychází zejména z analýzy forem gamifikace a také analýzy konkurenční aplikace Duolingo, která podobnou funkci přizpůsobení si avatara uživatele nabízí.
 
 % Review
-\subsubsection{FP-11 Profilové odznaky}
+\subsubsection{FP-17 Rozšíření obchodu a odemykání položek}
+
+% Review
+V aplikaci již existuje stránka obchodu, v němž si uživatel může zakoupit pomocí virtuální měny profilové obrázky.
+
+% Review
+Vzhledem k novým požadavkům aplikace je třeba tento obchod rozšířit tak, aby bylo možné kupovat i další položky, které jsou popsány v požadavku FP-16 Přizpůsobení avatara uživatele. % Write zde přidat odkaz na požadavek FP-16
+
+% Review
+Dále by v obchodu měla být zavedena nová funkce odemykání položek. Některé položky by měly být dostupné ke koupi pouze pokud uživatel dosáhl určitého ocenění v aplikaci. Do té doby by se položky měly uživateli zobrazovat jako zamčené.
+
+% Review
+U zamknutých položek by měl uživatel mít možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemknul.
+
+% Write - napsat nedostatky z odstavce výše do analýzy stávajícího řešení
+
+% Review
+\subsubsection{FP-18 Profilové odznaky}
 
 % Review
 Uživatel by měl mít možnost za určité aktivity v aplikaci získat odznaky, které reprezentují jeho úspěchy. Na profilu uživatele by se pak měl zobrazovat zkrácený seznam těchto odznaků s možností přesunutí se na stránku všech odznaků daného uživatele. Aplikace by měla také umožnit uživatelům si zobrazit podrobnější informace o jednotlivých odznacích, jako například název odznaku nebo jakým způsobem byl získán.
 
 % Review
 Tento požadavek vychází z analýzy konkurenční aplikace Duolingo, která tyto odznaky využívá, a dále z analýzy forem gamifikace.
+
+\subsubsection{FP-18 Zmražení streaku}
+
+% Review
+Aplikace uživateli zobrazuje tzv. streak, neboli skóre, které reprezentuje počet dní v řadě, v nichž uživatel splnil alespoň jedno učení.
+
+% Review
+Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupit do zásoby několik položek tzv. zmražení streaku.
+
+% Review
+Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné cvičení, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak i když některý den například zapomene se učit.
+
+% Review
+\subsubsection{FP-19 Liga učení}
+
+% Review
+V aplikaci by měly být zavedeny tzv. ligy učení, které by měly fungovat následujícím způsobem. Začátkem každého týdne by měl být každý uživatel zařazen do skupiny s omezeným počtem uživatelů, kteří se nachází ve stejné lize, tedy získali předchozí týden podobné množství bodů XP. Tato skupina je reprezentována žebříčkem uživatelů, který je seřazen podle počtu XP, které získali v momentálním týdnu.
+
+% Review
+Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pokud se nacházel v žebříčku uživatelů na prvních několika pozicích. Pokud se uživatel nacházel v žebříčku na posledních několika pozicích, měl by být přesunut do nižší ligy. Pokud se uživatel nacházel v žebříčku mezi těmito pozicemi, měl by zůstat v aktuální lize.
+
+% Review
+Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Duolingo, v nichž jsou podobné ligy implementovány.
+
+% Review
+\subsubsection{FP-19 Truhla s odměnou}
+
+% Review
+Po dokončení učení by uživateli měla být zobrazena stránka s truhlou, kterou bude moci uživatel otevřít. Po otevření truhly by měl uživatel získat náhodné množství virtuální měny, jako odměnu za jeho učení. Uživateli by následně mělo být nabídnuto, že může získat dvojnásobek této odměny, pokud shlédne reklamu.
+
+% Write - ujistit se, že jsem dělal analýzu gamifikace
+Tento požadavek vychází z analýzy gamifikace a analýzy konkurenční aplikace Duolingo, která tuto funkci nabízí.
 
 \subsection{Nefunkční požadavky}
 
