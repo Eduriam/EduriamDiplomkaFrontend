@@ -190,6 +190,47 @@ Tato struktura učení se zásadně liší od struktury učení v původní apli
 Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. To bude třeba zohlednit při návrhu a implementaci nového způsobu učení.
 
 % Review
+\subsubsection{FP-7 Nahlašování problému při učení}
+
+% Review
+Uživatel by měl mít při učení možnost u každého cvičení nebo vysvětlení látky nahlásit problém, který při dané aktivitě nastal. Při nahlašování by měl mít možnost zvolit o který typ problému z následujícího výběru se jedná.
+
+% Review
+\begin{itemize}
+    \item Uživatel považuje svou odpověď ve cvičení za správnou, i přes to, že ji aplikace označila jako špatnou.
+    \item Uživatel považuje svou odpověď ve cvičení za špatnou, i přes to, že ji aplikace označila jako správnou.
+    \item Zadání cvičení je pro uživatele matoucí nebo nejasné.
+    \item Vysvětlení látky je pro uživatele matoucí nebo nejasné.
+    \item Nastala jiná chyba. V tomto případě by měl uživatel mít možnost sám uvést, o jakou chybu se jedná.
+\end{itemize}
+
+% Review
+Uživatelé s rolí korektora by měli kromě předchozích možností nahlášení problému, mít také k dispozici následující možnosti.
+
+% Review
+\begin{itemize}
+    \item Vysvětlení látky je příliš dlouhé nebo příliš krátké.
+    \item Cvičení je příliš těžké nebo příliš snadné.
+    \item Cvičení nedostatečně testuje probíraný koncept.
+    \item Struktura lekce by měla být upravena. Tato možnost se využije například pokud v lekci není dostatek cvičení nebo vysvětlení látky.
+\end{itemize}
+
+% Review
+Korektoři by také měli mít možnost u každé odpovědi detailněji popsat vlastními slovy daný problém. 
+
+% Review
+Nahlášení problému od uživatelů s rolí korektora by mělo být označeno tak, aby bylo možné jej rozlišit od nahlášení problému běžných uživatelů. Role korektora bude nastavována uživatelům mimo frontend této aplikace. Tuto roli využijí zejména lidé zodpovědní za tvorbu a korekci jednotlivých kurzů.
+
+% Review
+\subsubsection{FP-8 Statistiky o učení}
+
+% Review
+Aplikace by měla při učení uživatele nově sbírat data o tom, jak dlouho uživatel prováděl jednotlivá cvičení nebo procházel vysvětlení látky. Tato data by měla být využita k tomu, aby se na konci učení uživateli zobrazila informace, jak dlouho se učil. 
+
+% Review
+Dále by měla být tato data odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
+
+% Review
 \subsubsection{FP-8 Stav energie}
 
 % Review
@@ -237,6 +278,11 @@ Mezi tyto prvky patří zejména:
     \item Boční navigační panel
     \item Stránka přepínání mezi jednotlivými kurzy
 \end{itemize}
+
+% Review
+\subsubsection{FP-12 Tmavý režim}
+
+Rozhraní aplikace by mělo být dostupné ve dvou režimech, ve světlém a tmavém. Uživatel by měl mít možnost v nastavení zvolit, zda chce používat světlý režim, tmavý režim, nebo režim dle systémového nastavení. Rozhraní aplikace by se pak mělo zobrazovat uživateli v tomto režimu. 
 
 % Review
 \subsubsection{FP-12 Push Notifikace}
@@ -364,16 +410,25 @@ V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje
     \item Kurzy, které má uživatel zapsané a přehled, jaké úrovně v nich uživatel dosáhl.
 \end{itemize}
 
-\subsubsection{FP-18 Zmražení streaku}
+\subsubsection{FP-18 Zmrazení streaku}
 
 % Review
 Aplikace uživateli zobrazuje tzv. streak, neboli skóre, které reprezentuje počet dní v řadě, v nichž uživatel splnil alespoň jedno učení.
 
 % Review
-Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupit do zásoby několik položek tzv. zmražení streaku.
+Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupit do zásoby několik položek tzv. zmrazení streaku.
 
 % Review
 Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné cvičení, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak i když některý den například zapomene se učit.
+
+% Review
+\subsubsection{FP-18 Oznámení o změně stavu streaku}
+
+% Review
+Pokud uživatel dokončí učení a jeho streak se zvýší na novou významnou hranici, například 100 dní, měla by mu aplikace zobrazit oznámení o dosažení této hranice.
+
+% Review
+Dále pokud uživatel ztratí streak, tedy je mu resetován na 0 dní, měla by mu tuto informaci aplikace oznámit po otevření aplikace. % Write - tohle líp přeformulovat
 
 % Review
 \subsubsection{FP-19 Liga učení}
