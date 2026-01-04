@@ -1,7 +1,10 @@
+% Done
 \section{Analýza požadavků}
 
-Na základě předchozí analýzy existujícího řešení jsem identifikoval následující funkční a nefunkční požadavky.
+% Done
+Na základě předchozí analýzy stávajícího řešení a analýzy konkurenčních aplikací jsem identifikoval a sepsal následující funkční a nefunkční požadavky.
 
+% Done
 \subsection{Funkční požadavky}
 
 % Review
@@ -14,32 +17,66 @@ V kapitole návrhu se pak budu věnovat podrobnému popsání případů užití
 \subsubsection{FP-1 Úvodní stránka aplikace}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Review
 Aplikace by měla mít úvodní stránku, která bude zobrazena, když uživatel otevře aplikaci a není přihlášen. Tato stránka by měla upoutat pozornost uživatele a umožnit mu vybrat si, jestli se chce přihlásit nebo registrovat.
 
 % Review
 Tento požadavek vychází z analýzy konkurence, kde většina aplikací má kromě stánky pro přihlášení a registraci i úvodní stránku s poutavou grafikou či textem, který prezentuje hlavní přínosy aplikace pro uživatele.
 
 % Review
-\subsubsection{FP-2 Stránka s přehledem kurzu}
+\subsubsection{FP-2 Nový úvodní dotazník a doporučování kurzů}
 
 % Review
-Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem lekcí, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit nebo se z něj odhlásit. Dále by měl uživatel mít možnost u kurzu zvolit, zda se ho chce momentálně učit nebo ne. Na základě této volby by aplikace měla uživateli zobrazovat cvičení při učení.
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
-Tento požadavek vychází z analýzy konkurence, kde ve většině aplikací mají kurzy vlastní stránku.
+% Review
+Aplikace by měla obsahovat úvodní dotazník zaměřený na získání informací o uživateli. Tyto informace by se měly týkat zejména cílů uživatele a jeho zkušeností s programováním. Na základě dotazníku by měla aplikace nabídnout uživateli několik kurzů, které odpovídají jeho cílům a zkušenostem.
+
+% Review
+Tato funkce je inspirována konkurenční aplikací Codecademy, která využívá úvodní dotazník pro doporučování kurzů uživateli.
 
 % Review
 \subsubsection{FP-3 Prohlížení a doporučování kurzů}
 
 % Review
-Uživatel by měl mít v aplikaci možnost zobrazit přehled jednotlivých kurzů a jednoduše prohledávat dostupné kurzy. U každého kurzu by měl mít možnost se přesunout na stránku daného kurzu.
-
-% Write - přidat stránku s dotazníkem pro doporučení kurzů, který by se zobrazil při setupu účtu a který by si uživatel mohl spustit znovu na stránce prohlížení kurzů
-
-% Review
-Součástí prohlížení kurzů by měla být sekce s doporučenými kurzy. Tato doporučení by měla být založena jednak na úvodním dotazníku uživatele a jednak na kurzech, které si uživatel sám zapsal.
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
 
 % Review
-\subsubsection{FP-4 Správa zapsaných kurzů}
+Uživatel by měl mít v aplikaci možnost zobrazit přehled dostupných kurzů a jednoduše je prohledávat. U každého kurzu by měl mít možnost se přesunout na stránku daného kurzu.
+
+% Review
+Součástí prohlížení kurzů by měla být sekce s doporučenými kurzy. Tato doporučení by měla být založena jednak na úvodním dotazníku uživatele, který vyplnil při registraci. Uživatel by měl mít možnost dotazník kdykoliv vyplnit znovu a přizpůsobit si tak svoje preference při učení. % Zde se dá inspirovat například aplikací Tinder, která má toto nastavování preferencí dobře udělané z hlediska UI/UX
+
+
+% Review
+\subsubsection{FP-4 Stránka kurzu}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Review
+Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem lekcí, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit nebo se z něj odhlásit. Dále by měl mít možnost u kurzu zvolit, zda se ho chce momentálně učit nebo ne. Na základě této volby by aplikace měla uživateli zobrazovat cvičení při učení.
+
+% Review
+Tento požadavek vychází z analýzy konkurence, kde ve většině aplikací mají kurzy vlastní stránku se svým popisem a přehledem lekcí.
+
+% Review
+\subsubsection{FP-5 Správa zapsaných kurzů}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
 
 % Review
 Uživatel by měl mít možnost si zobrazit přehled zapsaných kurzů. U každého kurzu by měl uživatel vidět jeho pokrok a úroveň v rámci daného kurzu. 
@@ -51,7 +88,12 @@ Dále by u každého kurzu mělo být zobrazeno, v jakém režimu se daný kurz 
 Uživatel by měl mít také možnost se z přehledu kurzů přesunout na stránku daného kurzu.
 
 % Review
-\subsubsection{FP-5 Nastavení cílové úrovně kurzu}
+\subsubsection{FP-6 Nastavení cílové úrovně kurzu}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
 
 % Review
 Aplikace by měla umožnit uživateli si nastavit cílovou úroveň kurzu, tedy úroveň, které chce v uživatel daném kurzu dosáhnout. Po dosažení této úrovně by měl být kurz přepnut do režimu, v němž se uživateli bude při učení zobrazovat pouze látka k zopakování a žádné nové lekce. Uživatel si tak bude moci u každého kurzu nastavit, jaké úrovně chce dosáhnout, což mu může usnadnit učení, pokud má v aplikaci zapsaných více kurzů.
@@ -63,7 +105,12 @@ Možnost nastavení cílové úrovně by měla být k dispozici jednak při záp
 Pokud uživatel dosáhne cílové úrovně daného kurzu, mělo by se mu zobrazit oznámení, že v daném kurzu dosáhnul svého cíle a že bude kurz přepnut do režimu, v němž si uživatel bude pouze opakovat danou látku. Dále by se mu měla zobrazit informace, že režim kurzu může kdykoliv změnit v nastavení.
 
 % Review
-\subsubsection{FP-4 Kariérní cesty}
+\subsubsection{FP-7 Kariérní cesty}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
 
 % Review
 Aplikace by kromě kurzů měla nabízet tzv. kariérní cesty, které sdružují jednotlivé kurzy do skupin podle určitého tématu. Každá kariérní cesta reprezentuje určitou profesi. Každá kariérní cesta by měla mít vlastní stránku s popisem a přehledem kurzů, které jsou součástí dané kariérní cesty.
@@ -78,31 +125,35 @@ Dále by měl mít uživatel možnosti si zvolit, zda se chce danou cestu moment
 Tento požadavek vychází z analýzy konkurence, kde většina analyzovaných aplikací nabízí určitou formu kariérních cest, díky kterým se uživatel může učit témata týkající se konkrétní profese.
 
 % Review
-\subsubsection{FP-5 Hlavní stránka kurzu}
+\subsubsection{FP-8 Stránka s lekcemi kurzu}
 
 % Review
-Stávající aplikace zobrazuje na hlavní stránce v kurzu lekce daného kurzu na tzv. mapě učení. Na ní jsou lekce vyobrazeny jako body na čáře připomínající cestu, po které se uživatel při postupování kurzem pohybuje.
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
 
-% Write - zde někde zahrnout to, že bych chtěl udělat, aby na hlavní stránce kurzu byly sekce, které by uživatel mohl rozbalit kliknutím. Tak to mají snad všechny analyzované aplikace a je to dobrý, že vidím sekce, na ty můžu kliknout a pak plnit jednotlivé kapitoly.
+% Review
+Ve stávající aplikaci jsou na stránce s lekcemi kurzu lekce vyobrazeny jako body na čáře připomínající cestu, po které se uživatel při postupování kurzem pohybuje. Stránka tak připomíná vizuálně mapu s cestou, po které se uživatel pohybuje. 
 
 % Review - tyhle argumenty bych možná přehodil do analýzy stávajícího řešení
 Tato mapa sice může zachytit svým vzhledem pozornost uživatele, nicméně má několik zásadních nevýhod z hlediska použitelnosti. Lekce jsou na mapě reprezentovány pouze ikonou a zkráceným názvem. Kvůli tomu může být pro uživatele obtížné na první pohled poznat, co je obsahem dané lekce. Dále, pokud se uživatel snaží najít konkrétní lekci v aplikaci, může to pro něj být velice obtížné, pokud mapa učení obsahuje větší množství lekcí.
 
 % Review
-Z těchto důvodů je třeba do aplikace upravit hlavní stránku kurzu tak, aby umožňovala uživateli lépe se orientovat v kurzu, jednodušeji procházet jednotlivé lekce a jednodušeji najít konkrétní lekci.
+Z těchto důvodů je třeba upravit stránku s lekcemi kurzu tak, aby byla přehlednější a umožňovala uživateli se lépe v lekcích orientovat.
 
 % Review
-\subsubsection{FP-5 Studijní plán}
-
-% (původní název požadavku: Učení se napříč kurzy)
-% Write - tento požadavek přepsat.. mělo by to být samostatná funkce/stránka "studijního plánu", kde si uživatel bude moci nastavit, jaké kurzy se chce učit a aplikace by mu pak podle toho nastavení každý den doporučovala lekce podle studijního plánu. Mělo by to fungovat trošku podobně jako v Codecademy, ale aby si uživatel mohl zvolit co jak chce umět
-% Write - napsat pak, že to vychází z analýzy konkurence Codecademy, která podobnou funkci nabízí 
+\subsubsection{FP-9 Studijní plán}
 
 % Review
-Uživatel by měl mít možnost spustit učení, které bude obsahovat vybranou látku ze všech kurzů. Aplikace bude vybírat látku podle toho, jakou látku se v poslední době učil a v jakém režimu se dané kurzy nachází.
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
 
 % Review
-Každý kurz se bude moci nacházet v následujících režimech učení:
+Aplikace by měla obsahovat stránku studijního plánu uživatele. Na této stránce by měl mít uživatel možnost si zapsaných kurzů zvolit, které se chce učit a jaké úrovně v nich chce dosáhnout. Podle studijního plánu pak bude aplikace doporučovat uživateli lekce při učení.
+
+% Review
+U každého kurzu bude uživatel moci přepínat mezi následujícími režimy. Tím bude moci zvolit, které zapsané kurzy se chce učit a které ne.
 
 % Review
 \begin{itemize}
@@ -111,8 +162,36 @@ Každý kurz se bude moci nacházet v následujících režimech učení:
     \item \textbf{Vypnutý} -- aplikace nebude uživateli zobrazovat žádnou látku z daného kurzu
 \end{itemize}
 
+% Review
+Dále bude moci u každého kurzu nastavit úroveň, které chce v kurzu dosáhnout.
+
+% Review
+Funkce studijního plánu vychází z analýzy konkurenční aplikace Codecademy, která umožňuje uživateli si vygenerovat studijní plán. Funkce dále vychází z problému, který nastává v konkurenčních aplikacích, pokud se uživatel chce učit více kurzů zároveň. Uživatel tak bývá nucen přepínat manuálně mezi jednotlivými kurzy a sám si plánovat, kterou látku se bude učit. Studijní plán by měl tomuto problému předejít a umožnit uživateli se jednoduše učit látku napříč mnoha kurzy.
+
+\subsubsection{FP-10 Učení se podle studijního plánu}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Review
+Aplikace by měla uživateli poskytnout možnost se jednoduše přesunout na stránku učení. Na této stránce by měla aplikace uživateli zobrazit doporučenou lekci nebo látku k zopakování, které budou vybrány na základě znalostí uživatele a jeho studijního plánu. Lekce a látka k zopakování bude vybírána napříč všemi relevantními kurzy dle studijního plánu.
+
+% Review
+Cílem této funkce je umožnit uživateli jednoduše spustit učení z libovolného místa v aplikaci a zamezit tak problémům s přepínáním mezi kurzy, které mohou nastávat v konkurenčních aplikacích.
+
+% Review
+Tato stránka učení by zároveň měla být nastavena jako výchozí stránka, na kterou bude uživatel přesměrován po spuštění aplikace. Cílem této funkce je snížit čas od zapnutí aplikace po začátek učení a dodržet tak princip "micro-interactions", který je často využíván například v aplikacích sociálních sítí. % Write - zde dát odkaz na princip z design knížky a místo sociálnch sítí uvést příklad z té knížky
+
 % Review - zde upřesnit podle toho, na co se appka bude zaměřovat - třeba na výuku webového inženýrství
-\subsubsection{FP-6 Cvičení pro výuku softwarového inženýrství} 
+% Write - zde jsem skončil při review
+\subsubsection{FP-11 Cvičení pro výuku softwarového inženýrství} 
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
 
 % Review
 Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, měla by obsahovat cvičení na toto téma, která se budou uživateli zobrazovat při učení.
@@ -132,6 +211,11 @@ Konkrétně by aplikace měla obsahovat následující cvičení:
 \subsubsection{FP-7 Nová struktura učení}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Review
 Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tento způsob výuky je inspirován analyzovanými aplikacemi Mimo a Duolingo, které podobnou formu výuky využívají.
 
 % Review - zde nakonec ověřit, jestli sedí typy komponentů 
@@ -149,10 +233,20 @@ Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživat
 % Write
 \subsubsection{FP-7 Chatbot}
 
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
 % Write - napsat, že by při učení měl mít premium uživatel možnost komunikovat s chatbotem, který mu zodpoví na otázky (výraz premium uživatel používat jako roli při popisu requirements, use casů atd.)
 
 % Review
 \subsubsection{FP-7 Nahlašování problému při učení}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 Uživatel by měl mít při učení možnost u každého cvičení nebo vysvětlení látky nahlásit problém, který při dané aktivitě nastal. Při nahlašování by měl mít možnost zvolit o který typ problému z následujícího výběru se jedná.
@@ -187,6 +281,11 @@ Nahlášení problému od uživatelů s rolí korektora by mělo být označeno 
 \subsubsection{FP-8 Statistiky o učení}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Could have \\
+\end{tabular}
+
+% Review
 Aplikace by měla při učení uživatele nově sbírat data o tom, jak dlouho uživatel prováděl jednotlivá cvičení nebo procházel vysvětlení látky. Tato data by měla být využita k tomu, aby se na konci učení uživateli zobrazila informace, jak dlouho se učil. 
 
 % Review
@@ -194,6 +293,11 @@ Dále by měla být tato data odeslána do backendové části aplikace, kde bud
 
 % Review
 \subsubsection{FP-8 Stav energie}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 Aplikace by měla uživateli zobrazovat jeho stav energie, který je reprezentovaný body energie.
@@ -205,6 +309,11 @@ Tento požadavek je inspirován analyzovanou aplikací Duolingo, která podobnou
 % Review
 \subsubsection{FP-9 Registrace a přihlášení pomocí účtu Google}
 
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
 % Write - zde zvážit další formy přihlášení - podle konkurenčních aplikací
 
 % Review
@@ -214,16 +323,12 @@ Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí
 Tento požadavek vychází z analýzy konkurence, kde většina konkurenčních aplikací tuto možnost nabízí.
 
 % Review
-\subsubsection{FP-10 Nový úvodní dotazník a doporučování kurzů}
-
-% Review
-Aplikace by měla obsahovat úvodní dotazník zaměřený na získání informací o uživateli. Tyto informace by se měly týkat zejména cílů uživatele a jeho zkušeností s programováním. Na základě dotazníku by měla aplikace nabídnout uživateli několik kurzů, které odpovídají jeho cílům a zkušenostem.
-
-% Review
-Tato funkce je inspirována konkurenční aplikací Code Academy, která využívá úvodní dotazník pro doporučování kurzů uživateli.
-
-% Review
 \subsubsection{FP-11 Zpřehlednění navigace v aplikaci}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 Aplikace by měla poskytovat uživateli přehlednější a jednodušší způsob navigace mezi jednotlivými stránkami. Z výsledků uživatelského testování v mé bakalářské práci, zabývající se stávající aplikací, vyplynulo, že mají uživatelé problém s navigací mezi jednotlivými stránkami aplikace, zejména mezi jednotlivými úrovněmi mapy učení v daném kurzu. Dále také z důvodu přidání nových stránek do aplikace v rámci této práce, bude třeba zajistit, aby navigační prvky v aplikaci byly pro uživatel přehledné a snadné na používání.
@@ -241,10 +346,20 @@ Mezi tyto prvky patří zejména:
 % Review
 \subsubsection{FP-12 Tmavý režim}
 
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
 Rozhraní aplikace by mělo být dostupné ve dvou režimech, ve světlém a tmavém. Uživatel by měl mít možnost v nastavení zvolit, zda chce používat světlý režim, tmavý režim, nebo režim dle systémového nastavení. Rozhraní aplikace by se pak mělo zobrazovat uživateli v tomto režimu. 
 
 % Review
 \subsubsection{FP-12 Push Notifikace}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 Aplikace by měla být schopna uživateli posílat push notifikace. % Write - zde přidat referenci na vysvětlení pojmu push notifikace
@@ -264,6 +379,11 @@ V rámci této práce se budu zabývat pouze zprovozněním zobrazování push n
 \subsubsection{FP-13 Připomínání učení}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Could have \\
+\end{tabular}
+
+% Review
 Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má v určitý čas učit. Aplikace by pak měla uživateli posílat push notifikace, které ho na učení upozorní, pokud se ještě v daný den neučil. Tato funkce je inspirována konkurenčními aplikacemi Mimo a Duolingo, které umožňují uživateli si nastavit každodenní připomenutí učení.
 
 % Write - tohle se ještě rozhodnout, jestli tam chci mít nebo ne
@@ -271,6 +391,11 @@ Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". P
 
 % Review
 \subsubsection{FP-14 Systém zobrazování reklam}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 Ve stávající aplikaci se reklamy zobrazují pouze po úspěšném dokončení učení a to pouze tzv. bannerové reklamy. % Write - tady ověřit název reklam
@@ -292,11 +417,21 @@ Tento požadavek je inspirován analýzou konkurenčních aplikaci, kde většin
 
 \subsubsection{FP-15 Premium systém}
 
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
 % write - zlepšit informování uživatele o tom, které části aplikace jsou dostupné v premium verzi (např. když uživatel klikne na tlačítko, které by mělo být dostupné pouze v premium verzi, aby ho to informovalo)
 % apod. sepsat podrobnější požadavky
 
 % Review
 \subsubsection{FP-16 Přizpůsobení avatara uživatele}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 Uživatel by měl možnost si přizpůsobit svého avatara, neboli postavu na profilovém obrázku, pomocí položek zakoupených v obchodě aplikace za virtuální měnu. Pro naplnění tohoto požadavku bude třeba upravit stránku obchodu tak, aby umožňovala přehledné prohlížení položek napříč více kategoriemi. Dále bude třeba upravit vzhled profilové stránky, aby byl profilový obrázek uživatele viditelnější. % Write - tohle nevím, jestli to mám psát do požadavků.. ale podle mě bych to měl mít někde napsaný
@@ -333,6 +468,11 @@ Tento požadavek vychází zejména z analýzy forem gamifikace a také analýzy
 \subsubsection{FP-17 Rozšíření obchodu a odemykání položek}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Could have \\
+\end{tabular}
+
+% Review
 V aplikaci již existuje stránka obchodu, v němž si uživatel může zakoupit pomocí virtuální měny profilové obrázky.
 
 % Review
@@ -350,6 +490,11 @@ U zamknutých položek by měl uživatel mít možnost si zobrazit informace o t
 \subsubsection{FP-18 Profilové odznaky}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Review
 Uživatel by měl mít možnost za určité aktivity v aplikaci získat odznaky, které reprezentují jeho úspěchy. Na profilu uživatele by se pak měl zobrazovat zkrácený seznam těchto odznaků s možností přesunutí se na stránku všech odznaků daného uživatele. Aplikace by měla také umožnit uživatelům si zobrazit podrobnější informace o jednotlivých odznacích, jako například název odznaku nebo jakým způsobem byl získán.
 
 % Review
@@ -357,6 +502,11 @@ Tento požadavek vychází z analýzy konkurenční aplikace Duolingo, která ty
 
 % Review
 \subsubsection{FP-18 Uživatelský profil}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje základní informace o daném uživateli. Po zavedení nových funkcí do aplikace je třeba tuto stránku aktualizovat tak, aby kromě již zobrazovaných informací o uživateli přehledně zobrazovala i následující informace.
@@ -372,6 +522,11 @@ V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje
 \subsubsection{FP-18 Zmrazení streaku}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Review
 Aplikace uživateli zobrazuje tzv. streak, neboli skóre, které reprezentuje počet dní v řadě, v nichž uživatel splnil alespoň jedno učení.
 
 % Review
@@ -384,6 +539,11 @@ Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nespln
 \subsubsection{FP-18 Oznámení o změně stavu streaku}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Review
 Pokud uživatel dokončí učení a jeho streak se zvýší na novou významnou hranici, například 100 dní, měla by mu aplikace zobrazit oznámení o dosažení této hranice.
 
 % Review
@@ -391,6 +551,11 @@ Dále pokud uživatel ztratí streak, tedy je mu resetován na 0 dní, měla by 
 
 % Review
 \subsubsection{FP-19 Liga učení}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Could have \\
+\end{tabular}
 
 % Review
 V aplikaci by měly být zavedeny tzv. ligy učení, které by měly fungovat následujícím způsobem. Začátkem každého týdne by měl být každý uživatel zařazen do skupiny s omezeným počtem uživatelů, kteří se nachází ve stejné lize, tedy získali předchozí týden podobné množství bodů XP. Tato skupina je reprezentována žebříčkem uživatelů, který je seřazen podle počtu XP, které získali v momentálním týdnu.
@@ -405,6 +570,11 @@ Tento požadavek vychází z analýzy konkurenčních řešení, zejména z anal
 \subsubsection{FP-19 Truhla s odměnou}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Review
 Po dokončení učení by uživateli měla být zobrazena stránka s truhlou, kterou bude moci uživatel otevřít. Po otevření truhly by měl uživatel získat náhodné množství virtuální měny, jako odměnu za jeho učení. Uživateli by následně mělo být nabídnuto, že může získat dvojnásobek této odměny, pokud shlédne reklamu.
 
 % Write - ujistit se, že jsem dělal analýzu gamifikace
@@ -412,6 +582,11 @@ Tento požadavek vychází z analýzy gamifikace a analýzy konkurenční aplika
 
 % Review
 \subsubsection{FP-19 Denní výzvy}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Could have \\
+\end{tabular}
 
 % Review
 Aplikace by měla uživateli každý den zobrazit několik denních výzev, které uživatel může splnit pro získání truhly s odměnou (vizte požadavek FP-19 Truhla s odměnou). % Write - přidat odkaz na požadavek
@@ -430,23 +605,30 @@ V aplikaci by měly být následující typy denních výzev:
 
 \subsubsection{FP-8 Certifikáty o dokončení kurzu}
 
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
 % Write - napsat, že chci aby aplikace generovala certifikáty o dokončení kurzů - ten si bude moct uživatel stáhnout a zároveň se mu bude zobrazovat na profilu
 
 \subsubsection{FP-8 Sdílení pokroku mezi uživateli}
 
-% Write - ostatní aplikace mají tento aspekt velice slabý.. Proto by bylo fajn, kdyby uživatelé mohli více sdílet pokrok a achievementy s ostatními, jednoduše ostatní uživatele vyhledávat atd.
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
-\subsubsection{FP-8 Micro interactions}
-
-% Write - zkusit nějak v aplikaci udělat to, že by uživatelé mohli zapnout aplikaci a hned se začít učit (podobně jak tomu je například u sociálních sítí)
-
-\subsubsection{FP-8 Platební systém}
-
-% Write - zde se zamyslet na
+% Write - ostatní aplikace mají tento aspekt velice slabý.. Proto by bylo fajn, kdyby uživatelé mohli více sdílet pokrok a achievementy s ostatními, jednoduše ostatní uživatele vyhledávat atd. V aplikaci to už trochu je, jen by to chtělo tam dát na backendu konkrétní triggers, co tam vloží tu zprávu (např achievement atd.) a na frontendu by to chtělo tam dát různé komponenty s různýma obrázkama třeba podle toho, co ten uživatel dosáhnul
 
 \subsection{Nefunkční požadavky}
 
 \subsubsection{NP-1 Vytvoření design systému}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Write zde bych měl možná spíš napsat, že nechci nutně "vytvořit design systém", ale že chci navrhnout styly uživatelského rozhraní (prostě chci v návrhu projít NI-NUR přednášky a projít barvy, branding, persony a všechno co jsme brali v přednáškách). 
 
@@ -457,6 +639,11 @@ V rámci práce by měla být vytvořena samostatná knihovna komponentů, kter�
 
 % Write - tohle možná přejmenovat na něco lepšího
 \subsubsection{NP-2 Aktualizace kódu}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 V kódu aplikace by měly být provedeny následující změny se záměrem zvýšit jeho kvalitu a udržitelnost a zjednodušit vývoj:
@@ -477,6 +664,13 @@ Tento požadavek byl vytvořen na základě výstupů analýzy existujícího ř
 \subsubsection{NP-4 Zavedení automatizovaných testů}
 
 % Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Write - zde napsat, že je třeba otestovat zejména základní věci v aplikaci - učení a platební systém
+
+% Review
 Do frontendové části aplikace by měly být zavedeny automatizované testy s cílem zajištění správného fungování aplikace a zvýšení její stability. Automatizované testy by se měly zaměřit na klíčové části aplikace, kterými jsou proces učení, registrace a přihlášení uživatele, výběr a zápis kurzů, a kupování předplatného. % Write - sem později sepsat, jaké testy jsem zaváděl do aplikace
 
 % Review
@@ -484,6 +678,11 @@ Tento požadavek vychází jednak z analýzy existujícího řešení a jednak z
 
 % Review
 \subsubsection{NP-5 Odstranění přebytečných funkcí}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
 
 % Review
 Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, bude třeba odstranit funkce týkající se původní domény výuky jazyků. Mezi tyto funkce patří následující.
@@ -502,10 +701,17 @@ Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, bu
 
 \subsubsection{NP-6 Změna datového modelu}
 
+% Write - tuhle část se možná nedávat - to prostě plyne z toho že budu přidávat nové funkce a odstraňovat staré - tím se to bude přirozeně měnit
+
 % write - tady se odkázat na to, že tomu se věnuje víc kolega v backendové části projektu, ale že novým datovým modelům je třeba přizpůsobit i celou frontendovou část aplikace
 
 % Review
 \subsubsection{NP-7 Automaticky generované třídy API}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 V rámci kódu frontendu by měly být automaticky generovány třídy reprezentující backendové API na základě openapi % Write - zjistit jak se píše správně open api specifikace
@@ -516,10 +722,20 @@ Požadavek vychází z analýzy existujícího řešení. Jeho cílem je zjednod
 
 \subsubsection{NP-8 Animace a mikro interakce}
 
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
 % write - napsat, že to je inspirováno například aplikací Scrimba a že cílem je aby aplikace působila interaktivnějším a vizuálně poutavějším dojmem. Nicméně že animace by měly být využity v přiměřeném množství.
 % write - že je cílem zvýšit požitek uživatele při používání aplikace. Cílem je vyloženě, aby se uživatel cítil lépe při používání aplikace, aby mu aplikace připadala "cool".
 
 \subsubsection{NP-8 Vytváření a nasazování PWA}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % write - cílem je:
 % - přizpůsobit aplikaci tak, aby mohla být vydána jako PWA
@@ -527,12 +743,15 @@ Požadavek vychází z analýzy existujícího řešení. Jeho cílem je zjednod
 
 \subsubsection{NP-9 Sběr statistik o uživatelském chování}
 
+% Write - tenhle požadavek si nechat spíš jako hoodně optional
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Could have \\
+\end{tabular}
+
 % write - že chci sbírat, jak dlouho zabírá čas dělat uživatelům cvičení
 % todo vymyslet další statistiky, které by bylo možné sbírat
 % basically chcem dělat kvalitativní studii - tohle bych mohl zapsat i do kapitoly testování, protože to je kvalitativní usability study
 % - tam pořádně navrhnout, na jaké otázky potřebuju odpovědi (až v tom testování) - zapsat tohle do Notionu jako task
 
-\subsubsection{NP-10 Migrace Figma návrhu na MUI design systém}
-
-% write - že chci postupně migrovat návrh Figmy tak, aby využíval oficiální figma komponenty Material UI
-% write - popsat, že migrace by měla být prováděna postupně a pouze u nových nebo předělávaných funkcí. Zbylé funkce by měly zůstat v původní Figmě.
