@@ -39,7 +39,7 @@
 % paragraph - if passed, this optional argument sets paragraphs as the deepest level of headers, styles it, numbers it and adds it to Table of Content. Use with care! Normally, it is considered unwise to use it, since it is too deep.
 % colour: bw for black&white OR no option for default colour scheme
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[czech,bachelor,oneside]{ctufit-thesis}
+\documentclass[czech,master,oneside]{ctufit-thesis}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FILL IN THIS INFORMATION
@@ -233,28 +233,29 @@
 % MODIFY ANYTHING BELOW THIS LINE
 %%%%%%%%%%%%%%%%%%%
 
-\include{text/chapters/1 introduction}
-\include{text/chapters/analysis/1 introduction}
+\input{text/chapters/1 introduction}
+\input{text/chapters/analysis/1 introduction}
+
+% Existing solution analysis
+\input{text/chapters/analysis/existing-solution/1 existing-solution}
 
 % Competitor analysis
-\include{text/chapters/analysis/competitors/1 competitors}
-\include{text/chapters/analysis/competitors/2 Mimo}
-\include{text/chapters/analysis/competitors/3 Codecademy}
-\include{text/chapters/analysis/competitors/4 Sololearn}
-\include{text/chapters/analysis/competitors/5 Scrimba}
-\include{text/chapters/analysis/competitors/6 results}
+\input{text/chapters/analysis/competitors/1 competitors}
+\input{text/chapters/analysis/competitors/2 Mimo}
+\input{text/chapters/analysis/competitors/3 Codecademy}
+\input{text/chapters/analysis/competitors/4 Sololearn}
+\input{text/chapters/analysis/competitors/5 Scrimba}
+\input{text/chapters/analysis/competitors/6 results}
 
-\include{text/chapters/analysis/2 existing solution}
-\include{text/chapters/analysis/3 competitors}
-\include{text/chapters/analysis/4 gamification}
-\include{text/chapters/analysis/5 requirements}
+\input{text/chapters/analysis/4 gamification}
+\input{text/chapters/analysis/5 requirements}
 
 % Chapter: Design
-\include{text/chapters/03 design/1 introduction}
-\include{text/chapters/03 design/2 ui design}
-\include{text/chapters/4 implementation}
-\include{text/chapters/5 testing}
-\include{text/chapters/6 conclusion}
+\input{text/chapters/03 design/1 introduction}
+\input{text/chapters/03 design/2 ui design}
+\input{text/chapters/4 implementation}
+\input{text/chapters/5 testing}
+\input{text/chapters/6 conclusion}
 
 \appendix\appendixinit % do not remove these two commands
 
