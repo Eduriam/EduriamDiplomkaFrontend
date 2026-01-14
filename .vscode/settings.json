@@ -138,17 +138,16 @@
     "templating",
     "verzování",
     // Názvy produktů
-    "Duolingo",
-    "Mondly",
-    "Busuu",
-    "Babbel",
-    "Blazor",
     "Mockoon",
     "Kanban",
     "Vercel",
     "Gitflow",
     "Kwiziq",
-    "Codecademy"
+    "Codecademy",
+    "Sololearn",
+    "Scrimba",
+    "Mimo",
+    "Segoe", // font
     // Oficiálně správná slova podle https://prirucka.ujc.cas.cz/
     "gamifikace",
     "gamifikaci",
