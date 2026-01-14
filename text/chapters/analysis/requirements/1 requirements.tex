@@ -1,19 +1,20 @@
 % Done
 \section{Analýza požadavků}
 
+% Review
+V této sekci sepíšu funkční a nefunkční požadavky vznikající aplikace. Při sepisování požadavků budu vycházet zejména z analýzy stávajícího řešení a analýzy existujících aplikací. Dále budu také vycházet z výsledků uživatelských testů, které byly provedeny v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis} zabývající se stávající aplikací, a také z návrhu úprav do budoucna, které byly popsány ve zmíněné práci.
+
+% Review
+Po sepsání jednotlivých požadavků se zaměřím na určení jejich priorit pomocí metody MoSCoW \cite{Moscow}. Tato metoda umožňuje jednoduše rozdělit požadavky do čtyř kategorií dle jejich priority. Požadavky v kategorii \textit{must have} musí být při implementaci splněny, požadavky kategorie \textit{should have} by měly být splněny, požadavky kategorie \textit{could have} mohou být splněny, a požadavky kategorie \textit{won't have} nebudou v rámci této práce implementovány.
+
 % Done
 Na základě předchozí analýzy stávajícího řešení a analýzy konkurenčních aplikací jsem identifikoval a sepsal následující funkční a nefunkční požadavky.
 
 % Done
 \subsection{Funkční požadavky}
 
-% Review - tohle trochu přepsat - je to napsaný moc hejhulácky
-V rámci analýzy funkčních požadavků se budu zaměřovat zejména na nové funkce, které by bylo vhodné do aplikace přidat. Jelikož jsem v rámci předchozí analýzy zjistil, že aplikace obsahuje řadu funkcí, které nejsou pro uživatele tak podstatné a zbytečně komplikují celý systém, budu klást důraz na to, aby požadavky odpovídaly skutečným potřebám uživatelů a aby nezaváděly do systému zbytečnou komplexitu. Cílem je se zaměřit na užitečnost a kvalitu jednotlivých funkcí, nikoliv na jejich kvantitu.
-
-% Write - přidat sem že Při sepisování požadavků budu také vycházet z výsledků uživatelských testů této aplikace, které jsem provedl v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}
-
 % Review
-V kapitole návrhu se pak budu věnovat podrobnému popsání případů užití, které budou jednotlivé funkce přesněji definovat.
+Při analýze jsem identifikoval a sepsal následující funkční požadavky, kterým se budu věnovat v rámci této práce.
 
 % Review
 \subsubsection{FP-1 Úvodní stránka aplikace}
@@ -81,10 +82,7 @@ Tento požadavek vychází z analýzy konkurence, kde ve většině aplikací ma
 \end{tabular}
 
 % Review
-Uživatel by měl mít možnost si zobrazit přehled zapsaných kurzů. U každého kurzu by měl uživatel vidět jeho pokrok a úroveň v rámci daného kurzu. 
-
-% Review
-Dále by u každého kurzu mělo být zobrazeno, v jakém režimu se daný kurz nachází. Režimy jsou popsány v požadavku FP-5 Učení se napříč kurzy. % Write - zde přidat odkaz na požadavek
+Uživatel by měl mít možnost si zobrazit přehled zapsaných kurzů. U každého kurzu by měl uživatel vidět jeho pokrok a úroveň v rámci daného kurzu.
 
 % Review
 Uživatel by měl mít také možnost se z přehledu kurzů přesunout na stránku daného kurzu.
@@ -170,6 +168,7 @@ Dále bude moci u každého kurzu nastavit úroveň, které chce v kurzu dosáhn
 % Review
 Funkce studijního plánu vychází z analýzy konkurenční aplikace Codecademy, která umožňuje uživateli si vygenerovat studijní plán. Funkce dále vychází z problému, který nastává v konkurenčních aplikacích, pokud se uživatel chce učit více kurzů zároveň. Uživatel tak bývá nucen přepínat manuálně mezi jednotlivými kurzy a sám si plánovat, kterou látku se bude učit. Studijní plán by měl tomuto problému předejít a umožnit uživateli se jednoduše učit látku napříč mnoha kurzy.
 
+% Review
 \subsubsection{FP-10 Učení se podle studijního plánu}
 
 % Review
@@ -181,10 +180,13 @@ Funkce studijního plánu vychází z analýzy konkurenční aplikace Codecademy
 Aplikace by měla uživateli poskytnout možnost se jednoduše přesunout na stránku učení. Na této stránce by měla aplikace uživateli zobrazit doporučenou lekci nebo látku k zopakování, které budou vybrány na základě znalostí uživatele a jeho studijního plánu. Lekce a látka k zopakování bude vybírána napříč všemi relevantními kurzy dle studijního plánu.
 
 % Review
-Cílem této funkce je umožnit uživateli jednoduše spustit učení z libovolného místa v aplikaci a zamezit tak problémům s přepínáním mezi kurzy, které mohou nastávat v konkurenčních aplikacích.
+Stránka učení by zároveň měla být nastavena jako výchozí stránka, na kterou bude uživatel přesměrován po spuštění aplikace.
 
 % Review
-Tato stránka učení by zároveň měla být nastavena jako výchozí stránka, na kterou bude uživatel přesměrován po spuštění aplikace. Cílem této funkce je snížit čas od zapnutí aplikace po začátek učení a dodržet tak princip "micro-interactions", který je často využíván například v aplikacích sociálních sítí. % Write - zde dát odkaz na princip z design knížky a místo sociálnch sítí uvést příklad z té knížky + zjistit jak správně typograficky napsat micro interactions, když to je anglický pojem
+Tato funkce má dva hlavní cíle. Prvním cílem je umožnit uživateli jednoduše spustit učení z libovolného místa v aplikaci a zamezit tak složitému přepínání mezi kurzy, které může nastávat v konkurenčních aplikacích, když se uživatel chce učit více kurzů zároveň.
+
+% Review
+Druhým cílem této funkce je využít princip návrhu uživatelského rozhraní \textit{microbreaks} \cite{Tidwell2020DesigningInterfaces}. Hlavní myšlenkou tohoto principu je přizpůsobit aplikaci tak, aby ji mohl uživatel zapnout a použít kdykoliv, kdy má v průběhu dne pár minut volného času. Když uživatel například čeká chvíli na zastávce, může aplikaci zapnout a využít tak efektivně svůj čas. Klíčovým prvkem tohoto principu je umožnit uživateli se ihned po spuštění aplikace přesunout k dané aktivitě, tedy v případě této aplikace, k samotnému učení. Tento princip je využíván například aplikacemi sociálních sítí, které jsou přizpůsobeny na to, aby je mohl uživatel zapnout kdykoliv, kdy má chvilku volného času.
 
 % Review
 \subsubsection{FP-11 Cvičení a komponenty pro výuku softwarového inženýrství} 
@@ -381,8 +383,7 @@ Rozhraní aplikace by mělo být dostupné ve dvou režimech, ve světlém a tma
 \end{tabular}
 
 % Review
-Aplikace by měla být schopna uživateli posílat push notifikace. % Write - zde přidat referenci na vysvětlení pojmu push notifikace
-Tyto notifikace by měly uživatele upozorňovat v následujících situacích:
+Aplikace by měla být schopna uživateli posílat push notifikace. Tyto notifikace by měly uživatele upozorňovat v následujících situacích:
 
 % Review
 \begin{itemize}
@@ -392,7 +393,7 @@ Tyto notifikace by měly uživatele upozorňovat v následujících situacích:
 \end{itemize}
 
 % Review
-V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace. % Write - přidat referenci na backendovou diplomku
+V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace.
 
 % Review
 \subsubsection{FP-21 Připomínání učení}
@@ -417,7 +418,7 @@ Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". P
 \end{tabular}
 
 % Review
-Ve stávající aplikaci se reklamy zobrazují pouze po úspěšném dokončení učení a to pouze tzv. bannerové reklamy. % Write - tady ověřit název reklam
+Ve stávající aplikaci se reklamy zobrazují pouze po úspěšném dokončení učení a to pouze ve formě bannerové reklamy.
 
 % Review
 Nově by aplikace měla umožňovat zobrazování dalších typů reklam, v závislosti na zařízení uživatele. Na mobilních zařízeních by aplikace měla primárně zobrazovat reklamy přes celou obrazovku. Na desktopových zařízeních by pak aplikace měla zobrazovat reklamy v podobě bannerů. Reklamy by měla aplikace zobrazovat v následujících případech.
@@ -453,13 +454,21 @@ Ve stávající aplikaci má uživatel možnost si zaplatit předplatné a tím 
 % Review
 V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenost a informovanost uživatelů, které funkce jsou dostupné v premium verzi aplikace. Pokud uživatel například chce využít funkci, která je dostupná pouze uživatelům s předplatným, měla by mu být zobrazena stránka, která ho bude informovat, že je daná funkce dostupná pouze v premium verzi aplikace.
 
-\subsubsection{FP-23 Zkušební verze předplatného}
+\subsubsection{FP-24 Zkušební verze předplatného}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
 
 % Review
 Aplikace by měla umožnit uživateli spustit zkušební verzi předplatného na určitou dobu zdarma. Tuto možnost by měli mít pouze uživatelé, kteří dříve zkušební verzi nikdy nevyužili.
 
 % Review
-\subsubsection{FP-24 Přizpůsobení avatara uživatele}
+\subsubsection{FP-25 Přizpůsobení avatara uživatele}
+
+% Review
+\label{sec:fp-avatar-customization}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -477,7 +486,7 @@ Uživatel by měl mít možnost si u avatara přizpůsobit barvu pleti, velikost
 Tento požadavek vychází zejména z analýzy forem gamifikace a také analýzy konkurenční aplikace Duolingo, která podobnou funkci přizpůsobení si avatara uživatele nabízí.
 
 % Review
-\subsubsection{FP-25 Rozšíření obchodu a odemykání položek}
+\subsubsection{FP-26 Rozšíření obchodu a odemykání položek}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -488,7 +497,7 @@ Tento požadavek vychází zejména z analýzy forem gamifikace a také analýzy
 V aplikaci již existuje stránka obchodu, v němž si uživatel může zakoupit pomocí virtuální měny profilové obrázky.
 
 % Review
-Vzhledem k novým požadavkům aplikace je třeba tento obchod rozšířit tak, aby bylo možné kupovat i další položky, které jsou popsány v požadavku FP-16 Přizpůsobení avatara uživatele. % Write zde přidat odkaz na požadavek FP-16
+Vzhledem k novým požadavkům aplikace je třeba tento obchod rozšířit tak, aby bylo možné si zakoupit i položky, které jsou popsány v požadavku \hyperref[sec:fp-avatar-customization]{FP-25 Přizpůsobení avatara uživatele}.
 
 % Review
 Dále by v obchodu měla být zavedena nová funkce odemykání položek. Některé položky by měly být dostupné ke koupi pouze pokud uživatel dosáhl určitého ocenění v aplikaci. Do té doby by se položky měly uživateli zobrazovat jako zamčené.
@@ -497,7 +506,7 @@ Dále by v obchodu měla být zavedena nová funkce odemykání položek. Někte
 U zamknutých položek by měl uživatel mít možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemknul.
 
 % Review
-\subsubsection{FP-26 Uživatelský profil}
+\subsubsection{FP-27 Uživatelský profil}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -509,15 +518,16 @@ V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje
 
 % Review
 \begin{itemize}
-    \item Avatar uživatele, popsaný v požadavku FP-16 Přizpůsobení avatara uživatele. % Write - přidat odkaz na požadavek
-    \item Liga, ve které se uživatel nachází. Popis lig je popsán v požadavku FP-19 Liga učení. % Write - přidat odkaz na požadavek
+    \item Avatar uživatele, popsaný v požadavku \hyperref[sec:fp-avatar-customization]{FP-25 Přizpůsobení avatara uživatele}.
+    \item Liga, ve které se uživatel nachází. Popis lig je popsán v požadavku \hyperref[sec:fp-30-leaderboard]{FP-30 Žebříček uživatelů}.
     \item Kurzy, které má uživatel zapsané a přehled, jaké úrovně v nich uživatel dosáhl.
 \end{itemize}
 
 % Review
 Z důvodu přidání nových informací bude třeba změnit vzhled celé profilové stránky uživatele.
 
-\subsubsection{FP-27 Zmrazení streaku}
+% Review
+\subsubsection{FP-28 Zmrazení streaku}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -534,7 +544,7 @@ Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupi
 Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné cvičení, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak i když některý den například zapomene se učit.
 
 % Review
-\subsubsection{FP-28 Oznámení o změně stavu streaku}
+\subsubsection{FP-29 Oznámení o změně stavu streaku}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -545,10 +555,13 @@ Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nespln
 Pokud uživatel dokončí učení a jeho streak se zvýší na novou významnou hranici, například 100 dní, měla by mu aplikace zobrazit oznámení o dosažení této hranice.
 
 % Review
-Dále pokud uživatel ztratí streak, tedy je mu resetován na 0 dní, měla by mu tuto informaci aplikace oznámit po otevření aplikace. % Write - tohle líp přeformulovat
+Dále, pokud uživatel ztratí streak, tedy je mu resetován na 0 dní, měla by mu být tato informace oznámena po otevření aplikace.
 
 % Review
-\subsubsection{FP-29 Liga učení}
+\subsubsection{FP-30 Žebříček uživatelů}
+
+% Review
+\label{sec:fp-30-leaderboard}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -565,7 +578,10 @@ Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pok
 Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Duolingo, v nichž jsou podobné ligy implementovány.
 
 % Review
-\subsubsection{FP-30 Truhla s odměnou}
+\subsubsection{FP-31 Truhla s odměnou}
+
+% Review
+\label{sec:fp-31-treasure-chest}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -575,10 +591,10 @@ Tento požadavek vychází z analýzy konkurenčních řešení, zejména z anal
 % Review
 Po dokončení učení by uživateli měla být zobrazena stránka s truhlou, kterou bude moci uživatel otevřít. Po otevření truhly by měl uživatel získat náhodné množství virtuální měny, jako odměnu za jeho učení. Uživateli by následně mělo být nabídnuto, že může získat dvojnásobek této odměny, pokud zhlédne reklamu.
 
-% Write - napsat, že tento požadavek vychází z analýzy gamifikace, pokud jsem jí prováděl - nebo jinak odůvodnit existenci tohoto požadavku
+% Review - napsat, že tento požadavek vychází z analýzy gamifikace, pokud jsem jí prováděl - nebo jinak odůvodnit existenci tohoto požadavku
 
 % Review
-\subsubsection{FP-31 Denní výzvy}
+\subsubsection{FP-32 Denní výzvy}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -586,8 +602,7 @@ Po dokončení učení by uživateli měla být zobrazena stránka s truhlou, kt
 \end{tabular}
 
 % Review
-Aplikace by měla uživateli každý den zobrazit několik denních výzev, které může splnit pro získání truhly s odměnou (vizte požadavek FP-19 Truhla s odměnou). % Write - přidat odkaz na požadavek
-Tyto výzvy mají za cíl motivovat uživatele, aby se učil nad rámec jeho základního učení, aby vyzkoušel různé funkce aplikace, a aby si rozšířil svoje znalosti napříč různými kurzy a nejen v kurzech, které má zapsané.
+Aplikace by měla uživateli každý den zobrazit několik denních výzev, které může splnit pro získání truhly s odměnou (vizte požadavek \hyperref[sec:fp-31-treasure-chest]{FP-31 Truhla s odměnou}). Tyto výzvy mají za cíl motivovat uživatele, aby se učil nad rámec jeho základního učení, aby vyzkoušel různé funkce aplikace, a aby si rozšířil svoje znalosti napříč různými kurzy a nejen v kurzech, které má zapsané.
 
 % Review - zde ještě dopsat další, co mě napadnou
 V aplikaci by měly být následující typy denních výzev:
@@ -599,7 +614,7 @@ V aplikaci by měly být následující typy denních výzev:
     \item Použití určité funkce aplikace, jako například zeptání se o radu chatbota nebo přizpůsobení avatara uživatele.
 \end{itemize}
 
-\subsubsection{FP-32 Certifikáty o dokončení kurzu}
+\subsubsection{FP-33 Certifikáty o dokončení kurzu}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -609,7 +624,7 @@ V aplikaci by měly být následující typy denních výzev:
 % Review
 Po dokončení kurzu by měl mít uživatel možnost si vygenerovat a stáhnout certifikát o dokončení kurzu. Certifikát by měl být ve formátu PDF a měl by obsahovat základní informace o dokončeném kurzu a uživateli, který kurz dokončil.
 
-\subsubsection{FP-33 Sdílení pokroku mezi uživateli}
+\subsubsection{FP-34 Sdílení pokroku mezi uživateli}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -630,6 +645,30 @@ Aplikace by měla být přizpůsobena na sdílení následujících zpráv mezi 
     \item Když uživatel skončí na předních příčkách v lize.
     \item Když uživatel dosáhne určité úrovně v kurzu.
     \item Když uživatel dosáhne určitého ocenění.
+\end{itemize}
+
+% Review
+\subsubsection{FP-35 Odstranění přebytečných funkcí}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Review
+Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, bude třeba odstranit funkce týkající se původní domény výuky jazyků. Mezi tyto funkce patří následující.
+
+% Write - tento seznam extrahovat do kapitoly analýza stávajícího systému a zde na to pouze odkázat.
+\begin{itemize}
+    \item Vyhledávání slovíček
+    \item Přidávání slovíček do seznamu oblíbených slovíček
+    \item Cvičení zaměřená na výuku jazyků a která nejsou využitelná pro výuku softwarového inženýrství
+    \item Rozdělení typů lekcí dle aspektu výuky jazyků, například gramatické lekce, lekce slovní zásoby apod.
+    \item Stránka slovíčka
+    \item Výběr preferovaných témat kurzu. Tato funkce v původní aplikaci sloužila jako způsob přeskočení skupin lekcí slovíček, které se netýkaly zájmů a cílů uživatele. Uživatel tak například mohl vypnutím tématu "Příroda a životní prostřední" jednoduše ze svého učení vyřadit všechny lekce týkající se tohoto tématu. V nové aplikaci ovšem bude struktura kurzů a domény změněna natolik, že tato funkce již nebude relevantní a její ponechání by mohlo mít za následek značné navýšení komplexity celého systému.
+    \item Přidávání lekcí do seznamu oblíbených lekcí. Žádná z analyzovaných aplikací tuto funkci nenabízí. Funkce v rámci původní domény výuky jazyků mohla být užitečná, nicméně nyní by zbytečně mohla komplikovat uživatelské rozhraní.
+    \item Odebrání stránky lekce. Tato stránka dříve zobrazovala například seznam vyučovaných slovíček v dané lekci. Zároveň bylo možné na této stránce přidávat lekci do seznamu oblíbených lekcí. V rámci domény výuky softwarového inženýrství žádná z analyzovaných aplikací samostatnou stránku pro lekci neobsahuje. Nyní ovšem stránka žádné výhody nemá a pouze komplikuje uživatelské rozhraní.
+    \item Vytváření vlastních lekcí slovíček. Původní aplikace umožňovala uživatelům seskupovat slovíčka v aplikaci do vlastních lekcí. Tato funkce již není relevantní z důvodu nové domény a struktury kurzů.
 \end{itemize}
 
 \subsection{Nefunkční požadavky}
@@ -653,9 +692,8 @@ Základní komponenty používané při implementaci by dále měly být extraho
 % Review
 Tato knihovna komponentů by měla stavět na již existujících komponentech a měla by využívat již zavedené technologie, tedy knihovny React, TypeScript, Storybook a Material UI.
 
-
-% Write - tohle možná přejmenovat na něco lepšího
-\subsubsection{NP-2 Aktualizace kódu}
+% Review
+\subsubsection{NP-2 Aktualizace kódu aplikace}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -692,31 +730,7 @@ Do frontendové části aplikace by měly být zavedeny automatizované testy s 
 Tento požadavek vychází jednak z analýzy existujícího řešení a jednak z návrhu úprav do budoucna v mé bakalářské práci \cite{Jenicek2024BachelorThesis} zabývající se zmíněným řešením.
 
 % Review
-\subsubsection{NP-4 Odstranění přebytečných funkcí}
-
-% Review
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Must have \\
-\end{tabular}
-
-% Review
-Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, bude třeba odstranit funkce týkající se původní domény výuky jazyků. Mezi tyto funkce patří následující.
-
-% Write - tento seznam extrahovat do kapitoly analýza stávajícího systému a zde na to pouze odkázat.
-\begin{itemize}
-    \item Vyhledávání slovíček
-    \item Přidávání slovíček do seznamu oblíbených slovíček
-    \item Cvičení zaměřená na výuku jazyků a která nejsou využitelná pro výuku softwarového inženýrství
-    \item Rozdělení typů lekcí dle aspektu výuky jazyků, například gramatické lekce, lekce slovní zásoby apod.
-    \item Stránka slovíčka
-    \item Výběr preferovaných témat kurzu. Tato funkce v původní aplikaci sloužila jako způsob přeskočení skupin lekcí slovíček, které se netýkaly zájmů a cílů uživatele. Uživatel tak například mohl vypnutím tématu "Příroda a životní prostřední" jednoduše ze svého učení vyřadit všechny lekce týkající se tohoto tématu. V nové aplikaci ovšem bude struktura kurzů a domény změněna natolik, že tato funkce již nebude relevantní a její ponechání by mohlo mít za následek značné navýšení komplexity celého systému.
-    \item Přidávání lekcí do seznamu oblíbených lekcí. Žádná z analyzovaných aplikací tuto funkci nenabízí. Funkce v rámci původní domény výuky jazyků mohla být užitečná, nicméně nyní by zbytečně mohla komplikovat uživatelské rozhraní.
-    \item Odebrání stránky lekce. Tato stránka dříve zobrazovala například seznam vyučovaných slovíček v dané lekci. Zároveň bylo možné na této stránce přidávat lekci do seznamu oblíbených lekcí. V rámci domény výuky softwarového inženýrství žádná z analyzovaných aplikací samostatnou stránku pro lekci neobsahuje. Nyní ovšem stránka žádné výhody nemá a pouze komplikuje uživatelské rozhraní.
-    \item Vytváření vlastních lekcí slovíček. Původní aplikace umožňovala uživatelům seskupovat slovíčka v aplikaci do vlastních lekcí. Tato funkce již není relevantní z důvodu nové domény a struktury kurzů.
-\end{itemize}
-
-% Review
-\subsubsection{NP-5 Automaticky generované třídy API}
+\subsubsection{NP-4 Automaticky generované třídy API}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -724,13 +738,12 @@ Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, bu
 \end{tabular}
 
 % Review
-V rámci kódu frontendu by měly být automaticky generovány třídy reprezentující backendové API na základě openapi % Write - zjistit jak se píše správně open api specifikace
-specifikace poskytované backendovou částí aplikace.
+V rámci kódu frontendu by měly být automaticky generovány třídy reprezentující backendové API na základě OpenAPI specifikace \cite{OpenAPISpecification} poskytované backendovou částí aplikace.
 
 % Review
 Požadavek vychází z analýzy existujícího řešení. Jeho cílem je zjednodušení implementace a zajištění konzistence mezi frontendovou a backendovou částí aplikace.
 
-\subsubsection{NP-6 Animace a mikro interakce}
+\subsubsection{NP-5 Animace a efekty}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -743,7 +756,8 @@ Do aplikace by měly být přidány základní animace s cílem zlepšit uživat
 % Review
 Tento požadavek vychází zejména z analýzy konkurenčních řešení, ve které konkurenční aplikace jako Mimo nebo Scrimba využívají animace a efekty.
 
-\subsubsection{NP-7 Sestavování a nasazování PWA}
+% Review
+\subsubsection{NP-6 Sestavování a nasazování PWA}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
