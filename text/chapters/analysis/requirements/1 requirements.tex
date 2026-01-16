@@ -387,10 +387,13 @@ Aplikace by měla být schopna uživateli posílat push notifikace. Tyto notifik
 
 % Review
 \begin{itemize}
-    \item Pokud si uživatel nastavil každodenní připomenutí učení a ještě se v daný den neučil.
+    \item Pokud se uživatel ještě neučil v daný den.
     \item Pokud se uživatel delší dobu v aplikaci nic neučil.
     \item Pokud uživateli končí předplatné aplikace a ještě ho neobnovil.
     \item Pokud uživatele začal sledovat jiný uživatel.
+    \item Pokud bylo použito zmrazení streaku.
+    \item Pokud byla zveřejněna aktivita jiného uživatele, kterého daný uživatel sleduje.
+    \item Pokud se blíží konec týdne a uživateli hrozí propadnutí do nižší ligy.
 \end{itemize}
 
 % Review
@@ -403,6 +406,8 @@ V rámci této práce se budu zabývat pouze zprovozněním zobrazování push n
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Could have \\
 \end{tabular}
+
+% Write - nakonec jsem se rozhodl, že bude povolené pouze chytré připomínání a uživatel nebude mít možnost si nastavit konkrétní čas.
 
 % Review - tohle se ještě rozhodnout, jestli tam chci mít nebo ne
 Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má v určitý čas učit. Aplikace by pak měla uživateli posílat push notifikace, které ho na učení upozorní, pokud se ještě v daný den neučil. Tato funkce je inspirována konkurenčními aplikacemi, které umožňují uživateli si nastavit každodenní připomenutí učení.
@@ -647,6 +652,8 @@ Aplikace by měla být přizpůsobena na sdílení následujících zpráv mezi 
     \item Když uživatel dosáhne určité úrovně v kurzu.
     \item Když uživatel dosáhne určitého ocenění.
 \end{itemize}
+
+% Write - přidat požadavek pro upozorňování uživatelů pomocí notices (aby těch notices bylo fakt hodně a aby upozorňovaly na všechny události v aplikaci)
 
 % Review
 \subsubsection{FP-35 Odstranění přebytečných funkcí}
