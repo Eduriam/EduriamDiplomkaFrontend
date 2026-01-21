@@ -1,52 +1,100 @@
 % Review
 \section{Návrh vzhledu uživatelského rozhraní}
 
-% Jelikož se aplikace mění ze zaměření na výuku jazyků na výuku softwarového inženýrství a programování, je třeba tomu přizpůsobit i vzhled uživatelského rozhraní. Tomu se budu věnovat v této kapitole.
+% Review
+V této sekci se zaměřím na samotný vzhled uživatelského rozhraní a na volbu barev, písem, ikon a vhodných animací. Cílem je vytvořit konzistentní vzhled, který bude následně možné použít v prototypu a samotné aplikaci.
 
 % Review
-\subsection{Výběr barev}
+Jelikož stávající aplikace využívá knihovnu Material UI, která implementuje standard Material Design 2 \cite{MaterialUI}, budu celý návrh zakládat na tomto standardu. Zmíněný standard klade důraz na konzistentní využívání palety barev, typografické hierarchie a komponentů. Dále se také zaměřuje na přístupnost uživatelského rozhraní, podporu světlého i tmavého režimu a dodržování doporučených osvědčených při návrhu uživatelského rozhraní \cite{MaterialDesign2}.
 
-% Jelikož stávající aplikace již vychází ze standardu Material Design 2 a využívá knihovnu Material UI, budu volit zbývající barvy, včetně sekundární barvy, v souladu s tímto standardem.
+% Review - přidat reference
+Na tomto místě je vhodné zmínit, že v současné době již existuje nová verze tohoto standardu Material Design 3, nicméně v době psaní tohoto textu nejsou k dispozici žádné knihovny, které by tento standard implementovaly v takové míře, aby je bylo možné pro tento projekt vhodně využít. Proto budu nadále pro aplikaci využívat knihovnu Material UI, která se řídí standardem Material Design 2.
 
-% Material Design 2 specifikuje tyto základní barvy, které jsou pak konzistentně používány napříč celou aplikací.
+% Review
+\subsection{Principy návrhu}
+
+% Review
+Před samotnou tvorbou návrhu je třeba stanovit základní principy, kterými se bude nový vzhled uživatelského rozhraní řídit. Při sestavování těchto principů budu vycházet z několika zdrojů. Zaprvé budu vycházet z analýzy existujících řešení, které jsem se věnoval v předchozí kapitole.
+
+% Review
+Zadruhé budu vycházet z toho, jakým způsobem by měla aplikace působit na uživatele. Aplikace by například měla působit jako důvěryhodný zdroj informací, aby uživatel byl ochotný se pomocí ní vzdělávat.
+
+% Review
+Zatřetí jsem se rozhodl zaměřit na návrh s ohledem na emocionální potřeby uživatelů \cite[385]{Hartson2019TheUxBook}. Emoční potřeby uživatelů mohou být při návrhu určitých typů systémů klíčové a mohou aplikaci zásadně odlišit od konkurenčních řešení \cite[387]{Hartson2019TheUxBook}. Pokud například navrhujeme aplikaci pro děti, můžeme se cíleně zaměřit na návrh uživatelského rozhraní, které bude barevné, interaktivní a zábavné na používání. U jiných typů systémů, jako například v aplikaci obchodní burzy, by podobný způsob designu pravděpodobně působil dětinsky, neprofesionálně a nedůvěryhodně. Jelikož se v rámci této práce zaměřuji na tvorbu vzdělávací aplikace, mohou být emoční potřeby, jako motivace, pocit pokroku a úspěchu klíčové a proto na nich budu zakládat návrh uživatelského rozhraní.
+
+% Review
+Na základě zmíněných zdrojů jsem identifikoval tyto základní principy, kterými se budu při návrhu řídit.
+
+% Review - zde checknout, jak správně stylisticky psát ten seznam
+\begin{itemize}
+    \item \textbf{Minimalismus} -- Hlavním cílem aplikace je učit uživatele programování. Při takové činnosti je ovšem po uživateli vyžadována vysoká úroveň pozornosti a koncentrace. Ve srovnání s ostatními aplikacemi tak může být používání této aplikace značně kognitivně náročné. Proto jsem se rozhodl při návrhu zaměřit na minimalistický design. Design by tak měl co nejvíce omezit zbytečné informace a zjednodušit prvky uživatelského rozhraní tak, aby nepřehlcovaly uživatele a neodváděly jeho pozornost od samotného učení. Uživatelské rozhraní by tak mělo svým minimalismem pomoci uživateli při učení a používání aplikace. % Write - zde bych mohl najít článek o tom, že minimalistický design je kognitivně méně naročný než ostatní
+    \item \textbf{Důvěryhodnost} -- Jelikož se aplikace zaměřuje na výuku a předávání informací uživatelům, je naprosto klíčové, aby působila jako důvěryhodný zdroj informací. Uživatelské rozhraní by tak mělo působit moderně, důvěryhodně a profesionálně. % Write - zde bych mohl napsat, že ta aplikace je v roli garanta toho, že prezentované informace jsou správné a kvalitní. A proto je třeba tak i působit
+    \item \textbf{Zábava} -- Jedním z cílů aplikace je motivovat uživatele k dlouhodobému učení a používání aplikace. Proto by pro uživatele by mělo být učení a používání aplikace zábavné a měl by se chtít k aplikaci dlouhodobě vracet. % Write - zde můžu doplnit nějaký článek o tom, že když se člověk baví, tak se lépe učí
+    \item \textbf{Pokrok a úspěch} -- Při používání aplikace a zejména při učení by měl mít uživatel pocit, že dělá pravidelně pokrok a že se posouvá blíže ke svému cíli. Aplikace by tak měla uživateli často ukazovat jeho pokroky a úspěchy.
+\end{itemize}
+
+% Review
+V následujících sekcích na základě těchto charakteristik vyberu konkrétní barvy, typografii, ikony a animace.
+
+% Review
+\subsection{Výběr palety barev}
+
+% Review
+Jako první krok návrhu vzhledu jsem se rozhodl zvolit paletu barev. Vybrané barvy pak budou konzistentně využívány napříč prototypem a celou aplikací. Barvy budu volit v souladu se standardem Material Design 2 a budu volit barvy jak pro světlý, tak pro tmavý režim uživatelského rozhraní.
 
 % Review
 \subsubsection{Primární barva}
 
-% Říct na co se používá primární barva dle https://m2.material.io/design/color/the-color-system.html#color-theme-creation
-
-% Primární barvu budu vybírat podle toho, jakým způsobem chce aplikace působit na uživatele. Vzdělávací aplikace mají za úkol předat uživatelům znalosti a informace.
-% Kličový aspekt vyučování - ten co vyučuje je v pozici experta, který by měl garantovat, že jsou vyučované informace pravdivé a kvalitní. Z toho důvodu je naprosto klíčová důvěra uživatele k učiteli. Učitel musí působit profesionálně a důvěryhodně.
-% Z tohoto důvodu jsem se rozhodl jako primární barvu zvolit modrou, jelikož modrá barva je považována za barvu důvěryhodnosti, inteligence a přesnosti. (zde přidat odkaz na prezentaci https://docs.google.com/presentation/d/1l_T7H8KyT43RTaGzcsLXo4t1wO8s30aD6yLaMZZ1InQ/edit?slide=id.ga6a0d160f4_0_48#slide=id.ga6a0d160f4_0_48)
-
-% Proto jsem se rozhodl zvolit jako primární barvu modrou #4fb5ea. V rámci Material Design 2 standardu má  
+% Review
+První barvu, kterou budu volit je primární barva. Tato barva reprezentuje samotnou značku aplikace a je napříč aplikací nejčastěji používána \cite{MaterialDesignColorSystem}. Využívá se zejména ke zvýraznění důležitých prvků, kterými jsou například tlačítka nebo navigační lišty.
 
 % Review
+Barvu jsem se rozhodl zvolit v souladu se stanovenými principy tak, aby aplikace působila důvěryhodně a profesionálně. Proto jsem jako primární barvu zvolil modrou, protože bývá považována za barvu důvěryhodnosti, inteligence a přesnosti \cite{NURColors}. 
+
+% Review
+Konkrétně jsem jako primární barvu zvolil barvu s kódem \texttt{\#4FB5EA}. Na základě této barvy jsem následně určil její světlejší variantu \texttt{\#8BD5FB} a její tmavší variantu \texttt{\#3C88B0}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral barvu textu, která je kontrastní se zvolenou primární barvou. Všechny tyto barvy jsou generovány v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}.
+
 \subsubsection{Sekundární barva}
 
-% Zde podle toho, jestli mi z designu ve Figmě vyplynulo, že chci sekundární barvu, říct, že buď jsem se rozhodl sekundární barvu nemít kvůli jednoduchosti uživatelského rozhraní (což je perfektně v souladu s Material Design 2 standardem) nebo že jsem se rozhodl sekundární barvu vybrat -> pak říct, proč jsem si vybral komplementární/triadickou/apod. barvu. Když už bych si nějakou vybíral, tak bych si asi vybral pastelovou oranžovou barvu. (viz https://m2.material.io/design/color/the-color-system.html#color-theme-creation)
+% Popsat co je sekundární barva a k čemu se využívá na základě tohoto článku https://m2.material.io/design/color/the-color-system.html
+
+% Popsat teorii barev a jak můžu volit sekundární barvu - monochromatic, analogous,complementary, split complementary, triadic, tetradic podle tohoto článku https://www.figma.com/color-wheel 
+
+Sekundární barva slouží k akcentům s nižší prioritou (doplňková tlačítka, štítky, odznaky), které nemají přebít význam primární barvy. Pro odlehčení a hravost volím pastelový odstín oranžové, který doplňuje primární modrou bez nadměrného kontrastu: \texttt{secondary.main} \texttt{\#FFB74D}, \texttt{secondary.dark} \texttt{\#F57C00}, \texttt{secondary.light} \texttt{\#FFE0B2}, \texttt{secondary.contrastText} \texttt{\#1F2937}.
 
 % Material Design 2 specifikuje kromě primární barvy ještě sekundární barvu. Tato barva je používána zjeména na ... doplnit podle Material UI guidelines a hodit link sem (https://m2.material.io/design/color/the-color-system.html#color-theme-creation)
 
 
 
-% Review
-\subsubsection{Barvy pozadí}
+\subsubsection{Neutrální barvy a pozadí}
 
-% Pro normální pozadí použít čistě bílou #ffffff
-% Pro dark theme jsem se rozhodl použít barvu tmavě modrou
+Neutrální škála zajišťuje čitelnost a hierarchii. Ve světlém režimu používám \texttt{background.default} \texttt{\#FFFFFF} a \texttt{background.paper} \texttt{\#FAFAFA}. Pro text volím \texttt{text.primary} \texttt{\#1F2937} a \texttt{text.secondary} \texttt{\#475569}. V tmavém režimu používám \texttt{background.default} tmavě modrou \texttt{\#0F172A} a \texttt{background.paper} \texttt{\#111827}, s texty \texttt{text.primary} \texttt{\#E5E7EB} a \texttt{text.secondary} \texttt{\#CBD5E1}.
 
-% Review
-\subsubsection{Další barvy}
+\subsubsection{Stavové barvy}
 
-% Write - zde sepsat jakým způsobem jsem vybíral ostatní barvy palety (chips, avatar apod.). Nemusím sepisovat každou barvu, ale říct přibližně jaké barvy jsem vybral a jaký tool jsem použil pro zajištění dobré viditelnosti a accessibility (takový to že to má dobrý kontrast). U barev avatarů napsat, že jsem pro pozadí například volil pastelové barvy, na kterých jsou ostatní barvy dobře viditelné.    
+Stavové barvy komunikují výsledek akcí a stavy systému. Používám paletu konzistentní s MUI: \texttt{success.main} \texttt{\#2E7D32}, \texttt{warning.main} \texttt{\#ED6C02}, \texttt{error.main} \texttt{\#D32F2F}, \texttt{info.main} \texttt{\#0288D1}. Pro text nad těmito akcenty volím \texttt{contrastText} \texttt{\#FFFFFF}; pro světlá pozadí stavových prvků (např. badge, chip) používám odlehčené varianty s dostatečným kontrastem k textu. Barva není jediným nositelem informace: doplňuji ji ikonami a textem.
 
-% Review
-\subsection{Výběr písma}
+\subsubsection{Kontrast a přístupnost}
 
-% Review
-\subsection{Výběr zaoblení a rozložení komponentů}
+% Říct, že jsem všechny barvy zkontroloval pomocí contast checkeru a že dodržují určitý kontrast https://www.figma.com/color-contrast-checker/
 
-% Review
-\subsection{Výběr animací a efektů}
+Paletu navrhuji s ohledem na WCAG~2.2: běžný text dosahuje kontrastu alespoň 4{,}5:1 (AA), velký text a tučné nadpisy alespoň 3:1. U nenetextových prvků (hrany komponent, ikony) zajišťuji kontrast minimálně 3:1 vůči sousedním povrchům. Interaktivním prvkům věnuji viditelné hover a focus stavy; focus indikátor má dostatečnou šířku a kontrast pro klávesovou navigaci. Kontrasty ověřuji v obou režimech (světlý/tmavý).
+
+\subsection{Typografie}
+
+\subsubsection{Výběr písma}
+
+Pro texty volím bezpatkové písmo vhodné pro obrazovky a dlouhodobé čtení. Preferuji \textit{Roboto} díky široké podpoře, dobré čitelnosti v menších velikostech a konzistenci s Material Designem. Písmo podporuje české znaky a má vyváženou metriku pro různé hustoty rozhraní. Alternativně lze zvážit \textit{Inter} se srovnatelnými vlastnostmi.
+
+\subsubsection{Hierarchie a škálování}
+
+Typografická škála určuje vizuální hierarchii a rytmus. Pro nadpisy a text navrhuji následující orientační hodnoty (velikost/řádkování): H1 34/40, H2 28/36, H3 24/32, H4 20/28, H5 16/24, H6 14/20, Body 16/24, Small 14/20, Caption 12/16. Škála je aplikována konzistentně v komponentách: tlačítka používají jednotnou velikost písma s větným psaním, formulářové štítky a nápovědy mají sekundární barvu textu a dostatečný kontrast.
+
+\subsection{Ikony a ilustrace}
+
+Používám rodinu \textit{Material Symbols} v jednotném stylu a tloušťce, s výchozí velikostí 24~px (20~px v hustších kontextech). Barvu ikon nechávám odvozovat z \texttt{currentColor}, aby automaticky respektovala kontext (primární, sekundární, disabled). Ilustrace volím střídmé a funkční: doplňují obsah, nejsou jediným nositelem významu a vždy mají textový doprovod nebo alternativní popis.
+
+\subsection{Animace a efekty}
+
+Animace navrhuji smysluplně a střídmě: podporují orientaci uživatele (přechody mezi stavy, zpětná vazba na akce), neodvádějí pozornost od obsahu a nezpomalují klíčové scénáře. Běžné trvání mikrointerakcí volím v rozmezí 150–250~ms s plynulými křivkami (\textit{decelerate}/\textit{standard}). Při načítání používám skeletory nebo průběhové indikátory podle kontextu. Respektuji systémové nastavení \textit{reduce motion}; v takovém případě animace omezuji nebo nahrazuji diskrétními přechody.
 
