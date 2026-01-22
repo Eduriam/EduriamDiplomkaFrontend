@@ -65,6 +65,9 @@ Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \tex
     \end{minipage}
 \end{figure}
 
+% Write - popsat, jak bude barva změněna ve tmavém režimu
+Tato barva bude používána jak ve světlém, tak ve tmavém režimu aplikace.
+
 % Review
 \subsubsection{Sekundární barva}
 
@@ -101,19 +104,14 @@ V rámci výběru sekundární barvy jsem se nakonec rozhodl využít monochroma
 % Review
 Přestože jsem se rozhodl pro monochromatické schéma a využívat tak hlavně primární barvu, bude aplikace obsahovat řadu dalších barev, které budou používány například pro indikaci stavů v aplikaci, jako například pro indikaci správných a špatných odpovědí uživatele. Tomu se budu věnovat v následujících sekcích.
 
+% Review
 \subsubsection{Stavové barvy}
-
-% Říct, že jsem vybral stavové barvy pro indikaci varování, chyb a úspěšných stavů
-% Pro chybu jsem vybral červenou, pro varování oranžovou a pro úspěch zelenou.
-% Říct že jsem jako základ zvolil pastelové varianty těchto barev a od nich jsem odvodil jejich tmavší varianty. Pastelové barvy jsem volil opět za účelem snížení agresivity jednotlivých barev.
-% Pro každý odstín jsem tak definoval hlavní, světlou a tmavou variantu, které bude možné využít při návrhu stavových komponentů. Pro volbu jednotlivých variant jsem opět využil nástroj Material palette generator (zde už nemusím dávat odkaz).
-% V seznamu itemize pak sepsat konkrétní barvy, které jsem zvolil.
 
 % Review
 Kromě zvolení primární a sekundární barvy je třeba také zvolit barvy pro indikaci různých stavů, které mohou v aplikaci nastat. Tyto barvy budou například použity pro indikaci správných a špatných odpovědí uživatele, nebo pro indikaci chyby a varování v aplikaci. Jako základní odstíny jsem zvolil zelenou pro indikaci úspěšných stavů, oranžovou pro indikaci varování a červenou pro indikaci chyb. Jelikož budou tyto barvy často používány při učení, rozhodl jsem se vybrat pastelové varianty těchto barev. Podobně jako primární barva by tak měly působit klidně, příjemně a neměly by příliš rozptylovat uživatele při učení.
 
-Podobně jako u primární barvy, umožňuje Material Design 2 definovat hlavní variantu \texttt{main}, světlou variantu \texttt{light} a tmavou variantu \texttt{dark} pro každou barvu. Dále knihovna Material UI umožňuje definovat také odpovídající barvu textu \texttt{contrastText} \cite{MUIPalette}, která je dostatečně kontrastní vůči dané barvě a dodržuje tak standard přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}. Pro každý stav jsem tak vybral varianty barev, které lze nalézt na obrázku \ref{fig:status-colors}.
-
+% Review
+Podobně jako u primární barvy, umožňuje Material Design 2 definovat hlavní variantu \texttt{main}, světlou variantu \texttt{light} a tmavou variantu \texttt{dark} pro každou barvu. Dále knihovna Material UI umožňuje definovat také odpovídající barvu textu \texttt{contrastText} \cite{MUIPalette}, která je dostatečně kontrastní vůči dané barvě a dodržuje tak standard přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}. Pro každý stav jsem tak vybral varianty barev, které lze nalézt na obrázku \ref{fig:status-colors}. 
 
 % Review
 \begin{figure}[!h]
@@ -127,12 +125,43 @@ Podobně jako u primární barvy, umožňuje Material Design 2 definovat hlavní
 \end{figure}
 
 % Review
-Podobně jako u primární barvy jsem pro volbu jednotlivých variant využil nástroj Material palette generator.
+Podobně jako u primární barvy jsem pro volbu jednotlivých variant využil nástroj Material palette generator. 
+
+% Write - popsat, jak budou barvy změněny ve tmavém režimu
+Tyto barvy budou používány jak ve světlém, tak ve tmavém režimu aplikace. 
 
 % Review
-\subsubsection{Neutrální barvy a pozadí}
+\subsubsection{Barvy pozadí}
 
-Neutrální škála zajišťuje čitelnost a hierarchii. Ve světlém režimu používám \texttt{background.default} \texttt{\#FFFFFF} a \texttt{background.paper} \texttt{\#FAFAFA}. Pro text volím \texttt{text.primary} \texttt{\#1F2937} a \texttt{text.secondary} \texttt{\#475569}. V tmavém režimu používám \texttt{background.default} tmavě modrou \texttt{\#0F172A} a \texttt{background.paper} \texttt{\#111827}, s texty \texttt{text.primary} \texttt{\#E5E7EB} a \texttt{text.secondary} \texttt{\#CBD5E1}.
+% Review
+Jako barvu pozadí \texttt{background} jsem se rozhodl využít výchozí barvu Material Design 2, tedy \texttt{\#FFFFFF}. Tato barva je používána zejména pro pozadí jednotlivých stránek. Jako barvu povrchů, neboli barvu pozadí některých komponentů, jsem dále zvolil světle šedou barvu \texttt{\#F3F3F3} označovanou jako \texttt{paper}, díky které bude možné komponenty lépe odlišit od pozadí stránky. Tyto barvy budou používány ve světlém režimu aplikace.
+
+% Review
+Co se tmavého režimu týče, zvolil jsem jako barvu pozadí tmavě šedou barvu \texttt{\#1A181D} a barvu povrchů \texttt{\#292834}. Hlavním důvodem pro použití tmavě šedých barev, místo čistě černé barvy, je snaha dosáhnout nižšího kontrastu mezi světlým textem a tmavým pozadím. Text je pak lépe čitelný a méně namáhá oči uživatele \cite{MaterialDesign2DarkTheme}.
+
+% Review
+Ukázky barev pozadí a povrchů lze nalézt na obrázku \ref{fig:background-colors}.
+
+% Review
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/Background Colors.png}
+        \caption{Volba barev pozadí a povrchů}
+        \label{fig:background-colors}
+    \end{minipage}
+\end{figure}
+
+% Review
+\subsubsection{Barvy textu}
+
+% Write - TODO:
+% - Primární barvy ve tmavém režimu (rovnou u barev)
+% - Stavové barvy ve tmavém režimu (rovnou u barev)
+% - Barvy textu
+% - Kontrast a přístupnost
+% - Přepsat trošku úvod barev, aby to zahrnulo všechno, čemu jsem se věnoval.
 
 \subsubsection{Kontrast a přístupnost}
 
