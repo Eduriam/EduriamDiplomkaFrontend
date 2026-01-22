@@ -44,7 +44,8 @@ The thesis follows this structure:
 
 - Everything should be written in formal academic Czech language.
 - When writing, always take into account what was already written in other files.
-- Write in the first person perspective. For example "V následujícím textu se budu zabývat návrhem uživatelského rozhraní. Rozhodl jsem se použít tuto barvu." etc. The text should describe how I as the writer created the project, how I decided etc.
+- Write in a first person perspective. For example "V následujícím textu se budu zabývat návrhem uživatelského rozhraní. Rozhodl jsem se použít tuto barvu." etc. The text should describe how I as the writer created the project, how I decided etc.
+- Try to avoid too general statements that are not backed by sources. For example "To bývá běžně používáno..." shouldn't be used unless we use some article or source that says that.
 
 ## Writing workflow
 

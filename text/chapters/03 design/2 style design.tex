@@ -27,9 +27,9 @@ Na základě zmíněných zdrojů jsem identifikoval tyto základní principy, k
 
 % Review - zde checknout, jak správně stylisticky psát ten seznam
 \begin{itemize}
-    \item \textbf{Minimalismus} -- Hlavním cílem aplikace je učit uživatele programování. Při takové činnosti je ovšem po uživateli vyžadována vysoká úroveň pozornosti a koncentrace. Ve srovnání s ostatními aplikacemi tak může být používání této aplikace značně kognitivně náročné. Proto jsem se rozhodl při návrhu zaměřit na minimalistický design. Design by tak měl co nejvíce omezit zbytečné informace a zjednodušit prvky uživatelského rozhraní tak, aby nepřehlcovaly uživatele a neodváděly jeho pozornost od samotného učení. Uživatelské rozhraní by tak mělo svým minimalismem pomoci uživateli při učení a používání aplikace. % Write - zde bych mohl najít článek o tom, že minimalistický design je kognitivně méně naročný než ostatní
-    \item \textbf{Důvěryhodnost} -- Jelikož se aplikace zaměřuje na výuku a předávání informací uživatelům, je naprosto klíčové, aby působila jako důvěryhodný zdroj informací. Uživatelské rozhraní by tak mělo působit moderně, důvěryhodně a profesionálně. % Write - zde bych mohl napsat, že ta aplikace je v roli garanta toho, že prezentované informace jsou správné a kvalitní. A proto je třeba tak i působit
-    \item \textbf{Zábava} -- Jedním z cílů aplikace je motivovat uživatele k dlouhodobému učení a používání aplikace. Proto by pro uživatele by mělo být učení a používání aplikace zábavné a měl by se chtít k aplikaci dlouhodobě vracet. % Write - zde můžu doplnit nějaký článek o tom, že když se člověk baví, tak se lépe učí
+    \item \textbf{Minimalismus} -- Hlavním cílem aplikace je učit uživatele programování. Při takové činnosti je ovšem po uživateli vyžadována vysoká úroveň pozornosti a koncentrace. Ve srovnání s ostatními aplikacemi tak může být používání této aplikace značně kognitivně náročné. Proto jsem se rozhodl při návrhu zaměřit na minimalistický design. Design by tak měl co nejvíce omezit zbytečné informace a zjednodušit prvky uživatelského rozhraní tak, aby nepřehlcovaly uživatele a neodváděly jeho pozornost od samotného učení. Uživatelské rozhraní by tak mělo svým minimalismem pomoci uživateli při učení a používání aplikace. % Write - zde bych mohl najít článek o tom, že minimalistický design je kognitivně méně naročný než ostatní (ale imo to není zas tak potřeba.. jen kdyby mi náhodou zbyl čas na konci)
+    \item \textbf{Důvěryhodnost} -- Jelikož se aplikace zaměřuje na výuku a předávání informací uživatelům, je naprosto klíčové, aby působila jako důvěryhodný zdroj informací. Uživatelské rozhraní by tak mělo působit moderně, důvěryhodně a profesionálně. % Write - zde bych mohl napsat, že ta aplikace je v roli garanta toho, že prezentované informace jsou správné a kvalitní. A proto je třeba tak i působit  (ale imo to není zas tak potřeba.. jen kdyby mi náhodou zbyl čas na konci)
+    \item \textbf{Zábava} -- Jedním z cílů aplikace je motivovat uživatele k dlouhodobému učení a používání aplikace. Proto by pro uživatele by mělo být učení a používání aplikace zábavné a měl by se chtít k aplikaci dlouhodobě vracet. % Write - zde můžu doplnit nějaký článek o tom, že když se člověk baví, tak se lépe učí  (ale imo to není zas tak potřeba.. jen kdyby mi náhodou zbyl čas na konci)
     \item \textbf{Pokrok a úspěch} -- Při používání aplikace a zejména při učení by měl mít uživatel pocit, že dělá pravidelně pokrok a že se posouvá blíže ke svému cíli. Aplikace by tak měla uživateli často ukazovat jeho pokroky a úspěchy.
 \end{itemize}
 
@@ -49,30 +49,57 @@ Jako první krok návrhu vzhledu jsem se rozhodl zvolit paletu barev. Vybrané b
 První barvu, kterou budu volit je primární barva. Tato barva reprezentuje samotnou značku aplikace a je napříč aplikací nejčastěji používána \cite{MaterialDesignColorSystem}. Využívá se zejména ke zvýraznění důležitých prvků, kterými jsou například tlačítka nebo navigační lišty.
 
 % Review
-Barvu jsem se rozhodl zvolit v souladu se stanovenými principy tak, aby aplikace působila důvěryhodně a profesionálně. Proto jsem jako primární barvu zvolil modrou, protože bývá považována za barvu důvěryhodnosti, inteligence a přesnosti \cite{NURColors}. 
+Barvu jsem se rozhodl zvolit v souladu se stanovenými principy tak, aby aplikace působila důvěryhodně a profesionálně. Proto jsem jako primární barvu zvolil odstín modré, protože bývá tato barva považována za barvu důvěryhodnosti, inteligence a přesnosti \cite{NURColors}.
 
 % Review
-Konkrétně jsem jako primární barvu zvolil barvu s kódem \texttt{\#4FB5EA}. Na základě této barvy jsem následně určil její světlejší variantu \texttt{\#8BD5FB} a její tmavší variantu \texttt{\#3C88B0}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral barvu textu, která je kontrastní se zvolenou primární barvou. Všechny tyto barvy jsou generovány v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}.
+Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \texttt{\#90D5FF}. Tato barva by měla evokovat pocit důvěryhodnosti a klidu \cite{FigmaLightBlue}. Jelikož se jedná o světlou barvu, zvolil jsem následně její dvě tmavší varianty \texttt{\#57B7FB} a \texttt{\#4889D4}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral černou barvu textu \texttt{\#000000}, která je kontrastní se zvolenou primární barvou. Všechny tyto barvy generovány zmíněným nástrojem jsou v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}.
 
+% Review
+Jako zvolenou primární barvu tak budu využívat světle modrou s kódem \texttt{\#57B7FB} a dále její světlejší variantu \texttt{\#90D5FF} a tmavší variantu \texttt{\#4889D4}.
+
+% Review
 \subsubsection{Sekundární barva}
 
-% Popsat co je sekundární barva a k čemu se využívá na základě tohoto článku https://m2.material.io/design/color/the-color-system.html
+% Review
+Material Design 2 umožňuje kromě primární barvy také definovat sekundární barvu, která slouží k doplnění primární barvy, vytvoření vizuálního kontrastu a zvýraznění určitých prvků rozhraní. Na rozdíl od primární barvy, která typicky reprezentuje samotnou značku aplikace a je v rozhraní přítomna na většině míst, je sekundární barva používána střídměji a pouze u některých prvků UI. Prakticky se tak využívá například na zvýraznění odkazů, v přepínačích, indikátorech stavů aplikace nebo v tzv. \textit{floating action buttons}. Přestože Material Design 2 definuje tuto sekundární barvu, její volba a použití jsou volitelné. \cite{MaterialDesignColorSystem}
 
-% Popsat teorii barev a jak můžu volit sekundární barvu - monochromatic, analogous,complementary, split complementary, triadic, tetradic podle tohoto článku https://www.figma.com/color-wheel 
+% Review
+Při volbě sekundární barvy jsem vycházel z principů teorie barev a ze standardně používaných barevných schémat, která definují rozložení barev na barevném kruhu \cite{FigmaWhatIsColorTheory}. Tato schémata slouží jako praktický nástroj pro posouzení, které barvy se vhodně doplňují tak, aby bylo možné je spolu využít například v uživatelském rozhraní. Na základě těchto schémat je tak možné zvolit sekundární barvu, která bude vhodně doplňovat primární barvu a vytvářet tak vizuálně příjemný vzhled uživatelského rozhraní. Při výběru sekundární barvy jsem volil z následujících schémat.
 
-Sekundární barva slouží k akcentům s nižší prioritou (doplňková tlačítka, štítky, odznaky), které nemají přebít význam primární barvy. Pro odlehčení a hravost volím pastelový odstín oranžové, který doplňuje primární modrou bez nadměrného kontrastu: \texttt{secondary.main} \texttt{\#FFB74D}, \texttt{secondary.dark} \texttt{\#F57C00}, \texttt{secondary.light} \texttt{\#FFE0B2}, \texttt{secondary.contrastText} \texttt{\#1F2937}.
+% Review - tady nevím, jestli má být správně tečka u jména paragrafu nebo ne
+\paragraph{Monochromatické schéma} Monochromatické schéma využívá jeden odstín a jeho světlejší či tmavší varianty. V rozhraní obvykle působí klidně a kompaktně. Je také snadné na použití, protože designeři musí pracovat pouze s jedním hlavním odstínem. \cite{FigmaWhatIsColorTheory}
 
-% Material Design 2 specifikuje kromě primární barvy ještě sekundární barvu. Tato barva je používána zjeména na ... doplnit podle Material UI guidelines a hodit link sem (https://m2.material.io/design/color/the-color-system.html#color-theme-creation)
+% Review
+\paragraph{Analogické schéma} Analogické schéma kombinuje sousední barvy na barevném kruhu. Toto schéma je často možné pozorovat v přírodě, kde se podobné odstíny barev často vyskytují blízko sebe. Výsledkem bývá harmonický, méně kontrastní vzhled a přírodně vypadající vzhled. \cite{FigmaColorWheel}
 
+% Review
+\paragraph{Komplementární schéma} Komplementární schéma využívá dvojici protilehlých barev na barevném kruhu. Vytváří tak vysoký kontrast, což je přínosné pro uchycení pozornosti uživatele na důležité prvky UI. Toto schéma tak umožňuje využití teplejších a chladnějších odstínů v UI.  \cite{FigmaColorWheel}
 
+% Review
+\paragraph{Rozděleně komplementární schéma} Rozděleně komplementární schéma vychází z komplementární dvojice odstínů, ale místo přímého protikladu jsou využity dvě sousední barvy k doplňkové barvě. V praxi tak designeři mají možnost využít více barev a paleta tak může působit vyváženěji. \cite{FigmaColorWheel} \cite{FigmaWhatIsColorTheory}
+
+% Review
+\paragraph{Triadické schéma} Triadické schéma pracuje se třemi barvami rovnoměrně rozmístěnými na barevném kruhu do tvaru rovnostranného trojúhelníku. Schéma může působit živěji a dynamičtěji, nicméně stále je třeba určit která ze tří barev bude v UI dominantní a které budou používány střídměji. \cite{FigmaColorWheel} 
+
+% Review
+\paragraph{Tetradické schéma} Tetradické schéma využívá čtyři barvy tvořící na barevném kruhu obdélník, často ve formě dvou komplementárních dvojic. Nabízí široké možnosti kombinací, avšak jeho použití v designu UI může být náročné, zejména kvůli udržení konzistence ve využití jednotlivých barev. \cite{FigmaColorWheel} 
+
+% Review
+\paragraph{Čtvercové schéma} Čtvercové schéma pracuje, jako tetradické schéma, se čtyřmi barvami rovnoměrně rozmístěnými na kruhu. Podobně jako tetradické schéma poskytuje velkou variabilitu, nicméně zvyšuje riziko vizuální roztříštěnosti, pokud nejsou stanovena a dodržována jasná pravidla pro použití jednotlivých barev. Oproti tetradickému schématu umožňuje čtvercové schéma sestavit vyrovnanější vzhled ve srovnání s vysokým kontrastem, který tetradické schéma často vytváří. \cite{FigmaColorWheel} 
+
+% Review
+V rámci výběru sekundární barvy jsem se nakonec rozhodl využít monochromatické schéma, tedy pracovat primárně s jedním odstínem modré a jeho variantami, a samostatnou sekundární barvu pro rozhraní nedefinovat. Toto rozhodnutí přímo plyne ze stanovených principů minimalismu a důvěryhodnosti. Díky omezení počtu barev by tak mělo uživatelské rozhraní působit minimalističtěji a mělo by být snadnější dodržet konzistentní využití barev napříč návrhem a aplikací. Celý design by tak měl působit profesionálnějším a čistším dojmem. Zároveň, jelikož jsem jako primární barvu zvolil světle modrou, mělo by výsledné rozhraní působit klidným a méně rušivým dojmem \cite{FigmaLightBlue}. To bude podstatné zejména při samotném učení, kdy je uživatel vystavěn vyšší kognitivní zátěži a příliš agresivní barvy by ho mohly rozptylovat.
+
+% Review
+Přestože jsem se rozhodl pro monochromatické schéma a využívat tak hlavně primární barvu, bude aplikace obsahovat řadu dalších barev, které budou používány například pro indikaci stavů v aplikaci, jako například pro indikaci správných a špatných odpovědí uživatele. Tomu se budu věnovat v následujících sekcích.
+
+\subsubsection{Stavové barvy}
+
+Říct, že jsem vybral 
 
 \subsubsection{Neutrální barvy a pozadí}
 
 Neutrální škála zajišťuje čitelnost a hierarchii. Ve světlém režimu používám \texttt{background.default} \texttt{\#FFFFFF} a \texttt{background.paper} \texttt{\#FAFAFA}. Pro text volím \texttt{text.primary} \texttt{\#1F2937} a \texttt{text.secondary} \texttt{\#475569}. V tmavém režimu používám \texttt{background.default} tmavě modrou \texttt{\#0F172A} a \texttt{background.paper} \texttt{\#111827}, s texty \texttt{text.primary} \texttt{\#E5E7EB} a \texttt{text.secondary} \texttt{\#CBD5E1}.
-
-\subsubsection{Stavové barvy}
-
-Stavové barvy komunikují výsledek akcí a stavy systému. Používám paletu konzistentní s MUI: \texttt{success.main} \texttt{\#2E7D32}, \texttt{warning.main} \texttt{\#ED6C02}, \texttt{error.main} \texttt{\#D32F2F}, \texttt{info.main} \texttt{\#0288D1}. Pro text nad těmito akcenty volím \texttt{contrastText} \texttt{\#FFFFFF}; pro světlá pozadí stavových prvků (např. badge, chip) používám odlehčené varianty s dostatečným kontrastem k textu. Barva není jediným nositelem informace: doplňuji ji ikonami a textem.
 
 \subsubsection{Kontrast a přístupnost}
 
