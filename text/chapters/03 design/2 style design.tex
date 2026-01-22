@@ -52,10 +52,18 @@ První barvu, kterou budu volit je primární barva. Tato barva reprezentuje sam
 Barvu jsem se rozhodl zvolit v souladu se stanovenými principy tak, aby aplikace působila důvěryhodně a profesionálně. Proto jsem jako primární barvu zvolil odstín modré, protože bývá tato barva považována za barvu důvěryhodnosti, inteligence a přesnosti \cite{NURColors}.
 
 % Review
-Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \texttt{\#90D5FF}. Tato barva by měla evokovat pocit důvěryhodnosti a klidu \cite{FigmaLightBlue}. Jelikož se jedná o světlou barvu, zvolil jsem následně její dvě tmavší varianty \texttt{\#57B7FB} a \texttt{\#4889D4}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral černou barvu textu \texttt{\#000000}, která je kontrastní se zvolenou primární barvou. Všechny tyto barvy generovány zmíněným nástrojem jsou v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}.
+Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \texttt{\#90D5FF}. Tato barva by měla evokovat pocit důvěryhodnosti a klidu \cite{FigmaLightBlue}. Jelikož se jedná o světlou barvu, zvolil jsem následně její dvě tmavší varianty \texttt{\#57B7FB} a \texttt{\#4889D4}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral černou barvu textu \texttt{\#000000}, která je kontrastní se zvolenou primární barvou. Všechny tyto barvy generovány zmíněným nástrojem jsou v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}. Výslednou volbu primární barvy a jednotlivých variant lze nalézt na obrázku \ref{fig:primary-color}.
 
 % Review
-Jako zvolenou primární barvu tak budu využívat světle modrou s kódem \texttt{\#57B7FB} a dále její světlejší variantu \texttt{\#90D5FF} a tmavší variantu \texttt{\#4889D4}.
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/Primary Color.png}
+        \caption{Volba primární barvy}
+        \label{fig:primary-color}
+    \end{minipage}
+\end{figure}
 
 % Review
 \subsubsection{Sekundární barva}
@@ -95,8 +103,33 @@ Přestože jsem se rozhodl pro monochromatické schéma a využívat tak hlavně
 
 \subsubsection{Stavové barvy}
 
-Říct, že jsem vybral 
+% Říct, že jsem vybral stavové barvy pro indikaci varování, chyb a úspěšných stavů
+% Pro chybu jsem vybral červenou, pro varování oranžovou a pro úspěch zelenou.
+% Říct že jsem jako základ zvolil pastelové varianty těchto barev a od nich jsem odvodil jejich tmavší varianty. Pastelové barvy jsem volil opět za účelem snížení agresivity jednotlivých barev.
+% Pro každý odstín jsem tak definoval hlavní, světlou a tmavou variantu, které bude možné využít při návrhu stavových komponentů. Pro volbu jednotlivých variant jsem opět využil nástroj Material palette generator (zde už nemusím dávat odkaz).
+% V seznamu itemize pak sepsat konkrétní barvy, které jsem zvolil.
 
+% Review
+Kromě zvolení primární a sekundární barvy je třeba také zvolit barvy pro indikaci různých stavů, které mohou v aplikaci nastat. Tyto barvy budou například použity pro indikaci správných a špatných odpovědí uživatele, nebo pro indikaci chyby a varování v aplikaci. Jako základní odstíny jsem zvolil zelenou pro indikaci úspěšných stavů, oranžovou pro indikaci varování a červenou pro indikaci chyb. Jelikož budou tyto barvy často používány při učení, rozhodl jsem se vybrat pastelové varianty těchto barev. Podobně jako primární barva by tak měly působit klidně, příjemně a neměly by příliš rozptylovat uživatele při učení.
+
+Podobně jako u primární barvy, umožňuje Material Design 2 definovat hlavní variantu \texttt{main}, světlou variantu \texttt{light} a tmavou variantu \texttt{dark} pro každou barvu. Dále knihovna Material UI umožňuje definovat také odpovídající barvu textu \texttt{contrastText} \cite{MUIPalette}, která je dostatečně kontrastní vůči dané barvě a dodržuje tak standard přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}. Pro každý stav jsem tak vybral varianty barev, které lze nalézt na obrázku \ref{fig:status-colors}.
+
+
+% Review
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/Status Colors.png}
+        \caption{Volba barev pro indikaci stavů}
+        \label{fig:status-colors}
+    \end{minipage}
+\end{figure}
+
+% Review
+Podobně jako u primární barvy jsem pro volbu jednotlivých variant využil nástroj Material palette generator.
+
+% Review
 \subsubsection{Neutrální barvy a pozadí}
 
 Neutrální škála zajišťuje čitelnost a hierarchii. Ve světlém režimu používám \texttt{background.default} \texttt{\#FFFFFF} a \texttt{background.paper} \texttt{\#FAFAFA}. Pro text volím \texttt{text.primary} \texttt{\#1F2937} a \texttt{text.secondary} \texttt{\#475569}. V tmavém režimu používám \texttt{background.default} tmavě modrou \texttt{\#0F172A} a \texttt{background.paper} \texttt{\#111827}, s texty \texttt{text.primary} \texttt{\#E5E7EB} a \texttt{text.secondary} \texttt{\#CBD5E1}.
