@@ -40,9 +40,7 @@ V následujících sekcích na základě těchto charakteristik vyberu konkrétn
 \subsection{Výběr palety barev}
 
 % Review
-Jako první krok návrhu vzhledu jsem se rozhodl zvolit paletu barev. Vybrané barvy pak budu konzistentně využívat napříč prototypem a celou aplikací. Barvy budu volit v souladu se standardem Material Design 2 a budu volit barvy jak pro světlý, tak pro tmavý režim uživatelského rozhraní. Při volbě palety barev se také budu řídit standardem přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}, díky kterému by mělo být uživatelské rozhraní dobře použitelné napříč různými zařízeními a také použitelné osobami se zdravotním postižením, jako například osobami se sníženým barvocitem.
-
-% Write - zde potom napsat, že se kompletní paleta barev nachází v přílohách, resp. dát na to odkaz stejně jako jsem dával odkaz na prototyp v diplomce
+Jako první krok návrhu vzhledu jsem se rozhodl zvolit paletu barev\footnote{Dostupné na: \href{https://www.figma.com/design/VZFuqWojrXq8yWjrBIq4OH}{https://www.figma.com/design/VZFuqWojrXq8yWjrBIq4OH}}. Vybrané barvy pak budu konzistentně využívat napříč prototypem a celou aplikací. Barvy budu volit v souladu se standardem Material Design 2 a budu volit barvy jak pro světlý, tak pro tmavý režim uživatelského rozhraní. Při volbě palety barev se také budu řídit standardem přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}, díky kterému by mělo být uživatelské rozhraní dobře použitelné napříč různými zařízeními a také použitelné osobami se zdravotním postižením, jako například osobami se sníženým barvocitem.
 
 % Review
 \subsubsection{Primární barva}
@@ -172,21 +170,43 @@ Po vybrání barvy pozadí je třeba přizpůsobit saturaci primární barvy, ba
 % Review
 Nakonec jsem vybral barvy textu pro tmavý režim. Jako primární barvu jsem zvolil výchozí bílou barvu \texttt{\#FFFFFF} a jako sekundární barvu jsem zvolil \texttt{\#989898}. Obě barvy opět splňují požadovaný kontrastní poměr.
 
+% Review
 \subsection{Typografie}
 
+V této sekci se zaměřím na volbu písma. Podobně jako u volby palety barev budu vycházet ze standardu Material Design 2 a budu volit vlastnosti písma v souladu se standardem přístupnosti WCAG 2.2 \cite{WCAG22}.
+
+% Review
 \subsubsection{Výběr písma}
 
-Pro texty volím bezpatkové písmo vhodné pro obrazovky a dlouhodobé čtení. Preferuji \textit{Roboto} díky široké podpoře, dobré čitelnosti v menších velikostech a konzistenci s Material Designem. Písmo podporuje české znaky a má vyváženou metriku pro různé hustoty rozhraní. Alternativně lze zvážit \textit{Inter} se srovnatelnými vlastnostmi.
+% Review
+Jako základní písmo jsem se rozhodl využít rodinu písem Inter. Tato rodina písem byla publikována v roce 2017 zaměřuje se na moderní a čistý vzhled, podporuje přes 147 jazyků a je široce využívána napříč různými obory. Pro tuto rodinu písem jsem se rozhodl zejména z důvodu moderního a profesionálního vzhledu a její široké podpory a rozšířenosti. \cite{Inter}
 
+% Review
+Při volbě písma je možné dále využít tzv. párování fontů \cite[271-272]{Tidwell2020DesigningInterfaces}, při kterém se pro nadpisy využije jiná rodina písma, než pro běžný text. Díky tomu lze dosáhnout výraznějšího rozlišení mezi nadpisy a běžným textem a také zajímavějšího vzhledu rozhraní. Při tomto párování je ovšem třeba použít písma, která jsou od sebe dostatečně odlišná a využít tak například patková a bezpatková písma. Pro zachování minimalismu jsem se rozhodl toto párování nevyužít a použít tak rodinu písem Inter pro nadpisy i běžný text.
+
+% Review
 \subsubsection{Hierarchie a škálování}
 
-Typografická škála určuje vizuální hierarchii a rytmus. Pro nadpisy a text navrhuji následující orientační hodnoty (velikost/řádkování): H1 34/40, H2 28/36, H3 24/32, H4 20/28, H5 16/24, H6 14/20, Body 16/24, Small 14/20, Caption 12/16. Škála je aplikována konzistentně v komponentách: tlačítka používají jednotnou velikost písma s větným psaním, formulářové štítky a nápovědy mají sekundární barvu textu a dostatečný kontrast.
+% Review
+Po volbě rodiny písma je třeba zvolit jednotlivé velikosti nadpisů a dalších textových prvků a sestavit tak typografickou škálu, která slouží jako manuál pro používání textových prvků v rozhraní. Pro sestavení této škály jsem se rozhodl využít oficiální nástroj Type scale generator\footnote{Dostupné na: \href{https://m2.material.io/design/typography/the-type-system.html}{https://m2.material.io/design/typography/the-type-system.html}}. Tento nástroj umožňuje vygenerovat typografickou škálu dle doporučených standardů a získat tak jednotlivé parametry textu pro nadpisy, podnadpisy, tlačítka a další textové prvky. Mezi tyto parametry patří například velikost písma, tučnost písma a prostor mezi písmeny. \cite{MaterialDesign2TypeSystem}
 
+% Review
+Vygenerovaná typografická škála tak bude sloužit jako podklad pro nastavení velikostí a dalších vlastností písma při tvorbě návrhu UI a následně i při tvorbě samotné aplikace.
+
+% Review
 \subsection{Ikony a ilustrace}
 
-Používám rodinu \textit{Material Symbols} v jednotném stylu a tloušťce, s výchozí velikostí 24~px (20~px v hustších kontextech). Barvu ikon nechávám odvozovat z \texttt{currentColor}, aby automaticky respektovala kontext (primární, sekundární, disabled). Ilustrace volím střídmé a funkční: doplňují obsah, nejsou jediným nositelem významu a vždy mají textový doprovod nebo alternativní popis.
+% Review
+V rámci návrhu rozhraní je dále třeba zvolit vhodnou kolekci ikon a ilustrací. Pro vzhled ikon jsem se rozhodl využít kolekci Material Icons\footnote{Dostupné na: \href{https://fonts.google.com/icons}{https://fonts.google.com/icons}}. Pro návrh jsem se rozhodl využít zaoblenou variantu těchto ikon, aby rozhraní působilo hravějším a zábavnějším dojmem.
 
-\subsection{Animace a efekty}
+% Review
+Jelikož bude aplikace obsahovat různé formy gamifikace a dalších motivačních prvků, je třeba do návrhu zahrnout kromě ikon i různé ilustrace. Jako zdroj ilustrací jsem se rozhodl využít repozitář ilustrací publikovaných pod svobodnými licencemi SVG Repo\footnote{Dostupné na: \href{https://www.svgrepo.com/}{https://www.svgrepo.com/}}. Jednotlivé ilustrace jsem se pak snažil volit tak, aby měly vzájemně konzistentní styl.
 
-Animace navrhuji smysluplně a střídmě: podporují orientaci uživatele (přechody mezi stavy, zpětná vazba na akce), neodvádějí pozornost od obsahu a nezpomalují klíčové scénáře. Běžné trvání mikrointerakcí volím v rozmezí 150–250~ms s plynulými křivkami (\textit{decelerate}/\textit{standard}). Při načítání používám skeletory nebo průběhové indikátory podle kontextu. Respektuji systémové nastavení \textit{reduce motion}; v takovém případě animace omezuji nebo nahrazuji diskrétními přechody.
+% Review
+\subsection{Animace a zvukové efekty}
+
+% Write - napsat o animacích
+
+% Review
+Kuriozitou při návrhu rozhraní bylo využití zvukových efektů. Zvukové efekty bývají ve webových aplikacích využívány velice zřídka, zejména kvůli tomu, že nejsou pro interakci s uživatelem potřeba a zbytečně by uživatele rušily při používání aplikace. V jistých případech mohou být ovšem zvukové efekty vhodné pro podpoření určitých emocí u uživatele a pro zvýšení intenzity požitku z vykonání určitých akcí. V této aplikaci budu například využívat zvukové efekty při samotném učení uživatele pro indikaci správných a špatných odpovědí. Jako zdroj zvukových efektů jsem se rozhodl využít soubor efektů Material Product Sounds\footnote{Dostupné na: \href{https://m2.material.io/design/sound/sound-resources.html}{https://m2.material.io/design/sound/sound-resources.html}}. \cite {MaterialDesign2ApplyingSounds}
 
