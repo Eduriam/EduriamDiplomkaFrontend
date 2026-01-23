@@ -40,7 +40,9 @@ V následujících sekcích na základě těchto charakteristik vyberu konkrétn
 \subsection{Výběr palety barev}
 
 % Review
-Jako první krok návrhu vzhledu jsem se rozhodl zvolit paletu barev. Vybrané barvy pak budou konzistentně využívány napříč prototypem a celou aplikací. Barvy budu volit v souladu se standardem Material Design 2 a budu volit barvy jak pro světlý, tak pro tmavý režim uživatelského rozhraní.
+Jako první krok návrhu vzhledu jsem se rozhodl zvolit paletu barev. Vybrané barvy pak budu konzistentně využívat napříč prototypem a celou aplikací. Barvy budu volit v souladu se standardem Material Design 2 a budu volit barvy jak pro světlý, tak pro tmavý režim uživatelského rozhraní. Při volbě palety barev se také budu řídit standardem přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}, díky kterému by mělo být uživatelské rozhraní dobře použitelné napříč různými zařízeními a také použitelné osobami se zdravotním postižením, jako například osobami se sníženým barvocitem.
+
+% Write - zde potom napsat, že se kompletní paleta barev nachází v přílohách, resp. dát na to odkaz stejně jako jsem dával odkaz na prototyp v diplomce
 
 % Review
 \subsubsection{Primární barva}
@@ -52,7 +54,10 @@ První barvu, kterou budu volit je primární barva. Tato barva reprezentuje sam
 Barvu jsem se rozhodl zvolit v souladu se stanovenými principy tak, aby aplikace působila důvěryhodně a profesionálně. Proto jsem jako primární barvu zvolil odstín modré, protože bývá tato barva považována za barvu důvěryhodnosti, inteligence a přesnosti \cite{NURColors}.
 
 % Review
-Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \texttt{\#90D5FF}. Tato barva by měla evokovat pocit důvěryhodnosti a klidu \cite{FigmaLightBlue}. Jelikož se jedná o světlou barvu, zvolil jsem následně její dvě tmavší varianty \texttt{\#57B7FB} a \texttt{\#4889D4}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral černou barvu textu \texttt{\#000000}, která je kontrastní se zvolenou primární barvou. Všechny tyto barvy generovány zmíněným nástrojem jsou v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}. Výslednou volbu primární barvy a jednotlivých variant lze nalézt na obrázku \ref{fig:primary-color}.
+Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \texttt{\#90D5FF}. Tato barva by měla evokovat pocit důvěryhodnosti a klidu \cite{FigmaLightBlue}. Jelikož se jedná o světlou barvu, zvolil jsem následně její dvě tmavší varianty \texttt{\#57B7FB} a \texttt{\#4889D4}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral kontrastní barvu textu \texttt{\#000000}, která bude používána pro text zobrazovaný na primární barvě. Vybraná černá barva textu dodržuje s primární barvou kontrastní poměr 4.5:1 dle AA standardu přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}. Díky tomu bude text na primární barvě dostatečně kontrastní a bude tedy snadno čitelný.
+
+% Review
+Všechny tyto barvy generovány zmíněným nástrojem jsou v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}. Výslednou volbu primární barvy a jednotlivých variant lze nalézt na obrázku \ref{fig:primary-color}.
 
 % Review
 \begin{figure}[!h]
@@ -64,9 +69,6 @@ Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \tex
         \label{fig:primary-color}
     \end{minipage}
 \end{figure}
-
-% Write - popsat, jak bude barva změněna ve tmavém režimu
-Tato barva bude používána jak ve světlém, tak ve tmavém režimu aplikace.
 
 % Review
 \subsubsection{Sekundární barva}
@@ -99,7 +101,7 @@ Při volbě sekundární barvy jsem vycházel z principů teorie barev a ze stan
 \paragraph{Čtvercové schéma} Čtvercové schéma pracuje, jako tetradické schéma, se čtyřmi barvami rovnoměrně rozmístěnými na kruhu. Podobně jako tetradické schéma poskytuje velkou variabilitu, nicméně zvyšuje riziko vizuální roztříštěnosti, pokud nejsou stanovena a dodržována jasná pravidla pro použití jednotlivých barev. Oproti tetradickému schématu umožňuje čtvercové schéma sestavit vyrovnanější vzhled ve srovnání s vysokým kontrastem, který tetradické schéma často vytváří. \cite{FigmaColorWheel} 
 
 % Review
-V rámci výběru sekundární barvy jsem se nakonec rozhodl využít monochromatické schéma, tedy pracovat primárně s jedním odstínem modré a jeho variantami, a samostatnou sekundární barvu pro rozhraní nedefinovat. Toto rozhodnutí přímo plyne ze stanovených principů minimalismu a důvěryhodnosti. Díky omezení počtu barev by tak mělo uživatelské rozhraní působit minimalističtěji a mělo by být snadnější dodržet konzistentní využití barev napříč návrhem a aplikací. Celý design by tak měl působit profesionálnějším a čistším dojmem. Zároveň, jelikož jsem jako primární barvu zvolil světle modrou, mělo by výsledné rozhraní působit klidným a méně rušivým dojmem \cite{FigmaLightBlue}. To bude podstatné zejména při samotném učení, kdy je uživatel vystavěn vyšší kognitivní zátěži a příliš agresivní barvy by ho mohly rozptylovat.
+V rámci výběru sekundární barvy jsem se nakonec rozhodl využít monochromatické schéma, tedy pracovat primárně s jedním odstínem modré a jeho variantami, a samostatnou sekundární barvu pro rozhraní nedefinovat. Toto rozhodnutí přímo plyne ze stanovených principů minimalismu a důvěryhodnosti. Díky omezení počtu barev by tak mělo uživatelské rozhraní působit minimalističtěji a mělo by být snadnější dodržet konzistentní využití barev napříč návrhem a aplikací. Celý design by tak měl působit profesionálnějším a čistším dojmem. Zároveň, jelikož jsem jako primární barvu zvolil světle modrou, mělo by výsledné rozhraní působit klidným a méně rušivým dojmem \cite{FigmaLightBlue}. To bude podstatné zejména při samotném učení, kdy je uživatel vystavěn vyšší kognitivní zátěži a příliš agresivní barvy by mohly být rozptylující.
 
 % Review
 Přestože jsem se rozhodl pro monochromatické schéma a využívat tak hlavně primární barvu, bude aplikace obsahovat řadu dalších barev, které budou používány například pro indikaci stavů v aplikaci, jako například pro indikaci správných a špatných odpovědí uživatele. Tomu se budu věnovat v následujících sekcích.
@@ -111,7 +113,7 @@ Přestože jsem se rozhodl pro monochromatické schéma a využívat tak hlavně
 Kromě zvolení primární a sekundární barvy je třeba také zvolit barvy pro indikaci různých stavů, které mohou v aplikaci nastat. Tyto barvy budou například použity pro indikaci správných a špatných odpovědí uživatele, nebo pro indikaci chyby a varování v aplikaci. Jako základní odstíny jsem zvolil zelenou pro indikaci úspěšných stavů, oranžovou pro indikaci varování a červenou pro indikaci chyb. Jelikož budou tyto barvy často používány při učení, rozhodl jsem se vybrat pastelové varianty těchto barev. Podobně jako primární barva by tak měly působit klidně, příjemně a neměly by příliš rozptylovat uživatele při učení.
 
 % Review
-Podobně jako u primární barvy, umožňuje Material Design 2 definovat hlavní variantu \texttt{main}, světlou variantu \texttt{light} a tmavou variantu \texttt{dark} pro každou barvu. Dále knihovna Material UI umožňuje definovat také odpovídající barvu textu \texttt{contrastText} \cite{MUIPalette}, která je dostatečně kontrastní vůči dané barvě a dodržuje tak standard přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}. Pro každý stav jsem tak vybral varianty barev, které lze nalézt na obrázku \ref{fig:status-colors}. 
+Podobně jako u primární barvy, umožňuje Material Design 2 definovat hlavní variantu \texttt{main}, světlou variantu \texttt{light} a tmavou variantu \texttt{dark} pro každou barvu. Dále knihovna Material UI umožňuje definovat také odpovídající barvu textu \texttt{contrastText} \cite{MUIPalette}, která je dostatečně kontrastní vůči dané barvě a dodržuje tak standard přístupnosti \textit{Web Content Accessibility Guidelines 2.2}, dále WCAG 2.2 \cite{WCAG22}. Pro každý stav jsem tak vybral varianty barev, které lze nalézt na obrázku \ref{fig:status-colors}. 
 
 % Review
 \begin{figure}[!h]
@@ -125,19 +127,16 @@ Podobně jako u primární barvy, umožňuje Material Design 2 definovat hlavní
 \end{figure}
 
 % Review
-Podobně jako u primární barvy jsem pro volbu jednotlivých variant využil nástroj Material palette generator. 
-
-% Write - popsat, jak budou barvy změněny ve tmavém režimu
-Tyto barvy budou používány jak ve světlém, tak ve tmavém režimu aplikace. 
+Podobně jako u primární barvy jsem pro volbu jednotlivých variant využil nástroj Material palette generator.
 
 % Review
 \subsubsection{Barvy pozadí}
 
 % Review
-Jako barvu pozadí \texttt{background} jsem se rozhodl využít výchozí barvu Material Design 2, tedy \texttt{\#FFFFFF}. Tato barva je používána zejména pro pozadí jednotlivých stránek. Jako barvu povrchů, neboli barvu pozadí některých komponentů, jsem dále zvolil světle šedou barvu \texttt{\#F3F3F3} označovanou jako \texttt{paper}, díky které bude možné komponenty lépe odlišit od pozadí stránky. Tyto barvy budou používány ve světlém režimu aplikace.
+Co se týče tmavého režimu, je třeba tuto barvu upravit tak, aby byla dostatečně kontrastní vůči pozadí dle standardu přístupnosti AA \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}. U primární barvy je tak třeba snížit její saturaci, aby byl dodržen kontrastní poměr 4.5:1 vůči pozadí pri používání této barvy u textových prvků.
 
 % Review
-Co se tmavého režimu týče, zvolil jsem jako barvu pozadí tmavě šedou barvu \texttt{\#1A181D} a barvu povrchů \texttt{\#292834}. Hlavním důvodem pro použití tmavě šedých barev, místo čistě černé barvy, je snaha dosáhnout nižšího kontrastu mezi světlým textem a tmavým pozadím. Text je pak lépe čitelný a méně namáhá oči uživatele \cite{MaterialDesign2DarkTheme}.
+Jako barvu pozadí \texttt{background} jsem se rozhodl využít výchozí barvu Material Design 2, tedy \texttt{\#FFFFFF}. Tato barva je používána zejména pro pozadí jednotlivých stránek. Jako barvu povrchů, neboli barvu pozadí některých komponentů, jsem dále zvolil světle šedou barvu \texttt{\#F3F3F3} označovanou jako \texttt{paper}, díky které bude možné komponenty lépe odlišit od pozadí stránky. Tyto barvy budou používány ve světlém režimu aplikace.
 
 % Review
 Ukázky barev pozadí a povrchů lze nalézt na obrázku \ref{fig:background-colors}.
@@ -145,7 +144,7 @@ Ukázky barev pozadí a povrchů lze nalézt na obrázku \ref{fig:background-col
 % Review
 \begin{figure}[!h]
     \centering
-    \begin{minipage}{0.6\textwidth}
+    \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./images/Background Colors.png}
         \caption{Volba barev pozadí a povrchů}
@@ -156,18 +155,22 @@ Ukázky barev pozadí a povrchů lze nalézt na obrázku \ref{fig:background-col
 % Review
 \subsubsection{Barvy textu}
 
-% Write - TODO:
-% - Primární barvy ve tmavém režimu (rovnou u barev)
-% - Stavové barvy ve tmavém režimu (rovnou u barev)
-% - Barvy textu
-% - Kontrast a přístupnost
-% - Přepsat trošku úvod barev, aby to zahrnulo všechno, čemu jsem se věnoval.
+% Review
+Pro textové prvky jsem se rozhodl využít výchozí barvu Material Design 2, tedy černou barvu \texttt{\#000000}. Kromě této primární barvy textu knihovna Material UI ještě umožňuje definovat sekundární barvu textu, kterou je možné využít například pro odstavce a vytvořit tak silnější vizuální kontrast mezi nadpisy a normálním textem. Jako sekundární barvu jsem se tak rozhodl využít barvu \texttt{\#6f6f6f}, která je výrazně světlejší než černá barva, nicméně i pro běžný text stále splňuje kontrastní poměr mezi textem a barvami pozadí 4.5:1 dle AA standardu WCAG 2.2 \cite{WCAG22}.  
 
-\subsubsection{Kontrast a přístupnost}
+\subsubsection{Tmavý režim}
 
-% Říct, že jsem všechny barvy zkontroloval pomocí contast checkeru a že dodržují určitý kontrast https://www.figma.com/color-contrast-checker/
+% Review
+Jedním z definovaných požadavků je dostupnost tmavého režimu aplikace. Pro vytvoření tmavého režimu je třeba jednotlivé barvy upravit tak, aby je bylo možné využívat na tmavých pozadích a stále odpovídaly standardu WCAG 2.2 \cite{WCAG22}. Při tvorbě tmavého režimu jsem postupoval dle doporučení oficiální dokumentace Material Design 2 \cite{MaterialDesign2DarkTheme}.
 
-Paletu navrhuji s ohledem na WCAG~2.2: běžný text dosahuje kontrastu alespoň 4{,}5:1 (AA), velký text a tučné nadpisy alespoň 3:1. U nenetextových prvků (hrany komponent, ikony) zajišťuji kontrast minimálně 3:1 vůči sousedním povrchům. Interaktivním prvkům věnuji viditelné hover a focus stavy; focus indikátor má dostatečnou šířku a kontrast pro klávesovou navigaci. Kontrasty ověřuji v obou režimech (světlý/tmavý).
+% Review
+Jako první krok jsem se rozhodl zvolit samotné barvy pozadí a povrchů pro tmavý režim. Jako barvu pozadí jsem zvolil tmavě šedou barvu \texttt{\#1A181D} a jako barvu povrchů jsem dále zvolil tmavě šedou barvu \texttt{\#292834}. Hlavním důvodem pro použití tmavě šedých barev, místo čistě černé barvy, je snaha dosáhnout nižšího kontrastu mezi světlým textem a tmavým pozadím. Text je pak lépe čitelný a méně namáhá oči uživatele. \cite{MaterialDesign2DarkTheme}
+
+% Review
+Po vybrání barvy pozadí je třeba přizpůsobit saturaci primární barvy, barvy stavů a barvy textu tak, aby byl dodržen kontrastní poměr 4.5:1 mezi textem a tmavým pozadím \cite{WCAG22}. Pro nalezení odpovídajících desaturovaných barev jsem využil nástroj Colour contrast checker\footnote{Dostupné na: \href{https://colourcontrast.cc/}{https://colourcontrast.cc/}}, který mi umožnil vybrat k jednotlivým barvám jejich desaturované varianty a zkontrolovat dodržení kontrastního poměru.
+
+% Review
+Nakonec jsem vybral barvy textu pro tmavý režim. Jako primární barvu jsem zvolil výchozí bílou barvu \texttt{\#FFFFFF} a jako sekundární barvu jsem zvolil \texttt{\#989898}. Obě barvy opět splňují požadovaný kontrastní poměr.
 
 \subsection{Typografie}
 
