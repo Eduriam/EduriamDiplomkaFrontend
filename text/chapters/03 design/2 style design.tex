@@ -184,19 +184,26 @@ Jako základní písmo jsem se rozhodl využít rodinu písem Inter. Tato rodina
 % Review
 Při volbě písma je možné dále využít tzv. párování fontů \cite[271-272]{Tidwell2020DesigningInterfaces}, při kterém se pro nadpisy využije jiná rodina písma, než pro běžný text. Díky tomu lze dosáhnout výraznějšího rozlišení mezi nadpisy a běžným textem a také zajímavějšího vzhledu rozhraní. Při tomto párování je ovšem třeba použít písma, která jsou od sebe dostatečně odlišná a využít tak například patková a bezpatková písma. Pro zachování minimalismu jsem se rozhodl toto párování nevyužít a použít tak rodinu písem Inter pro nadpisy i běžný text.
 
-% Write - zapsat do figmy nové velikosti a tučnosti podle škály - researchnout ještě jak moc to musím dodržovat (tu tučnost atd.)
-% Write - vytvořit ve figmě přehled typografické škály
-% Write - sem ještě dopsat co jsem zvolil za písmo pro kód
-% Write - stáhnout zvuky z pluginu do počítače
+% Review
+Dále, jelikož budou v aplikaci často zobrazovány ukázky kódu, bylo potřeba zvolit písmo pro zobrazování kódu. Pro tento účel jsem se rozhodl využít rodinu písem JetBrains Mono\footnote{Dostupné na: \href{https://www.jetbrains.com/lp/mono/}{https://www.jetbrains.com/lp/mono/}}, která je speciálně navržena tak, aby byla dobře použitelná v editorech kódu a aby byl samotný kód dobře čitelný. \cite{JetBrainsMono}
 
 % Review
 \subsubsection{Hierarchie a škálování}
 
 % Review
-Po volbě rodiny písma je třeba zvolit jednotlivé velikosti nadpisů a dalších textových prvků a sestavit tak typografickou škálu, která slouží jako manuál pro používání textových prvků v rozhraní. Pro sestavení této škály jsem se rozhodl využít oficiální nástroj Type scale generator\footnote{Dostupné na: \href{https://m2.material.io/design/typography/the-type-system.html}{https://m2.material.io/design/typography/the-type-system.html}}. Tento nástroj umožňuje vygenerovat typografickou škálu dle doporučených standardů a získat tak jednotlivé parametry textu pro nadpisy, podnadpisy, tlačítka a další textové prvky. Mezi tyto parametry patří například velikost písma, tučnost písma a prostor mezi písmeny. \cite{MaterialDesign2TypeSystem}
+Po volbě rodiny písma je třeba zvolit typografickou škálu, která určuje velikosti jednotlivých textových prvků rozhraní, jako například velikosti nadpisů, podnadpisů a odstavců. Prvním krokem při volbě škály je zvolení základní velikosti písma, například 16 pixelů. Tato velikost reprezentuje velikost běžného textu v odstavcích. Následně, na základě zvolené škály, se toto číslo násobí daným poměrem, čímž se získají velikosti nadpisů, podnadpisů a dalších textových prvků. 
 
 % Review
-Vygenerovaná typografická škála tak bude sloužit jako podklad pro nastavení velikostí a dalších vlastností písma při tvorbě návrhu UI a následně i při tvorbě samotné aplikace.
+Volba typografické škály tak určuje, jaký je rozdíl mezi velikostmi jednotlivých textových prvků. Tento rozdíl pak ovlivňuje, jak velký bude vizuální kontrast mezi jednotlivými prvky. Škály s vysokým kontrastem, jako například \textit{Golden ratio} s poměrem 1,618, jsou vhodné pro velké obrazovky \cite{TypographicScales}. Naopak škály s nízkým kontrastem, jako například \textit{Major Second} s poměrem 1,125, umožňují zobrazit větší množství textu na jedné stránce, jelikož jednotlivé nadpisy nezabírají tolik prostoru. Takové škály se často používají například na mobilních zařízeních, kde je prostor na obrazovce omezený.
+
+% Review
+Při volbě škály jsem nejprve použil oficiální nástroj pro generaci typografické škály dle standardu Material Design 2 \cite{MaterialDesign2TypeSystem}. Po aplikaci této škály při návrhu uživatelského rozhraní jsem ovšem došel k názoru, že tato škála vytváří příliš vysoký kontrast mezi textovými prvky. Velké nadpisy zabírají příliš mnoho prostoru a jsou při návrhu rozhraní pro tento typ aplikace takřka nepoužitelné. Nedostatek menších nadpisů tak neumožňuje dosáhnout detailnějšího odlišení jednotlivých sekcí a podsekcí, což značně znepřehledňuje například stránky se cvičeními a vysvětlením látky. Došel jsem tak k závěru, že výchozí oficiální typografická škála Material Design 2 není pro tuto aplikaci vhodná.
+
+% Review
+Z tohoto důvodu jsem se rozhodl zvolit vlastní typografickou škálu, která bude vhodnější pro tento typ aplikace. Rozhodl jsem se vybrat dvě škály, jednu pro mobilní zařízení a jednu pro desktopová zařízení. Pro mobilní zařízení jsem se rozhodl využít škálu s nižším kontrastem \textit{Minor Third} s poměrem 1.200 a pro desktopová zařízení škálu \textit{Major Third} s poměrem 1,250. Díky těmto škálám tak bude možné plně využít všechny velikosti nadpisů a text tak bude přizpůsoben jednotlivým zařízením. \cite{TypographicScales}
+
+% Review
+Pro generaci jednotlivých velikostí písma jsem následně využil nástroj Typescale\footnote{Dostupné na: \href{https://typescale.com/}{https://typescale.com/}}. Při aplikaci vygenerované škály v návrhu rozhraní jsem následně dodržoval standardy Material Design 2, které se týkají vlastností jednotlivých textových prvků a definují například doporučenou velikost písma.
 
 % Review
 \subsection{Ikony a ilustrace}
@@ -210,6 +217,9 @@ Jelikož bude aplikace obsahovat různé formy gamifikace a dalších motivačn�
 % Review
 \subsection{Animace a zvukové efekty}
 
+% Write - vytvořit ve figmě přehled typografické škály
+% Write - fixnout v návrhu nadpisy (aspoň základně)
+% Write - stáhnout zvuky z pluginu do počítače
 % Write - napsat o animacích
 
 % Review
