@@ -75,11 +75,20 @@ Pro ukázku návrhu jsem vybral několik stránek z prototypu. Tyto stránky lze
 % Mezi nejpoužívanější responzivní rozložení stránek patří například \textit{mostly fluid}, \textit{column drop} nebo layout shifter. Já jsem se rozhodl použít rozložení tiny tweaks, které spočívá v organizaci stránky do jednoho sloupce, který se zobrazuje na všech zařízeních.
 % Vysvětlit jednotlivé přístupy mostly fluid, column drop a layout shifter
 
-Návrh prototypu jsem realizoval přístupem \textit{mobile-first}. Primární cílovou platformou jsou mobilní zařízení, proto jsem nejprve navrhl obrazovky pro menší rozlišení a teprve následně jsem řešil úpravy pro větší displeje. Tento postup mi umožnil soustředit se na prioritizaci obsahu a na jednoduché rozvržení, které je na malých obrazovkách klíčové.
+% Review
+Návrh prototypu jsem realizoval přístupem \textit{mobile-first} \cite{MobileFirst}. Primární cílovou platformou této aplikace jsou mobilní zařízení, proto jsem nejprve navrhl vzhled stránek pro menší rozlišení a teprve následně jsem řešil úpravy pro větší displeje. Tento postup mi umožnil soustředit se na efektivní využití prostoru a na jednoduché rozvržení stránek, které je na malých obrazovkách potřeba.
 
-Při návrhu responsivity je možné využít několik běžných přístupů. Rozložení \textit{mostly fluid} typicky pracuje s „tekutým“ obsahem, který se plynule přizpůsobuje šířce obrazovky, přičemž se mění především šířky prvků a mezery. Přístup \textit{column drop} naopak počítá s více sloupci na větších obrazovkách, které se při zmenšení rozlišení postupně „přeskládají“ pod sebe do menšího počtu sloupců. \textit{Layout shifter} představuje nejvýraznější formu přizpůsobení, kdy se mezi rozlišeními mění nejen velikosti prvků, ale i samotná struktura stránky (např. přesun navigace, změna hierarchie bloků nebo odlišné rozmístění klíčových komponentů).
+% Review
+Po dokončení návrhu prototypu bylo třeba zvolit, jakým způsobem bude rozhraní responzivní, tedy jak se bude rozložení stránek přizpůsobovat různým velikostem displejů. Při návrhu responzivity je možné využít několik standardních rozložení stránek. 
 
-V tomto projektu jsem se rozhodl pro přístup \textit{tiny tweaks}, který spočívá v zachování stejné základní struktury stránky napříč zařízeními a v provedení pouze drobných úprav při změně rozlišení. V praxi to znamená, že stránky jsou organizovány do jednoho hlavního sloupce, který je použit jak na mobilních zařízeních, tak na desktopu. Na větších displejích se pak mění především maximální šířka obsahu, odsazení a práce s volným prostorem. Tento přístup mi umožňuje udržet návrh jednoduchý a konzistentní, což je v souladu s principem minimalismu, a zároveň snižuje riziko rozdílného chování mezi mobilní a desktopovou verzí aplikace.
+% Review
+Rozložení \textit{mostly fluid} například typicky pracuje s bloky obsahu, které se přesouvají pod sebe se zmenšujícím se rozlišením \cite[7]{NURResponsiveDesign}. Dále je možné využít rozložení \textit{column drop}, které využívá několik sloupců s obsahem a se zmenšujícím se rozlišením se sloupce opět přesouvají pod sebe \cite[8]{NURResponsiveDesign}. Také je možné využít rozložení \textit{layout shifter}, které představuje nejkomplexnější ze zmíněných přístupů a spočívá v navržení jiné struktury stránek pro každou velikost displeje \cite[9]{NURResponsiveDesign}. 
+
+% Review
+V tomto projektu jsem se rozhodl využít přístup \textit{tiny tweaks}, který spočívá v uspořádání veškerého obsahu stránky do jediného sloupce a zachování tohoto rozložení stránky napříč všemi zařízeními \cite[10]{NURResponsiveDesign}. Na stránkách jsou tak při změně velikosti displeje provedeny pouze drobné úpravy. Implementace se tak bude řídit primárně návrhem pro mobilní zařízení a na větších displejích se budou měnit především maximální šířka obsahu, odsazení a práce s volným prostorem. Kromě toho bude struktura stránek zachována a bude napříč zařízeními totožná.
+
+% Review
+Jako důsledek zvolení tohoto přístupu je tak možné udržet návrh jednoduchý a konzistentní. Zároveň díky totožnému rozložení stránek je snížené riziko rozdílného chování napříč různými velikostmi displejů. Aplikaci by tak mělo být snazší rozšiřovat, udržovat a testovat.
 
 % Write
 \subsection{Testování prototypu}
