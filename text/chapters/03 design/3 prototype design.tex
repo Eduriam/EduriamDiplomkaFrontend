@@ -1,26 +1,92 @@
 % Review
 \section{Návrh prototypu uživatelského rozhraní}
 
-% Tato kapitola popisuje rozvržení, mřížku, responsivitu a přístupnost v kontextu high‑fidelity prototypu.
+% Review
+V této sekci se zaměřím na návrh \textit{high fidelity} prototypu uživatelského rozhraní\footnote{Dostupné na: \href{https://www.figma.com/design/VZFuqWojrXq8yWjrBIq4OH}{https://www.figma.com/design/VZFuqWojrXq8yWjrBIq4OH}}, tedy prototypu, který bude obsahovat detailní návrh uživatelského rozhraní včetně definovaných stylů, barev, písma, ilustrací a interakcí \cite[53-54]{NURUIDesignSteps}. Cílem je vytvořit návrh uživatelského rozhraní, které bude přesně specifikovat vzhled aplikace a přechody mezi jednotlivými stránkami. Prototyp tak bude sloužit jako podklad pro samotnou implementaci aplikace.
 
-\subsection{Rozvržení, mřížka a prostor}
+% Review
+Pro tvorbu prototypu jsem zvolil nástroj Figma\footnote{Dostupné na: \href{https://www.figma.com/}{https://www.figma.com/}}, protože umožňuje rychlé iterace návrhu, práci s komponentami a také propojení obrazovek do podoby interaktivního prototypu. Při návrhu jsem vycházel ze stylů definovaných v předchozí sekci.
 
-% Popsat grid systém a breakpoints v návaznosti na MUI a Material Design.
-\subsubsection{Grid a breakpoints}
+% Review
+\subsection{Tvorba prototypu}
 
-% Definovat breakpoints (xs–xl), chování layoutu a umisťování komponent.
-\subsubsection{Spacing scale}
+% Review
+V rámci mé bakalářské práce jsem se mimo jiné věnoval vytvoření návrhu uživatelského rozhraní pro stávající aplikaci na výuku angličtiny \cite{Jenicek2024BachelorThesis}. V průběhu let jsem ovšem zpozoroval několik nedostatků tohoto prototypu. Použitá knihovna předdefinovaných komponentů je zbytečně složitá a komplikuje vytváření a používání nových komponentů. Prototyp také nevyužívá moderní funkce programu Figma, jako například definice proměnných komponentů a globálních proměnných. S ohledem na nově definované styly, nové funkce a na nový účel aplikace jsem se tak rozhodl vytvořit celý návrh uživatelského rozhraní od začátku a bez návaznosti na existující prototyp.
 
-% Uvést měřítko mezer (spacing scale), vertikální rytmus a okraje.
-\subsubsection{Elevation, stíny a zaoblení}
+% Review
+Při tvorbě prototypu jsem postupoval následovně. Nejprve jsem zadefinoval pomocí proměnných jednotlivé styly dle návrhu v předchozí sekci. Následně jsem provedl hrubý návrh základních komponent a stránek aplikace. Poté jsem se v rámci agilního procesu vývoje vždy zaměřil na jednu funkci, kterou jsem navrhl podrobněji a zprovoznil její interakce v prototypu. Po dokončení návrhu dané funkce jsem provedl její implementaci a testování, které jsou popsané v následujících kapitolách. Po dokončení dané funkce jsem se přesunul na následující funkci, dle její priority. Po dokončení návrhu všech funkcí jsem provedl závěrečné úpravy návrhu a organizaci stránek a komponentů.
 
-% Popsat použití elevation/stínů a poloměrů zaoblení u povrchů a komponent.
+% Review
+Při návrhu jsem kladl důraz na znovupoužitelnost komponent a na využití pokročilejších možností Figmy, díky kterým je možné prototyp v budoucnu jednodušeji rozšiřovat a upravovat. Konkrétně jsem široce využíval komponenty a jejich varianty, díky kterým je zajištěna vyšší konzistence samotného návrhu. Dále jsem využíval lokální proměnné komponentů a globální kolekce proměnných, díky kterým je možné kdykoliv měnit styly v návrhu, aniž by bylo nutné modifikovat samotné stránky a komponenty \cite{FigmaVariablesGuide}. 
 
-\subsection{Responsivita a adaptivita}
+% Review
+Jednotlivé komponenty jsem dále strukturoval tak, aby bylo možné je přímo implementovat s využitím jejich zadefinovaných parametrů v prototypu. Při návrhu jsem také využíval funkci \textit{auto layout}, díky které je možné přesně specifikovat rozložení komponentů tak, aby byly responzivní a použitelné v různých částech UI \cite{FigmaAutolayoutGuide}.
 
-% Zde popsat chování rozhraní napříč zařízeními, touch cíle a adaptivní vzory.
+% Review
+Součástí návrhu jsou také dva režimy aplikace, světlý a tmavý. Oba režimy sdílí stejné rozvržení stránek a komponentů a liší se pouze aplikovanými styly, zejména barvami pozadí, textu a stavů. Pro definici světlého a tmavého režimu jsem využil funkci módů proměnných \cite{FigmaModesForVariables}, díky které je možné pro každý režim definovat jiné hodnoty proměnných a následně snadno mezi tmavým a světlým režimem přepínat. Díky tomu je opět zajištěna vyšší konzistence návrhu, jelikož není třeba pro světlý a tmavý režim navrhovat samostatné stránky, ale je možné pouze přepínat mezi aplikovanými styly.
 
-\subsection{Přístupnost}
+% Review
+Vytvořený návrh vzhledu jsem také doplnil o interakce reprezentující reálné používání aplikace. Zaměřil jsem se zejména na navigaci mezi obrazovkami tak, aby bylo možné procházet základní scénáře používání aplikace. Díky tomu bylo možné prototyp interaktivně procházet bez samotné implementace a provádět na něm základní testování.
 
-% Uvést klíčové zásady a11y: focus ring, ARIA, klávesová navigace, text alternativ.
+% Review
+Pro ukázku návrhu jsem vybral několik stránek z prototypu. Tyto stránky lze najít na obrázcích \ref{fig:navrh-1}, \ref{fig:navrh-2}, \ref{fig:navrh-3} a \ref{fig:navrh-4}.
 
+% Review - tyto obrázky znovu exportovat
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/home.png}
+        \caption{Ukázka návrhu hlavní stránky aplikace}
+        \label{fig:navrh-1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/study-session [write code].png}
+        \caption{Ukázka návrhu cvičení programování}
+        \label{fig:navrh-2}
+    \end{minipage}
+\end{figure}
+
+% Review - tyto obrázky znovu exportovat
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/leaderboard.png}
+        \caption{Ukázka návrhu žebříčku uživatelů}
+        \label{fig:navrh-3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/user.png}
+        \caption{Ukázka návrhu uživatelského profilu}
+        \label{fig:navrh-4}
+    \end{minipage}
+\end{figure}
+
+% Write
+\subsection{Responsivita}
+
+% Že jsem přistupoval mobile-first přístupem
+% Že jsem návrh provedl pro mobilní zařízení a případně navrhl změny pro desktopová zařízení.
+% Mezi nejpoužívanější responzivní rozložení stránek patří například \textit{mostly fluid}, \textit{column drop} nebo layout shifter. Já jsem se rozhodl použít rozložení tiny tweaks, které spočívá v organizaci stránky do jednoho sloupce, který se zobrazuje na všech zařízeních.
+% Vysvětlit jednotlivé přístupy mostly fluid, column drop a layout shifter
+
+Návrh prototypu jsem realizoval přístupem \textit{mobile-first}. Primární cílovou platformou jsou mobilní zařízení, proto jsem nejprve navrhl obrazovky pro menší rozlišení a teprve následně jsem řešil úpravy pro větší displeje. Tento postup mi umožnil soustředit se na prioritizaci obsahu a na jednoduché rozvržení, které je na malých obrazovkách klíčové.
+
+Při návrhu responsivity je možné využít několik běžných přístupů. Rozložení \textit{mostly fluid} typicky pracuje s „tekutým“ obsahem, který se plynule přizpůsobuje šířce obrazovky, přičemž se mění především šířky prvků a mezery. Přístup \textit{column drop} naopak počítá s více sloupci na větších obrazovkách, které se při zmenšení rozlišení postupně „přeskládají“ pod sebe do menšího počtu sloupců. \textit{Layout shifter} představuje nejvýraznější formu přizpůsobení, kdy se mezi rozlišeními mění nejen velikosti prvků, ale i samotná struktura stránky (např. přesun navigace, změna hierarchie bloků nebo odlišné rozmístění klíčových komponentů).
+
+V tomto projektu jsem se rozhodl pro přístup \textit{tiny tweaks}, který spočívá v zachování stejné základní struktury stránky napříč zařízeními a v provedení pouze drobných úprav při změně rozlišení. V praxi to znamená, že stránky jsou organizovány do jednoho hlavního sloupce, který je použit jak na mobilních zařízeních, tak na desktopu. Na větších displejích se pak mění především maximální šířka obsahu, odsazení a práce s volným prostorem. Tento přístup mi umožňuje udržet návrh jednoduchý a konzistentní, což je v souladu s principem minimalismu, a zároveň snižuje riziko rozdílného chování mezi mobilní a desktopovou verzí aplikace.
+
+% Write
+\subsection{Testování prototypu}
+
+% Po dokončení návrhu prototypu byla provedena heuristická analýza, která pomohla identifikovat nějaké základní problémy a nedostatky v návrhu. 
+% Heuristická analýza je podrobněji popsána v kapitole testování. 
+
+Po dokončení první verze prototypu jsem provedl heuristickou analýzu, jejímž cílem bylo v rané fázi zachytit základní problémy v použitelnosti a konzistenci návrhu. Díky této analýze bylo možné identifikovat nedostatky ještě před samotnou implementací a upravit návrh tak, aby lépe odpovídal očekávanému chování uživatelů a zvoleným principům návrhu.
+
+Heuristická analýza a její výsledky jsou podrobněji popsány v kapitole testování. Zjištění z této fáze jsem postupně zapracoval zpět do prototypu, čímž se prototyp stal stabilnějším podkladem pro následnou implementaci a další ověřování návrhu.
