@@ -1,5 +1,5 @@
 % Done
-\section{Specifikace funkcí aplikace}
+\section{Návrh funkcí aplikace}
 
 % Review
 V této sekci se budu věnovat podrobnější specifikaci funkcí navrhované aplikace. Nejprve se zaměřím na popis jednotlivých aktérů, kteří budou s aplikací interagovat. Následně na základě funkčních požadavků sepíšu seznam případů užití, které budou podrobněji specifikovat, jak mají jednotlivé části aplikace fungovat z pohledu uživatele. Nakonec na základě případů užití sepíšu podrobnou specifikaci vybraných funkcí v jazyce Gherkin. Tato specifikace umožní efektivní spouštění automatizovaných testů pomocí nástroje Cucumber a bude také sloužit jako dokumentace toho, jak se aplikace skutečně chová. Mimo jiné bude možné tuto specifikaci využít také jako zadání pro AI agenty, kteří mohou v budoucnu na základě této specifikace přesně implementovat požadované funkce, nebo například generovat dokumentaci a testy.
@@ -28,18 +28,53 @@ Premium uživatel je osoba, která má aktivní předplatné nebo zkušební ver
 % Review
 Korektor je osoba zodpovědná za kontrolu kvality výukového obsahu, aby byl správný a srozumitelný. V rámci aplikace může používat funkce podobně jako premium uživatel. Kromě toho může využívat podrobnější nahlašování chyb při učení.
 
-\subsection{Seznam případů užití}
+% Review
+\subsection{Specifikace případů užití}
 
+% Write
 % Vysvětlit, co jsou případy užití, k čemu jsou dobré a proč je vhodné je specifikovat.
-% Odkázat se na nějakou odbornou literaturu.
+% Říct, že součástí use casů bývají také scénáře, které podrobněji popisují, jakým způsobem jednotliví aktéři (uživatelé) interagují s daným systémem. Jelikož jsem se rozhodl v aplikaci využít jazyk Gherkin pro podrobnější specifikaci funkcí, jsou podrobné scénáře definovány přímo v té specifikaci a nebudu je zde vypisovat k případům užití, protože by to bylo redundantní.    
 
 % Popsat postupně všechny use cases případy užití ve stejném pořadí jako jsou funkční požadavky
 
-\subsection{Specifikace funkcí pomocí jazyku Gherkin}
+% Review
+\subsection{Specifikace funkcí pomocí jazyka Gherkin}
 
-% Popsat co je Gherkin, Cucumber a jaké výhody přináší. Říct, že příchod umělé inteligence zásadně změnil způsob vývoje a že jsem se rozhodl použít Gherkin, který umožní definovat přesné scénáře pro AI agenty a zároveň bude sloužit pro automatizaci testů
-% Popsat, co obsahuje Gherkin feature file a přidat ukázku
-% Popsat stručně, že gherkin feature files mohou sloužit jako přesná specifikace pro AI agenty, kteří pomáhají při implementaci samotných funkcí. Jelikož se jedná o přesnou specifikaci.
-% Popsat, stručně, jak lze gherkin feature files následně pomocí Cucumber využít pro spuštění testů. Nepopisovat jak to funguje, jen stručně říct, že Cucumber podle jednotlivých kroků scénářů následně spouští automatizované testy a zajišťuje tak, že jsou všechny ty kroky scénářů pokryty testy a že tak aplikace skutečně funguje.
+% Review
+Po sepsání případů užití jsem se rozhodl nové funkce přesněji specifikovat pomocí jazyka Gherkin \cite{CucumberDocs}. Gherkin je jednoduchý strukturovaný jazyk, který umožňuje pomocí přirozeného jazyka popsat chování systému v podobě textových scénářů. Díky přesně dané struktuře je následně možné tyto scénáře strojově zpracovat pomocí nástroje Cucumber\footnote{Dostupné na: \href{https://cucumber.io/}{https://cucumber.io/}} a ověřit, že se aplikace chová v souladu se specifikací pomocí automatizovaných testů. Celý proces je postavený na přístupu \textit{Behavior-Driven Development} (BDD) \cite{BDD}, tedy na metodice vývoje, při které se přesně specifikuje očekávané chování systému a následně se vytvoří automatizované testy, které ověří, že se aplikace skutečně podle specifikace chová. Tento přístup vznikl jako reakce na rozšířenou metodiku \textit{Test-Driven Development} (TDD) s cílem pomoci vývojářům a testerům nahlížet na testování více z pohledu samotného chování aplikace, přesněji pochopit a definovat požadované chování a minimalizovat tak nejednoznačnosti v zadání a implementaci jednotlivých funkcí \cite{BDDHistory}.
 
-% Konečně bude tato specifikace sloužit jako dokumentace toho, jak přesně se aplikace chová a jakým způsobem ji lze využívat.
+% Review
+Tento přístup má několik zásadních výhod. Zaprvé samotná specifikace slouží jako přesná dokumentace toho, jak se současný systém skutečně chová. Díky přirozenému jazyku může být užitečná nejen testerům a vývojářům, ale i lidem, kteří nejsou technicky zaměření. Zadruhé díky automatizovaným testům, které jsou spouštěny dle jednotlivých scénářů, je možné průběžně ověřovat, že se aplikace skutečně chová přesně v souladu se specifikací. Zatřetí přesné specifikace funkcí mohou sloužit jako podklady pro asistenty umělé inteligence, kteří pomáhají vývojářům a testerům s implementací kódu. Používání nástrojů umělé inteligence tak může být díky přesné specifikaci a automatizovaným testům výrazně efektivnější.
+
+% Review
+Z výše zmíněných důvodů jsem se rozhodl využít jazyk Gherkin a nástroj Cucumber pro specifikaci funkcí a automatizaci testů s cílem zajistit efektivnější vývoj a kvalitnější implementaci samotných funkcí.
+
+% Review
+\subsubsection{Postup při specifikaci}
+
+% Write - sem ještě dopsat že jsem použil use cases definované v předchozí sekci
+Funkce jsem specifikoval v souladu s dokumentací nástroje Cucumber \cite{CucumberDocs}, tedy přímo v repozitáři frontendu aplikace v souborech s příponou \texttt{.feature}. Tyto soubory jsem následně využil jako podklad pro implementaci a dále pro automatizaci testů, kterou jsem popsal v kapitole testování.
+
+% Review
+Soubory v jazyce Gherkin obsahují definici funkce \texttt{Feature} a jeden nebo více scénářů \texttt{Scenario} s jednotlivými kroky. Kroky scénáře jsou definovány pomocí klíčových slov \texttt{Given} a \texttt{When}, které definují předpoklady a dále 
+
+% Review
+Soubor ve formátu Gherkin typicky obsahuje definici funkce (\textit{Feature}), jeden nebo více scénářů (\textit{Scenario}) a jednotlivé kroky. Kroky jsou definovány pomocí klíčových slov, kterými jsou například slova \texttt{Given} definující předpoklady, \texttt{When} definující událost v systému, \texttt{Then} definující očekávaný výsledek a \texttt{And} umožňující definovat více kroků stejného typu. Příklad definice funkce pomocí jazyka Gherkin lze nalézt v ukázce kódu \ref{fig:feature-file-example}.
+
+% Write - přidat actual ukázku z kódu
+\begin{listing}[ht]
+    \begin{minted}{gherkin}
+Feature: Vyhodnocení odpovědi ve cvičení
+
+  Scenario: Uživatel odpoví správně
+    Given uživatel je přihlášen
+    And má otevřené cvičení
+    When odešle správnou odpověď
+    Then aplikace zobrazí pozitivní zpětnou vazbu
+    And přičte uživateli body
+    \end{minted}
+    % Write - přepsat název ukázky podle toho co to bude za ukázku
+    \caption{Ukázka specifikace funkce pomocí jazyka Gherkin}
+    \label{fig:feature-file-example}
+\end{listing}
+
