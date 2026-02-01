@@ -31,11 +31,30 @@ Korektor je osoba zodpovědná za kontrolu kvality výukového obsahu, aby byl s
 % Review
 \subsection{Specifikace případů užití}
 
-% Write
-% Vysvětlit, co jsou případy užití, k čemu jsou dobré a proč je vhodné je specifikovat.
-% Říct, že součástí use casů bývají také scénáře, které podrobněji popisují, jakým způsobem jednotliví aktéři (uživatelé) interagují s daným systémem. Jelikož jsem se rozhodl v aplikaci využít jazyk Gherkin pro podrobnější specifikaci funkcí, jsou podrobné scénáře definovány přímo v té specifikaci a nebudu je zde vypisovat k případům užití, protože by to bylo redundantní.    
+% Review
+Jako další krok při návrhu funkcí jsem se rozhodl sepsat případy užití. Případy užití představují způsob, jak specifikovat funkční chování systému z pohledu jeho aktérů. Každý případ užití popisuje konkrétní cíl aktéra a interakce se systémem, které k dosažení tohoto cíle vedou. Díky tomuto přístupu je tak možné detailněji formulovat požadavky a identifikovat okrajové případy, které je třeba při návrhu a implementaci ošetřit. Případy užití tak mohou být užitečné pro vývojáře, protože jim poskytnou detailnější popis toho, jak má daná část systému fungovat. Dále mohou být využity testery například jako podklad pro vytváření automatizovaných testů. Díky tomu, že bývají případy užití specifikovány pomocí přirozeného jazyka, mohou být čitelné i pro osoby, které nejsou technicky zaměřené. Celkově tak tvoří přesnější specifikaci systému, na základě které lze následně postupovat při návrhu a implementaci samotné aplikace. \cite{UseCases}
 
-% Popsat postupně všechny use cases případy užití ve stejném pořadí jako jsou funkční požadavky
+% Review
+V průběhu let se vyvinulo několik způsobů, jak k případům užití přistupovat a jak je specifikovat. Základy techniky specifikace případů užití položil Ivar Jacobson v roce 1986. Alistair Cockburn \cite{Cockburn2001WritingEffectiveUseCases} následně popsal metodiku pro psaní podrobnějších případů užití. Přesto však prosazoval názor, že by forma specifikace případů užití měla odpovídat potřebám a rozsahu konkrétního projektu. Další techniku specifikace případů užití také popsal například Martin Fowler, který prosazoval názor, že neexistuje jeden standardní způsob, jak specifikovat případy užití, a že formát a rozsah případů užití by měl být zvolen dle potřeb konkrétního projektu. \cite[22-27]{NURUIDesignSteps}
+
+% Review
+V této práci jsem se tak rozhodl vycházet z práce Alistaira Cockburna \cite{Cockburn2001WritingEffectiveUseCases} a specifikovat případy užití způsobem, který bude užitečný pro vývoj této konkrétní aplikace. Pro každý případ užití tak budu specifikovat jeho identifikátor, název, popis, hlavního aktéra, hlavní scénář a případné alternativní scénáře. 
+
+% Review
+Pro specifikaci scénářů jsem se rozhodl využít jazyk Gherkin, který přináší několik zásadních výhod, kterým se budu věnovat v následující sekci. Jelikož se v jazyce Gherkin definují scénáře přímo v repozitáři aplikace v souborech s příponou \texttt{.feature} \cite{CucumberDocs}, rozhodl jsem se nejprve v rámci specifikace případů užití popsat hlavní a alternativní scénáře pouze stručným popisem a detailně je pak specifikovat přímo v repozitáři aplikace pomocí jazyka Gherkin. Díky tomuto postupu budu moci nejprve získat přehled o všech scénářích a okrajových případech a poté provést jejich podrobnější specifikaci přímo v repozitáři aplikace. Jak jsem zmínil, výhodám tohoto postupu se budu věnovat v následující sekci.
+
+% Review
+V rámci specifikace případů užití jsem tak sestavil následující seznam případů užití.
+
+\subsubsection{UC-X Name of the use case}
+
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Use case description \\
+  \textbf{Hlavní aktér:} & Actor name  \\
+  \textbf{Hlavní scénář:} & Main scenario description \\
+  \textbf{Alternativní scénář 1:} & Alternative scenario description \\
+  \textbf{Alternativní scénář 2:} & Alternative scenario description \\
+\end{tabular}
 
 % Review
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}
@@ -44,7 +63,7 @@ Korektor je osoba zodpovědná za kontrolu kvality výukového obsahu, aby byl s
 Po sepsání případů užití jsem se rozhodl nové funkce přesněji specifikovat pomocí jazyka Gherkin \cite{CucumberDocs}. Gherkin je jednoduchý strukturovaný jazyk, který umožňuje pomocí přirozeného jazyka popsat chování systému v podobě textových scénářů. Díky přesně dané struktuře je následně možné tyto scénáře strojově zpracovat pomocí nástroje Cucumber\footnote{Dostupné na: \href{https://cucumber.io/}{https://cucumber.io/}} a ověřit, že se aplikace chová v souladu se specifikací pomocí automatizovaných testů. Celý proces je postavený na přístupu \textit{Behavior-Driven Development} (BDD) \cite{BDD}, tedy na metodice vývoje, při které se přesně specifikuje očekávané chování systému a následně se vytvoří automatizované testy, které ověří, že se aplikace skutečně podle specifikace chová. Tento přístup vznikl jako reakce na rozšířenou metodiku \textit{Test-Driven Development} (TDD) s cílem pomoci vývojářům a testerům nahlížet na testování více z pohledu samotného chování aplikace, přesněji pochopit a definovat požadované chování a minimalizovat tak nejednoznačnosti v zadání a implementaci jednotlivých funkcí \cite{BDDHistory}.
 
 % Review
-Tento přístup má několik zásadních výhod. Zaprvé samotná specifikace slouží jako přesná dokumentace toho, jak se současný systém skutečně chová. Díky přirozenému jazyku může být užitečná nejen testerům a vývojářům, ale i lidem, kteří nejsou technicky zaměření. Zadruhé díky automatizovaným testům, které jsou spouštěny dle jednotlivých scénářů, je možné průběžně ověřovat, že se aplikace skutečně chová přesně v souladu se specifikací. Zatřetí přesné specifikace funkcí mohou sloužit jako podklady pro asistenty umělé inteligence, kteří pomáhají vývojářům a testerům s implementací kódu. Používání nástrojů umělé inteligence tak může být díky přesné specifikaci a automatizovaným testům výrazně efektivnější.
+Tento přístup má několik zásadních výhod. Zaprvé samotná specifikace slouží jako přesná dokumentace toho, jak se současný systém skutečně chová. Díky přirozenému jazyku může být užitečná nejen testerům a vývojářům, ale i lidem, kteří nejsou technicky zaměření. Zadruhé díky automatizovaným testům, které jsou spouštěny dle jednotlivých scénářů, je možné průběžně ověřovat, že se aplikace skutečně chová přesně v souladu se specifikací. Zatřetí přesné specifikace funkcí mohou sloužit jako podklady pro asistenty umělé inteligence, kteří pomáhají vývojářům a testerům s implementací kódu. Používání nástrojů umělé inteligence tak může být díky přesné specifikaci a automatizovaným testům výrazně efektivnější. \cite{CucumberDocs}
 
 % Review
 Z výše zmíněných důvodů jsem se rozhodl využít jazyk Gherkin a nástroj Cucumber pro specifikaci funkcí a automatizaci testů s cílem zajistit efektivnější vývoj a kvalitnější implementaci samotných funkcí.
@@ -52,8 +71,8 @@ Z výše zmíněných důvodů jsem se rozhodl využít jazyk Gherkin a nástroj
 % Review
 \subsubsection{Postup při specifikaci}
 
-% Write - sem ještě dopsat že jsem použil use cases definované v předchozí sekci
-Funkce jsem specifikoval v souladu s dokumentací nástroje Cucumber \cite{CucumberDocs}, tedy přímo v repozitáři frontendu aplikace v souborech s příponou \texttt{.feature}. Tyto soubory jsem následně využil jako podklad pro implementaci a dále pro automatizaci testů, kterou jsem popsal v kapitole testování.
+% Review
+Funkce jsem specifikoval na základě definovaných případů užití a v souladu s dokumentací nástroje Cucumber \cite{CucumberDocs}, tedy přímo v repozitáři frontendu aplikace v souborech s příponou \texttt{.feature}. Tyto soubory jsem následně využil jako podklad pro implementaci a dále pro automatizaci testů, kterou jsem popsal v kapitole testování.
 
 % Review
 Soubory v jazyce Gherkin obsahují definici funkce \texttt{Feature} a jeden nebo více scénářů \texttt{Scenario} s jednotlivými kroky. Kroky scénáře jsou definovány pomocí klíčových slov \texttt{Given} a \texttt{When}, které definují předpoklady a dále 
