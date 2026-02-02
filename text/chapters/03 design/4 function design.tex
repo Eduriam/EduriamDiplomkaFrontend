@@ -17,6 +17,12 @@ V rámci specifikace funkcí je třeba popsat tzv. aktéry, kteří reprezentuj�
 Uživatel je osoba, která využívá aplikaci k učení se programování. Mezi jeho hlavní aktivity patří například zapisování si kurzů, učení se programování, interakce s ostatními uživateli a interakce s prvky gamifikace v aplikaci.
 
 % Review
+\subsubsection{Nepřihlášený uživatel}
+
+% Review
+Nepřihlášený uživatel je osoba, která v aplikaci není přihlášena a nemá tak přístup k většině funkcí aplikace. Může se však přihlásit nebo se registrovat v aplikaci.
+
+% Review
 \subsubsection{Premium uživatel}
 
 % Review
@@ -46,14 +52,17 @@ Pro specifikaci scénářů jsem se rozhodl využít jazyk Gherkin, který přin
 % Review
 V rámci specifikace případů užití jsem tak sestavil následující seznam případů užití.
 
-\subsubsection{UC-X Name of the use case}
+% Review
+\subsubsection{UC-1 Volba přihlášení nebo registrace}
 
+% Review
 \begin{tabular}{lp{0.7\linewidth}}
-  \textbf{Popis:} & Use case description \\
-  \textbf{Hlavní aktér:} & Actor name  \\
-  \textbf{Hlavní scénář:} & Main scenario description \\
-  \textbf{Alternativní scénář 1:} & Alternative scenario description \\
-  \textbf{Alternativní scénář 2:} & Alternative scenario description \\
+  \textbf{Popis:} & Umožňuje uživateli si zobrazit úvodní stránku aplikace a zvolit, zda se chce přihlásit nebo registrovat. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-welcome-page} \\
+  \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
+  \textbf{Hlavní scénář:} & Nepřihlášený uživatel otevře aplikaci, zobrazí se mu úvodní stránka, uživatel zvolí možnost přihlášení a bude přesměrován na stránku přihlášení. \\
+  \textbf{Alternativní scénář 1:} & Nepřihlášený uživatel otevře aplikaci, zobrazí se mu úvodní stránka, uživatel zvolí možnost registrace a bude přesměrován na stránku registrace. \\
+  \textbf{Alternativní scénář 2:} & Přihlášený uživatel otevře aplikaci na úvodní stránce, systém ho automaticky přesměruje na hlavní stránku v aplikaci. \\
 \end{tabular}
 
 % Review
