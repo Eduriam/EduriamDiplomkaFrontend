@@ -52,17 +52,65 @@ Pro specifikaci scénářů jsem se rozhodl využít jazyk Gherkin, který přin
 % Review
 V rámci specifikace případů užití jsem tak sestavil následující seznam případů užití.
 
-% Review
+% Done
 \subsubsection{UC-1 Volba přihlášení nebo registrace}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí úvodní stránku aplikace a zvolí, zda se chce přihlásit nebo registrovat. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-welcome-page} \\
+  \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
+  \textbf{Hlavní scénář:} & Nepřihlášený uživatel otevře aplikaci a aplikace mu zobrazí úvodní stránku. Uživatel zvolí možnost přihlášení a aplikace ho přesměruje na stránku přihlášení. \\
+  \textbf{Alternativní scénář 1:} & Nepřihlášený uživatel otevře aplikaci a aplikace mu zobrazí úvodní stránku. Uživatel zvolí možnost registrace a aplikace ho přesměruje na stránku registrace. \\
+  \textbf{Alternativní scénář 2:} & Přihlášený uživatel otevře aplikaci na úvodní stránce. Aplikace ho automaticky přesměruje na hlavní stránku v aplikaci. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-2 Vyplnění úvodního dotazníku}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
-  \textbf{Popis:} & Umožňuje uživateli si zobrazit úvodní stránku aplikace a zvolit, zda se chce přihlásit nebo registrovat. \\
-  \textbf{Požadavek:} & \nameref{sec:fp-welcome-page} \\
-  \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
-  \textbf{Hlavní scénář:} & Nepřihlášený uživatel otevře aplikaci, zobrazí se mu úvodní stránka, uživatel zvolí možnost přihlášení a bude přesměrován na stránku přihlášení. \\
-  \textbf{Alternativní scénář 1:} & Nepřihlášený uživatel otevře aplikaci, zobrazí se mu úvodní stránka, uživatel zvolí možnost registrace a bude přesměrován na stránku registrace. \\
-  \textbf{Alternativní scénář 2:} & Přihlášený uživatel otevře aplikaci na úvodní stránce, systém ho automaticky přesměruje na hlavní stránku v aplikaci. \\
+  \textbf{Popis:} & Uživatel vyplní úvodní dotazník zaměřený na jeho cíle a zkušenosti s programováním. Aplikace uživateli na základě dotazníku doporučí kurzy a kariérní cesty, které si může zapsat. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-onboarding} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Po registraci uživatele aplikace zobrazí dotazník. Uživatel vyplní svoji úroveň programování, témata, která se chce učit a cíl, kterého chce dosáhnout. Aplikace zobrazí uživateli stránku, která ujistí uživatele, že daného cíle může s pomocí aplikace dosáhnout. Následně uživateli zobrazí seznam doporučených kurzů a kariérních cest. Uživatel vybere jeden z doporučených kurzů. Následně vyplní svůj denní cíl. Aplikace uživateli oznámí, že dotazník byl dokončen. Uživatel se pak může přesunout na hlavní stránku aplikace. \\
+  \textbf{Alternativní scénář 1:} & Uživatel při průchodu hlavním scénářem nevybere kurz ze seznamu doporučených kurzů. Zvolí možnost pro zobrazení všech kurzů v aplikaci. Aplikace mu zobrazí přehled všech dostupných kurzů. Uživatel vybere jeden z kurzů a pokračuje dle hlavního scénáře vyplněním svého denního cíle. \\
+  \textbf{Poznámka:} & Zapsání kariérní cesty se od zápisu kurzu nijak neliší a bude fungovat analogicky. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-3 Zobrazení přehledu kurzů a kariérních cest}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel se přesune na stránku s přehledem kurzů a kariérních cest. Kliknutím na kurz nebo kariérní cestu se pak přesune na jeho resp. její stránku. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku s přehledem kurzů a kariérních cest. Aplikace mu zobrazí několik doporučených kurzů nebo kariérních cest a dále seznam všech dostupných kurzů a kariérních cest rozřazených podle kategorií. Uživatel se vybráním kurzu přesune na jeho stránku. \\
+  \textbf{Alternativní scénář 1:} & Při průchodu hlavním scénářem uživatel nevybere kurz ale kariérní cestu a přesune se tak na stránku kariérní cesty. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-4 Zobrazení přehledu doporučených kurzů}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel si může zobrazit přehled všech doporučených kurzů a kariérních cest. Kliknutím na kurz nebo kariérní cestu se pak přesune na jeho resp. její stránku. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se ze stránky přehledu kurzů a kariérních cest přesune na stránku přehledu doporučených kurzů a kariérních cest. Aplikace mu zobrazí seznam všech doporučených kurzů a kariérních cest. Uživatel se vybráním kurzu přesune na jeho stránku. \\
+  \textbf{Alternativní scénář 1:} & Při průchodu hlavním scénářem uživatel nevybere kurz ale kariérní cestu a přesune se tak na stránku kariérní cesty. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-5 Vyplnění dotazníku pro úpravu doporučení kurzů a kariérních cest}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel na stránce přehledu doporučených kurzů a kariérních cest vyplní dotazník pro úpravu doporučení kurzů a kariérních cest. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune ze stránky doporučených kurzů a kariérních cest na stránku dotazníku. V dotazníku vyplní jeho úroveň programování, témata, která se chce učit a cíl, kterého chce dosáhnout. Aplikace mu zobrazí informaci, že uživatel dokončil dotazník. Uživatel zvolí možnost zobrazení nových doporučení a přesune se tak zpět na stránku doporučených kurzů a kariérních cest. \\
 \end{tabular}
 
 % Review
