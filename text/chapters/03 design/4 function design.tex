@@ -113,6 +113,54 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Hlavní scénář:} & Uživatel se přesune ze stránky doporučených kurzů a kariérních cest na stránku dotazníku. V dotazníku vyplní jeho úroveň programování, témata, která se chce učit a cíl, kterého chce dosáhnout. Aplikace mu zobrazí informaci, že uživatel dokončil dotazník. Uživatel zvolí možnost zobrazení nových doporučení a přesune se tak zpět na stránku doporučených kurzů a kariérních cest. \\
 \end{tabular}
 
+% Done
+\subsubsection{UC-6 Zobrazení stránky kurzu a zápis do kurzu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku kurzu a přihlásí se do něj. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-page} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku daného kurzu, aplikace mu zobrazí přehled kurzu včetně jeho popisu a přehledu částí kurzu. Uživatel zvolí možnost zapsání se do kurzu. Aplikace uživatele zapíše do kurzu a přesměruje ho na stránku učení první lekce kurzu. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-7 Zobrazení stránky kurzu a pokračování v učení}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku kurzu a zvolí možnost pokračovat v učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-page} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku daného kurzu, aplikace mu zobrazí přehled kurzu včetně popisu a přehledu částí kurzu. Uživatel zvolí možnost pokračovat v učení. Aplikace přesměruje uživatele na stránku učení, kde mu zobrazí následující lekci, kterou by se měl uživatel v kurzu učit. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-8 Zobrazení certifikátu o dokončení kurzu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel s premium účtemsi zobrazí stránku kurzu a zvolí možnost zobrazit certifikát o dokončení kurzu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-certificate} \\
+  \textbf{Hlavní aktér:} & Premium uživatel \\
+  \textbf{Hlavní scénář:} & Premium uživatel, který dokončil daný kurz, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli stránku s certifikátem. \\
+  \textbf{Alternativní scénář 1:} & Premium uživatel, který daný kurz ještě nedokončil, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli informaci, že musí nejprve dokončit kurz, aby mohl certifikát zobrazit. \\
+  \textbf{Alternativní scénář 2:} & Uživatel, který nemá premium účet, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu. \\
+\end{tabular}
+
+% Write - tohle je třeba implementovat (zatím jsem to nedělal)
+\subsubsection{UC-9 Zobrazení stránky pro správu kurzů a odhlášení se z kurzu}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku pro správu zapsaných kurzů a zvolí možnost odhlásit se z daného kurzu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-management} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku pro správu zapsaných kurzů, aplikace mu zobrazí seznam zapsaných kurzů. Uživatel zvolí kurz, ze kterého se chce odhlásit. Aplikace uživateli zobrazí upozornění, že se daná akce nedá vrátit. Uživatel potvrdí akci odhlášení se z kurzu. Aplikace uživatele odhlásí z kurzu a přesměruje ho na stránku přehledu zapsaných kurzů. \\
+\end{tabular}
+
+
+
 % Review
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}
 

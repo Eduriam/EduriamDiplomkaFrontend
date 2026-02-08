@@ -58,36 +58,44 @@ Uživatel by měl mít v aplikaci možnost zobrazit přehled dostupných kurzů 
 % Done
 Součástí prohlížení kurzů by měla být sekce s doporučenými kurzy. Tato doporučení by měla být založena na úvodním dotazníku, který uživatele vyplnil při registraci. Uživatel by měl mít možnost dotazník kdykoliv vyplnit znovu a přizpůsobit si tak svoje preference při zapisování kurzů.
 
-% Review
+% Done
 \subsubsection{FP-4 Stránka kurzu}\label{sec:fp-course-page}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Review
-Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem lekcí, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit nebo se z něj odhlásit. Dále by měl mít možnost u kurzu zvolit, zda se ho chce momentálně učit nebo ne. Na základě této volby by aplikace měla uživateli zobrazovat cvičení při učení.
+% Done
+Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem lekcí, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit. Dále by měl mít možnost se přesunout na stránku pro správu zapsaných kurzů, kde se bude moci z kurzu odhlásit. Pokud je uživatel do kurzu zapsaný, měl by mít možnost jednoduše pokračovat v učení daného kurzu. Uživatel by měl mít také možnost zobrazit svůj certifikát o dokončení kurzu, pokud už jej získal.
 
-% Review
-Tento požadavek vychází z analýzy konkurence, kde ve většině aplikací mají kurzy vlastní stránku se svým popisem a přehledem lekcí.
+% Done
+Tento požadavek vychází z analýzy konkurence, kde většina aplikací obsahuje stránky kurzů s jejich popisem a s přehledem lekcí, které jsou v kurzu obsaženy.
 
-% Review
-\subsubsection{FP-5 Správa zapsaných kurzů}
+% Done
+\subsubsection{FP-5 Certifikáty o dokončení kurzu}\label{sec:fp-course-certificate}
 
-% Review
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Done
+Po dokončení kurzu by měl uživateli s premium účtem být vygenerován certifikát o dokončení daného kurzu. Certifikát by měl být zobrazen na veřejně dostupné stránce a měl by obsahovat základní informace o dokončeném kurzu a uživateli, který kurz dokončil. Uživatel by měl mít možnost odkaz na certifikát jednoduše sdílet s ostatními uživateli. Uživatelům, kteří nemají premium účet, by měla být zobrazena informace, že si budou moci certifikát vygenerovat po zakoupení premium předplatného.
+
+% Done
+\subsubsection{FP-6 Správa zapsaných kurzů}\label{sec:fp-course-management}
+
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Review
-Uživatel by měl mít možnost si zobrazit přehled zapsaných kurzů. U každého kurzu by měl uživatel vidět jeho pokrok a úroveň v rámci daného kurzu.
+% Done
+Uživatel by měl mít možnost si zobrazit přehled zapsaných kurzů. U každého kurzu by měl uživatel mít možnost se z něj odhlásit.
 
 % Review
-Uživatel by měl mít také možnost se z přehledu kurzů přesunout na stránku daného kurzu.
-
-% Review
-\subsubsection{FP-6 Nastavení cílové úrovně kurzu}
+\subsubsection{FP-7 Nastavení cílové úrovně kurzu}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -104,7 +112,7 @@ Možnost nastavení cílové úrovně by měla být k dispozici jednak při záp
 Pokud uživatel dosáhne cílové úrovně daného kurzu, mělo by se mu zobrazit oznámení, že v daném kurzu dosáhnul svého cíle a že bude kurz přepnut do režimu, v němž si uživatel bude pouze opakovat danou látku. Dále by se mu měla zobrazit informace, že režim kurzu může kdykoliv změnit v nastavení.
 
 % Review
-\subsubsection{FP-7 Kariérní cesty}
+\subsubsection{FP-8 Kariérní cesty}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -124,7 +132,7 @@ Dále by měl mít uživatel možnosti si zvolit, zda se chce danou cestu moment
 Tento požadavek vychází z analýzy konkurence, kde většina analyzovaných aplikací nabízí určitou formu kariérních cest, díky kterým se uživatel může učit témata týkající se konkrétní profese.
 
 % Review
-\subsubsection{FP-8 Stránka s lekcemi kurzu}
+\subsubsection{FP-9 Stránka s lekcemi kurzu}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -141,7 +149,7 @@ Tato mapa sice může zachytit svým vzhledem pozornost uživatele, nicméně m�
 Z těchto důvodů je třeba upravit stránku s lekcemi kurzu tak, aby byla přehlednější a umožňovala uživateli se lépe v lekcích orientovat.
 
 % Review
-\subsubsection{FP-9 Studijní plán}
+\subsubsection{FP-10 Studijní plán}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -168,7 +176,7 @@ Dále bude moci u každého kurzu nastavit úroveň, které chce v kurzu dosáhn
 Funkce studijního plánu vychází z analýzy konkurenční aplikace Codecademy, která umožňuje uživateli si vygenerovat studijní plán. Funkce dále vychází z problému, který nastává v konkurenčních aplikacích, pokud se uživatel chce učit více kurzů zároveň. Uživatel tak bývá nucen přepínat manuálně mezi jednotlivými kurzy a sám si plánovat, kterou látku se bude učit. Studijní plán by měl tomuto problému předejít a umožnit uživateli se jednoduše učit látku napříč mnoha kurzy.
 
 % Review
-\subsubsection{FP-10 Učení se podle studijního plánu}
+\subsubsection{FP-11 Učení se podle studijního plánu}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -188,7 +196,7 @@ Tato funkce má dva hlavní cíle. Prvním cílem je umožnit uživateli jednodu
 Druhým cílem této funkce je využít princip návrhu uživatelského rozhraní \textit{microbreaks} \cite{Tidwell2020DesigningInterfaces}. Hlavní myšlenkou tohoto principu je přizpůsobit aplikaci tak, aby ji mohl uživatel zapnout a použít kdykoliv, kdy má v průběhu dne pár minut volného času. Když uživatel například čeká chvíli na zastávce, může aplikaci zapnout a využít tak efektivně svůj čas. Klíčovým prvkem tohoto principu je umožnit uživateli se ihned po spuštění aplikace přesunout k dané aktivitě, tedy v případě této aplikace, k samotnému učení. Tento princip je využíván například aplikacemi sociálních sítí, které jsou přizpůsobeny na to, aby je mohl uživatel zapnout kdykoliv, kdy má chvilku volného času.
 
 % Review
-\subsubsection{FP-11 Cvičení a komponenty pro výuku softwarového inženýrství} 
+\subsubsection{FP-12 Cvičení a komponenty pro výuku softwarového inženýrství} 
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -232,7 +240,7 @@ Při učení bude dále možné zobrazovat uživateli následující komponenty.
 U komponent, v nichž uživatel může psát celý kód, by měla aplikace umožnit uživateli jednoduše zformátovat daný kód. Tato funkce vychází z analýzy konkurence Codecademy, která tuto funkci nabízí a může přispět k lepší uživatelské zkušenosti.
 
 % Review
-\subsubsection{FP-12 Nová struktura učení}
+\subsubsection{FP-13 Nová struktura učení}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -257,7 +265,7 @@ Tato struktura učení se zásadně liší od struktury učení v původní apli
 Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. To bude třeba zohlednit při návrhu a implementaci nového způsobu učení.
 
 % Review
-\subsubsection{FP-13 Chatbot}
+\subsubsection{FP-14 Chatbot}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -268,7 +276,7 @@ Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživat
 Aplikace by měla při učení poskytovat premium uživateli chatbota, který mu bude moci vysvětlit, proč byla jeho odpověď ve cvičení špatná nebo mu podrobněji vysvětlit, co daný kód ve cvičení znamená a jak funguje.
 
 % Review
-\subsubsection{FP-14 Nahlašování problému při učení}
+\subsubsection{FP-15 Nahlašování problému při učení}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -305,7 +313,7 @@ Korektoři by také měli mít možnost u každé odpovědi detailněji popsat v
 Nahlášení problému od uživatelů s rolí korektora by mělo být označeno tak, aby bylo možné jej rozlišit od nahlášení problému běžných uživatelů. Role korektora bude nastavována uživatelům mimo frontend této aplikace. Tuto roli využijí zejména lidé zodpovědní za tvorbu a korekci jednotlivých kurzů.
 
 % Review
-\subsubsection{FP-15 Statistiky o učení}
+\subsubsection{FP-16 Statistiky o učení}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -319,7 +327,7 @@ Aplikace by měla při učení uživatele nově sbírat data o tom, jak dlouho u
 Dále by měla být tato data odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
 
 % Review
-\subsubsection{FP-16 Stav energie}
+\subsubsection{FP-17 Stav energie}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -334,7 +342,7 @@ Učením se budou body energie snižovat. Pokud uživatel všechny body energie 
 Tento požadavek je inspirován analyzovanou aplikací Duolingo, která podobnou funkci nabízí. Tato funkce slouží primárně k motivaci uživatele, aby se učil pravidelně každý den a dále také k tomu, aby byl uživatel motivován si zakoupit premium účet.
 
 % Review
-\subsubsection{FP-17 Registrace a přihlášení pomocí Google a Apple}
+\subsubsection{FP-18 Registrace a přihlášení pomocí Google a Apple}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -348,7 +356,7 @@ Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí
 Tento požadavek vychází z analýzy konkurence, kde většina konkurenčních aplikací tuto možnost nabízí.
 
 % Review
-\subsubsection{FP-18 Zpřehlednění navigace v aplikaci}
+\subsubsection{FP-19 Zpřehlednění navigace v aplikaci}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -365,7 +373,7 @@ Změnu navigace bude třeba provést zejména v hlavní navigační liště, bo�
 Cílem této změny je zpřehlednit aplikaci a zjednodušit uživateli navigaci mezi jednotlivými stránkami.
 
 % Review
-\subsubsection{FP-19 Tmavý režim}
+\subsubsection{FP-20 Tmavý režim}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -376,7 +384,7 @@ Cílem této změny je zpřehlednit aplikaci a zjednodušit uživateli navigaci 
 Rozhraní aplikace by mělo být dostupné ve dvou režimech, ve světlém a tmavém. Uživatel by měl mít možnost v nastavení zvolit, zda chce používat světlý režim, tmavý režim, nebo režim dle systémového nastavení. Rozhraní aplikace by se pak mělo zobrazovat uživateli v tomto režimu.
 
 % Review
-\subsubsection{FP-20 Push Notifikace}
+\subsubsection{FP-21 Push Notifikace}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -401,7 +409,7 @@ Aplikace by měla být schopna uživateli posílat push notifikace. Tyto notifik
 V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace.
 
 % Review
-\subsubsection{FP-21 Připomínání učení}
+\subsubsection{FP-22 Připomínání učení}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -417,7 +425,7 @@ Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má
 Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". Pokud uživatel tuto funkci zapne, nebude mu aplikace připomínat učení podle nastaveného času, ale na základě předchozího používání aplikace. Tato možnost by měla být v aplikaci nastavena jako výchozí.
 
 % Review
-\subsubsection{FP-22 Systém zobrazování reklam}
+\subsubsection{FP-23 Systém zobrazování reklam}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -442,7 +450,7 @@ Dále by aplikace měla uživateli v pravidelných intervalech zobrazovat reklam
 % Review
 Tento požadavek vychází z analýzy konkurenčních aplikaci, kde většina aplikací zobrazuje reklamy v průběhu používání aplikace a zobrazuje reklamy na premium verzi aplikace.
 
-\subsubsection{FP-23 Nový systém předplatného}
+\subsubsection{FP-24 Nový systém předplatného}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -461,7 +469,7 @@ Ve stávající aplikaci má uživatel možnost si zaplatit předplatné a tím 
 % Review
 V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenost a informovanost uživatelů, které funkce jsou dostupné v premium verzi aplikace. Pokud uživatel například chce využít funkci, která je dostupná pouze uživatelům s předplatným, měla by mu být zobrazena stránka, která ho bude informovat, že je daná funkce dostupná pouze v premium verzi aplikace.
 
-\subsubsection{FP-24 Zkušební verze předplatného}
+\subsubsection{FP-25 Zkušební verze předplatného}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -472,7 +480,7 @@ V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenos
 Aplikace by měla umožnit uživateli spustit zkušební verzi předplatného na určitou dobu zdarma. Tuto možnost by měli mít pouze uživatelé, kteří dříve zkušební verzi nikdy nevyužili.
 
 % Review
-\subsubsection{FP-25 Přizpůsobení avatara uživatele}
+\subsubsection{FP-26 Přizpůsobení avatara uživatele}
 
 % Done
 \label{sec:fp-avatar-customization}
@@ -493,7 +501,7 @@ Uživatel by měl mít možnost si u avatara přizpůsobit barvu pleti, velikost
 Tento požadavek vychází zejména z analýzy forem gamifikace a také analýzy konkurenční aplikace Duolingo, která podobnou funkci přizpůsobení si avatara uživatele nabízí.
 
 % Review
-\subsubsection{FP-26 Rozšíření obchodu a odemykání položek}
+\subsubsection{FP-27 Rozšíření obchodu a odemykání položek}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -513,7 +521,7 @@ Dále by v obchodu měla být zavedena nová funkce odemykání položek. Někte
 U zamknutých položek by měl uživatel mít možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemknul.
 
 % Review
-\subsubsection{FP-27 Uživatelský profil}
+\subsubsection{FP-28 Uživatelský profil}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -526,7 +534,7 @@ V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje
 % Review
 \begin{itemize}
     \item Avatar uživatele, popsaný v požadavku \nameref{sec:fp-avatar-customization}.
-    \item Liga, ve které se uživatel nachází. Popis lig je popsán v požadavku \nameref{sec:fp-30-leaderboard}.
+    \item Liga, ve které se uživatel nachází. Popis lig je popsán v požadavku \nameref{sec:fp-leaderboard}.
     \item Kurzy, které má uživatel zapsané a přehled, jaké úrovně v nich uživatel dosáhl.
 \end{itemize}
 
@@ -534,7 +542,7 @@ V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje
 Z důvodu přidání nových informací bude třeba změnit vzhled celé profilové stránky uživatele.
 
 % Review
-\subsubsection{FP-28 Zmrazení streaku}
+\subsubsection{FP-29 Zmrazení streaku}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -551,7 +559,7 @@ Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupi
 Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné cvičení, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak i když některý den například zapomene se učit.
 
 % Review
-\subsubsection{FP-29 Oznámení o změně stavu streaku}
+\subsubsection{FP-30 Oznámení o změně stavu streaku}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -565,10 +573,10 @@ Pokud uživatel dokončí učení a jeho streak se zvýší na novou významnou 
 Dále, pokud uživatel ztratí streak, tedy je mu resetován na 0 dní, měla by mu být tato informace oznámena po otevření aplikace.
 
 % Review
-\subsubsection{FP-30 Žebříček uživatelů}
+\subsubsection{FP-31 Žebříček uživatelů}
 
 % Review
-\label{sec:fp-30-leaderboard}
+\label{sec:fp-leaderboard}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -585,10 +593,10 @@ Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pok
 Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Duolingo, v nichž jsou podobné ligy implementovány.
 
 % Review
-\subsubsection{FP-31 Truhla s odměnou}
+\subsubsection{FP-32 Truhla s odměnou}
 
 % Review
-\label{sec:fp-31-treasure-chest}
+\label{sec:fp-treasure-chest}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -601,7 +609,7 @@ Po dokončení učení by uživateli měla být zobrazena stránka s truhlou, kt
 % Review - napsat, že tento požadavek vychází z analýzy gamifikace, pokud jsem jí prováděl - nebo jinak odůvodnit existenci tohoto požadavku
 
 % Write - tohle jsem se rozhodl, že možná odstraním.. pokud bych to joo stíhal, tak to zahrnout, jinak tento požadavek zcela odstranit
-\subsubsection{FP-32 Denní výzvy}
+\subsubsection{FP-33 Denní výzvy}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -609,7 +617,7 @@ Po dokončení učení by uživateli měla být zobrazena stránka s truhlou, kt
 \end{tabular}
 
 % Review
-Aplikace by měla uživateli každý den zobrazit několik denních výzev, které může splnit pro získání truhly s odměnou (vizte požadavek \nameref{sec:fp-31-treasure-chest}). Tyto výzvy mají za cíl motivovat uživatele, aby se učil nad rámec jeho základního učení, aby vyzkoušel různé funkce aplikace, a aby si rozšířil svoje znalosti napříč různými kurzy a nejen v kurzech, které má zapsané.
+Aplikace by měla uživateli každý den zobrazit několik denních výzev, které může splnit pro získání truhly s odměnou (vizte požadavek \nameref{sec:fp-treasure-chest}). Tyto výzvy mají za cíl motivovat uživatele, aby se učil nad rámec jeho základního učení, aby vyzkoušel různé funkce aplikace, a aby si rozšířil svoje znalosti napříč různými kurzy a nejen v kurzech, které má zapsané.
 
 % Review - zde ještě dopsat další, co mě napadnou
 V aplikaci by měly být následující typy denních výzev:
@@ -620,16 +628,6 @@ V aplikaci by měly být následující typy denních výzev:
     \item Naučení se jedné lekce z určitého kurzu.
     \item Použití určité funkce aplikace, jako například zeptání se o radu chatbota nebo přizpůsobení avatara uživatele.
 \end{itemize}
-
-\subsubsection{FP-33 Certifikáty o dokončení kurzu}
-
-% Review
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
-\end{tabular}
-
-% Review
-Po dokončení kurzu by měl mít uživatel možnost si vygenerovat a stáhnout certifikát o dokončení kurzu. Certifikát by měl být ve formátu PDF a měl by obsahovat základní informace o dokončeném kurzu a uživateli, který kurz dokončil.
 
 \subsubsection{FP-34 Sdílení pokroku mezi uživateli}
 
