@@ -67,13 +67,30 @@ Součástí prohlížení kurzů by měla být sekce s doporučenými kurzy. Tat
 \end{tabular}
 
 % Done
-Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem lekcí, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit. Dále by měl mít možnost se přesunout na stránku pro správu zapsaných kurzů, kde se bude moci z kurzu odhlásit. Pokud je uživatel do kurzu zapsaný, měl by mít možnost jednoduše pokračovat v učení daného kurzu. Uživatel by měl mít také možnost zobrazit svůj certifikát o dokončení kurzu, pokud už jej získal.
+Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem kapitol, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit. Dále by měl mít možnost se přesunout na stránku pro správu zapsaných kurzů, kde se bude moci z kurzu odhlásit. Pokud je uživatel do kurzu zapsaný, měl by mít možnost jednoduše pokračovat v učení daného kurzu. Uživatel by měl mít také možnost zobrazit svůj certifikát o dokončení kurzu, pokud už jej získal.
 
 % Done
 Tento požadavek vychází z analýzy konkurence, kde většina aplikací obsahuje stránky kurzů s jejich popisem a s přehledem lekcí, které jsou v kurzu obsaženy.
 
 % Done
-\subsubsection{FP-5 Certifikáty o dokončení kurzu}\label{sec:fp-course-certificate}
+\subsubsection{FP-5 Stránka kapitoly kurzu}\label{sec:fp-course-chapter-page}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Done
+Aplikace by měla umožnit uživateli si zobrazit stránku kapitoly kurzu. Na této stránce by měly být zobrazeny všechny lekce dané kapitoly. Lekce by měly být seskupeny dle jejich témat do sekcí. Lekce by měly být označeny jako dokončené nebo nedokončené podle toho, zda uživatel danou lekci dokončil. Aplikace by také měla vizuálně zvýraznit lekci, kterou by se uživatel měl učit dále.
+
+% Done
+Ve stávající aplikaci jsou lekce kurzu vyobrazeny jako body na čáře připomínající cestu, po které se uživatel při postupování kurzem pohybuje. V rámci tohoto zobrazení tak nejsou zobrazeny názvy lekcí. Byť je toto zobrazení vizuálně poutavé, a například konkurenční aplikace Mimo toto zobrazení využívá, může být velice nepraktické zejména z důvodu, že je pro uživatele značně obtížné najít konkrétní lekci, pokud se ji chce naučit nebo si ji zopakovat.
+
+% Done
+Z hlediska použitelnosti jsem tak vyhodnotil, že by v rámci tohoto požadavku měl být navržen nový vzhled seznamu lekcí, který bude možné použít na stránce kapitoly kurzu. Tento vzhled by měl v základu fungovat jako seznam lekcí rozdělených do sekcí. Vizuálně by měl ale také částečně připomínat původní vizuální vyobrazení ve formě připomínající cestu s lekcemi. Cílem je tak vytvořit vizuálně poutavý vzhled znázorňující chronologickou posloupnost lekcí, který ovšem bude praktičtější a bude umožňovat uživateli se lépe v lekcích orientovat.
+
+% Done
+\subsubsection{FP-6 Certifikáty o dokončení kurzu}\label{sec:fp-course-certificate}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -84,7 +101,7 @@ Tento požadavek vychází z analýzy konkurence, kde většina aplikací obsahu
 Po dokončení kurzu by měl uživateli s premium účtem být vygenerován certifikát o dokončení daného kurzu. Certifikát by měl být zobrazen na veřejně dostupné stránce a měl by obsahovat základní informace o dokončeném kurzu a uživateli, který kurz dokončil. Uživatel by měl mít možnost odkaz na certifikát jednoduše sdílet s ostatními uživateli. Uživatelům, kteří nemají premium účet, by měla být zobrazena informace, že si budou moci certifikát vygenerovat po zakoupení premium předplatného.
 
 % Done
-\subsubsection{FP-6 Správa zapsaných kurzů}\label{sec:fp-course-management}
+\subsubsection{FP-7 Správa zapsaných kurzů}\label{sec:fp-course-management}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -95,7 +112,7 @@ Po dokončení kurzu by měl uživateli s premium účtem být vygenerován cert
 Uživatel by měl mít možnost si zobrazit přehled zapsaných kurzů. U každého kurzu by měl uživatel mít možnost se z něj odhlásit.
 
 % Done
-\subsubsection{FP-7 Cesty učení}\label{sec:fp-learning-paths}
+\subsubsection{FP-8 Cesty učení}\label{sec:fp-learning-paths}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -111,23 +128,6 @@ Tento požadavek vychází z analýzy konkurence, kde většina analyzovaných a
 % Write - požadavek na nějakou vizualizaci progressu co se týče znalostí
 
 % Write - převymyslet ještě učení - udělat abych mohl mít kurz v módu opakování/učení/stopnutý a různé úrovně kurzu (nějak seskupený)
-
-% Review
-\subsubsection{FP-9 Stránka s lekcemi kurzu}
-
-% Review
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Must have \\
-\end{tabular}
-
-% Review
-Ve stávající aplikaci jsou na stránce s lekcemi kurzu lekce vyobrazeny jako body na čáře připomínající cestu, po které se uživatel při postupování kurzem pohybuje. Stránka tak připomíná vizuálně mapu s cestou, po které se uživatel pohybuje. 
-
-% Review - tyhle argumenty bych možná přehodil do analýzy stávajícího řešení
-Tato mapa sice může zachytit svým vzhledem pozornost uživatele, nicméně má několik zásadních nevýhod z hlediska použitelnosti. Lekce jsou na mapě reprezentovány pouze ikonou a zkráceným názvem. Kvůli tomu může být pro uživatele obtížné na první pohled poznat, co je obsahem dané lekce. Dále, pokud se uživatel snaží najít konkrétní lekci v aplikaci, může to pro něj být velice obtížné, pokud mapa učení obsahuje větší množství lekcí.
-
-% Review
-Z těchto důvodů je třeba upravit stránku s lekcemi kurzu tak, aby byla přehlednější a umožňovala uživateli se lépe v lekcích orientovat.
 
 % Review
 \subsubsection{FP-10 Studijní plán}
@@ -229,6 +229,8 @@ U komponent, v nichž uživatel může psát celý kód, by měla aplikace umož
 \end{tabular}
 
 % Write - napsat sem, že by měl uživatel mít možnost se přesouvat mezi již dokončenými cvičeními a stráknami s vysvětlením látky
+
+% Write - do use casů vytvořit diagram aktivit pro průchod učení
 
 % Review
 Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tento způsob výuky je inspirován analyzovanými aplikacemi Mimo a Duolingo, které podobnou formu výuky využívají.

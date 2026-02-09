@@ -136,7 +136,20 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \end{tabular}
 
 % Done
-\subsubsection{UC-8 Zobrazení certifikátu o dokončení kurzu}
+\subsubsection{UC-8 Spuštění lekce na stránce kurzu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel se ze stránky kurzu přesune na stránku kapitoly kurzu a spustí danou lekci. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-chapter-page} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se nachází na stránce daného kurzu, zvolí danou kapitolu a aplikace ho přesměruje na stránku kapitoly kurzu, kde dále zobrazí seznam lekcí rozdělených do sekcí. Uživatel vybere jednu z lekcí a aplikace ho přesměruje na stránku učení dané lekce. \\
+  \textbf{Alternativní scénář 1:} & Uživatel při průchodu hlavním scénářem ještě není do kurzu zapsaný. Při spuštění lekce aplikace uživatele automaticky zapíše do kurzu a následně ho přesměruje na stránku učení dané lekce. \\
+  \textbf{Poznámka:} & Uživatel bude moci v kurzu spustit libovolnou lekci nehledě na to, které lekce již dříve dokončil.
+\end{tabular}
+
+% Done
+\subsubsection{UC-9 Zobrazení certifikátu o dokončení kurzu}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -149,7 +162,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \end{tabular}
 
 % Write - tohle je třeba implementovat (zatím jsem to nedělal)
-\subsubsection{UC-9 Zobrazení stránky pro správu kurzů a odhlášení se z kurzu}
+\subsubsection{UC-10 Zobrazení stránky pro správu kurzů a odhlášení se z kurzu}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
