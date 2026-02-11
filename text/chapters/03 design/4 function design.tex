@@ -208,6 +208,65 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Alternativní scénář 2:} & Uživatel, který nemá premium účet, se přesune na stránku dané kariérní cesty a zvolí možnost zobrazit certifikát. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu. \\
 \end{tabular}
 
+% Done
+\subsubsection{UC-13 Zobrazení studijního plánu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Umožňuje uživateli si zobrazit stránku se svým studijním plánem, tedy přehledem všech zapsaných kurzů a jejich aktuálního režimu učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku studijního plánu, aplikace mu zobrazí seznam zapsaných kurzů a jejich aktuální režimy učení. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-14 Změna režimu učení kurzu ve studijním plánu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Umožňuje uživateli změnit režim učení jednotlivých kurzů ve studijním plánu. Uživatel může vybrat mezi režimy učení, opakování a pozastavení kurzu.  \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel na stránce studijního plánu změní u vybraného kurzu jeho režim na \uv{učení}, aplikace změnu uloží a kurz začne být zohledňován při doporučování nových lekcí k učení. \\
+  \textbf{Alternativní scénář 1:} & Uživatel na stránce studijního plánu změní u vybraného kurzu režim na \uv{opakování}, aplikace změnu uloží a kurz začne být zohledňován při výběru látky k opakování. \\
+  \textbf{Alternativní scénář 2:} & Uživatel na stránce studijního plánu změní u vybraného kurzu režim na \uv{pozastaveno}, aplikace změnu uloží a kurz přestane být zohledňován při doporučování lekcí k učení i k opakování. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-15 Spuštění nadcházející lekce podle studijního plánu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Umožňuje uživateli spustit nadcházející doporučenou lekci podle jeho studijního plánu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku, aplikace mu zobrazí nadcházející lekci podle studijního plánu, uživatel spustí tuto lekci a aplikace ho přesměruje na stránku učení. \\
+  \textbf{Alternativní scénář 1:} & Uživatel otevře hlavní stránku, ale aplikace nenalezla žádnou nadcházející lekci, například protože má uživatel všechny lekce zapsaných kurzů dokončené. Aplikace zobrazí informaci, že jsou všechny lekce zapsaných kurzů dokončené a zobrazí možnost pro zapsání nových kurzů. Uživatel zvolí možnost pro zapsání nového kurzu a aplikace ho přesměruje na stránku pro výběr kurzů. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-16 Spuštění opakování podle studijního plánu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Umožňuje uživateli spustit opakování látky, kterou aplikace doporučí na základě studijního plánu a toho, jak si uživatel naučenou látku pamatuje. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace a zvolí možnost opakování. Aplikace podle studijního plánu a historie učení vybere vhodnou látku k zopakování ze zapsaných kurzů, které jsou v režimu učení nebo opakování. Aplikace zobrazí informaci, ze kterého kurzu bude uživatel látku opakovat a dále zobrazí možnost spustit opakování. Uživatel spustí opakování a aplikace ho přesměruje na stránku učení. \\
+  \textbf{Alternativní scénář 1:} & Uživatel otevře hlavní stránku aplikace a zvolí možnost opakování. Aplikace nenajde žádnou látku z opakování a zobrazí informaci, že všechna látka ze zapsaných kurzů byla již zopakována. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-17 Spuštění učení jiné lekce než doporučené lekce podle studijního plánu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel se rozhodne učit se jinou lekci, než nadcházející lekci doporučenou dle studijního plánu. Spustí tak nadcházející lekci ze specifického kurzu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace a zvolí možnost otevření studijního plánu. Aplikace mu zobrazí studijní plán, tedy seznam zapsaných kurzů a jejich aktuální režimy učení. U každého kurzu dále zobrazí možnost spustit učení se daného kurzu. Uživatel zvolí možnost učení se konkrétního kurzu a aplikace ho přesměruje na stránku učení, kde mu zobrazí látku z nadcházející lekce v rámci daného kurzu. \\
+\end{tabular}
+
 
 % Review
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}
