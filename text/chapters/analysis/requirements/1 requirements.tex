@@ -201,6 +201,63 @@ Tato struktura učení se zásadně liší od struktury učení v původní apli
 % Done
 Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. Proto by měla aplikace uživateli také zřetelněji poskytovat zpětnou vazbu při cvičeních.
 
+% Done
+\subsubsection{FP-13 Bloky cvičení} 
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Done
+V aplikaci by v rámci učení a opakování měly být uživateli zobrazovány bloky cvičení, díky kterým si bude moci procvičit a zopakovat danou látku. Aplikace by měla obsahovat různé komponenty, ze kterých se budou jednotlivé bloky cvičení skládat. Tyto komponenty lze rozdělit do dvou kategorií.
+
+% Done
+První kategorií jsou pasivní komponenty, které mají za cíl pouze zobrazovat informace ve formě textu, obrázků, tabulek, diagramů apod. Tyto komponenty budou sloužit zejména pro specifikaci zadání daného cvičení. Aplikace by měla obsahovat následující pasivní komponenty.
+
+% Done
+\begin{itemize}
+    \item Nadpis
+    \item Odstavec textu
+    \item Jednoduchá tabulka
+    \item Tabulka připomínající tabulku v databázi
+    \item Seznamy číslované a nečíslované
+    \item Obrázky ve formátech PNG, JPG, SVG a GIF
+    \item Diagramy definované pomocí jazyka Mermaid\footnote{Dostupné na: \href{https://mermaid.js.org/}{https://mermaid.js.org/}}.
+    \item Ukázka kódu
+    \item Ukázka výstupu kódu v terminálu
+    \item Ukázka výstupu kódu v podobě webové stránky
+    \item Ukázka výstupu kódu v podobě tabulky
+\end{itemize}
+
+% Done
+Druhou kategorií jsou aktivní komponenty, se kterými bude uživatel moci interagovat a splnit tak dané cvičení. Cílem těchto komponentů je získat data o tom, jak uživatel danému tématu rozumí. Aplikace by měla obsahovat následující aktivní komponenty.
+
+% Done
+\begin{itemize}
+    \item Otázka s výběrem správné odpovědi z nabídky odpovědí
+    \item Vyplnění chybějícího textu v kódu s vynechanými políčky
+    \item Vyplnění chybějícího textu v kódu s vynechanými políčky pomocí nabídky slov
+    \item Napsání nebo přepsání kódu ručně
+\end{itemize}
+
+% Done
+Aplikace by měla umožňovat k jednotlivým komponentům připojit audio nahrávku, která bude daný komponent komentovat a doprovázet tak uživatele při vyplňování cvičení. Při zobrazení bloku cvičení by se měly postupně spustit všechny audio nahrávky, které takto provedou uživatele celým cvičením. Uživatel by měl mít možnost si audio kdykoliv vypnout a používat aplikaci i bez něj.
+
+% Review
+\subsubsection{FP-13 Editor kódu} 
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Write
+Jednoduchý editor kódu s možností zobrazení více záložek reprezentující různé soubory nebo okna s výstupem kódu
+
+% Review
+U komponent, v nichž uživatel může psát celý kód, by měla aplikace umožnit uživateli jednoduše zformátovat daný kód. Tato funkce vychází z analýzy konkurence Codecademy, která tuto funkci nabízí a může přispět k lepší uživatelské zkušenosti.
+
 % Review
 \subsubsection{FP-13 Cvičení a komponenty pro výuku softwarového inženýrství} 
 
@@ -211,39 +268,6 @@ Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživat
 
 % Review
 Aplikace se bude zaměřovat na výuku základů softwarového inženýrství, a proto bude obsahovat cvičení na různá témata z tohoto oboru. % Review - zde checknout, jak se píše čárka u a proto
-Konkrétně by aplikace měla obsahovat následující cvičení.
-
-% Review
-\begin{itemize}
-    \item Otázka s výběrem správné odpovědi
-    \item Otázka a kód s vynechanými políčky, do kterých uživatel vyplní slova nebo znaky z nabídky
-    \item Otázka a kód s vynechanými políčky, do kterých uživatel sám vyplní znak nebo slovo
-\end{itemize}
-
-% Review
-Ve cvičeních, v nichž uživatel vyplňuje komplexnější kód, by mu měla aplikace zobrazit po vyplnění odpovědi výstup kódu. Ten může být zobrazen v následujících formátech.
-
-% Review
-\begin{itemize}
-    \item Okno s jednoduchou HTML stránkou, která může obsahovat CSS styly a JavaScript kód.
-    \item Okno s textem vizuálně připomínajícím výstup v terminálu.
-    \item Okno s tabulkou vyplněnou daty.
-\end{itemize}
-
-% Review
-Při učení bude dále možné zobrazovat uživateli následující komponenty.
-\begin{itemize}
-    \item Krátká ukázka kódu na jednom řádku textu
-    \item Jednoduchý editor kódu s možností zobrazení více záložek reprezentující různé soubory nebo okna s výstupem kódu
-    \item Obrázky ve formátech PNG, JPG, SVG a GIF
-    \item Odstavce textu
-    \item Nadpisy
-    \item Tabulky
-    \item Seznamy číslované a nečíslované
-\end{itemize}
-
-% Review
-U komponent, v nichž uživatel může psát celý kód, by měla aplikace umožnit uživateli jednoduše zformátovat daný kód. Tato funkce vychází z analýzy konkurence Codecademy, která tuto funkci nabízí a může přispět k lepší uživatelské zkušenosti.
 
 % Done
 \subsubsection{FP-14 Vysvětlení odpovědí ve cvičeních}
