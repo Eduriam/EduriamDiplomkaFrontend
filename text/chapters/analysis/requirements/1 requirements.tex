@@ -162,33 +162,33 @@ Tato hlavní stránka by měla být nastavena jako výchozí stránka aplikace, 
 % Done
 Cílem této funkce je poskytnout uživateli co nejjednodušší způsob spuštění učení a využít tak princip návrhu uživatelského rozhraní \textit{microbreaks} \cite{Tidwell2020DesigningInterfaces}. Hlavní myšlenkou tohoto principu je přizpůsobit aplikaci tak, aby ji mohl uživatel použít kdykoliv, kdy má v průběhu dne jen pár minut volného času a získat tak hodnotu, kterou aplikace nabízí. Když uživatel například čeká chvíli na zastávce, může aplikaci na pár minut zapnout a využít tak efektivně svůj čas. Klíčovým prvkem tohoto principu je umožnit uživateli se ihned po spuštění aplikace přesunout k dané hodnotě, kterou aplikace nabízí. V případě této aplikace je tak snaha umožnit uživateli se ihned po spuštění aplikace přesunout k samotnému učení. Tento princip je využíván například aplikacemi sociálních sítí, které jsou pečlivě navrženy tak, aby je mohl uživatel kdykoliv v průběhu dne na pár minut zapnout a použít.
 
-% Review
+% Done
 \subsubsection{FP-11 Opakování po dokončení lekce}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Review
+% Done
 Zásadní funkcí této aplikace je poskytnout uživateli možnost si jednoduše opakovat již naučenou látku tak, aby ji nezapomněl. Po dokončení každé nové lekce by tak měla být uživateli nabídnuta možnost opakování již naučené látky. Uživatel bude moci opakování odmítnout a přesunout se tak na stránku ze které spustil učení nové lekce. Dále bude mít možnost spustit opakování.
 
-% Review
+% Done
 Po spuštění opakování bude uživateli vybrána látka k zopakování. Tato látka by měla být vybrána z kurzů, které jsou ve studijním plánu buď v režimu učení, nebo v režimu opakování.
 
-% Review
-\subsubsection{FP-16 Statistiky o učení}
+% Done
+\subsubsection{FP-12 Statistiky o učení}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Could have \\
+    \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
-Aplikace by měla při učení uživatele nově sbírat data o tom, jak dlouho uživatel prováděl jednotlivá cvičení nebo procházel vysvětlení látky. Tato data by měla být využita k tomu, aby se na konci učení uživateli zobrazila informace, jak dlouho se učil. 
+% Done
+Aplikace by měla při učení a opakování uživatele nově sbírat data o tom, jak dlouho uživatel plnil jednotlivá cvičení, jak dlouho procházel vysvětlení látky a jakou úspěšnost měl při plnění jednotlivých cvičení. Tato data by měla být odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
 
-% Review
-Dále by měla být tato data odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
+% Done
+Uživateli by dále měla na konci učení nebo opakování aplikace zobrazit přehled se statistikami. Na této stránce by měly být zobrazeny informace o tom, kolik času se uživatel učil, jakou měl úspěšnost při plnění cvičení, kolik nových konceptů se naučil nebo kolik konceptů si zopakoval a kolik bodů XP získal.
 
 % Review
 \subsubsection{FP-12 Nová struktura učení}
