@@ -176,20 +176,6 @@ Zásadní funkcí této aplikace je poskytnout uživateli možnost si jednoduše
 % Done
 Po spuštění opakování bude uživateli vybrána látka k zopakování. Tato látka by měla být vybrána z kurzů, které jsou ve studijním plánu buď v režimu učení, nebo v režimu opakování.
 
-% Done
-\subsubsection{FP-12 Statistiky o učení}
-
-% Done
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
-\end{tabular}
-
-% Done
-Aplikace by měla při učení a opakování uživatele nově sbírat data o tom, jak dlouho uživatel plnil jednotlivá cvičení, jak dlouho procházel vysvětlení látky a jakou úspěšnost měl při plnění jednotlivých cvičení. Tato data by měla být odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
-
-% Done
-Uživateli by dále měla na konci učení nebo opakování aplikace zobrazit přehled se statistikami. Na této stránce by měly být zobrazeny informace o tom, kolik času se uživatel učil, jakou měl úspěšnost při plnění cvičení, kolik nových konceptů se naučil nebo kolik konceptů si zopakoval a kolik bodů XP získal.
-
 % Review
 \subsubsection{FP-12 Nová struktura učení}
 
@@ -265,29 +251,29 @@ Při učení bude dále možné zobrazovat uživateli následující komponenty.
 % Review
 U komponent, v nichž uživatel může psát celý kód, by měla aplikace umožnit uživateli jednoduše zformátovat daný kód. Tato funkce vychází z analýzy konkurence Codecademy, která tuto funkci nabízí a může přispět k lepší uživatelské zkušenosti.
 
-% Review
-\subsubsection{FP-14 Chatbot}
+% Done
+\subsubsection{FP-14 Vysvětlení odpovědí ve cvičeních}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
-Aplikace by měla při učení poskytovat premium uživateli chatbota, který mu bude moci vysvětlit, proč byla jeho odpověď ve cvičení špatná nebo mu podrobněji vysvětlit, co daný kód ve cvičení znamená a jak funguje.
+% Done
+Po tom, co uživatel odpoví v rámci cvičení, by mu měla aplikace poskytnout možnost si zobrazit vysvětlení dané odpovědi. Díky tomu bude moci získat podrobnější vysvětlení, proč byla jeho odpověď ve cvičení špatná nebo správná.
 
-% Review
+% Done
 \subsubsection{FP-15 Nahlašování problému při učení}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
+% Done
 Uživatel by měl mít při učení možnost u každého cvičení nebo vysvětlení látky nahlásit problém, který při dané aktivitě nastal. Při nahlašování by měl mít možnost zvolit o který typ problému z následujícího výběru se jedná.
 
-% Review
+% Done
 \begin{itemize}
     \item Uživatel považuje svou odpověď ve cvičení za správnou, i přes to, že ji aplikace označila jako špatnou.
     \item Uživatel považuje svou odpověď ve cvičení za špatnou, i přes to, že ji aplikace označila jako správnou.
@@ -296,10 +282,10 @@ Uživatel by měl mít při učení možnost u každého cvičení nebo vysvětl
     \item Nastala jiná chyba. V tomto případě by měl uživatel mít možnost sám uvést, o jakou chybu se jedná.
 \end{itemize}
 
-% Review
+% Done
 Uživatelé s rolí korektora by měli kromě předchozích možností nahlášení problému, mít také k dispozici následující možnosti.
 
-% Review
+% Done
 \begin{itemize}
     \item Vysvětlení látky je příliš dlouhé nebo příliš krátké.
     \item Cvičení je příliš těžké nebo příliš snadné.
@@ -307,11 +293,25 @@ Uživatelé s rolí korektora by měli kromě předchozích možností nahláše
     \item Struktura lekce by měla být upravena. Tato možnost se využije například pokud v lekci není dostatek cvičení nebo vysvětlení látky.
 \end{itemize}
 
-% Review
+% Done
 Korektoři by také měli mít možnost u každé odpovědi detailněji popsat vlastními slovy daný problém. 
 
-% Review
+% Done
 Nahlášení problému od uživatelů s rolí korektora by mělo být označeno tak, aby bylo možné jej rozlišit od nahlášení problému běžných uživatelů. Role korektora bude nastavována uživatelům mimo frontend této aplikace. Tuto roli využijí zejména lidé zodpovědní za tvorbu a korekci jednotlivých kurzů.
+
+% Done
+\subsubsection{FP-12 Statistiky o učení}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Done
+Aplikace by měla při učení a opakování uživatele nově sbírat data o tom, jak dlouho uživatel plnil jednotlivá cvičení, jak dlouho procházel vysvětlení látky a jakou úspěšnost měl při plnění jednotlivých cvičení. Tato data by měla být odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
+
+% Done
+Uživateli by dále měla na konci učení nebo opakování aplikace zobrazit přehled se statistikami. Na této stránce by měly být zobrazeny informace o tom, kolik času se uživatel učil, jakou měl úspěšnost při plnění cvičení, kolik nových konceptů se naučil nebo kolik konceptů si zopakoval a kolik bodů XP získal.
 
 % Review
 \subsubsection{FP-17 Stav energie}
