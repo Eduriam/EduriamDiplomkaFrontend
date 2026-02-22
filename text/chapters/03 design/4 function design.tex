@@ -267,6 +267,92 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace a zvolí možnost otevření studijního plánu. Aplikace mu zobrazí studijní plán, tedy seznam zapsaných kurzů a jejich aktuální režimy učení. U každého kurzu dále zobrazí možnost spustit učení se daného kurzu. Uživatel zvolí možnost učení se konkrétního kurzu a aplikace ho přesměruje na stránku učení, kde mu zobrazí látku z nadcházející lekce v rámci daného kurzu. \\
 \end{tabular}
 
+% Done
+\subsubsection{UC-18 Spuštění opakování po dokončení lekce}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Umožňuje uživateli po dokončení nové lekce ihned spustit opakování dříve naučené látky. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-post-lesson-review} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel dokončí učení a aplikace mu nabídne možnost spustit opakování. Uživatel opakování spustí, aplikace vybere vhodnou látku z kurzů ve studijním plánu v režimu učení nebo opakování a přesměruje uživatele na stránku opakování. \\
+  \textbf{Alternativní scénář 1:} & Uživatel po dokončení nové lekce opakování odmítne. Aplikace uživatele vrátí na stránku, ze které učení dané lekce spustil. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-19 Učení se lekce}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel spustí učení se dané lekce, splní jednotlivá cvičení a dokončí učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-structure}, \nameref{sec:fp-exercise-blocks}, \nameref{sec:fp-explanation-blocks} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel spustí lekci. Aplikace mu bude postupně zobrazovat bloky s vysvětlením látky a bloky cvičení. Uživatel projde všechny bloky s vysvětlením látky a splní správně všechna cvičení. Po dokončení posledního bloku aplikace zobrazí uživateli stránku se statistikami o učení. Uživatel zvolí možnost pokračovat a tím dokončí učení. \\
+  \textbf{Alternativní scénář 1:} & Uživatel v průběhu plnění lekce odpoví špatně. V takovém případě mu aplikace zobrazí možnost si zobrazit vysvětlení odpovědi a zkusit cvičení znovu. Uživatel si zobrazí vysvětlení odpovědi a vyplní znovu cvičení, tentokrát správně. \\
+  \textbf{Alternativní scénář 2:} & Uživatel v průběhu plnění lekce odpoví špatně. V takovém případě mu aplikace zobrazí možnost si zobrazit vysvětlení odpovědi a zkusit cvičení znovu. Uživatel zkusí cvičení ještě dvakrát a v obou případech odpoví špatně. Po třetí špatné odpovědi aplikace zobrazí uživateli možnost přeskočit cvičení a pokračovat v lekci. Nešťastný uživatel tuto možnost zvolí a aplikace mu zobrazí následující blok lekce. \\
+\end{tabular}
+
+% Write - zde vytvořit activity diagram učení
+
+% Done
+\subsubsection{UC-20 Opakování látky}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel spustí opakování, splní jednotlivá cvičení a dokončí opakování. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-post-lesson-review}, \nameref{sec:fp-learning-structure}, \nameref{sec:fp-exercise-blocks} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel spustí opakování a aplikace ho přesměruje na stránku opakování. Aplikace bude uživateli postupně zobrazovat bloky cvičení tak, aby si zopakoval vybranou látku. Uživatel postupně splní všechna cvičení. Po dokončení posledního cvičení aplikace zobrazí uživateli stránku se statistikami o opakování. Uživatel zvolí možnost pokračovat a tím dokončí opakování. \\
+  \textbf{Alternativní scénář 1:} & Uživatel odpoví na cvičení špatně. Aplikace zobrazí stejnou negativní zpětnou vazbu jako při učení a dané cvičení znovu zařadí do opakování, aby bylo uživateli během stejného průchodu zobrazeno ještě jednou. Uživatel následně odpoví na cvičení správně a pokračuje dalších cvičeních. \\
+\end{tabular}
+
+% Write - zde vytvořit activity diagram učení
+
+% Done
+\subsubsection{UC-21 Vyplnění cvičení pomocí editoru kódu}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživateli se v rámci průchodu lekcí zobrazí cvičení s editorem kódu. Uživatel použije editor kódu k úspěšnému vyplnění cvičení.  \\
+  \textbf{Požadavek:} & \nameref{sec:fp-code-editor} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel spustí lekci. Aplikace mu zobrazí cvičení s editorem kódu. Uživatel správně vyplní všechna cvičení v záložkách editoru a zvolí možnost zkontrolovat řešení. Aplikace zobrazí informaci, že byla odpověď správná, a ukáže uživateli výstup daného kódu, pokud je k dispozici. Uživatel zvolí možnost pokračovat a tím dokončí cvičení. \\
+  \textbf{Alternativní scénář 1:} & Uživatel při vyplňování cvičení odpoví špatně. V takovém případě aplikace nezobrazí výstup daného kódu a zobrazí pouze negativní zpětnou vazbu. Uživatel opraví svou odpověď a dokončí cvičení. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-22 Zobrazení vysvětlení odpovědi ve cvičení}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel v rámci učení nebo opakování vyplní cvičení a zvolí možnost vysvětlení, proč byla jeho odpověď správná nebo špatná. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-answer-explanation} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel v rámci učení nebo opakování vyplní cvičení a zvolí možnost zkontrolovat jeho řešení. Aplikace mu zobrazí možnost si zobrazit vysvětlení, proč byla jeho odpověď správná nebo špatná. Uživatel zvolí tuto možnost a zobrazí si tak vysvětlení odpovědi.\\
+\end{tabular}
+
+% Done
+\subsubsection{UC-23 Nahlášení problému při učení}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel nebo korektor nahlásí problém u cvičení nebo bloku vysvětlení látky. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-report-learning-issue} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel při učení nebo opakování vyplní cvičení a zvolí možnost nahlásit problém. Aplikace zobrazí formulář pro nahlášení problému. Uživatel zvolí typ problému, popíše slovy problém a odešle formulář. Aplikace přesměruje uživatele zpět na stránku se cvičením. \\
+  \textbf{Alternativní scénář 1:} & Korektor při nahlášení využije rozšířené typy problémů a provede nahlášení problému. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-24 Zobrazení statistik po dokončení učení nebo opakování}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Po dokončení učení nebo opakování jsou uživateli zobrazeny souhrnné statistiky o učení resp. opakování. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-stats} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel dokončí poslední blok učení nebo opakování. Aplikace zobrazí uživateli stránku se statistikami. \\
+\end{tabular}
 
 % Review
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}
