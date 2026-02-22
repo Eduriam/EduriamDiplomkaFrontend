@@ -214,6 +214,10 @@ U komponent, v nichž uživatel může psát celý kód, by měla aplikace umož
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
+% Přidat sem audio pro jednotlivá cvičení
+
+% Přidat sem kompletně explanation blocky
+
 % Write - napsat sem, že by měl uživatel mít možnost se přesouvat mezi již dokončenými cvičeními a stráknami s vysvětlením látky
 
 % Write - do use casů vytvořit diagram aktivit pro průchod učení
@@ -543,25 +547,25 @@ Pokud uživatel dokončí učení a jeho streak se zvýší na novou významnou 
 % Review
 Dále, pokud uživatel ztratí streak, tedy je mu resetován na 0 dní, měla by mu být tato informace oznámena po otevření aplikace.
 
-% Review
-\subsubsection{FP-31 Žebříček uživatelů}
+% Done
+\subsubsection{FP-31 Žebříček uživatelů}\label{sec:fp-leaderboard}
 
-% Review
-\label{sec:fp-leaderboard}
-
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Could have \\
 \end{tabular}
 
-% Review
-V aplikaci by měly být zavedeny tzv. ligy učení, které by měly fungovat následujícím způsobem. Začátkem každého týdne by měl být každý uživatel zařazen do skupiny s omezeným počtem uživatelů, kteří se nachází ve stejné lize, tedy získali předchozí týden podobné množství bodů XP. Tato skupina je reprezentována žebříčkem uživatelů, který je seřazen podle počtu XP, které získali v momentálním týdnu.
+% Done
+V aplikaci by měly být zavedeny žebříčky uživatelů, které by měly fungovat následujícím způsobem. Každý uživatel bude přiřazen do tzv. ligy učení. Každá liga učení bude reprezentovat, jak často se daný uživatel učí.
 
-% Review
-Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pokud se nacházel v žebříčku uživatelů na prvních několika pozicích. Pokud se uživatel nacházel v žebříčku na posledních několika pozicích, měl by být přesunut do nižší ligy. Pokud se uživatel nacházel v žebříčku mezi těmito pozicemi, měl by zůstat v aktuální lize.
+% Done
+Začátkem každého týdne by měl být každý uživatel zařazen do skupiny s omezeným počtem uživatelů, kteří se nachází ve stejné lize, tedy získali předchozí týden podobné množství bodů XP. V rámci této skupiny jsou uživatelé seřazeni podle počtu bodů XP, které získali v momentálním týdnu.
 
-% Review
-Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Duolingo, v nichž jsou podobné ligy implementovány.
+% Done
+Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pokud se nacházel v žebříčku uživatelů na prvních několika pozicích. Pokud se uživatel nacházel v žebříčku na posledních několika pozicích, měl by být přesunut do nižší ligy. Pokud se uživatel nacházel v žebříčku mezi těmito pozicemi, měl by zůstat v aktuální lize. Uživatel si bude moci kdykoliv zobrazit svoji pozici v žebříčku.
+
+% Done
+Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Sololearn, v nichž jsou podobné ligy implementovány.
 
 % Review
 \subsubsection{FP-32 Truhla s odměnou}
