@@ -271,19 +271,48 @@ V jednotlivých záložkách by mělo být možné uživateli zobrazovat násled
     \item Ukázka výstupu kódu v podobě tabulky
 \end{itemize}
 
-% Review
-\subsubsection{FP-13 Cvičení a komponenty pro výuku softwarového inženýrství} 
+% Done
+\subsubsection{FP-15 Bloky vysvětlení látky} 
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Review
-Aplikace se bude zaměřovat na výuku základů softwarového inženýrství, a proto bude obsahovat cvičení na různá témata z tohoto oboru. % Review - zde checknout, jak se píše čárka u a proto
+% Done
+V rámci učení by měly být zobrazovány bloky vysvětlení látky, které mají za cíl uživateli danou látku krátce a srozumitelně vysvětlit před tím, než začne plnit jednotlivá cvičení. Celé vysvětlení látky bude probíhat formou audio výkladu, doplněného o různé animace, vizualizace a další komponenty. Tyto komponenty budou sloužit jednak jako nástroj pro lepší porozumění látky a jednak jako způsob zachycení a udržení pozornosti uživatele během výkladu. Komponenty by tak, na rozdíl od komponent bloků cvičení, měly obsahovat i různé animace a přechody tak, aby byl výklad vizuálně poutavý.
 
 % Done
-\subsubsection{FP-14 Vysvětlení odpovědí ve cvičeních}
+V rámci bloků vysvětlení látky by mělo být možné uživateli zobrazovat následující komponenty.
+
+% Done 
+\begin{itemize}
+    \item Nadpis
+    \item Odstavec textu
+    \item Jednoduchá tabulka
+    \item Tabulka připomínající tabulku v databázi
+    \item Seznamy číslované a nečíslované
+    \item Obrázky ve formátech PNG, JPG, SVG a GIF
+    \item Diagramy definované pomocí jazyka Mermaid\footnote{Dostupné na: \href{https://mermaid.js.org/}{https://mermaid.js.org/}} s animovanými přechody mezi různými kroky upravování diagramu.
+    \item Ukázka kódu s animovanými přechody mezi různými kroky upravování kódu.
+    \item Ukázka terminálu s animovanými přechody mezi různými kroky zadávání příkazů do terminálů a vypisování jejich výstupů.
+    \item Ukázka webové stránky
+    \item Pozadí ve formě jednobarevného pozadí
+    \item Pozadí ve formě obrázku
+    \item Pozadí ve formě videa
+\end{itemize}
+
+% Done
+Výklad látky by mělo být možné ovládat následujícími způsoby. Uživatel by měl mít možnost výklad zastavit, přeskočit na libovolnou část výkladu a nebo výklad zrychlit. Po skončení výkladu by měl mít možnost výklad spustit znovu.
+
+% Done
+Jelikož se může stát, že uživatel nemá vždy možnost poslouchat audio výklad, měl by mít možnost si zvuk vypnout. V takovém případě by mu měly být zobrazeny titulky, které budou vysvětlovat látku místo audio výkladu.
+
+% Done
+Zásadní vlastností celého bloku vysvětlení látky je, že by měl být responzivní a mělo by tak být možné výklad jednoduše sledovat jak na malých, tak na velkých displejích. Dále by měl výklad brát v potaz světlý resp. tmavý režim aplikace a zobrazovat všechny komponenty v příslušném režimu. 
+
+% Done
+\subsubsection{FP-16 Vysvětlení odpovědí ve cvičeních}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -294,7 +323,7 @@ Aplikace se bude zaměřovat na výuku základů softwarového inženýrství, a
 Po tom, co uživatel odpoví v rámci cvičení, by mu měla aplikace poskytnout možnost si zobrazit vysvětlení dané odpovědi. Díky tomu bude moci získat podrobnější vysvětlení, proč byla jeho odpověď ve cvičení špatná nebo správná.
 
 % Done
-\subsubsection{FP-15 Nahlašování problému při učení}
+\subsubsection{FP-17 Nahlašování problému při učení}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -331,7 +360,7 @@ Korektoři by také měli mít možnost u každé odpovědi detailněji popsat v
 Nahlášení problému od uživatelů s rolí korektora by mělo být označeno tak, aby bylo možné jej rozlišit od nahlášení problému běžných uživatelů. Role korektora bude nastavována uživatelům mimo frontend této aplikace. Tuto roli využijí zejména lidé zodpovědní za tvorbu a korekci jednotlivých kurzů.
 
 % Done
-\subsubsection{FP-12 Statistiky o učení}
+\subsubsection{FP-18 Statistiky o učení}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
