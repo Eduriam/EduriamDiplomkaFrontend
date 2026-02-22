@@ -163,7 +163,66 @@ Tato hlavní stránka by měla být nastavena jako výchozí stránka aplikace, 
 Cílem této funkce je poskytnout uživateli co nejjednodušší způsob spuštění učení a využít tak princip návrhu uživatelského rozhraní \textit{microbreaks} \cite{Tidwell2020DesigningInterfaces}. Hlavní myšlenkou tohoto principu je přizpůsobit aplikaci tak, aby ji mohl uživatel použít kdykoliv, kdy má v průběhu dne jen pár minut volného času a získat tak hodnotu, kterou aplikace nabízí. Když uživatel například čeká chvíli na zastávce, může aplikaci na pár minut zapnout a využít tak efektivně svůj čas. Klíčovým prvkem tohoto principu je umožnit uživateli se ihned po spuštění aplikace přesunout k dané hodnotě, kterou aplikace nabízí. V případě této aplikace je tak snaha umožnit uživateli se ihned po spuštění aplikace přesunout k samotnému učení. Tento princip je využíván například aplikacemi sociálních sítí, které jsou pečlivě navrženy tak, aby je mohl uživatel kdykoliv v průběhu dne na pár minut zapnout a použít.
 
 % Review
-\subsubsection{FP-12 Cvičení a komponenty pro výuku softwarového inženýrství} 
+\subsubsection{FP-11 Opakování po dokončení lekce}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Review
+Zásadní funkcí této aplikace je poskytnout uživateli možnost si jednoduše opakovat již naučenou látku tak, aby ji nezapomněl. Po dokončení každé nové lekce by tak měla být uživateli nabídnuta možnost opakování již naučené látky. Uživatel bude moci opakování odmítnout a přesunout se tak na stránku ze které spustil učení nové lekce. Dále bude mít možnost spustit opakování.
+
+% Review
+Po spuštění opakování bude uživateli vybrána látka k zopakování. Tato látka by měla být vybrána z kurzů, které jsou ve studijním plánu buď v režimu učení, nebo v režimu opakování.
+
+% Review
+\subsubsection{FP-16 Statistiky o učení}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Could have \\
+\end{tabular}
+
+% Review
+Aplikace by měla při učení uživatele nově sbírat data o tom, jak dlouho uživatel prováděl jednotlivá cvičení nebo procházel vysvětlení látky. Tato data by měla být využita k tomu, aby se na konci učení uživateli zobrazila informace, jak dlouho se učil. 
+
+% Review
+Dále by měla být tato data odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
+
+% Review
+\subsubsection{FP-12 Nová struktura učení}
+
+% Review
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Přidat sem audio pro jednotlivá cvičení
+
+% Přidat sem kompletně explanation blocky
+
+% Write - napsat sem, že by měl uživatel mít možnost se přesouvat mezi již dokončenými cvičeními a stráknami s vysvětlením látky
+
+% Write - do use casů vytvořit diagram aktivit pro průchod učení
+
+% Review
+Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tento způsob výuky je inspirován analyzovanými aplikacemi Mimo a Duolingo, které podobnou formu výuky využívají.
+
+% Review - zde nakonec ověřit, jestli sedí typy komponentů 
+Při učení by aplikace měla uživateli vysvětlovat látku a zadávat cvičení pomocí audio nahrávky, která bude doplněna o další komponenty, které pomohou uživateli lépe porozumět dané látce. Díky tomu bude aplikace kombinovat přístup konkurenční aplikace Mimo, která využívá různé komponenty pro vysvětlení látky, a přístup konkurenční aplikace Scrimba, v níž je látka vyučována pomocí interaktivního prostředí s audio nahrávkou vysvětlující danou látku.
+
+% Review
+Aplikace by měla brát v potaz situaci, kdy uživatel nebude moci poslouchat audio a měla by uživateli umožnit se učit i bez něj.
+
+% Review
+Tato struktura učení se zásadně liší od struktury učení v původní aplikaci, kde probíraná látka nebyla uživateli při učení vysvětlena a učení nebylo doplněno o audio nahrávku vysvětlující danou látku.
+
+% Review
+Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. To bude třeba zohlednit při návrhu a implementaci nového způsobu učení.
+
+% Review
+\subsubsection{FP-13 Cvičení a komponenty pro výuku softwarového inženýrství} 
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -205,37 +264,6 @@ Při učení bude dále možné zobrazovat uživateli následující komponenty.
 
 % Review
 U komponent, v nichž uživatel může psát celý kód, by měla aplikace umožnit uživateli jednoduše zformátovat daný kód. Tato funkce vychází z analýzy konkurence Codecademy, která tuto funkci nabízí a může přispět k lepší uživatelské zkušenosti.
-
-% Review
-\subsubsection{FP-13 Nová struktura učení}
-
-% Review
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Must have \\
-\end{tabular}
-
-% Přidat sem audio pro jednotlivá cvičení
-
-% Přidat sem kompletně explanation blocky
-
-% Write - napsat sem, že by měl uživatel mít možnost se přesouvat mezi již dokončenými cvičeními a stráknami s vysvětlením látky
-
-% Write - do use casů vytvořit diagram aktivit pro průchod učení
-
-% Review
-Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tento způsob výuky je inspirován analyzovanými aplikacemi Mimo a Duolingo, které podobnou formu výuky využívají.
-
-% Review - zde nakonec ověřit, jestli sedí typy komponentů 
-Při učení by aplikace měla uživateli vysvětlovat látku a zadávat cvičení pomocí audio nahrávky, která bude doplněna o další komponenty, které pomohou uživateli lépe porozumět dané látce. Díky tomu bude aplikace kombinovat přístup konkurenční aplikace Mimo, která využívá různé komponenty pro vysvětlení látky, a přístup konkurenční aplikace Scrimba, v níž je látka vyučována pomocí interaktivního prostředí s audio nahrávkou vysvětlující danou látku.
-
-% Review
-Aplikace by měla brát v potaz situaci, kdy uživatel nebude moci poslouchat audio a měla by uživateli umožnit se učit i bez něj.
-
-% Review
-Tato struktura učení se zásadně liší od struktury učení v původní aplikaci, kde probíraná látka nebyla uživateli při učení vysvětlena a učení nebylo doplněno o audio nahrávku vysvětlující danou látku.
-
-% Review
-Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. To bude třeba zohlednit při návrhu a implementaci nového způsobu učení.
 
 % Review
 \subsubsection{FP-14 Chatbot}
@@ -284,20 +312,6 @@ Korektoři by také měli mít možnost u každé odpovědi detailněji popsat v
 
 % Review
 Nahlášení problému od uživatelů s rolí korektora by mělo být označeno tak, aby bylo možné jej rozlišit od nahlášení problému běžných uživatelů. Role korektora bude nastavována uživatelům mimo frontend této aplikace. Tuto roli využijí zejména lidé zodpovědní za tvorbu a korekci jednotlivých kurzů.
-
-% Review
-\subsubsection{FP-16 Statistiky o učení}
-
-% Review
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Could have \\
-\end{tabular}
-
-% Review
-Aplikace by měla při učení uživatele nově sbírat data o tom, jak dlouho uživatel prováděl jednotlivá cvičení nebo procházel vysvětlení látky. Tato data by měla být využita k tomu, aby se na konci učení uživateli zobrazila informace, jak dlouho se učil. 
-
-% Review
-Dále by měla být tato data odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
 
 % Review
 \subsubsection{FP-17 Stav energie}
@@ -534,7 +548,7 @@ Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupi
 Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné cvičení, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak i když některý den například zapomene se učit.
 
 % Review
-\subsubsection{FP-30 Oznámení o změně stavu streaku}
+\subsubsection{FP-30 Oznámení o změně stavu streaku} 
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
