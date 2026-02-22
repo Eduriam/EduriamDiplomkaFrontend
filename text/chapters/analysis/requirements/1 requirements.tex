@@ -176,36 +176,30 @@ Zásadní funkcí této aplikace je poskytnout uživateli možnost si jednoduše
 % Done
 Po spuštění opakování bude uživateli vybrána látka k zopakování. Tato látka by měla být vybrána z kurzů, které jsou ve studijním plánu buď v režimu učení, nebo v režimu opakování.
 
-% Review
-\subsubsection{FP-12 Nová struktura učení}
+% Done
+\subsubsection{FP-12 Nová struktura učení a opakování}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Přidat sem audio pro jednotlivá cvičení
-
-% Přidat sem kompletně explanation blocky
-
-% Write - napsat sem, že by měl uživatel mít možnost se přesouvat mezi již dokončenými cvičeními a stráknami s vysvětlením látky
-
 % Write - do use casů vytvořit diagram aktivit pro průchod učení
 
-% Review
-Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tento způsob výuky je inspirován analyzovanými aplikacemi Mimo a Duolingo, které podobnou formu výuky využívají.
+% Done
+Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Učení se tak bude skládat z různých bloků, přičemž některé budou zaměřené na vysvětlení látky a některé na procvičení dané látky. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tato data budou později využita pro doporučování látky k opakování.
 
-% Review - zde nakonec ověřit, jestli sedí typy komponentů 
-Při učení by aplikace měla uživateli vysvětlovat látku a zadávat cvičení pomocí audio nahrávky, která bude doplněna o další komponenty, které pomohou uživateli lépe porozumět dané látce. Díky tomu bude aplikace kombinovat přístup konkurenční aplikace Mimo, která využívá různé komponenty pro vysvětlení látky, a přístup konkurenční aplikace Scrimba, v níž je látka vyučována pomocí interaktivního prostředí s audio nahrávkou vysvětlující danou látku.
+% Done
+Při učení by měla aplikace uživateli vysvětlovat látku formou připomínající video s audio nahrávkou. V rámci cvičení by pak měla aplikace zobrazovat cvičení, která opět mohou být doplněna o audio nahrávku. Cvičení i vysvětlení látky budou doplněny o různé vizuální komponenty, které pomohou uživateli lépe porozumět dané látce. Učení tak bude kombinovat přístup konkurenční aplikace Mimo, která využívá různé komponenty pro vysvětlení látky, a přístup konkurenční aplikace Scrimba, v níž je látka vyučována pomocí interaktivního prostředí s audio nahrávkou vysvětlující danou látku.
 
-% Review
-Aplikace by měla brát v potaz situaci, kdy uživatel nebude moci poslouchat audio a měla by uživateli umožnit se učit i bez něj.
+% Done
+Uživatel by měl mít při učení možnost se vracet k již dokončeným blokům, tedy k dokončeným cvičením a k vysvětlením látky.
 
-% Review
-Tato struktura učení se zásadně liší od struktury učení v původní aplikaci, kde probíraná látka nebyla uživateli při učení vysvětlena a učení nebylo doplněno o audio nahrávku vysvětlující danou látku.
+% Done
+Tato struktura učení se zásadně liší od struktury učení v původní aplikaci, kde probíraná látka nebyla uživateli při učení vysvětlena, učení nebylo doplněno o žádné animace nebo audio nahrávky a uživatel neměl možnost se vracet k již dokončeným blokům.
 
-% Review
-Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. To bude třeba zohlednit při návrhu a implementaci nového způsobu učení.
+% Done
+Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. Proto by měla aplikace uživateli také zřetelněji poskytovat zpětnou vazbu při cvičeních.
 
 % Review
 \subsubsection{FP-13 Cvičení a komponenty pro výuku softwarového inženýrství} 
