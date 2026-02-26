@@ -282,7 +282,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 % Done
 \subsubsection{UC-19 Učení se lekce}
 
-% Done
+% Done ✅
 \begin{tabular}{lp{0.7\linewidth}}
   \textbf{Popis:} & Uživatel spustí učení se dané lekce, splní jednotlivá cvičení a dokončí učení. \\
   \textbf{Požadavek:} & \nameref{sec:fp-learning-structure}, \nameref{sec:fp-exercise-blocks}, \nameref{sec:fp-explanation-blocks} \\
@@ -304,6 +304,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel spustí opakování a aplikace ho přesměruje na stránku opakování. Aplikace bude uživateli postupně zobrazovat bloky cvičení tak, aby si zopakoval vybranou látku. Uživatel postupně splní všechna cvičení. Po dokončení posledního cvičení aplikace zobrazí uživateli stránku se statistikami o opakování. Uživatel zvolí možnost pokračovat a tím dokončí opakování. \\
   \textbf{Alternativní scénář 1:} & Uživatel odpoví na cvičení špatně. Aplikace zobrazí stejnou negativní zpětnou vazbu jako při učení a dané cvičení znovu zařadí do opakování, aby bylo uživateli během stejného průchodu zobrazeno ještě jednou. Uživatel následně odpoví na cvičení správně a pokračuje dalších cvičeních. \\
+  \textbf{Alternativní scénář 2:} & Uživatel odpoví na cvičení špatně. Aplikace zobrazí stejnou negativní zpětnou vazbu jako při učení. Uživatel zkusí cvičení ještě dvakrát a v obou případech odpoví špatně. Po třetí špatné odpovědi aplikace zobrazí uživateli možnost přeskočit cvičení a pokračovat v opakování. Uživatel zvolí tuto možnost. Aplikace mu dané cvičení již znovu zobrazovat nebude a zobrazí uživateli následující blok opakování. \\
 \end{tabular}
 
 % Write - zde vytvořit activity diagram učení
