@@ -341,7 +341,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Požadavek:} & \nameref{sec:fp-report-learning-issue} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel při učení nebo opakování vyplní cvičení a zvolí možnost nahlásit problém. Aplikace zobrazí formulář pro nahlášení problému. Uživatel zvolí typ problému, popíše slovy problém a odešle formulář. Aplikace přesměruje uživatele zpět na stránku se cvičením. \\
-  \textbf{Alternativní scénář 1:} & Uživatel při učení nebo opakování na stránce bloku vysvětlení látky zvolí možnost nahlásit problém. Aplikace zobrazí formulář pro nahlášení problému. Uživatel zvolí typ problému, popíše slovy problém a odešle formulář. Aplikace přesměruje uživatele zpět na stránku s blokem vysvětlení látky.
+  \textbf{Alternativní scénář 1:} & Uživatel při učení nebo opakování na stránce bloku vysvětlení látky zvolí možnost nahlásit problém. Aplikace zobrazí formulář pro nahlášení problému. Uživatel zvolí typ problému, popíše slovy problém a odešle formulář. Aplikace přesměruje uživatele zpět na stránku s blokem vysvětlení látky. \\
   \textbf{Alternativní scénář 2:} & Korektor při nahlášení využije rozšířené typy problémů a provede nahlášení problému. \\
 \end{tabular}
 
@@ -367,6 +367,29 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel si zobrazí žebříček. Aplikace zobrazí jeho aktuální ligu a pořadí uživatelů v dané skupině podle bodů XP získaných v aktuálním týdnu, včetně pozice daného uživatele. \\
   \textbf{Alternativní scénář 1:} & Uživatel se v aktuálním týdnu ještě neučil. Aplikace zobrazí informaci, že bude uživatel zařazen do ligy po dokončení libovolné lekce nebo opakování. \\
+\end{tabular}
+
+
+% Done
+\subsubsection{UC-26 Zobrazení stavu energie}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí jeho aktuální stav energie, který určuje, kolik učení nebo opakování může ještě v daný den spustit. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-energy-status} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel zvolí možnost zobrazení stavu energie. Aplikace zobrazí aktuální počet dostupných bodů energie pro daný den a také možnost odemknutí neomezeného množství energie. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-27 Spuštění učení nebo opakování s nedostatkem bodů energie}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel se z libovolného místa aplikace pokusí spustit učení nebo opakování, ale nemá dostatek bodů energie. Bude tak přesměrován na stránku s přehledem výhod premium účtu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-energy-status} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel, který již nemá žádné body energie, z libovolného místa aplikace spustí učení nebo opakování. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že může získat neomezené množství energie, pokud si zakoupí premium účet. \\
 \end{tabular}
 
 % Review
@@ -409,5 +432,6 @@ Feature: Vyhodnocení odpovědi ve cvičení
     \caption{Ukázka specifikace funkce pomocí jazyka Gherkin}
     \label{fig:feature-file-example}
 \end{listing}
+
 
 
