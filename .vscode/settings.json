@@ -230,5 +230,6 @@
     "colour",
     "defence"
   ],
-  "cSpell.enabled": true
+  "cSpell.enabled": true,
+  "chatgpt.openOnStartup": true
 }

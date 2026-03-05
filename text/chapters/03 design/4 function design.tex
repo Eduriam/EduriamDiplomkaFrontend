@@ -392,6 +392,18 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Hlavní scénář:} & Uživatel, který již nemá žádné body energie, z libovolného místa aplikace spustí učení nebo opakování. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že může získat neomezené množství energie, pokud si zakoupí premium účet. \\
 \end{tabular}
 
+% Done
+\subsubsection{UC-28 Nákup položky v obchodě}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel si na stránce obchodu zakoupí položku za virtuální měnu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-shop-unlock-items} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře obchod, vybere odemčenou položku a vybere možnost zakoupit položku. Aplikace odečte odpovídající množství virtuální měny a označí položku jako zakoupenou. \\
+  \textbf{Alternativní scénář 1:} & Uživatel vybere zamčenou položku. Aplikace zobrazí informaci, jaké podmínky musí uživatel splnit, aby položku odemknul a mohl ji zakoupit. \\
+\end{tabular}
+
 % Review
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}
 
@@ -432,6 +444,7 @@ Feature: Vyhodnocení odpovědi ve cvičení
     \caption{Ukázka specifikace funkce pomocí jazyka Gherkin}
     \label{fig:feature-file-example}
 \end{listing}
+
 
 
 
