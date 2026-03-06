@@ -532,26 +532,25 @@ V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenos
 % Review
 Aplikace by měla umožnit uživateli spustit zkušební verzi předplatného na určitou dobu zdarma. Tuto možnost by měli mít pouze uživatelé, kteří dříve zkušební verzi nikdy nevyužili.
 
-% Review
+% Done
 \subsubsection{FP-26 Přizpůsobení avatara uživatele}
 
 % Done
 \label{sec:fp-avatar-customization}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
-Uživatel by měl mít možnost si přizpůsobit svého avatara, neboli postavu na profilovém obrázku, pomocí položek, které zakoupil v obchodě za virtuální měnu. V rámci tohoto požadavku bude také třeba upravit vzhled profilové stránky uživatele, aby byl profilový obrázek viditelnější. Pro přizpůsobení avatara by aplikace měla uživateli poskytnout samostatnou stránku, kde může změny provádět. 
+% Done
+Uživatel by měl mít možnost si přizpůsobit svého avatara, tedy postavu na profilovém obrázku, pomocí položek, které zakoupil v obchodě za virtuální měnu. To se liší od původní aplikace, kde měl uživatel pouze možnost měnit obrázek na svém profilu.
 
-% Review - zde ještě rozhodnout, které položky chceme a které ne. Tehle seznam byl sepsaný podle toho, co má Duolingo, ale v něčem bychom se mohli třeba přiblížit tomu, jak to má třeba Habitica nebo Eatventure
+% Done
+Uživatel by měl mít možnost si u svého avatara přizpůsobit barvu pleti, oči, barvu očí, výraz v obličeji, vlasy, barvu vlasů, doplňky, barvu brýlí, vousy, barvu vousů, pokrývku hlavy, oblečení a barvu pozadí profilového obrázku.
 
-Uživatel by měl mít možnost si u avatara přizpůsobit barvu pleti, velikost těla, obličej, barvu očí, vlasy, barvu vlasů, doplňky, barvu brýlí, vousy, barvu vousů, pokrývku hlavy, oblečení, barvu oblečení a barvu pozadí profilového obrázku.
-
-% Review - zde ještě případně přepsat, podle toho, jestli budu dělat analýzu gamifikace
-Tento požadavek vychází zejména z analýzy forem gamifikace a také analýzy konkurenční aplikace Duolingo, která podobnou funkci přizpůsobení si avatara uživatele nabízí.
+% Done
+Tento požadavek vychází z principů gamifikace, konkrétně z principu vlastnictví \cite{Chou2019ActionableGamification}. Tento princip říká, že uživatelé mohou být více motivování, pokud mají pocit, že v rámci aplikace něco vlastní. Příkladem toho je právě přizpůsobování avatara, díky kterému si uživatelé mohou s postavou vytvořit pouto a zvýšit tak svoji motivaci pro používání aplikace. Přizpůsobování avatara tak může mít za následek častější a pravidelnější používání aplikace \cite{Birk2018CombatingAttrition}. Tento princip například využívá i velice známá vzdělávací aplikace Duolingo\footnote{Dostupné na: \href{https://www.duolingo.com/}{https://www.duolingo.com/}}, která podobnou funkci přizpůsobení avatara uživatelům nabízí.
 
 % Done
 \subsubsection{FP-27 Rozšíření obchodu a odemykání položek}\label{sec:fp-shop-unlock-items}
@@ -570,26 +569,24 @@ Dále by v obchodu měla být zavedena nová funkce odemykání položek. Někte
 % Done
 U zamčených položek by měl uživatel mít možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemknul.
 
-% Review
+% Done
 \subsubsection{FP-28 Uživatelský profil}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
-V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje základní informace o daném uživateli. Po zavedení nových funkcí do aplikace je třeba tuto stránku aktualizovat tak, aby kromě již zobrazovaných informací o uživateli přehledně zobrazovala i následující informace.
+% Done
+V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje základní informace o daném uživateli. Po zavedení nových funkcí do aplikace je třeba tuto stránku aktualizovat  a upravit její vzhled tak, aby kromě již zobrazovaných informací o uživateli přehledně zobrazovala i následující informace.
 
-% Review
+% Done
 \begin{itemize}
-    \item Avatar uživatele, popsaný v požadavku \nameref{sec:fp-avatar-customization}.
-    \item Liga, ve které se uživatel nachází. Popis lig je popsán v požadavku \nameref{sec:fp-leaderboard}.
-    \item Kurzy, které má uživatel zapsané a přehled, jaké úrovně v nich uživatel dosáhl.
+    \item Avatar uživatele, kterého si bude uživatel moci přizpůsobit dle požadavku \nameref{sec:fp-avatar-customization}.
+    \item Liga, ve které se uživatel nachází, podle požadavku \nameref{sec:fp-leaderboard}.
+    \item Krátký seznam zapsaných kurzů uživatele s možností zobrazení kompletního seznamu zapsaných kurzů. Společně s kurzy by měl být zobrazen i pokrok uživatele v rámci těchto kurzů.
+    \item Krátký seznam ocenění uživatele s možností zobrazení kompletního seznamu ocenění.
 \end{itemize}
-
-% Review
-Z důvodu přidání nových informací bude třeba změnit vzhled celé profilové stránky uživatele.
 
 % Review
 \subsubsection{FP-29 Zmrazení streaku}
