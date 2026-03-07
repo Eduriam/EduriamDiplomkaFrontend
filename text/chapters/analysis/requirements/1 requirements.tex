@@ -399,7 +399,7 @@ Tento požadavek vychází z analýzy konkurence, kde většina aplikací obsahu
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
+    \textbf{Priorita:} & Could have \\
 \end{tabular}
 
 % Review
@@ -408,32 +408,37 @@ Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí
 % Review
 Tento požadavek vychází z analýzy konkurence, kde většina konkurenčních aplikací tuto možnost nabízí.
 
-% Review
-\subsubsection{FP-19 Zpřehlednění navigace v aplikaci}
+% Done
+\subsubsection{FP-19 Stránka nastavení}\label{sec:fp-settings-page}
 
-% Review
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+\end{tabular}
+
+% Done
+Původní aplikace obsahovala velice jednoduchou stránku nastavení, která umožňovala uživateli nastavit pouze několik základních funkcí. Jelikož bude do aplikace přidána řada nových funkcí, bude nutné tuto stránku zásadně změnit a rozšířit tak, aby umožňovala uživateli přehledně nastavovat potřebné funkce. Stránka nastavení by tak měla poskytovat uživateli následující možnosti.
+
+% Done
+\begin{itemize}
+    \item Nastavení účtu uživatele, tedy uživatelského jména, jména, emailu, hesla a avatara.
+    \item Nastavení režimu vzhledu aplikace dle požadavku \nameref{sec:fp-dark-mode}.
+    \item Nastavení notifikací, tedy které notifikace uživatel chce dostávat a které ne.
+    \item Odhlášení se ze zapsaného kurzu.
+    \item Zobrazení základní nápovědy v aplikaci.
+    \item Nahlášení problému nebo chyby v aplikaci.
+    \item Zobrazení podmínek a dalších právních informací o používání aplikace.
+\end{itemize}
+
+% Done
+\subsubsection{FP-20 Tmavý režim}\label{sec:fp-dark-mode}
+
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
-Aplikace by měla poskytovat uživateli přehlednější a jednodušší způsob navigace mezi jednotlivými stránkami. Z výsledků uživatelského testování v mé bakalářské práci \cite{Jenicek2024BachelorThesis} zabývající se stávající aplikací vyplynulo, že mají uživatelé problém s navigací mezi jednotlivými stránkami aplikace, zejména mezi jednotlivými úrovněmi mapy učení v daném kurzu. Dále, také z důvodu přidání nových stránek do aplikace, bude třeba zajistit, aby navigační prvky v aplikaci byly pro uživatel přehledné a snadné na používání.
-
-% Review
-Změnu navigace bude třeba provést zejména v hlavní navigační liště, bočním navigačním panelu a stránkou sloužící k přepínání mezi jednotlivými kurzy.
-
-% Review
-Cílem této změny je zpřehlednit aplikaci a zjednodušit uživateli navigaci mezi jednotlivými stránkami.
-
-% Review
-\subsubsection{FP-20 Tmavý režim}
-
-% Review
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
-\end{tabular}
-
-% Review
+% Done
 Rozhraní aplikace by mělo být dostupné ve dvou režimech, ve světlém a tmavém. Uživatel by měl mít možnost v nastavení zvolit, zda chce používat světlý režim, tmavý režim, nebo režim dle systémového nastavení. Rozhraní aplikace by se pak mělo zobrazovat uživateli v tomto režimu.
 
 % Review
@@ -589,36 +594,43 @@ V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje
     \item Krátký seznam ocenění uživatele s možností zobrazení kompletního seznamu ocenění.
 \end{itemize}
 
-% Review
-\subsubsection{FP-29 Zmrazení streaku}
+% Done
+\subsubsection{FP-29 Zmrazení streaku}\label{sec:fp-streak-freeze}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
-Aplikace uživateli zobrazuje tzv. streak, neboli skóre, které reprezentuje počet dní v řadě, v nichž uživatel splnil alespoň jedno učení.
+% Done
+Aplikace uživateli zobrazuje tzv. streak, neboli skóre, které reprezentuje počet dní v řadě, v nichž uživatel splnil alespoň jedno učení nebo opakování.
 
-% Review
-Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupit do zásoby několik položek tzv. zmrazení streaku.
+% Done
+Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupit do zásoby několik položek tzv. zmrazení streaku. Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné učení nebo opakování, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak, i když se některý den zapomene učit.
 
-% Review
-Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné cvičení, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak i když některý den například zapomene se učit.
+% Done
+\subsubsection{FP-30 Rozšířená oznámení v aplikaci} 
 
-% Review
-\subsubsection{FP-30 Oznámení o změně stavu streaku} 
-
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
-Pokud uživatel dokončí učení a jeho streak se zvýší na novou významnou hranici, například 100 dní, měla by mu aplikace zobrazit oznámení o dosažení této hranice.
+% Done
+V původní aplikaci existoval systém, který umožňoval uživateli zobrazovat oznámení při otevření hlavní stránky aplikace. Tento jednoduchý systém z důvodu přidání nových funkcí bude třeba rozšířit tak, aby uživateli oznámil, pokud v aplikaci nastaly následující události.
 
 % Review
-Dále, pokud uživatel ztratí streak, tedy je mu resetován na 0 dní, měla by mu být tato informace oznámena po otevření aplikace.
+\begin{itemize}
+    \item Pokud aplikace automaticky použila zmrazení streaku z požadavku \nameref{sec:fp-streak-freeze}.
+    \item Pokud aplikace resetovala streak uživatele.
+    \item Pokud uživatel dosáhl nové významné hranice streaku, například 100 dní.
+    \item Pokud byl uživatel přesunut do vyšší ligy z požadavku \nameref{sec:fp-leaderboard}.
+    \item Pokud byl uživatel přesunut do nižší ligy z požadavku \nameref{sec:fp-leaderboard}.
+    \item Pokud uživatel dosáhl nového úspěchu.
+    \item Pokud uživatel získal truhlu s odměnou z požadavku \nameref{sec:fp-treasure-chest}.
+    \item Pokud uživatel nemá zapnuté notifikace z požadavku \nameref{sec:fp-push-notifications}.
+    \item Pokud by se uživateli měla zobrazit reklama z požadavku \nameref{sec:fp-advertisement}.
+\end{itemize}
 
 % Done
 \subsubsection{FP-31 Žebříček uživatelů}\label{sec:fp-leaderboard}
@@ -748,6 +760,20 @@ Základní komponenty používané při implementaci by dále měly být extraho
 Tato knihovna komponentů by měla stavět na již existujících komponentech a měla by využívat již zavedené technologie, tedy knihovny React, TypeScript, Storybook a Material UI.
 
 % Write - přidat sem požadavek pro error handling podle standardu RFC 9457
+
+% Done
+\subsubsection{NP-2 Zpřehlednění navigace v aplikaci}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Done
+Aplikace by měla poskytovat uživateli přehlednější a jednodušší způsob navigace mezi jednotlivými stránkami. Z výsledků uživatelského testování v mé bakalářské práci \cite{Jenicek2024BachelorThesis}, která se zabývala původní aplikací, vyplynulo, že mají uživatelé problém s navigací mezi jednotlivými stránkami aplikace, zejména mezi jednotlivými sekcemi v daném kurzu. Jelikož do aplikace bude také přidána řada nových funkcí, bude třeba aktualizovat navigaci tak, aby uživatel se uživatel snadno orientoval v aplikaci a aby mohl snadno využívat všechny dostupné funkce.
+
+% Done
+Změna navigace se bude týkat zejména hlavní navigační lišty, bočního navigačního panelu a stránky sloužící k přepínání mezi jednotlivými kurzy.
 
 % Review
 \subsubsection{NP-2 Aktualizace kódu aplikace}
