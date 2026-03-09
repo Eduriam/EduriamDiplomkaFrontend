@@ -462,6 +462,40 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Hlavní scénář:} & Uživatel otevře stránku nastavení a změní jednu nebo více preferencí. Ihned po úpravě dané preference aplikace změnu automaticky uloží. \\
 \end{tabular}
 
+% Done
+\subsubsection{UC-34 Zobrazení nových oznámení na hlavní stránce}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel otevře hlavní stránku aplikace a aplikace mu zobrazí nová oznámení o důležitých událostech v aplikaci. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-extended-notifications} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace. Aplikace mu zobrazí nová oznámení na základě událostí, které v aplikaci nastaly. Uživatel si přečte oznámení a zvolí možnost pokračovat na hlavní stránku aplikace. Aplikace ho přesměruje na hlavní stránku. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-35 Zobrazení reklamy po ukončení učení nebo opakování}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Po ukončení učení nebo opakování aplikace zobrazí uživateli reklamu podle typu jeho zařízení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-advertisement} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel dokončí nebo předčasně ukončí učení či opakování. Aplikace uživateli zobrazí reklamu v závislosti na typu jeho zařízení. Uživatel zhlédne reklamu a zvolí možnost pokračovat. Aplikace ho přesměruje na následující stránku. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-36 Otevření truhly s odměnou po dokončení učení}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel po dokončení učení otevře truhlu s odměnou. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-treasure-chest}, \nameref{sec:fp-advertisement} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Po dokončení učení nebo opakování aplikace zobrazí uživateli stránku s truhlou, která se sama otevře. Aplikace zobrazí uživateli množství obdržené virtuální měny. Uživatel zvolí možnost pokračovat. Aplikace ho přesune na následující stránku. \\
+  \textbf{Alternativní scénář 1:} & Po otevření truhly uživatel zvolí možnost získat dvojnásobek odměny. Aplikace zobrazí uživateli reklamu. Uživatel reklamu zhlédne. Aplikace po jejím úspěšném přehrání zobrazí uživateli informaci, že získal dvojnásobek odměny. Uživatel zvolí možnost pokračovat. Aplikace přesune uživatele na následující stránku. \\
+\end{tabular}
+
 % Review
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}
 
