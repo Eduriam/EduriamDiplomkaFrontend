@@ -463,6 +463,8 @@ Aplikace by měla být schopna uživateli posílat push notifikace. Tyto notifik
     \item Pokud se blíží konec týdne a uživateli hrozí propadnutí do nižší ligy.
 \end{itemize}
 
+% Write- zde nezapomenout naimplementovat tohle: Pokud uživatel nemá zapnuté notifikace z požadavku \nameref{sec:fp-push-notifications}. Už to mám zahrnuté v požadavku pro in-app ozámení, ale neimplementoval jsem zatím tu mechaniku toho kdy se do Notices přidá toto oznámení. 
+
 % Review
 V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace.
 
@@ -508,6 +510,7 @@ Dále by aplikace měla uživateli v pravidelných intervalech zobrazovat reklam
 % Review
 Tento požadavek vychází z analýzy konkurenčních aplikaci, kde většina aplikací zobrazuje reklamy v průběhu používání aplikace a zobrazuje reklamy na premium verzi aplikace.
 
+% Review
 \subsubsection{FP-24 Nový systém předplatného}
 
 % Review
@@ -527,6 +530,7 @@ Ve stávající aplikaci má uživatel možnost si zaplatit předplatné a tím 
 % Review
 V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenost a informovanost uživatelů, které funkce jsou dostupné v premium verzi aplikace. Pokud uživatel například chce využít funkci, která je dostupná pouze uživatelům s předplatným, měla by mu být zobrazena stránka, která ho bude informovat, že je daná funkce dostupná pouze v premium verzi aplikace.
 
+% Review
 \subsubsection{FP-25 Zkušební verze předplatného}
 
 % Review
@@ -619,7 +623,7 @@ Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupi
 % Done
 V původní aplikaci existoval systém, který umožňoval uživateli zobrazovat oznámení při otevření hlavní stránky aplikace. Tento jednoduchý systém z důvodu přidání nových funkcí bude třeba rozšířit tak, aby uživateli oznámil, pokud v aplikaci nastaly následující události.
 
-% Review
+% Done
 \begin{itemize}
     \item Pokud aplikace automaticky použila zmrazení streaku z požadavku \nameref{sec:fp-streak-freeze}.
     \item Pokud aplikace resetovala streak uživatele.
@@ -631,6 +635,20 @@ V původní aplikaci existoval systém, který umožňoval uživateli zobrazovat
     \item Pokud uživatel nemá zapnuté notifikace z požadavku \nameref{sec:fp-push-notifications}.
     \item Pokud by se uživateli měla zobrazit reklama z požadavku \nameref{sec:fp-advertisement}.
 \end{itemize}
+
+% Done
+\subsubsection{FP-32 Truhla s odměnou}\label{sec:fp-treasure-chest}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Should have \\
+\end{tabular}
+
+% Done
+Po dokončení učení by se uživateli měla zobrazit stránka s truhlou, kterou bude moci uživatel otevřít. Po otevření truhly by měl uživatel získat náhodné množství virtuální měny, jako odměnu za jeho učení. Virtuální měnu bude moci následně využít k nákupu položek v obchodě dle požadavku \nameref{sec:fp-shop-unlock-items}.
+
+% Done
+Po otevření truhly by měla být uživateli nabídnuta možnost získat dvojnásobek této odměny, pokud zhlédne reklamu.
 
 % Done
 \subsubsection{FP-31 Žebříček uživatelů}\label{sec:fp-leaderboard}
@@ -651,22 +669,6 @@ Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pok
 
 % Done
 Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Sololearn, v nichž jsou podobné ligy implementovány.
-
-% Review
-\subsubsection{FP-32 Truhla s odměnou}
-
-% Review
-\label{sec:fp-treasure-chest}
-
-% Review
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
-\end{tabular}
-
-% Review
-Po dokončení učení by uživateli měla být zobrazena stránka s truhlou, kterou bude moci uživatel otevřít. Po otevření truhly by měl uživatel získat náhodné množství virtuální měny, jako odměnu za jeho učení. Uživateli by následně mělo být nabídnuto, že může získat dvojnásobek této odměny, pokud zhlédne reklamu.
-
-% Review - napsat, že tento požadavek vychází z analýzy gamifikace, pokud jsem jí prováděl - nebo jinak odůvodnit existenci tohoto požadavku
 
 % Review
 \subsubsection{FP-34 Sdílení pokroku mezi uživateli}
