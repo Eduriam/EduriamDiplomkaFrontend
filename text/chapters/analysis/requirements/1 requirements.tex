@@ -667,28 +667,26 @@ Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pok
 % Done
 Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Sololearn, v nichž jsou podobné ligy implementovány.
 
-% Review
-\subsubsection{FP-34 Sdílení pokroku mezi uživateli}
+% Done
+\subsubsection{FP-34 Sdílení pokroku mezi uživateli}\label{sec:fp-progress-sharing}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
-V aplikaci existuje základní funkce pro sdílení pokroku mezi uživateli. Tato funkce je ovšem příliš jednoduchá a s implementací nových funkcí je třeba ji přizpůsobit.
+% Done
+V aplikaci existuje základní funkce pro sdílení pokroku mezi uživateli. V rámci této funkce si může uživatel zobrazit stránku se zprávami o pokroku ostatních uživatelů, které daný uživatel sleduje. Uživatel následně může reagovat na tyto zprávy pomocí emotikonů. Tato funkce je ovšem příliš jednoduchá a je třeba ji přizpůsobit novým funkcím aplikace.
 
-% Review
-Aplikace by měla být přizpůsobena na sdílení následujících zpráv mezi uživateli.
+% Done
+Nově by stránka měla zobrazovat zprávy o následujících událostech týkajících se pokroku sledovaných uživatelů.
 
-% V rámci tohoto požadavku by taky měl být odstraněn infinite scroll. Místo toho by měla aplikace jednoduše posty za posledních 7 dní a další nezobrazovat.
-
-% Review - zde vymyslet všechny další cases
+% Done
 \begin{itemize}
-    \item Když uživatel dosáhne určitého streaku.
-    \item Když uživatel skončí na předních příčkách v lize.
-    \item Když uživatel dosáhne určité úrovně v kurzu.
-    \item Když uživatel dosáhne určitého ocenění.
+    \item Zpráva o tom, že uživatel dosáhl významné hranice denní řady učení.
+    \item Zpráva o tom, že uživatel získal určité ocenění.
+    \item Zpráva o tom, že uživatel postoupil do vyšší ligy učení.
+    \item Zpráva o tom, že uživatel dokončil kurz.
 \end{itemize}
 
 % Write - tohle možná je nefunkční požadavek?
