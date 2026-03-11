@@ -527,16 +527,24 @@ V původní aplikaci měl uživatel možnost si zaplatit předplatné a tím zí
 % Done
 V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenost a informovanost uživatelů, které funkce jsou dostupné v premium verzi aplikace. Pokud uživatel například chce využít funkci, která je dostupná pouze uživatelům s předplatným, měla by mu být zobrazena stránka, která ho bude informovat, že je daná funkce dostupná pouze v premium verzi aplikace.
 
-% Review
+% Done
 \subsubsection{FP-25 Zkušební verze předplatného}
 
-% Review
+% Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
+% Write - přidat free trial oznámení do extended-notifications
+
+% Done
+Aplikace by měla umožnit uživateli spustit zkušební verzi předplatného na určitou dobu zdarma. Tuto možnost by měli mít pouze uživatelé bez premium účtu, kteří zkušební verzi v posledním roce nevyužili.
+
 % Review
-Aplikace by měla umožnit uživateli spustit zkušební verzi předplatného na určitou dobu zdarma. Tuto možnost by měli mít pouze uživatelé, kteří dříve zkušební verzi nikdy nevyužili.
+Spuštění zkušební verze by mělo probíhat tak, že aplikace uživateli vysvětlí, jak zkušební doba funguje, uživatel následně zadá své platební údaje a aplikace mu spustí zkušební verzi premium účtu na určitou dobu. Několik dní před koncem zkušební doby pak aplikace oznámí uživateli, že mu bude končit zkušební doba premium účtu. Toto oznámení bude zobrazeno jednak jako oznámení přímo v aplikaci podle požadavku \nameref{sec:fp-extended-notifications} a jednak jako oznámení pomocí e-mailu. Uživatel se bude moci kdykoliv během zkušební doby od předplatného odhlásit. Pokud tak neučiní do konce zkušební doby, bude mu automaticky spuštěno plnohodnotné předplatné.
+
+% Done
+Součástí této funkce by mělo být také pravidelné nabízení zkušební verze uživatelům, kteří zkušební dobu v posledním roce nevyužili, pomocí rozšířených oznámení popsaných v požadavku \nameref{sec:fp-extended-notifications}.
 
 % Done
 \subsubsection{FP-26 Přizpůsobení avatara uživatele}
