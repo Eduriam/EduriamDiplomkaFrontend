@@ -508,6 +508,32 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Alternativní scénář 1:} & Uživatel otevře stránku s novinkami, ale aplikace nenalezne žádné nové zprávy o sledovaných uživatelích. Aplikace zobrazí informaci, že momentálně nejsou dostupné nové zprávy o pokroku. \\
 \end{tabular}
 
+% Done
+\subsubsection{UC-38 Registrace pomocí účtu Google}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Nepřihlášený uživatel se zaregistruje do aplikace pomocí účtu Google. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-google-auth} \\
+  \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
+  \textbf{Hlavní scénář:} & Nepřihlášený uživatel na stránce registrace zvolí možnost registrace pomocí účtu Google. Aplikace přesměruje uživatele na stránku, kde ověří svoji totožnost pomocí účtu Google. Po úspěšném ověření aplikace vytvoří nový účet, uživatele přihlásí a přesměruje ho na úvodní dotazník. \\
+  \textbf{Alternativní scénář 1:} & Nepřihlášený uživatel zahájí registraci pomocí účtu Google, přičemž účet se stejnou e-mailovou adresou již v aplikaci existuje. Aplikace registraci neprovede, oznámí uživateli chybovou hlášku a nabídne uživateli přihlášení k existujícímu účtu. \\ % Tady nevím, jestli by to šlo, ale úplně ideálně by to uživatele rovnou přihlásilo
+  \textbf{Alternativní scénář 2:} & Nepřihlášený uživatel při ověření přes Google zruší registraci. Aplikace ho přesměruje zpět na stránku registrace a zobrazí informaci, že registrace nebyla dokončena. \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-39 Přihlášení pomocí účtu Google}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Nepřihlášený uživatel se přihlásí do aplikace pomocí svého účtu Google. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-google-auth} \\
+  \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
+  \textbf{Hlavní scénář:} & Nepřihlášený uživatel na stránce přihlášení zvolí možnost přihlásit se pomocí účtu Google. Aplikace přesměruje uživatele na stránku, kde ověří svoji totožnost pomocí účtu Google. Po úspěšném ověření v Google účtu aplikace uživatele přihlásí a přesměruje ho na hlavní stránku aplikace. \\
+  \textbf{Alternativní scénář 1:} & Nepřihlášený uživatel zvolí přihlášení pomocí účtu Google, přičemž v aplikaci neexistuje účet propojený s daným Google účtem. Aplikace přihlášení neprovede, oznámí uživateli chybovou hlášku a nabídne uživateli registraci pomocí Google účtu. \\ % Tady nevím, jestli by to šlo, ale úplně ideálně by to uživatele rovnou zaregistrovalo
+  \textbf{Alternativní scénář 2:} & Nepřihlášený uživatel při ověření přes Google zruší přihlášení nebo nepotvrdí souhlas. Aplikace ho vrátí na stránku přihlášení a zobrazí informaci, že přihlášení nebylo dokončeno. \\
+\end{tabular}
+
 % Review
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}
 
