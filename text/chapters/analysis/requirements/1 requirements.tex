@@ -528,20 +528,24 @@ V původní aplikaci měl uživatel možnost si zaplatit předplatné a tím zí
 V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenost a informovanost uživatelů, které funkce jsou dostupné v premium verzi aplikace. Pokud uživatel například chce využít funkci, která je dostupná pouze uživatelům s předplatným, měla by mu být zobrazena stránka, která ho bude informovat, že je daná funkce dostupná pouze v premium verzi aplikace.
 
 % Done
-\subsubsection{FP-25 Zkušební verze předplatného}
+\subsubsection{FP-25 Zkušební verze předplatného}\label{sec:fp-free-trial}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Write - přidat free trial oznámení do extended-notifications
-
 % Done
 Aplikace by měla umožnit uživateli spustit zkušební verzi předplatného na určitou dobu zdarma. Tuto možnost by měli mít pouze uživatelé bez premium účtu, kteří zkušební verzi v posledním roce nevyužili.
 
-% Review
-Spuštění zkušební verze by mělo probíhat tak, že aplikace uživateli vysvětlí, jak zkušební doba funguje, uživatel následně zadá své platební údaje a aplikace mu spustí zkušební verzi premium účtu na určitou dobu. Několik dní před koncem zkušební doby pak aplikace oznámí uživateli, že mu bude končit zkušební doba premium účtu. Toto oznámení bude zobrazeno jednak jako oznámení přímo v aplikaci podle požadavku \nameref{sec:fp-extended-notifications} a jednak jako oznámení pomocí e-mailu. Uživatel se bude moci kdykoliv během zkušební doby od předplatného odhlásit. Pokud tak neučiní do konce zkušební doby, bude mu automaticky spuštěno plnohodnotné předplatné.
+% Done
+Pro spuštění zkušební verze premium účtu bude po uživateli vyžadováno, aby zadal své platební údaje. Před zadáním údajů by mělo být uživateli vysvětleno, jak zkušební doba funguje.
+
+% Done
+Několik dní před koncem zkušební doby by mělo být uživateli odesláno oznámení, že bude zkušební doba končit. Toto oznámení bude zobrazeno jednak jako oznámení přímo v aplikaci podle požadavku \nameref{sec:fp-extended-notifications} a jednak jako oznámení ve formě e-mailu.
+
+% Done
+Uživatel se bude moci kdykoliv během zkušební doby od předplatného odhlásit. Pokud tak neučiní do konce zkušební doby, bude mu automaticky spuštěno plnohodnotné předplatné.
 
 % Done
 Součástí této funkce by mělo být také pravidelné nabízení zkušební verze uživatelům, kteří zkušební dobu v posledním roce nevyužili, pomocí rozšířených oznámení popsaných v požadavku \nameref{sec:fp-extended-notifications}.
@@ -639,6 +643,8 @@ V původní aplikaci existoval systém, který umožňoval uživateli zobrazovat
     \item Pokud uživatel získal truhlu s odměnou z požadavku \nameref{sec:fp-treasure-chest}.
     \item Pokud uživatel nemá zapnuté notifikace z požadavku \nameref{sec:fp-push-notifications}.
     \item Pokud by se uživateli měla zobrazit reklama z požadavku \nameref{sec:fp-advertisement}.
+    \item Pokud uživatel bez premium účtu ještě nevyzkoušel za dané období zkušební verzi předplatného z požadavku \nameref{sec:fp-free-trial}.
+    \item Pokud uživateli bude za několik dní končit zkušební verze předplatného z požadavku \nameref{sec:fp-free-trial}.
 \end{itemize}
 
 % Done

@@ -540,6 +540,29 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
   \textbf{Alternativní scénář 2:} & Nepřihlášený uživatel při ověření přes Google zruší přihlášení nebo nepotvrdí souhlas. Aplikace ho vrátí na stránku přihlášení a zobrazí informaci, že přihlášení nebylo dokončeno. \\
 \end{tabular}
 
+% Done
+\subsubsection{UC-40 Aktivace zkušební verze předplatného}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel bez aktivního premium účtu aktivuje zkušební verzi předplatného. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-free-trial} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace. Aplikace mu zobrazí oznámení o dostupné zkušební verzi předplatného. Uživatel zvolí možnost vyzkoušet předplatné. Aplikace zobrazí stránku s informací, že bude uživateli zasláno oznámení dva dny před koncem zkušební doby. Uživatel zvolí možnost spustit zkušební dobu. Aplikace zobrazí uživateli formulář pro vyplnění platebních údajů. Uživatel vyplní platební údaje a potvrdí spuštění zkušební doby. Aplikace zkušební verzi aktivuje a zobrazí potvrzení o aktivaci. \\
+  \textbf{Alternativní scénář 1:} & Uživatel otevře stránku s předplatným. Na stránce předplatného zvolí možnost vyzkoušet předplatné. Scénář následně pokračuje stejným způsobem jako v hlavním scénáři krokem zobrazení informace, že bude uživateli zasláno oznámení dva dny před koncem zkušební doby.  \\
+\end{tabular}
+
+% Done
+\subsubsection{UC-41 Zrušení zkušební verze předplatného}
+
+% Done
+\begin{tabular}{lp{0.7\linewidth}}
+  \textbf{Popis:} & Uživatel během zkušební doby zruší předplatné na stránce správy předplatného. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-free-trial} \\
+  \textbf{Hlavní aktér:} & Premium uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel s aktivní zkušební dobou předplatného otevře stránku pro správu předplatného a zvolí možnost zrušit předplatné. Aplikace se uživatele zeptá na důvod zrušení, uživatel vybere jednu z nabízených možností a zvolí možnost pokračovat. Aplikace se uživatele zeptá, zda chce skutečně zrušit předplatné, uživatel zrušení potvrdí a aplikace zobrazí informaci, že předplatné bylo zrušeno. \\
+\end{tabular}
+
 % Review
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}
 
