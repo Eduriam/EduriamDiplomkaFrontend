@@ -121,9 +121,10 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku kurzu a přihlásí se do něj. \\
-  \textbf{Požadavek:} & \nameref{sec:fp-course-page} \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-page}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel se přesune na stránku daného kurzu, aplikace mu zobrazí přehled kurzu včetně jeho popisu a přehledu částí kurzu. Uživatel zvolí možnost zapsání se do kurzu. Aplikace uživatele zapíše do kurzu a přesměruje ho na stránku učení první lekce kurzu. \\
+  \textbf{Alternativní scénář 1:} & Uživatel bez předplatného se přesune na stránku kurzu, který je dostupný pouze pro uživatele s premium účtem, a zvolí možnost zapsání do kurzu. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že kurz je dostupný pouze v premium verzi aplikace. \\
 \end{tabular}
 
 % Done
@@ -156,11 +157,11 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
   \textbf{Popis:} & Uživatel s premium účtem si zobrazí stránku kurzu a zvolí možnost zobrazit certifikát o dokončení kurzu. \\
-  \textbf{Požadavek:} & \nameref{sec:fp-course-certificate} \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-certificate}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Premium uživatel \\
   \textbf{Hlavní scénář:} & Premium uživatel, který dokončil daný kurz, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli stránku s certifikátem. \\
   \textbf{Alternativní scénář 1:} & Premium uživatel, který daný kurz ještě nedokončil, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli informaci, že musí nejprve dokončit kurz, aby mohl certifikát zobrazit. \\
-  \textbf{Alternativní scénář 2:} & Uživatel, který nemá premium účet, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu. \\
+  \textbf{Alternativní scénář 2:} & Uživatel, který nemá premium účet, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že daná funkce je dostupná pouze v premium verzi aplikace. \\
 \end{tabular}
 
 % Write - tohle je třeba implementovat (zatím jsem to nedělal)
@@ -181,9 +182,10 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku kariérní cesty a přihlásí se do ní. \\
-  \textbf{Požadavek:} & \nameref{sec:fp-learning-paths} \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-paths}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel se přesune na stránku dané kariérní cesty, aplikace mu zobrazí přehled kariérní cesty včetně jejího popisu a přehledu kurzů, které jsou v kariérní cestě obsaženy. Uživatel zvolí možnost zapsání se do kariérní cesty. Aplikace uživatele zapíše do kariérní cesty a přesměruje ho na stránku učení první lekce prvního kurzu v rámci dané kariérní cesty. \\
+  \textbf{Alternativní scénář 1:} & Uživatel bez předplatného se přesune na stránku kariérní cesty, která je dostupná pouze pro uživatele s premium účtem, a zvolí možnost zapsání se do kariérní cesty. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že kariérní cesta je dostupná pouze v premium verzi aplikace. \\
 \end{tabular}
 
 % Done
@@ -203,11 +205,11 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
   \textbf{Popis:} & Uživatel s premium účtem si zobrazí stránku kariérní cesty a zvolí možnost zobrazit certifikát o dokončení kariérní cesty. \\
-  \textbf{Požadavek:} & \nameref{sec:fp-learning-paths} \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-paths}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Premium uživatel \\
   \textbf{Hlavní scénář:} & Premium uživatel, který dokončil danou kariérní cestu, se přesune na stránku dané kariérní cesty a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli stránku s certifikátem. \\
   \textbf{Alternativní scénář 1:} & Premium uživatel, který danou kariérní cestu ještě nedokončil, se přesune na stránku dané kariérní cesty a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli informaci, že musí nejprve dokončit kariérní cestu, aby mohl certifikát zobrazit. \\
-  \textbf{Alternativní scénář 2:} & Uživatel, který nemá premium účet, se přesune na stránku dané kariérní cesty a zvolí možnost zobrazit certifikát. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu. \\
+  \textbf{Alternativní scénář 2:} & Uživatel, který nemá premium účet, se přesune na stránku dané kariérní cesty a zvolí možnost zobrazit certifikát. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že daná funkce je dostupná pouze v premium verzi aplikace. \\
 \end{tabular}
 
 % Done
@@ -378,9 +380,10 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí jeho aktuální stav energie, který určuje, kolik učení nebo opakování může ještě v daný den spustit. \\
-  \textbf{Požadavek:} & \nameref{sec:fp-energy-status} \\
+  \textbf{Požadavek:} & \nameref{sec:fp-energy-status}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel zvolí možnost zobrazení stavu energie. Aplikace zobrazí aktuální počet dostupných bodů energie pro daný den a také možnost odemknutí neomezeného množství energie. \\
+  \textbf{Alternativní scénář 1:} & Premium uživatel zvolí možnost zobrazení stavu energie. Aplikace zobrazí informaci, že učení a opakování nejsou pro premium účet omezeny systémem energie. \\
 \end{tabular}
 
 % Done
@@ -389,7 +392,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
   \textbf{Popis:} & Uživatel se z libovolného místa aplikace pokusí spustit učení nebo opakování, ale nemá dostatek bodů energie. Bude tak přesměrován na stránku s přehledem výhod premium účtu. \\
-  \textbf{Požadavek:} & \nameref{sec:fp-energy-status} \\
+  \textbf{Požadavek:} & \nameref{sec:fp-energy-status}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel, který již nemá žádné body energie, z libovolného místa aplikace spustí učení nebo opakování. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že může získat neomezené množství energie, pokud si zakoupí premium účet. \\
 \end{tabular}
@@ -481,9 +484,10 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
   \textbf{Popis:} & Po ukončení učení nebo opakování aplikace zobrazí uživateli reklamu podle typu jeho zařízení. \\
-  \textbf{Požadavek:} & \nameref{sec:fp-advertisement} \\
+  \textbf{Požadavek:} & \nameref{sec:fp-advertisement}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel dokončí nebo předčasně ukončí učení či opakování. Aplikace uživateli zobrazí reklamu v závislosti na typu jeho zařízení. Uživatel zhlédne reklamu a zvolí možnost pokračovat. Aplikace ho přesměruje na následující stránku. \\
+  \textbf{Alternativní scénář 1:} & Premium uživatel dokončí nebo předčasně ukončí učení či opakování. Aplikace reklamu nezobrazí a uživatele přesměruje přímo na následující stránku. \\
 \end{tabular}
 
 % Done
