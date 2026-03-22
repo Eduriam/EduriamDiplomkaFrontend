@@ -1,0 +1,54 @@
+%---------------------------------------------------------------
+\section{Postup při realizaci projektu}
+%---------------------------------------------------------------
+
+% Outline:
+% - Výchozí stav projektu a důvody modernizace.
+% - Knihovny @eduriam/ui-core a @eduriam/ui-x.
+% - Aktualizace technologického stacku.
+% - Refaktoring kódu.
+% - Aktualizace linterů a konvencí.
+% - Zavedení AI konvencí.
+% - Nový Figma prototyp.
+
+\subsection{Příprava realizace projektu}
+
+Před zahájením implementace jednotlivých funkcí jsem navázal na původní frontendové řešení z bakalářské práce a provedl jsem jeho cílenou modernizaci. Důvodem nebyla pouze potřeba doplnit nové funkce, ale i zásadní změna domény aplikace a požadavek na dlouhodobě udržitelnou strukturu kódu. Hlavním cílem přípravy tedy bylo oddělit stabilní stavební části systému, aktualizovat technologický základ a odstranit omezení, která komplikovala další rozvoj.
+
+\subsubsection{Příprava knihoven \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}}
+
+V rámci přípravy jsem oddělil komponentovou vrstvu do dvou knihoven. Knihovna \texttt{@eduriam/ui-core} slouží jako základ design systému postavený nad Material UI\footnote{Dostupné na: \href{https://mui.com/}{https://mui.com/}}. Obsahuje zejména základní stavební prvky uživatelského rozhraní a centrální definici \textit{theme}, která určuje konzistentní vzhled aplikace.
+
+Knihovna \texttt{@eduriam/ui-x} obsahuje komplexnější komponenty, které se využívají zejména při učení a vysvětlování látky. Tyto komponenty jsou navržené tak, aby byly znovupoužitelné i mimo hlavní frontend aplikace. Praktickým přínosem je možnost samostatně zobrazit a testovat průběh učení bez nutnosti vázat celý obsah na konkrétní implementaci jedné stránky.
+
+Ve frontendu jsem následně používal obě knihovny současně. Díky tomu jsem oddělil design systém od aplikační logiky a vytvořil předpoklad pro konzistentní využití komponent i v dalších částech projektu.
+
+\subsubsection{Aktualizace knihoven a nástrojů}
+
+Technologický základ jsem aktualizoval na novější verze, konkrétně například Yarn 4.9.3, Node.js 24.9.0, Storybook 10.3.1, Next.js 16.2.1 a Material UI 7.3.9. Tyto změny byly důležité zejména kvůli kompatibilitě mezi knihovnami, dostupnosti aktuálních funkcí a snížení technického dluhu v projektu.
+
+Aktualizace zároveň zjednodušila další implementační kroky, protože jsem pracoval nad konzistentním prostředím, které odpovídalo současným doporučeným postupům.
+
+\subsubsection{Refaktoring kódu}
+
+Po aktualizaci stacku jsem provedl refaktoring stávajícího kódu. Nejprve jsem odstranil části navázané na původní doménu výuky jazyků, které již neodpovídaly novému zaměření aplikace.
+
+Dále jsem přepracoval strukturu komponent pro učení tak, aby bylo možné jednoduše přidávat nové typy cvičení a vysvětlujících bloků. Původní řešení bylo příliš rigidní a rozšiřování funkcí vedlo k neúměrnému nárůstu složitosti. Nová struktura je modulárnější a lépe podporuje iterativní rozvoj.
+
+Současně jsem zavedl sjednocující layout komponenty, zejména \texttt{PageRoot}, \texttt{ContentContainer} a \texttt{PageNavigation}. Tyto prvky zajišťují konzistentní rozložení uživatelského rozhraní napříč stránkami, například jednotné odsazení, responzivní chování a jednotný způsob definice navigačních prvků.
+
+\subsubsection{Aktualizace linterů a konvencí}
+
+V projektu jsem aktualizoval ESLint a Prettier a upravil jejich konfiguraci tak, aby byla kontrola kvality kódu přísnější a zároveň čitelná pro běžný vývoj. Praktickým příkladem je zavedení pravidla \texttt{eqeqeq}\footnote{Dostupné na: \href{https://eslint.org/docs/latest/rules/eqeqeq}{https://eslint.org/docs/latest/rules/eqeqeq}}, které vynucuje porovnávání pomocí \texttt{===} a \texttt{!==}. Tím se snižuje riziko nejednoznačného porovnávání hodnot a chyb způsobených implicitní konverzí typů v jazyce JavaScript/TypeScript.
+
+\subsubsection{Zavedení nástrojů umělé inteligence}
+
+Další částí přípravy bylo zavedení konvencí pro AI asistenty používané při vývoji. Vycházel jsem ze standardu Agent Skills\footnote{Dostupné na: \href{https://agentskills.io/}{https://agentskills.io/}}. V rámci projektu jsem definoval pravidla zejména pro generování nových komponent, stránek a \texttt{.feature} souborů v jazyce Gherkin.
+
+Výhodou tohoto přístupu je, že stejné konvence lze využívat napříč různými nástroji a modely, například v prostředích Claude Code, Cursor, Codex nebo Gemini CLI. Díky tomu jsem snížil rozdíly v kvalitě výstupu při použití různých AI nástrojů.
+
+\subsubsection{Vytvoření nového Figma prototypu}
+
+Původní prototyp byl založen na externí lo-fi knihovně komponent. Tento přístup byl vhodný pro rychlé vytvoření prvotního návrhu, ale v pokročilé fázi návrhu komplikoval práci, protože struktura komponent a jejich parametry neodpovídaly cílové implementaci.
+
+Z tohoto důvodu jsem vytvořil nový prototyp s ručně navrženými komponentami bez závislosti na externí knihovně. Výsledkem byla nižší komplexita návrhu, přesnější návaznost na implementaci a jednodušší převod návrhu do produkčního kódu.

@@ -1,0 +1,132 @@
+% Outline:
+% - Výběr implementovaných epiků.
+% - Nová struktura učení: Atom, Lekce, StudyBlock, režimy learn/review.
+% - ExplanationStudyBlock + Remotion: přínosy, limity, fallback.
+% - ExerciseStudyBlock: interaktivita, vyhodnocení, sběr dat.
+% - Google OAuth: frontend flow + integrace s backendem.
+% - PWA přizpůsobení: manifest, service worker, HTTPS.
+
+\subsection{Implementace funkcí}
+
+Při implementaci jsem se zaměřil na tři hlavní epiky, které měly největší dopad na výslednou podobu aplikace: novou strukturu učení, registraci a přihlášení pomocí účtu Google a přizpůsobení aplikace pro režim PWA. Největší část práce byla věnována prvnímu epiku, protože představuje základní mechanismus, na kterém stojí samotné učení i opakování látky.
+
+\subsubsection{Nová struktura učení}
+
+Základním doménovým prvkem nové struktury je \textit{atom}, který reprezentuje konkrétní znalost nebo koncept. Lekce se skládá z více atomů a každý atom je dále tvořen sadou \textit{StudyBlocků}, které definují konkrétní průchod uživatele danou látkou.
+
+V systému používám dva hlavní typy bloků:
+\begin{itemize}
+    \item \texttt{ExplanationStudyBlock}, který slouží k vysvětlení látky,
+    \item \texttt{ExerciseStudyBlock}, který slouží k procvičení a vyhodnocení porozumění.
+\end{itemize}
+
+Tímto rozdělením jsem dosáhl toho, že je možné odděleně řídit způsob prezentace látky a způsob ověřování znalostí, aniž by bylo nutné měnit celý tok lekce.
+
+\paragraph{Tok \texttt{learn} a tok \texttt{review}}
+
+Při režimu \texttt{learn} jsou uživateli ve stanoveném pořadí zobrazovány vysvětlující a cvičební bloky označené jako \texttt{learn}. Uživatel tak nejprve získá kontext, následně ihned aplikuje nové znalosti a postupně se učí více atomů v rámci jedné lekce.
+
+Při režimu \texttt{review} backend vybírá atomy určené k opakování pomocí algoritmu rozloženého opakování (\textit{spaced repetition}). Frontend pro každý vybraný atom zobrazí odpovídající \texttt{ExerciseStudyBlock} označený jako \texttt{review}. V tomto režimu uživatel neprochází celé vysvětlení tématu, ale zaměřuje se na cílené opakování.
+
+Po dokončení sezení frontend odesílá agregované hodnocení atomů přes API (\texttt{atomId}, \texttt{rating}), aby backend mohl upravit další plán opakování. Tím je zajištěna průběžná adaptace studijního procesu.
+
+\paragraph{Vyhodnocení odpovědí}
+
+Ve cvičebních blocích je uživatel při nesprávné odpovědi nucen řešení opravit. Pokud odpoví třikrát nesprávně, aplikace mu nabídne možnost cvičení přeskočit. Tento mechanismus omezuje zablokování uživatele na jednom kroku, ale současně zachovává tlak na aktivní opravu chyb.
+
+Po vyhodnocení odpovědi si uživatel může zobrazit vysvětlení, proč byla odpověď správná nebo nesprávná. Toto vysvětlení je dostupné jak při učení, tak při opakování.
+
+\subsubsection{Vysvětlování látky pomocí \texttt{ExplanationStudyBlock}}
+
+\texttt{ExplanationStudyBlock} využívá vizualizace připomínající krátká videa doplněná audiovýkladem. Klíčové je, že tyto vizualizace nejsou ve výchozím stavu streamované jako předrenderované soubory \texttt{mp4}, ale jsou vykreslovány za běhu aplikace pomocí knihovny Remotion\footnote{Dostupné na: \href{https://www.remotion.dev/}{https://www.remotion.dev/}} na základě JSON definice.
+
+Tento přístup měl několik významných výhod:
+\begin{itemize}
+    \item sjednocení stylu a technologií mezi \uv{videem} a zbytkem React aplikace,
+    \item jednodušší globální změny vzhledu po vydání nové verze komponent,
+    \item přirozená responzivita pro různé velikosti a orientace obrazovky,
+    \item návaznost na režim světlého a tmavého motivu,
+    \item znovupoužitelnost komponent napříč vysvětlením a cvičeními.
+\end{itemize}
+
+Současně jsem musel zohlednit i limitace. Vykreslování animací v prohlížeči je citlivé na výkon zařízení, proto není vhodné touto formou řešit graficky extrémně náročný obsah. U složitějších vizualizací je možné použít \textit{fallback} ve formě předrenderovaného videa vloženého do bloku přes komponentu typu \texttt{Video}.
+
+Další limitací je nutnost držet jednoduchou strukturu prezentace, aby bylo dosaženo responzivního chování. V praxi jsem proto strukturoval vysvětlení hierarchií \textit{scéna} -> \textit{slide} -> \textit{sloupec} -> \textit{komponenta}. Na širokých displejích se sloupce zobrazují vedle sebe, na úzkých displejích pod sebou.
+
+Z hlediska přístupnosti jsem doplnil možnost titulků pro případy, kdy uživatel nemůže poslouchat audio. Tento režim není ekvivalentní plnohodnotnému audiovýkladu, ale prakticky zvyšuje použitelnost systému v reálných podmínkách.
+
+\subsubsection{\texttt{ExerciseStudyBlock} a flexibilní struktura cvičení}
+
+\texttt{ExerciseStudyBlock} kombinuje pasivní komponenty (například text, diagram, vizualizace) a interaktivní komponenty, se kterými uživatel aktivně pracuje. Na rozdíl od vysvětlujícího bloku zde nepoužívám rigidní šablonu, což umožňuje navrhovat různé typy cvičení podle charakteru látky.
+
+V praxi to znamená, že jedno cvičení může obsahovat zadání, kontextový diagram i editor kódu, zatímco jiné cvičení může být složené z jiných interaktivních prvků. Tato flexibilita byla důležitá pro škálovatelnost řešení při přidávání dalších typů obsahu.
+
+\subsubsection{Artefakty a diagramy pro dokumentaci struktury učení}
+
+V této části kapitoly doplním následující artefakty:
+\begin{itemize}
+    \item diagram doménového modelu (\textit{Atom}, \textit{Lekce}, \textit{StudyBlock}, typy bloků),
+    \item diagram struktury \texttt{ExplanationStudyBlock} (\textit{Scene}, \textit{Slide}, \textit{Column}, komponenty),
+    \item activity diagram průběhu učení a opakování,
+    \item screenshoty obrazovek učení.
+\end{itemize}
+
+\begin{figure}[ht]
+    \centering
+    \fbox{\parbox{0.92\textwidth}{
+        \textbf{Placeholder: Diagram doménového modelu učení}\\
+        Obsah: vztahy mezi entitami Atom, Lekce, StudyBlock, ExplanationStudyBlock a ExerciseStudyBlock.
+    }}
+    \caption{Diagram doménového modelu nové struktury učení (bude doplněno)}
+    \label{fig:impl-learning-domain-model}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \fbox{\parbox{0.92\textwidth}{
+        \textbf{Placeholder: Diagram struktury ExplanationStudyBlock}\\
+        Obsah: hierarchie Scene -> Slide -> Column -> vizualizační komponenty.
+    }}
+    \caption{Struktura vysvětlujícího bloku s Remotion renderováním (bude doplněno)}
+    \label{fig:impl-explanation-block-structure}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \fbox{\parbox{0.92\textwidth}{
+        \textbf{Placeholder: Activity diagram průběhu učení/opakování}\\
+        Obsah: learn flow, review flow, vyhodnocení odpovědi, 3 pokusy, skip.
+    }}
+    \caption{Activity diagram průběhu učení a opakování (bude doplněno)}
+    \label{fig:impl-learning-activity}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \fbox{\parbox{0.92\textwidth}{
+        \textbf{Placeholder: Screenshoty obrazovek učení}\\
+        Obsah: obrazovka vysvětlení, obrazovka cvičení, vyhodnocení odpovědi.
+    }}
+    \caption{Ukázky obrazovek studijního sezení (bude doplněno)}
+    \label{fig:impl-learning-screens}
+\end{figure}
+
+\subsubsection{Registrace a přihlášení pomocí účtu Google}
+
+Pro externí autentizaci jsem implementoval OAuth workflow nad integrační vrstvou frontendu a backendových endpointů. Ve frontendu začíná tok funkcí \texttt{startGoogleAuth}, která uloží zdroj akce (\texttt{signin} nebo \texttt{signup}) do \texttt{sessionStorage}, získá autorizační URL z endpointu \texttt{external-auth/google/authorize} a přesměruje uživatele na autorizační stránku Google.
+
+Po návratu z Google se zpracování provádí na callback stránce \texttt{/signin/callback}. Frontend načte autorizační kód z query parametru \texttt{code} a předá jej backendu přes endpoint \texttt{/authorize}. Po úspěšném dokončení frontend uloží autentizační data (\texttt{idToken}, \texttt{refreshToken}, uživatele), nastaví autorizační hlavičku pro další API volání a přesměruje uživatele buď na hlavní stránku, nebo na onboarding podle stavu účtu.
+
+Součástí implementace je i explicitní mapování chybových stavů. Například stav 404 je mapován na \uv{Google účet nenalezen} a stav 409 na \uv{Google účet již existuje}. Uživateli se následně zobrazí odpovídající kontext na přihlašovací nebo registrační stránce.
+
+\subsubsection{Přizpůsobení aplikace pro PWA}
+
+V rámci nefunkčního požadavku na PWA jsem doplnil konfiguraci nutnou pro to, aby prohlížeče aplikaci klasifikovaly jako progresivní webovou aplikaci. V souboru \texttt{manifest.ts} jsem definoval metadata aplikace (název, krátký název, start URL, scope, režim zobrazení \texttt{standalone}, barevné parametry a ikony).
+
+Dále jsem doplnil registraci service workeru na klientu. Registrace probíhá pouze v produkčním režimu a pouze v bezpečném kontextu (HTTPS nebo localhost). Využitý service worker je záměrně jednoduchý a řeší základní lifecycle události (\texttt{install}, \texttt{activate}) bez pokročilé cache strategie.
+
+Výsledkem je možnost instalace aplikace přímo z prohlížeče na mobilní i desktopová zařízení. Publikace do obchodů typu Google Play, App Store nebo Microsoft Store je technicky možná po dalších krocích, ale je mimo rozsah této práce.
+
+\subsubsection{Vazba implementace na testovací scénáře}
+
+Výše popsané implementační části jsou přímo navázány na testovací scénáře, které uvádím v kapitole \uv{Testování}. Konkrétně jde o scénáře průchodu režimy \texttt{learn} a \texttt{review}, vyhodnocování cvičení včetně limitu tří chybných pokusů, OAuth scénáře pro Google registraci a přihlášení (včetně chybových větví) a základní ověření PWA chování a nasazení v prostředích \texttt{dev}, \texttt{stage} a \texttt{production}.

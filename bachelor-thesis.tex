@@ -1,0 +1,238 @@
+%---------------------------------------------------------------
+\chapter{Implementace a nasazení}
+%---------------------------------------------------------------
+
+V této kapitole se nejprve zaměřím na realizaci samotné aplikace a popíšu, jakým způsobem jsem při implementaci frontendu postupoval. Dále také popíšu, jakým způsobem jsem komunikoval s~kolegou Janem Hlaváčem, který se věnuje backendové části aplikace, abychom zajistili funkčnost celé aplikace po jejím nasazení. Následně popíšu samotný proces nasazení frontendové části aplikace, kde se budu věnovat jednak nasazení do vývojového prostředí a jednak nasazení do produkčního prostředí.
+
+%---------------------------------------------------------------
+\section{Postup při realizaci projektu}
+%---------------------------------------------------------------
+
+V této části textu popíšu, jakým způsobem jsem postupoval při realizaci frontendové části aplikace. Nejprve popíšu, jakým způsobem probíhala příprava celého projektu. Dále popíšu, jakým způsobem jsem postupoval při samotné implementaci frontendu. Nakonec se budu věnovat tomu, jak jsme spolupracovali s kolegou Janem Hlaváčem, aby byla zajištěna správná komunikace mezi frontendovou a backendovou částí aplikace.
+
+\subsection{Příprava realizace projektu}
+
+Jelikož byla aplikace vytvářena od úplného začátku, bylo potřeba před implementací provést několik úvodních kroků, které připraví projekt k implementaci a umožní efektivní vývoj. Této přípravě se budu věnovat v následujících částech textu.
+
+\subsubsection{Kroky před implementací}
+
+Před započetím fáze implementace jsem již měl dokončenou analýzu konkurenčních řešení a~sepsané všechny případy užití. Dále jsem měl v programu Figma připravený hrubý návrh celého uživatelského rozhraní. Tento návrh obsahoval rozložení uživatelského rozhraní a základní vzhled jednotlivých stránek a komponentů. V této fázi ještě nebyl návrh dokončený. Detailní vzhled komponentů a stránek jsem se rozhodl finalizovat až v průběhu iterativního vývoje. 
+
+Díky tomuto přístupu jsem se vždy mohl v rámci dané iterace zaměřit na podrobný návrh a~implementaci daných komponentů a stránek. Zároveň jsem ale měl už na začátku implementace obecný přehled o vzhledu a struktuře celého uživatelského rozhraní. To mi velice pomohlo při organizaci a strukturování kódu aplikace. Dále jsem měl díky tomuto iterativnímu přístupu větší flexibilitu při návrhu a implementaci. Mohl jsem tak velice jednoduše provádět průběžné změny v návrhu a neustále ho tak zlepšovat.
+
+\subsubsection{Příprava implementace}
+
+Před zahájením implementace jednotlivých funkcionalit bylo potřeba vytvořit a nastavit samotný repozitář aplikace tak, aby byl připravený pro vývoj.
+
+Jako první krok přípravy jsem vytvořil Git repozitář na platformě GitHub a nastavil jsem projekt pomocí nástroje npm\footnote{Dostupné na: \href{https://www.npmjs.com/}{https://www.npmjs.com/}}. Následně jsem nainstaloval a nastavil hlavní knihovny React, Next.js, Material UI a Storybook, které byly klíčové pro začátek vývoje.
+
+Dále jsem vytvořil strukturu složek projektu a stanovil jsem určité konvence, které jsem poté při vývoji dodržoval. Při vývoji jsem se rozhodl využít knihovnu Storybook, kvůli které bylo třeba ke stránkám a komponentům vytvořit řadu dodatečných souborů. Ty mohly značně znepřehlednit celý projekt, a proto jsem se rozhodl pro každou stránku a komponent vytvořit vlastní složku se všemi relevantními soubory. Dále jsem se rozhodl pro komponenty a stránky vytvořit předpřipravené složky se všemi potřebnými soubory. Tyto složky sloužily jako šablony, pomocí kterých bylo možné velice jednoduše a rychle vytvářet nové stránky a komponenty. Zároveň byla díky těmto šablonám zachována základní konzistence struktury kódu napříč celým projektem. Kód byl tak výrazně přehlednější a jednoduše se v něm orientovalo. Podobné šablo\-ny jsem poté vytvořil i například u služeb komunikujících s API, u kterých bylo také třeba zachovat určitou formu konzistence v kódu.
+
+Následně jsem zprovoznil jednotlivé knihovny pro zajištění kvality kódu. Mezi ně patří již dříve zmíněné knihovny ESLint a Prettier. Dále jsem pomocí knihovny Husky nastavil \textit{git hook} \cite{GitHook}, který v projektu při použití příkazu \texttt{git commit} automaticky spustí ESLint a při každém příkazu \texttt{git push} sestaví celý projekt. Díky tomu je zajištěna určitá úroveň kvality kódu ve vzdálených větvích repozitáře. Vývojář tak například nemůže odeslat kód, který je zjevně nefunkční. Cenou za tuto kontrolu je ovšem výrazně pomalejší provádění zmí\-něných příkazů programu Git. Jelikož na frontendové části této aplikace pracuji sám, nebyl jsem touto nevýhodou příliš ovlivněn. Kdyby ovšem v budoucnu na projektu pracovalo více vývojářů, stálo by za úvahu přesunout tyto kontroly na vzdálené servery. Kontroly by tak například byly prováděny pouze kdyby byl v repozitáři vytvořen \textit{merge request} a vývojáři by tak nemuseli sestavovat projekt na svých zařízeních.
+
+Poslední částí přípravy projektu bylo několik úvodních schůzek s kolegou Janem Hlaváčem, který se zabývá implementací backendové části této aplikace. V rámci těchto schůzek jsme diskutovali, jakým způsobem by měla aplikace fungovat, a která data bude aplikace využívat. Díky těmto schůzkám jsme získali přehled o celé aplikaci a odhadli, které části implementace budou nejpracnější a ve kterých částech projektu mohou potenciálně nastat problémy. Na základě těchto schůzek jsme pak byli schopni přesněji projekt naplánovat a dohodnout se na postupu implementace.
+
+\subsection{Postup při implementaci frontendu}
+
+Po dokončení přípravy projektu jsem mohl začít se samotnou implementací jednotlivých funkcionalit. Při vývoji frontendu jsem se rozhodl postupovat iterativní metodou. V rámci každé iterace jsem vybral několik souvisejících případů užití, na kterých jsem následně pracoval. Díky tomu, že byly jednotlivé případy užití rozděleny podle priorit, bylo velice jednoduché postupovat od nejdůležitějších funkcionalit k méně důležitým. Základní funkčnost aplikace tak byla k dispozici již v rané fázi vývoje. 
+
+V následujících částech této kapitoly popíšu jednotlivé kroky, pomocí kterých jsem na základě případů užití implementoval jednotlivé stránky a funkcionality aplikace. Pro ilustraci ukážu jednotlivé kroky vývoje na konkrétním případu užití \hyperref[sec:uc-lesson]{UC9 – Zobrazení lekce}, v rámci kterého jsem se zabýval vývojem stránky, která vyobrazuje přehled dané lekce v kurzu angličtiny.
+
+\subsubsection{Dokončení návrhu}
+
+Před začátkem vývoje jsem měl již připravený návrh celého uživatelského rozhraní s rozložením jednotlivých stránek a komponentů. V této fázi vývoje jsem se zaměřil na dokončení návrhu dané stránky v programu Figma. Protože jsem se při vývoji snažil zaměřit na pozitivní uživatelskou zkušenost, rozhodl jsem se vždy danou stránku aplikace detailně navrhnout tak, aby vzhledem co nejpřesněji odpovídala výsledné stránce v aplikaci. Díky tomu jsem mohl případné vizuální nedostatky v uživatelském rozhraní odhalit ještě před samotnou implementací. Ukázku dokončeného návrhu přehledu lekce v aplikaci lze nalézt na obrázku \ref{fig:navrh-5}.
+
+Díky detailnímu návrhu a dříve popsaným případům užití jsem tak při implementaci mohl vycházet z přesné specifikace, jakým způsobem má aplikace vypadat a fungovat. To samotnou implementaci značně zjednodušilo.
+
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/lesson-speaking.png}
+        \caption{Návrh přehledu lekce mluvení}
+        \label{fig:navrh-5}
+    \end{minipage}
+\end{figure}
+
+\subsubsection{Implementace komponentů}
+
+Po dokončení návrhu dané stránky jsem nejdříve začal s implementací jednotlivých komponentů uživatel\-ského rozhraní, které se na stránce nachází.
+
+Komponenty jsem vyvíjel pomocí knihovny Storybook. Tato knihovna umožňuje komponenty vyvíjet samostatně a nezávisle na již existujícím uživatelském rozhraní. Knihovna poskytuje funkce, které umožňují předávat komponentům různé sady dat, na základě kterých se komponenty vykreslují. Storybook následně, na základě těchto dat, sestaví jednoduchou interaktivní dokumentaci, v níž je možné komponenty zobrazovat v různých stavech a prostředích, například na různých velikostech obrazovek. S těmito komponenty lze pak v rámci dokumentace interagovat a manuálně je testovat.
+
+Tento postup, ve kterém jsem nejdříve izolovaně vyvíjel samostatné komponenty, pak je manuálně testoval, a až poté z nich vytvářel uživatelské rozhraní, se ukázal být velice užitečným. Otestované komponenty pak bylo velice jednoduché začlenit do existujícího uživatelského rozhraní. Díky knihovně Storybook souběžně s komponenty vznikala i jejich jednoduchá interaktivní dokumentace, díky které bylo snadné komponenty vícekrát využívat a vracet se k nim při vývoji dalších stránek.
+
+\subsubsection{Vytvoření mock API}
+
+Po implementaci a manuálním testování potřebných komponentů jsem dále pokračoval vytvořením mocku koncových bodů REST API, které bylo třeba na dané stránce využívat.
+
+Mock REST API jsem vytvářel pomocí programu Mockoon, který umožňuje snadné vytváření mocku REST API pomocí grafického uživatelského rozhraní a jeho následné spuštění v podobě serveru. Definice mocku je ukládána do jednoho JSON souboru, který lze následně verzovat například pomocí programu Git. Na základě tohoto souboru je pak možné mock nasadit s~využitím konzolové verze aplikace Mockoon CLI\footnote{Dostupné na: \href{https://mockoon.com/cli/}{https://mockoon.com/cli/}} nebo s pomocí balíčku Mockoon Serverless\footnote{Dostupné na: \href{https://mockoon.com/serverless/}{https://mockoon.com/serverless/}}. Samotnému nasazení se budu věnovat v dalších částech této kapitoly.
+
+V rámci vytváření mocku jsem využil některé pokročilejší funkce aplikace Mockoon. Jednou z těchto funkcí je tzv. \textit{templating}, který umožňuje vytváření dynamických odpovědí serveru \cite{MockoonTemplating}. Tuto funkci jsem využil například v kombinaci s knihovnou Faker.js\footnote{Dostupné na: \href{https://fakerjs.dev/}{https://fakerjs.dev/}}, díky které lze generovat data pro zmíněné odpovědi serveru. Příklad definice takové odpovědi lze nalézt v ukázce kódu \ref{fig:ukazka-response}.
+
+\begin{listing}[ht]
+    \begin{minted}{json}
+{
+   "id": "{{faker 'string.uuid'}}",
+   "name": "{{faker 'lorem.words' 4}}",
+   "favorite": false,
+   "visible": true,
+   "description": "{{faker 'lorem.paragraph' 10}}",
+   "type": "SPEAKING"
+}
+    \end{minted}
+    \caption{Definice odpovědi koncového bodu pro získání dané lekce}
+    \label{fig:ukazka-response}
+\end{listing}
+
+\subsubsection{Vytvoření služby pro komunikaci s API}
+
+Po vytvoření mocku koncových bodů API jsem vždy v kódu frontendu vytvořil službu, která měla za úkol zprostředkovávat komunikaci s daným koncovým bodem API. Příklad takové služby lze nalézt v ukázce kódu \ref{fig:ukazka-frontend-api}.
+
+\begin{listing}[!ht]
+    \begin{minted}[breaklines]{typescript}
+const LessonsAPI = {
+    URI: (courseId: Id) => `user/courses/${courseId}/lessons`,
+
+    useLesson(
+        courseId: Id, 
+        lessonId: Id
+    ): Modify<FetchHook<Lesson>, { lesson: Lesson }> {
+        const { data, ...rest } = useAPI<Lesson>(
+            `${this.URI(courseId)}/${lessonId}`
+        );
+        return { lesson: data, ...rest };
+    },
+
+    /* ... */
+
+    async updateLesson(
+        courseId: Id, 
+        lesson: LessonUpdateDTO
+    ): Promise<Lesson> {
+        return API.patch(`${this.URI(courseId)}/${lesson.id}`, lesson);
+    },
+    
+    /* ... */
+};
+    \end{minted}
+    \caption{Ukázka služby LessonsAPI}
+    \label{fig:ukazka-frontend-api}
+\end{listing}
+
+Při implementaci těchto služeb jsem pro dotazy typu \texttt{GET} vytvořil funkce, které jsou v kontextu vývoje ve frameworku React nazývány \textit{custom hooks} \cite{ReactCustomHook}. Příkladem takové funkce je \texttt{useLesson} v ukázce \ref{fig:ukazka-frontend-api}. Díky těmto funkcím je možné snadno přistupovat k datům API ze samotných React komponentů.
+
+V těchto funkcích jsem dále využíval \textit{custom hook} \texttt{useAPI}, který se stará o zachycování případných chyb a také využívá knihovnu SWR pro cachování odpovědí ze serveru.
+
+Pro všechny typy dotazů jsem pak využíval vlastní službu pojmenovanou \texttt{API}. Tato služba se stará o zajištění samotné komunikace mezi frontendem a backendovým API pomocí knihovny Axios\footnote{Dostupné na: \href{https://axios-http.com/}{https://axios-http.com/}}.
+
+\subsubsection{Implementace samotné stránky}
+
+Po dokončení všech předchozích kroků již zbývalo sestavit samotnou stránku aplikace. K tomu jsem využil připravené komponenty a výše popsanou službu pro komunikaci s API. V ukázce kódu \ref{fig:ukazka-react-component} je možné nalézt ukázku implementace stránky zobrazující přehled lekce kurzu v aplikaci.
+
+Ve zmíněné ukázce je vidět využitý dříve popsaný \textit{custom hook} \texttt{useLesson}, který jednak poskytuje data získaná z API a jednak poskytuje funkci \texttt{mutate} z knihovny SWR, která umožňuje data měnit v místní \textit{cache}. Použití této funkce je vidět ve funkci \texttt{handleFavoriteChange}, která je spuštěna, když uživatel označí danou lekci za svoji oblíbenou.
+
+Tato funkce odešle pomocí \texttt{LessonsAPI} požadavek o změnu dat. Zároveň je využita funkce \texttt{mutate}, která okamžitě změní data v místní \textit{cache}. Tato technika je nazývána \textit{optimistic updates} \cite{OptimisticUpdates}. Díky ní uživatel v aplikaci okamžitě vidí danou změnu a nemusí čekat na odpověď ze serveru. Vyřízení odeslaného požadavku pak probíhá v pozadí. Pokud by odeslaný požadavek z~jakéhokoliv důvodu selhal, je uživatel upozorněn.
+
+Dále je v ukázce kódu využitý \textit{custom hook} \texttt{useTranslation}, který poskytuje funkci \texttt{t}. Ta pomocí knihovny i18next zobrazuje text v uživatelském rozhraní na základě zvoleného jazyka. Díky tomu je zajištěna základní forma internacionalizace.
+
+\begin{listing}[!ht]
+    \begin{minted}[breaklines]{jsx}
+const LessonOverview: React.FC<ILessonOverview> = ({ lessonId, courseId }) => {
+    const { t } = useTranslation("common");
+    const { lesson, mutate } = LessonsAPI.useLesson(courseId, lessonId);
+
+    /* ... */
+
+    function handleFavoriteChange(value: boolean) {
+        mutate(
+            LessonsAPI.updateLesson(courseId, { 
+                id: lessonId, 
+                favorite: value 
+            }),
+            optimisticMutationOption({
+                ...lesson,
+                favorite: value,
+            })
+        );
+    }    
+
+    return (
+        <ContentContainer>
+            /* ... */
+            <BottomFab
+                header={t("studying.studyLesson")}
+                icon={icons.startStudy}
+                onClick={() => router.push(`/study?lessonId=${lessonId}`)}
+            />
+        </ContentContainer>
+    );
+};
+    \end{minted}
+    \caption{Ukázka implementace stránky s přehledem lekce}
+    \label{fig:ukazka-react-component}
+\end{listing}
+
+\subsubsection{Testování implementované stránky}
+
+Kromě dříve provedeného testování jednotlivých komponentů jsem vždy po dokončení dané stránky provedl i její manuální otestování. Toto testování již probíhalo v samotné aplikaci s~využitím mocku API.
+
+V rámci tohoto testování jsem se soustředil hlavně na samotnou funkčnost aplikace. Dále jsem se také zaměřil na ověření, zda daná stránka aplikace splňuje 10 heuristik uživatelské použitelnosti \cite{10heuristics}, které popsal {{Jakob Nielsen, Ph.D.}} Jednotlivé heuristiky popisují základní principy, pomocí kterých by mělo být uživatelské rozhraní vytvořeno, aby poskytovalo kvalitní uživatelskou zkušenost. Ověření, zda aplikace tato doporučení splňuje, mi umožnilo najít a opravit případné nedostatky v uživatelském rozhraní. 
+
+Na tomto místě je třeba zdůraznit, že ověření, zda aplikace splňuje zmíněné heuristiky jsem prováděl pouze já za účelem nalezení základních nedostatků. Nejednalo se tedy o komplexní heuristickou analýzu, ve které by se například angažovali experti se znalostmi dané domény. Složitější heuristická analýza by byla mimo rozsah této bakalářské práce, a proto jsem se ji rozhodl neprovádět.
+
+\subsection{Postup při spolupráci s backendem}
+
+Jelikož je cílem projektu vytvořit a nasadit funkční aplikaci, bylo potřeba v průběhu vývoje efektivně komunikovat s kolegou Janem Hlaváčem, který souběžně s touto prací vytvářel backendovou část této aplikace. V této části kapitoly se zaměřím na popis, jakým způsobem jsme v rámci implementace postupovali, abychom zajistili konzistenci mezi mockem API, který je součástí této práce a reálným API, které je součástí práce zmíněného kolegy.
+
+V této části kapitoly budu mne a kolegu Jana Hlaváče pro jednoduchost označovat jako tým, přestože jsme každý na svých bakalářských pracích pracovali individuálně a komunikovali jsme spolu převážně kvůli zajištění konzistence mezi specifikacemi mock API a reálného API a kvůli následnému nasazení aplikace.
+
+\subsubsection{Zvolená metodika}
+
+Při vývoji softwaru v týmu lze postupovat různými způsoby. V rámci tohoto projektu jsme se rozhodli využít agilní metodiku Kanban \cite{Kanban}. Tuto metodiku jsme upřednostnili před jinými metodikami kvůli několika důvodům.
+
+Hlavním důvodem byla jednoduchost metodiky Kanban. V týmu o dvou vývojářích by napří\-klad striktní dodržování metodiky Scrum \cite{Scrum} mohlo vést ke zbytečnému komplikování pracovního postupu.
+
+Dalším důvodem byla nekonzistentní a nepředvídatelná dostupnost obou vývojářů. Jelikož se tým nenacházel v korporátním prostředí s konzistentní pracovní dobou, nýbrž v prostředí akademickém, ve kterém bylo třeba v různé časy pracovat na různých projektech, nebo se věnovat jiným akademickým povinnostem, bylo velice obtížné předvídat dostupnost členů týmu. K tomu přispěl i fakt, že se oba členové týmu rozhodli v průběhu vývoje vycestovat do zahraničí a dočasně se tak věnovat studiím na jiných univerzitách. Použití jednodušší a flexibilnější metodiky se tak jevilo jako nejvhodnější varianta pro tento projekt.
+
+Kanban nám tak umožnil pracovat na sobě téměř nezávisle. Tato metodika se tak ukázala být velice vhodná pro tento konkrétní projekt.
+
+\subsubsection{Postup při implementaci}
+
+Implementace zpravidla začínala na frontendové části aplikace. Dříve popsaným způsobem jsem navrhl uživatelské rozhraní, vytvořil mock koncových bodů API a implementoval danou strán\-ku v aplikaci. Mock API byl v této fázi pouze mým prvotním návrhem a zdaleka neodpovídal finální verzi API. Díky tomuto mocku jsem byl ovšem schopen přesně určit a definovat, která data jsou ve frontendové části aplikace potřeba.
+
+Následně jsme s kolegou Hlaváčem vytvořili úkoly v programu Jira, které obsahovaly požada\-vky na vytvoření koncových bodů REST API. Kolega pak na základě těchto úkolů vytvořil přesnou specifikaci daného koncového bodu API a implementoval ho společně s backendovou částí aplikace.
+
+Na základě finální specifikace od kolegy Hlaváče jsem následně provedl případné změny v~mocku API a frontendové části aplikace.
+
+Díky tomuto postupu jsme byli v týmu schopni pracovat takřka nezávisle na sobě a zajistit konzistenci mezi mock API a reálným API, která byla klíčová při následném nasazení aplikace.
+
+%---------------------------------------------------------------
+\section{Nasazení aplikace}
+%---------------------------------------------------------------
+
+V této části kapitoly se zaměřím na popis nasazení frontendové části aplikace. V rámci nasazení jsem pracoval se dvěma prostředími. Aplikaci jsem nasadil jednak ve vývojovém prostředí pro účely interního testování. V tomto prostředí frontend aplikace využívá mock API, který jsem společně s aplikací vytvářel v průběhu implementace. Dále jsem, v souladu s hlavním cílem tohoto projektu, nasadil frontend aplikace do produkčního prostředí. V produkčním prostředí bylo již třeba zajistit komunikaci s reálným REST API, které je součástí backendové části tohoto projektu.
+
+\subsection{Vývojové prostředí frontendu}
+
+Vývojové prostředí aplikace jsem zprovoznil již v rané fázi vývoje. Toto prostředí jsem využíval zejména pro interní testování, diskuze na schůzkách a dále pro uživatelské testování. Toto prostředí také umožnilo otestovat základní funkčnost frontendu aplikace na vybraných serverech před nasazením aplikace do produkčního prostředí. Díky tomu jsem předešel řadě chyb, které se projevily až po nasazení do testovacího prostředí.
+
+Pro nasazení aplikace jsem nejprve zvolil hostingovou službu Netlify. Ta se v rámci testování aplikace ukázala být nevhodná pro nejnovější verze frameworku Next.js. Některé funkce tohoto frameworku nebyly plně podporovány a řada stránek v aplikaci tak nefungovala dle očekávání.
+
+Proto jsem se rozhodl přesunout aplikaci k hostingové službě společnosti Vercel. Společnost Vercel je zodpovědná za vývoj frameworku Next.js, což přináší při provozu aplikace řadu výhod. Nejnovější funkce frameworku jsou v rámci hostingové služby podporovány a prostředí je přizpů\-sobeno pro optimální funkčnost Next.js aplikací. Díky tomu bylo samotné nasazení velice jednoduché a všechny problémy s předchozím hostingem byly tímto přesunem vyřešeny.
+
+V průběhu vývoje jsem pro verzování kódu využíval již dříve zmiňovanou technologii Git a službu GitHub. Tyto technologie proces nasazení značně zjednodušily. V Git repozitáři jsem využíval dvě hlavní větvě pojmenované \texttt{dev} a \texttt{master}. První zmíněná větev odpovídá verzi aplikace, která je nasazena ve vývojovém prostředí. Hostingovou službu Vercel jsem propojil s GitHub repozitářem tak, že se při aktualizaci větve \texttt{dev} aplikace znovu automaticky sestaví a nasadí do testovacího prostředí.
+
+\subsubsection{Mock API}
+
+Společně s aplikací v testovacím prostředí bylo také třeba nasadit samotný mock API, který tato aplikace využívá.
+
+Jelikož jsem pro verzování mocku také využíval Git a GitHub, byl proces podobný jako při nasazování aplikace. Mock jsem nasadil s využitím služby Netlify a dříve zmíněného balíčku Mockoon Serverless. Dříve zmíněné problémy se službou Netlify se u mocku nevyskytovaly, a~proto jsem se rozhodl ho na serverech Netlify ponechat.
+
+\subsection{Produkční prostředí frontendu}
+
+Nasazení do produkčního prostředí proběhlo až v posledních fázích vývoje po dokončení hlavních funkcionalit aplikace. Pro nasazení frontendu do produkčního prostředí jsem již rovnou použil hostingovou službu společnosti Vercel, která se osvědčila při nasazování aplikace do testovacího prostředí.
+
+Jak jsem již zmínil, v repozitáři jsem využíval dvě hlavní větve \texttt{dev} a \texttt{master}. Druhá větev odpovídá verzi aplikace, která je nasazena v produkčním prostředí. Pro vytvoření vydání aplikace jsem vytvořil tzv. \textit{release branch}, což je standardní postup při pracovním postupu Gitflow \cite{Gitflow}. V této větvi jsem následně provedl úpravy kódu tak, aby byla aplikace kompatibilní s aktuální verzí REST API backendové části aplikace. Po dokončení úprav jsem dle postupu Gitflow sloučil větev \textit{release branch} do větví \texttt{dev} a \texttt{master}. Z větve master pak byl frontend aplikace automaticky sestaven a nasazen do produkčního prostředí.
+
+Pro monitorování stavu frontendové části aplikace v produkčním prostředí jsem použil již dříve zmíněný program Sentry. Tento program umožňuje zejména sledovat chyby, které při používání aplikace nastávají, a značně tak ulehčuje provoz a údržbu aplikace.

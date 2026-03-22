@@ -1,0 +1,40 @@
+%---------------------------------------------------------------
+\section{Nasazení aplikace}
+%---------------------------------------------------------------
+
+% Outline:
+% - Rozdělení prostředí a jejich role.
+% - Dev prostředí.
+% - Stage prostředí.
+% - Produkční prostředí.
+% - Release proces a rozdíl CI/CD vs release.
+
+V rámci provozu frontendu používám tři samostatná prostředí: \texttt{dev}, \texttt{stage} a \texttt{production}. Každé prostředí má odlišný účel, odlišné napojení na backendové API a odlišný způsob nasazení. Toto rozdělení mi umožnilo oddělit rychlou vývojovou iteraci od stabilního testování na reálném backendu a od produkčního vydání.
+
+\subsection{Vývojové prostředí (\texttt{dev})}
+
+Vývojové prostředí je dostupné na adrese \texttt{dev.eduriam.com} a běží na hostingu Vercel. Toto prostředí je napojeno na Mockoon mock backendového API, proto je vhodné zejména pro rychlou validaci frontendových změn v situaci, kdy ještě není k dispozici odpovídající backendový endpoint.
+
+Nasazení do tohoto prostředí probíhá automaticky při každém \textit{push} do větve \texttt{dev}. V praxi jsem toto prostředí využíval pro průběžné interní ověřování implementovaných funkcí nad kontrolovanými testovacími daty.
+
+\subsection{Testovací prostředí (\texttt{stage})}
+
+Stage prostředí je dostupné na adrese \texttt{app.stage.eduriam.com} a běží rovněž na hostingu Vercel. Na rozdíl od \texttt{dev} je napojeno na stage backendové API, tedy na reálnou backendovou implementaci určenou pro testování.
+
+Nasazení do stage probíhá také automaticky při každém \textit{push} do větve \texttt{dev}. Stage prostředí tak představuje hlavní integrační testovací vrstvu, ve které lze ověřovat chování frontendu nad skutečnými endpointy a datovými kontrakty.
+
+\subsection{Produkční prostředí (\texttt{production})}
+
+Produkční prostředí je dostupné na adrese \texttt{app.eduriam.com} a je napojeno na produkční backendové API. Nasazení probíhá až při vytvoření release tagu na větvi \texttt{master}, což odpovídá řízenému vydávání stabilních verzí.
+
+Tento postup zajišťuje, že se do produkce nedostávají průběžné experimentální změny z vývojového cyklu. Produkční release je oddělený od kontinuálního nasazování do \texttt{dev} a \texttt{stage} a je spojen s explicitním rozhodnutím o vydání.
+
+\subsection{Release proces}
+
+Release proces navazuje na postup použitý již v bakalářské práci, byl však aktualizován o aktuální domény a prostředí. Prakticky rozlišuji dva režimy:
+\begin{itemize}
+    \item \textbf{Kontinuální nasazování} do \texttt{dev} a \texttt{stage} při průběžném vývoji.
+    \item \textbf{Release nasazení} do \texttt{production} až po vytvoření release tagu na \texttt{master}.
+\end{itemize}
+
+Toto rozdělení mi umožnilo udržet rychlou iteraci během vývoje, ale současně zachovat kontrolovaný a předvídatelný způsob produkčního vydávání. Nasazení přes HTTPS navíc splňuje technický předpoklad pro PWA režim popsaný v předchozí části kapitoly.

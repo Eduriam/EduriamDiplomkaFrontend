@@ -1,0 +1,27 @@
+% Outline:
+% - Iterativní implementační cyklus.
+% - Návaznost Gherkin -> implementace -> testy -> OpenAPI.
+% - Stručná spolupráce s backendem.
+
+\subsection{Postup při implementaci frontendu}
+
+Po dokončení přípravy projektu jsem implementaci vedl iterativně. V jednotlivých iteracích jsem vždy vybíral související scénáře a realizoval je jako uzavřený celek od specifikace po ověření funkčnosti. Tento postup mi umožnil průběžně doručovat funkční části systému a zároveň rychle reagovat na změny API nebo návrhu uživatelského rozhraní.
+
+Typická iterace měla následující podobu:
+
+\begin{enumerate}
+    \item Nejprve jsem zpřesnil požadavky a kontext příslušných případů užití.
+    \item Následně jsem sepsal detailní scénáře v jazyce Gherkin v \texttt{.feature} souborech.
+    \item Poté jsem dopracoval konkrétní část návrhu uživatelského rozhraní ve Figmě.
+    \item Funkci jsem implementoval proti Mock API a průběžně na ni navázal automatizované testy odvozené z Gherkin scénářů.
+    \item V průběhu implementace jsem prováděl manuální testování, abych ověřil chování rozhraní i logiku funkce.
+    \item Po aktualizaci backendu jsem převzal změny API kontraktu.
+    \item Na základě OpenAPI specifikace jsem vygeneroval třídy pro komunikaci s API a integroval je do frontendu.
+    \item Iteraci jsem uzavřel finálním manuálním ověřením a následně uživatelským testováním, které dále popisuji v kapitole \uv{Testování}.
+\end{enumerate}
+
+Tento postup jsem volil záměrně, protože dobře propojuje návrh, implementaci i testování. Gherkin scénáře mi sloužily jako formální specifikace chování, automatizované testy jako průběžná kontrola konzistence a manuální testování jako doplnění aspektů, které nelze snadno pokrýt automatizací.
+
+\subsubsection{Spolupráce s backendem}
+
+V průběhu návrhu i implementace jsem pravidelně konzultoval strukturu API a funkční chování s Bc. Jakubem Vondráčkem, který realizoval backendovou část systému. Koordinaci úkolů a požadavků jsme průběžně evidovali v nástroji Notion. Díky tomu bylo možné udržovat konzistenci mezi frontendem, Mock API a reálným backendovým API i při iterativním vývoji.

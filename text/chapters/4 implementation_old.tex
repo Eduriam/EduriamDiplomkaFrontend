@@ -1,0 +1,38 @@
+%---------------------------------------------------------------
+\chapter{Implementace}
+%---------------------------------------------------------------
+
+\section{Postup při realizaci projektu}
+
+\subsection{Příprava implementace}
+
+\subsubsection{Aktualizace konvencí a linterů}
+
+Na začátku přípravy implementace jsem se zaměřil na zavedení nových konvencí a linterů s cílem zvýšit kvalitu kódu a zajistit jeho konzistenci napříč celým projektem. V projektu byly již zavedeny knihovny ESLint a Prettier, nicméně jejich konfigurace byla zastaralá a neodpovídala současným standardům. Proto jsem aktualizoval obě knihovny, jejich konfigurace a zavedl jsem nové konvence a pravidla pro psaní kódu. Po zavedení těchto změn jsem provedl refaktoring stávajícího kódu, aby odpovídal novým pravidlům. 
+
+\subsubsection{Dockerizace}
+
+Následně jsem provedl dockerizaci vývojového prostředí, která do té doby nebyla v aplikaci zavedena. Cílem bylo zajistit, aby veškerý vývoj probíhal v konzistentním prostředí a aby se zjednodušilo nastavování aplikace a práce s jednotlivými příkazy, skripty a knihovnami.
+
+\subsubsection{Zavední nástrojů umělé inteligence}
+
+% write - todo
+
+% Sem přidat, že jsem sepsal skills podle standardu definovaným společností Anthropic https://agentskills.io/what-are-skills
+
+\subsubsection{Refaktoring zastaralých komponent}
+
+% write - todo napsat o tom, že jsem odstranil nebo upravil zastaralé komponenty, které byly zaměřeny čistě na výuku angličtiny a které nebudou v nové verzi aplikace potřeba
+
+\subsubsection{Design System}
+
+Po zavedení nových konvencí a linterů jsem se přesunul k vytvoření design systému. Protože aplikace již využívala knihovnu Material UI, rozhodl jsem se na této knihovně stavět a vytvořit na jejím základě samostatnou knihovnu komponentů s názvem Eduriam UI. Tato knihovna bude kromě této aplikace využívána i v dalších částech projektu, jako jsou například webové stránky nebo další interní programy.
+
+Knihovnu jsem vytvořil jako samostatný repozitář, který jsem následně vydal jako npm balíček ve službě GitHub Packages. % write - přidat citaci na GitHub Packages
+Díky tomu je možné knihovnu snadno verzovat a distribuovat napříč různými částmi projektu. Tuto knihovnu jsem následně importoval do frontendové části aplikace, kde jsem provedl rozsáhlý refaktoring kódu frontendu, při kterém jsem přesunul komponenty do nově vytvořené knihovny a upravil jejich implementaci tak, aby odpovídala zavedeným konvencím.
+
+V rámci knihovny Eduriam UI jsem použil jazyk TypeScript a knihovny React a Material UI. Dále jsem zavedl knihovnu Storybook, která umožňuje snadné prohlížení, dokumentaci a testování jednotlivých komponentů. Do knihovny jsem také zavedl nástroje Prettier a ESLint pro zajištění konzistentního formátování a zvýšení kvality kódu.
+
+% write - přidat citaci na Storybook, Prettier, ESlint
+
+% write todo - actually přidat do Eduriam UI Prettier a ESLint

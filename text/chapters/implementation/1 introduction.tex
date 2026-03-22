@@ -1,0 +1,22 @@
+%---------------------------------------------------------------
+\chapter{Implementace a nasazení}
+%---------------------------------------------------------------
+
+% Outline:
+% - Úvod kapitoly a vymezení rozsahu.
+% - Postup při realizaci projektu: příprava, workflow, implementace funkcí.
+% - Nasazení aplikace: dev, stage, produkce.
+
+% Outline:
+% - Cíl kapitoly.
+% - Vymezení vůči kapitolám Návrh a Testování.
+% - Rozsah: frontend + integrační spolupráce s backendem.
+% - Stručná mapa podkapitol.
+
+V této kapitole se věnuji implementaci navrženého řešení a jeho nasazení do jednotlivých prostředí. Zaměřuji se především na frontendovou část aplikace, protože ta je hlavním výstupem této práce. Cílem kapitoly je popsat, jakým způsobem jsem převedl návrh z předchozí kapitoly do reálně provozovaného systému, jaké technické změny jsem při tom provedl a jak jsem následně zajistil nasazení aplikace.
+
+Kapitola navazuje na kapitolu \uv{Návrh}, ve které jsem specifikoval cílové chování systému, případy užití a scénáře v jazyce Gherkin. Naopak detailní výsledky ověřování implementace přesouvám do kapitoly \uv{Testování}. V této kapitole se proto soustředím zejména na implementační rozhodnutí, strukturu řešení a praktický postup realizace.
+
+Rozsah kapitoly je vymezen frontendem aplikace. Backendovou část popisuji pouze v rozsahu integrační spolupráce, tedy zejména v kontextu API kontraktu, generování tříd z OpenAPI specifikace a synchronizace změn při iterativním vývoji.
+
+Nejprve popisuji přípravu projektu a technické kroky, které bylo nutné provést před samotnou implementací funkcí. Následně uvádím iterativní workflow, podle kterého jsem jednotlivé funkce realizoval. Poté detailněji rozebírám vybrané implementované epiky, zejména novou strukturu učení. Kapitolu uzavírám popisem nasazení aplikace do prostředí \texttt{dev}, \texttt{stage} a \texttt{production}.
