@@ -26,13 +26,22 @@ Nakonec, došlo k zásadní změně v doméně, na kterou se tato vzdělávací 
 % Review
 V následujících částech textu tak podrobněji popíšu jednotlivé kroky přípravy projektu.
 
-\subsubsection{Příprava knihoven \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}}
+% Review
+\subsubsection{Příprava knihoven komponentů}
 
-V rámci přípravy jsem oddělil komponentovou vrstvu do dvou knihoven. Knihovna \texttt{@eduriam/ui-core} slouží jako základ design systému postavený nad Material UI\footnote{Dostupné na: \href{https://mui.com/}{https://mui.com/}}. Obsahuje zejména základní stavební prvky uživatelského rozhraní a centrální definici \textit{theme}, která určuje konzistentní vzhled aplikace.
+% Review
+V rámci přípravy aplikace jsem se rozhodl od aplikace oddělit některé UI komponenty a přesunout je do samostatných knihoven, které bude tato aplikace využívat. Komponenty jsem rozdělil do dvou knihoven \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}. První zmíněná knihovna bude obsahovat základní UI komponenty, jako tlačítka, textová pole, karty apod. Druhá zmíněná knihovna pak bude obsahovat komplexnější komponenty, které budou využívány jen ve specifických případech. Toto rozdělení tak reflektuje strukturu knihovny Material UI \cite{MaterialUI}, která je podobně rozdělena na knihovnu základních komponentů MUI Core a na knihovnu komplexnějších komponentů MUI X.
 
-Knihovna \texttt{@eduriam/ui-x} obsahuje komplexnější komponenty, které se využívají zejména při učení a vysvětlování látky. Tyto komponenty jsou navržené tak, aby byly znovupoužitelné i mimo hlavní frontend aplikace. Praktickým přínosem je možnost samostatně zobrazit a testovat průběh učení bez nutnosti vázat celý obsah na konkrétní implementaci jedné stránky.
+Důvodů pro toto rozdělení je několik. Vytvoření knihovny \texttt{@eduriam/ui-core} umožní postupně vytvořit jednotný design systém a knihovnu základních komponentů, kterou bude možné využívat jak v samotné aplikaci, tak v dalších částech projektu, jako například na webových stránkách, nebo v dalších interních programech, které nejsou součástí této diplomové práce. Díky tomu bude možné dodržet konzistentní design napříč všemi částmi projektu. Dalším důvodem je dodržení design principu \textit{Separation of Concerns}, který říká, že bychom při vytváření systémů měli jasně oddělit zodpovědnosti jednotlivých částí systému. Díky tomu bude možné docílit přehlednější struktury kódu a lepší testovatelnosti a udržitelnosti celého systému. V případě této aplikace jsem se tak snažil oddělit základní UI komponenty od logiky samotné aplikace.
 
-Ve frontendu jsem následně používal obě knihovny současně. Díky tomu jsem oddělil design systém od aplikační logiky a vytvořil předpoklad pro konzistentní využití komponent i v dalších částech projektu.
+% Review
+Cílem zmíněné knihovny tak bylo oddělit základní UI komponenty od zbytku projektu. Kromě základních komponentů ovšem vznikla potřeba sdílet určité složitější komponenty napříč různými částmi projektu. Zejména se jedná o komponenty, které vizualizují průběh učení dané lekce, tedy komponenty zobrazující jednotlivá cvičení a vysvětlení látky. Tyto komponenty budou využívány jednak v samotné aplikaci a jednak v interním nástroji pro tvorbu obsahu, ve kterém bude možné například zobrazit náhled učení se dané lekce. Zmíněný nástroj již není součástí této práce. Jelikož bude knihovna \texttt{@eduriam/ui-core} se základními komponenty využívána ve více programech, snažil jsem se tuto knihovnu zachovat co nejjednodušší a nejmenší. Z tohoto důvodu jsem pro komplexnější komponenty vytvořil samostatnou knihovnu \texttt{@eduriam/ui-x}, kterou bude možné zavést do programů ve kterých tyto specifické komponenty budou skutečně potřeba.
+
+% Review
+Další výhodou tohoto přístupu je možnost verzování knihoven pomocí sémantického verzování \cite{SemVer}. Díky tomuto způsobu verzování je možné snadno rozšiřovat a vylepšovat komponenty nezávisle na ostatních částech systému. Celý vývoj komponentů je tak strukturovanější a přehlednější.
+
+% Review
+Frontend aplikace tak bude využívat obě zmíněné knihovny.
 
 \subsubsection{Aktualizace knihoven a nástrojů}
 
