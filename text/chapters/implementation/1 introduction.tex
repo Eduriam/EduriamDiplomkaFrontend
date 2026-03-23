@@ -7,16 +7,17 @@
 % - Postup při realizaci projektu: příprava, workflow, implementace funkcí.
 % - Nasazení aplikace: dev, stage, produkce.
 
-% Outline:
-% - Cíl kapitoly.
-% - Vymezení vůči kapitolám Návrh a Testování.
-% - Rozsah: frontend + integrační spolupráce s backendem.
-% - Stručná mapa podkapitol.
+% Review
+V předchozích kapitolách jsem se věnoval analýze a návrhu jednotlivých částí aplikace. V této kapitole navážu na předchozí kapitoly a popíšu, jakým způsobem jsem postupoval při implementaci a nasazení aplikace.
 
-V této kapitole se věnuji implementaci navrženého řešení a jeho nasazení do jednotlivých prostředí. Zaměřuji se především na frontendovou část aplikace, protože ta je hlavním výstupem této práce. Cílem kapitoly je popsat, jakým způsobem jsem převedl návrh z předchozí kapitoly do reálně provozovaného systému, jaké technické změny jsem při tom provedl a jak jsem následně zajistil nasazení aplikace.
+% Review
+Nejprve popíšu úvodní úpravy aplikace, které jsem provedl s cílem připravit aplikaci na nadcházející vývoj. Tyto úpravy se týkaly zejména aktualizace používaných knihoven, aktualizace konvencí a linterů, refaktoringu kódu a zavedení nástrojů umělé inteligence pro asistenci při vývoji.
 
-Kapitola navazuje na kapitolu \uv{Návrh}, ve které jsem specifikoval cílové chování systému, případy užití a scénáře v jazyce Gherkin. Naopak detailní výsledky ověřování implementace přesouvám do kapitoly \uv{Testování}. V této kapitole se proto soustředím zejména na implementační rozhodnutí, strukturu řešení a praktický postup realizace.
+% Review
+Dále popíšu, jakým způsobem jsem při vývoji postupoval a jakým způsobem jsem spolupracoval s kolegou Bc. Jakubem Vondráčkem, který se v jeho diplomové práci zabývá backendovou částí této aplikace.
 
-Rozsah kapitoly je vymezen frontendem aplikace. Backendovou část popisuji pouze v rozsahu integrační spolupráce, tedy zejména v kontextu API kontraktu, generování tříd z OpenAPI specifikace a synchronizace změn při iterativním vývoji.
+% Review
+Dále se budu věnovat implementaci nejvýznamnějších funkcí aplikace. Mezi tyto funkce patří například nová struktura učení, notifikační systém, autentizace pomocí účtu Google nebo přizpůsobení aplikace tak, aby splňovala požadavky progresivních webových aplikací a bylo ji tak možné stáhnout a nainstalovat na zařízení uživatele.
 
-Nejprve popisuji přípravu projektu a technické kroky, které bylo nutné provést před samotnou implementací funkcí. Následně uvádím iterativní workflow, podle kterého jsem jednotlivé funkce realizoval. Poté detailněji rozebírám vybrané implementované epiky, zejména novou strukturu učení. Kapitolu uzavírám popisem nasazení aplikace do prostředí \texttt{dev}, \texttt{stage} a \texttt{production}.
+% Review
+Nakonec popíšu, jakým způsobem jsem nasadil frontendovou část aplikace do jednotlivých prostředí. Nejprve popíšu testovací prostředí využívající mock API, které simuluje reálné API a umožňuje testování nezávisle na stavu backendové části aplikace. Dále popíšu druhé testovací prostředí, které již využívá backendové API nasazené v testovacím režimu. Nakonec popíšu nasazení do produkčního prostředí, kde aplikace využívá produkční verzi backendového API.   
