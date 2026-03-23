@@ -59,13 +59,17 @@ Mezi aktualizované knihovny patří například Next.js, Material UI, Storybook
 % Review
 Celkově aktualizace knihoven skutečně přinesla řadu výhod. Novější knihovny zefektivnily vývoj aplikace, což bylo možné pozorovat například u nástroje Storybook, jehož novější verze přinesla přehlednější a výrazně rychlejší tvorbu UI komponentů díky novým konvencím a rychlejšímu sestavování jednotlivých komponentů při spouštění Storybook serveru.
 
+% Review
 \subsubsection{Refaktoring kódu}
 
-Po aktualizaci stacku jsem provedl refaktoring stávajícího kódu. Nejprve jsem odstranil části navázané na původní doménu výuky jazyků, které již neodpovídaly novému zaměření aplikace.
+% Review
+Po aktualizaci knihoven jsem dále provedl refaktoring stávajícího kódu. Nejprve jsem provedl úvodní refaktoring před fází implementace, který zahrnoval zejména přesun příslušných komponentů do dříve zmíněných knihoven \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}. Úvodní refaktoring dále zahrnoval zásadní změnu struktury komponentů pro učení, v rámci které jsem komponenty změnil tak, aby byly rozšiřitelnější a lépe udržovatelné. Komponenty jsem tak připravil pro budoucí úpravy a vývoj.
 
-Dále jsem přepracoval strukturu komponent pro učení tak, aby bylo možné jednoduše přidávat nové typy cvičení a vysvětlujících bloků. Původní řešení bylo příliš rigidní a rozšiřování funkcí vedlo k neúměrnému nárůstu složitosti. Nová struktura je modulárnější a lépe podporuje iterativní rozvoj.
+% Review
+V rámci úvodního refaktoringu jsem dále vytvořil nové komponenty, které usnadňují vývoj a sjednocují rozložení prvků UI na jednotlivých stránkách aplikace. Mezi tyto komponenty patří například komponenty \texttt{PageRoot}, \texttt{ContentContainer} a \texttt{PageNavigation}, díky kterým jsou rozložení a navigace napříč všemi stránkami konzistentní a snadno konfigurovatelné.
 
-Současně jsem zavedl sjednocující layout komponenty, zejména \texttt{PageRoot}, \texttt{ContentContainer} a \texttt{PageNavigation}. Tyto prvky zajišťují konzistentní rozložení uživatelského rozhraní napříč stránkami, například jednotné odsazení, responzivní chování a jednotný způsob definice navigačních prvků.
+% Review
+V průběhu vývoje jsem pak průběžně prováděl další refaktoring, který se týkal převážně průběžného odstraňování a aktualizace zastaralých komponentů a stránek. Tyto změny jsem prováděl průběžně zejména kvůli tomu, že bylo snazší staré funkce postupně nahrazovat novými a aktualizovat je, než všechny odstranit najednou.
 
 \subsubsection{Aktualizace linterů a konvencí}
 
