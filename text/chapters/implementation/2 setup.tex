@@ -12,7 +12,7 @@
 % - Nový Figma prototyp.
 
 % Review
-V této části textu popíšu úvodní přípravu projektu a jednotlivé kroky, které jsem provedl před zahájením samotné implementace.
+V této části textu popíšu úvodní přípravu projektu a jednotlivé kroky, které jsem provedl před zahájením samotné implementace. Tuto přípravu jsem prováděl souběžně s předchozími fázemi analýzy a návrhu.
 
 % Review
 Úvodní přípravu aplikace bylo třeba provést hned z několika důvodů. Původní aplikace byla naposledy aktivně vyvíjena v roce 2024, kdy jsem ji s kolegou Bc. Janem Hlaváčem vyvíjel v rámci našich bakalářských prací. Přestože jsme se projektu věnovali i po dokončení bakalářských prací, naše zaměření bylo především na části projektu které se netýkaly samotného vývoje. Vývoj tak ustál a aplikace nedostávala žádné nové aktualizace. Od roku 2024 došlo k řadě změn, kterým je nyní třeba projekt přizpůsobit. 
@@ -71,18 +71,41 @@ V rámci úvodního refaktoringu jsem dále vytvořil nové komponenty, které u
 % Review
 V průběhu vývoje jsem pak průběžně prováděl další refaktoring, který se týkal převážně průběžného odstraňování a aktualizace zastaralých komponentů a stránek. Tyto změny jsem prováděl průběžně zejména kvůli tomu, že bylo snazší staré funkce postupně nahrazovat novými a aktualizovat je, než všechny odstranit najednou.
 
+% Review
 \subsubsection{Aktualizace linterů a konvencí}
 
-V projektu jsem aktualizoval ESLint a Prettier a upravil jejich konfiguraci tak, aby byla kontrola kvality kódu přísnější a zároveň čitelná pro běžný vývoj. Praktickým příkladem je zavedení pravidla \texttt{eqeqeq}\footnote{Dostupné na: \href{https://eslint.org/docs/latest/rules/eqeqeq}{https://eslint.org/docs/latest/rules/eqeqeq}}, které vynucuje porovnávání pomocí \texttt{===} a \texttt{!==}. Tím se snižuje riziko nejednoznačného porovnávání hodnot a chyb způsobených implicitní konverzí typů v jazyce JavaScript/TypeScript.
+% Review
+V rámci úvodní přípravy projektu jsem také provedl aktualizaci konvencí a konfigurací nástrojů pro formátování a kontrolu kvality kódu ESLint a Prettier. Jak jsem již zmínil výše, tyto nástroje jsem aktualizoval na jejich novější verze a dále jsem zavedl přísnější pravidla pro kontrolu kódu. Jedním z nově zavedených pravidel je například pravidlo \texttt{eqeqeq} \footnote{Dokumentace dostupná na: \href{https://eslint.org/docs/latest/rules/eqeqeq}{https://eslint.org/docs/latest/rules/eqeqeq}}, které vynucuje typově bezpečné porovnávání hodnot pomocí \texttt{===} a \texttt{!==} namísto porovnávání pomocí \texttt{==} a \texttt{!=}.
 
+% Review
+Zmíněná pravidla jsem zavedl s cílem snížit riziko vzniku nejednoznačného kódu a chyb, které mohou nastávat při nesprávném použití jazyků JavaScript a TypeScript, ve kterých je frontendová část aplikace naprogramována.
+
+% Review
 \subsubsection{Zavedení nástrojů umělé inteligence}
 
-Další částí přípravy bylo zavedení konvencí pro AI asistenty používané při vývoji. Vycházel jsem ze standardu Agent Skills\footnote{Dostupné na: \href{https://agentskills.io/}{https://agentskills.io/}}. V rámci projektu jsem definoval pravidla zejména pro generování nových komponent, stránek a \texttt{.feature} souborů v jazyce Gherkin.
+% Review
+Další částí přípravy bylo zavedení konvencí pro nástroje umělé inteligence, které mohou vývojářům pomoci s vytvářením kódu. Vycházel jsem ze standardu Agent Skills\footnote{Dostupné na: \href{https://agentskills.io/}{https://agentskills.io/}} definovaným společností Anthropic. Tento standard umožňuje s pomocí souborů ve formátu Markdown definovat instrukce a pravidla pro AI agenty, kteří na základě nich mohou v kódu vykonávat různé úkony.
 
-Výhodou tohoto přístupu je, že stejné konvence lze využívat napříč různými nástroji a modely, například v prostředích Claude Code, Cursor, Codex nebo Gemini CLI. Díky tomu jsem snížil rozdíly v kvalitě výstupu při použití různých AI nástrojů.
+% Review
+Zadefinoval jsem tak pravidla a instrukce pro tvorbu nových UI komponentů, programování stránek aplikace, tvorbu automatizovaných testů a práci s \texttt{.feature} soubory.
 
-\subsubsection{Vytvoření nového Figma prototypu}
+% Review
+Výhodou využití zmíněného standardu je vysoká kompatibilita s nejpoužívanějšími nástroji umělé inteligence pro tvorbu kódu, kterými jsu například Claude Code, Cursor, Codex, Gemini CLI a další. Instrukce tak bude možné využívat napříč různými IDE, nástroji a AI modely.
 
-Původní prototyp byl založen na externí lo-fi knihovně komponent. Tento přístup byl vhodný pro rychlé vytvoření prvotního návrhu, ale v pokročilé fázi návrhu komplikoval práci, protože struktura komponent a jejich parametry neodpovídaly cílové implementaci.
+% Review
+\subsubsection{Příprava nového prototypu v nástroji Figma}
 
-Z tohoto důvodu jsem vytvořil nový prototyp s ručně navrženými komponentami bez závislosti na externí knihovně. Výsledkem byla nižší komplexita návrhu, přesnější návaznost na implementaci a jednodušší převod návrhu do produkčního kódu.
+% Review
+V rámci úvodních příprav projektu, které probíhaly současně s analýzou a návrhem, jsem se rozhodl změnit způsob, kterým je tvořen prototyp uživatelského rozhraní v nástroji Figma. Původní návrh uživatelského rozhraní, který jsem vytvořil v rámci mé bakalářské práce, využíval externí knihovnu základních komponentů, které jsem upravil a následně využil v návrhu jednotlivých stránek aplikace.
+
+% Review
+Využití knihovny s již připravenými komponenty zpočátku umožnilo rychle a efektivně vytvořit úvodní prototyp uživatelského rozhraní. Časem se však ukázalo, že má tento přístup zásadní nevýhody při tvorbě \textit{high fidelity} prototypu. Komponenty externí knihovny často používaly jinou strukturu a parametry, než bylo potřeba. Struktura komponentů a jejich parametrů se tak postupnými úpravami stávala zbytečně složitou, což značně snižovalo efektivitu tvorby prototypu.
+
+% Review
+Jelikož jsem v rámci této práce měl za cíl vytvořit kompletně nový a propracovanější vzhled všech komponentů a stránek aplikace, rozhodl jsem se zmíněný přístup změnit a místo externí knihovny komponentů vytvořit všechny komponenty ručně. Díky tomu jsem měl vyšší kontrolu nad tvorbou jednotlivých komponentů a byl jsem schopen je navrhovat jednodušeji a přesněji. Důsledkem toho byl přesnější návrh a snížená složitost komponentů. To vedlo k rychlejším úpravám prototypu a následně k efektivnější implementaci.
+
+% Review
+V rámci úpravy prototypu jsem také provedl organizaci návrhů stránek a komponentů, aby odpovídaly nové struktuře aplikace a dříve zmíněným knihovnám \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}.
+
+% Review
+Díky těmto změnám by tak měl být prototyp v budoucnu snadno rozšiřitelný a upravitelný. 
