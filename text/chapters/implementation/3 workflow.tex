@@ -3,25 +3,44 @@
 % - Návaznost Gherkin -> implementace -> testy -> OpenAPI.
 % - Stručná spolupráce s backendem.
 
+% Review
 \subsection{Postup při implementaci frontendu}
 
-Po dokončení přípravy projektu jsem implementaci vedl iterativně. V jednotlivých iteracích jsem vždy vybíral související scénáře a realizoval je jako uzavřený celek od specifikace po ověření funkčnosti. Tento postup mi umožnil průběžně doručovat funkční části systému a zároveň rychle reagovat na změny API nebo návrhu uživatelského rozhraní.
+% Review
+Po dokončení přípravy projektu jsem začal se samotnou implementací. Před samotnou implementací již byla dokončena většina kroků analýzy a společně s ní také úvodní verze návrhu uživatelského rozhraní. Měl jsem tak veškeré podklady pro zahájení implementace.
 
-Typická iterace měla následující podobu:
+% Review
+Současně s implementací frontendové části projektu také probíhala implementace backendové části, kterou prováděl kolega Bc. Jakub Vondráček v rámci jeho diplomové práce. Z důvodu výrazných změn API bylo třeba zajistit vhodnou formu spolupráce tak, aby probíhal vývoj plynule a efektivně. Rozhodli jsme se tak využít agilní metodiku Kanban, která se osvědčila při vývoji původní aplikace \cite{Jenicek2024BachelorThesis}, kterou jsem vyvíjel s kolegou Bc. Janem Hlaváčem v rámci našich bakalářských prací. Tato metodika nám umožnila pracovat na jednotlivých funkcích takřka nezávisle na sobě a efektivně implementovat jednotlivé funkce. Důvody pro zvolení zmíněné metodiky jsem popsal v rámci mé bakalářské práce.
 
-\begin{enumerate}
-    \item Nejprve jsem zpřesnil požadavky a kontext příslušných případů užití.
-    \item Následně jsem sepsal detailní scénáře v jazyce Gherkin v \texttt{.feature} souborech.
-    \item Poté jsem dopracoval konkrétní část návrhu uživatelského rozhraní ve Figmě.
-    \item Funkci jsem implementoval proti Mock API a průběžně na ni navázal automatizované testy odvozené z Gherkin scénářů.
-    \item V průběhu implementace jsem prováděl manuální testování, abych ověřil chování rozhraní i logiku funkce.
-    \item Po aktualizaci backendu jsem převzal změny API kontraktu.
-    \item Na základě OpenAPI specifikace jsem vygeneroval třídy pro komunikaci s API a integroval je do frontendu.
-    \item Iteraci jsem uzavřel finálním manuálním ověřením a následně uživatelským testováním, které dále popisuji v kapitole \uv{Testování}.
-\end{enumerate}
+% Review
+Implementaci funkcí jsem tak rozdělil do dvou fází. V první fázi jsem vždy implementoval danou funkci s využitím existujícího mock API, které jsem upravil tak, aby reflektovalo očekávanou strukturu nového API. V druhé fázi, poté co kolega Bc. Jakub Vondráček dokončil implementaci příslušných koncových bodů API, jsem napojil funkci na nové API a provedl případné úpravy v kódu frontendu. Jednotlivé fáze podrobněji popíšu v následujících částech textu.
 
-Tento postup jsem volil záměrně, protože dobře propojuje návrh, implementaci i testování. Gherkin scénáře mi sloužily jako formální specifikace chování, automatizované testy jako průběžná kontrola konzistence a manuální testování jako doplnění aspektů, které nelze snadno pokrýt automatizací.
+% Review
+\subsubsection{Implementace nových funkcí}
 
-\subsubsection{Spolupráce s backendem}
+% Review
+Při implementaci nových funkcí jsem postupoval iterativním způsobem dle priorit jednotlivých požadavků. V rámci iterativního vývoje jsem postupoval v následujících krocích.
 
-V průběhu návrhu i implementace jsem pravidelně konzultoval strukturu API a funkční chování s Bc. Jakubem Vondráčkem, který realizoval backendovou část systému. Koordinaci úkolů a požadavků jsme průběžně evidovali v nástroji Notion. Díky tomu bylo možné udržovat konzistenci mezi frontendem, Mock API a reálným backendovým API i při iterativním vývoji.
+% Review
+Nejprve jsem na základě případů užití a požadavků aplikace provedl podrobnou specifikaci scénářů v jazyce Gherkin. Tuto specifikaci jsem prováděl již přímo v repozitáři aplikace v souborech s příponou \texttt{.feature}. Současně s tím jsem pro danou funkci kompletně dokončil návrh uživatelského rozhraní.
+
+% Review
+Na základě přesné specifikace scénářů jsem následně provedl implementaci samotné funkce společně s automatizovanými testy, které s pomocí nástroje Cucumber využívaly specifikované \texttt{.feature} soubory. Součástí implementace bylo také provedení změn v existujícím mocku backend API.
+
+% Review
+Po dokončení implementace jsem otestoval nově vytvořenou funkci spuštěním automatizovaných testů. Následně jsem také provedl manuální testování dané funkce.
+
+% Review
+\subsubsection{Napojení funkcí na API}
+
+% Review
+Po tom, co kolega Bc. Jakub Vondráček dokončil implementaci příslušných koncových bodů API, jsem provedl napojení funkce na nové API. V rámci této fáze jsem postupoval následujícím způsobem.
+
+% Review
+Nejprve jsem na základě podrobné OpenAPI specifikace backend API vygeneroval ve frontendové části aplikace třídy a typy, které reflektují novou strukturu API. Díky automatické generaci typů na základě OpenAPI specifikace jsme tak zajistili konzistentnější a přesnější komunikaci mezi frontendovou a backendovou částí aplikace. Následně jsem provedl případné úpravy dané funkce a mocku API tak, aby odpovídaly nové struktuře API.
+
+% Review
+Po napojení funkce na nové API jsem znovu provedl testování funkce spuštěním automatizovaných testů. Dále jsem provedl manuální testování dané funkce, tentokrát s využitím testovacího backend API.
+
+% Review
+Po provedení všech výše zmíněných kroků tak byla funkce dokončená a připravená k nasazení do produkčního prostředí.  
