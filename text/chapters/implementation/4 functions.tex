@@ -6,11 +6,11 @@
 % - Google OAuth: frontend flow + integrace s backendem.
 % - PWA přizpůsobení: manifest, service worker, HTTPS.
 
-\subsection{Implementace funkcí}
+\section{Implementace funkcí}
 
 Při implementaci jsem se zaměřil na tři hlavní epiky, které měly největší dopad na výslednou podobu aplikace: novou strukturu učení, registraci a přihlášení pomocí účtu Google a přizpůsobení aplikace pro režim PWA. Největší část práce byla věnována prvnímu epiku, protože představuje základní mechanismus, na kterém stojí samotné učení i opakování látky.
 
-\subsubsection{Nová struktura učení}
+\subsection{Nová struktura učení}
 
 Základním doménovým prvkem nové struktury je \textit{atom}, který reprezentuje konkrétní znalost nebo koncept. Lekce se skládá z více atomů a každý atom je dále tvořen sadou \textit{StudyBlocků}, které definují konkrétní průchod uživatele danou látkou.
 
@@ -111,7 +111,7 @@ V této části kapitoly doplním následující artefakty:
     \label{fig:impl-learning-screens}
 \end{figure}
 
-\subsubsection{Registrace a přihlášení pomocí účtu Google}
+\subsection{Registrace a přihlášení pomocí účtu Google}
 
 Pro externí autentizaci jsem implementoval OAuth workflow nad integrační vrstvou frontendu a backendových endpointů. Ve frontendu začíná tok funkcí \texttt{startGoogleAuth}, která uloží zdroj akce (\texttt{signin} nebo \texttt{signup}) do \texttt{sessionStorage}, získá autorizační URL z endpointu \texttt{external-auth/google/authorize} a přesměruje uživatele na autorizační stránku Google.
 
@@ -119,7 +119,7 @@ Po návratu z Google se zpracování provádí na callback stránce \texttt{/sig
 
 Součástí implementace je i explicitní mapování chybových stavů. Například stav 404 je mapován na \uv{Google účet nenalezen} a stav 409 na \uv{Google účet již existuje}. Uživateli se následně zobrazí odpovídající kontext na přihlašovací nebo registrační stránce.
 
-\subsubsection{Přizpůsobení aplikace pro PWA}
+\subsection{Přizpůsobení aplikace pro PWA}
 
 V rámci nefunkčního požadavku na PWA jsem doplnil konfiguraci nutnou pro to, aby prohlížeče aplikaci klasifikovaly jako progresivní webovou aplikaci. V souboru \texttt{manifest.ts} jsem definoval metadata aplikace (název, krátký název, start URL, scope, režim zobrazení \texttt{standalone}, barevné parametry a ikony).
 
@@ -127,6 +127,6 @@ Dále jsem doplnil registraci service workeru na klientu. Registrace probíhá p
 
 Výsledkem je možnost instalace aplikace přímo z prohlížeče na mobilní i desktopová zařízení. Publikace do obchodů typu Google Play, App Store nebo Microsoft Store je technicky možná po dalších krocích, ale je mimo rozsah této práce.
 
-\subsubsection{Vazba implementace na testovací scénáře}
+\subsection{Vazba implementace na testovací scénáře}
 
 Výše popsané implementační části jsou přímo navázány na testovací scénáře, které uvádím v kapitole \uv{Testování}. Konkrétně jde o scénáře průchodu režimy \texttt{learn} a \texttt{review}, vyhodnocování cvičení včetně limitu tří chybných pokusů, OAuth scénáře pro Google registraci a přihlášení (včetně chybových větví) a základní ověření PWA chování a nasazení v prostředích \texttt{dev}, \texttt{stage} a \texttt{production}.
