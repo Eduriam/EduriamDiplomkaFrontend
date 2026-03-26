@@ -91,8 +91,10 @@ S výše zmíněnými výhodami se pojí několik limitací, které je třeba br
 % Review
 Z výše zmíněného důvodu jsem se rozhodl do vysvětlovacích videí zavést komponent \texttt{Video}, díky kterému je možné do videa vložit video ve standardním formátu, tedy například ve formátu \texttt{mp4}. Díky tomu lze přístup popisovaný v této kapitole využít pro jednodušší a graficky méně náročné prvky, a pro složité vizualizace využít zmíněný komponent \texttt{Video}.
 
+% Review
 Další limitací rozebíraného přístupu je responzivita samotných videí. Pokud chceme docílit responzivních videí, je třeba zásadně přizpůsobit rozložení prvků na obrazovce mobilním zařízení, které ve srovnání většími monitory obsahují výrazně méně prostoru pro zobrazení grafických prvků. Aby bylo dosaženo plně funkční responzivity, bylo třeba zásadně zjednodušit strukturu videí a zredukovat tak počet zobrazovaných komponentů, které lze v jednu chvíli ve videu zobrazit. Této responzivitě se budu věnovat v následující podkapitole tohoto textu.
 
+% Review
 Poslední limitací, kterou zde zmíním, je použitelnost videí v situacích, kdy uživatel nemá možnost poslouchat dostupnou audio nahrávku. Pokud například uživatel jede v autobuse nebo vlaku a nemá k dispozici sluchátka, jeho možnost sledovat vysvětlovací videa je značně limitována. Tato limitace vychází spíše z rozhodnutí vysvětlovat látku formou videí, než ze samotného přístupu dynamického vykreslování videí popisovaném v této kapitole. Byť je tato limitace zásadní z hlediska uživatelské zkušenosti, je cenou za získání potenciálně záživnější formy výuky a efektivnějšího vysvětlování látky. V rámci této práce jsem se tak rozhodl, že výhody tohoto přístupu převyšují zmíněnou nevýhodu a rozhodl jsem se tak tento přístup použít.
 
 % Review
@@ -123,55 +125,25 @@ Samotné komponenty bylo také třeba vytvářet s ohledem na responzivitu vide�
 
 % Write - zde dát ukázku komponentu s kódem CodeExplainer
 
-\subsubsection{Artefakty a diagramy pro dokumentaci struktury učení}
+% Review
+\subsubsection{Plnění cvičení pomocí \texttt{ExerciseStudyBlock}}
 
-V této části kapitoly doplním následující artefakty:
-\begin{itemize}
-    \item diagram doménového modelu (\textit{Atom}, \textit{Lekce}, \textit{StudyBlock}, typy bloků),
-    \item diagram struktury \texttt{ExplanationStudyBlock} (\textit{Scene}, \textit{Slide}, \textit{Column}, komponenty),
-    \item activity diagram průběhu učení a opakování,
-    \item screenshoty obrazovek učení.
-\end{itemize}
+% Review
+Po tom, co je uživateli vysvětlena látka pomocí dříve popsaných \texttt{ExplanationStudyBlock} bloků, je uživateli zobrazen blok \texttt{ExerciseStudyBlock}, který slouží k procvičení dané látky a sběru dat o tom, jak uživatel dané látce rozumí.
 
-\begin{figure}[ht]
-    \centering
-    \fbox{\parbox{0.92\textwidth}{
-        \textbf{Placeholder: Diagram doménového modelu učení}\\
-        Obsah: vztahy mezi entitami Atom, Lekce, StudyBlock, ExplanationStudyBlock a ExerciseStudyBlock.
-    }}
-    \caption{Diagram doménového modelu nové struktury učení (bude doplněno)}
-    \label{fig:impl-learning-domain-model}
-\end{figure}
+% Review
+Každý tento blok je, podobně jako bloky s vysvětlením látky, vykreslen na samostatné stránce v rámci učení. Tento blok může obsahovat jeden nebo více komponentů, které jsou vykresleny pod sebou v jednom sloupci. Komponenty jsou buď pasivní, které pouze zobrazují informace, nebo aktivní, se kterými může uživatel interagovat. Pasivní komponenty jsou například nadpisy, odstavce nebo diagramy. Aktivními komponenty jsou různá cvičení, které musí uživatel vyplnit pro splnění daného bloku. Jeden \texttt{ExerciseStudyBlock} může obsahovat více aktivních bloků. Příkladem toho je editor kódu, který obsahuje více oken s kódem. Každé okno je pak považováno za samostatné cvičení.
 
-\begin{figure}[ht]
-    \centering
-    \fbox{\parbox{0.92\textwidth}{
-        \textbf{Placeholder: Diagram struktury ExplanationStudyBlock}\\
-        Obsah: hierarchie Scene -> Slide -> Column -> vizualizační komponenty.
-    }}
-    \caption{Struktura vysvětlujícího bloku s Remotion renderováním (bude doplněno)}
-    \label{fig:impl-explanation-block-structure}
-\end{figure}
+% Write - zde můžu dát 2 ukázky cvičení
 
-\begin{figure}[ht]
-    \centering
-    \fbox{\parbox{0.92\textwidth}{
-        \textbf{Placeholder: Activity diagram průběhu učení/opakování}\\
-        Obsah: learn flow, review flow, vyhodnocení odpovědi, 3 pokusy, skip.
-    }}
-    \caption{Activity diagram průběhu učení a opakování (bude doplněno)}
-    \label{fig:impl-learning-activity}
-\end{figure}
+% Review
+Po vyplnění všech aktivních komponentů v rámci daného bloku uživatel zvolí možnost zkontrolovat výsledky, aplikace odpověď ohodnotí a zaznamená. Uživatel pak má možnost pokračovat nebo odpověď opravit v případě, že byla špatná.
 
-\begin{figure}[ht]
-    \centering
-    \fbox{\parbox{0.92\textwidth}{
-        \textbf{Placeholder: Screenshoty obrazovek učení}\\
-        Obsah: obrazovka vysvětlení, obrazovka cvičení, vyhodnocení odpovědi.
-    }}
-    \caption{Ukázky obrazovek studijního sezení (bude doplněno)}
-    \label{fig:impl-learning-screens}
-\end{figure}
+% Review
+Podobně jako bloky s vysvětlením látky, mohou bloky se cvičeními obsahovat audio nahrávku, která doprovází uživatele při učení. Na rozdíl od bloků s vysvětlením látky, kde je audio nahrávka přehrávána v rámci celého videa, je v případě bloků se cvičeními audio nahrávka pouze připojena ke konkrétním komponentům. Každý komponent tak k sobě může mít připojenou audio nahrávku, která například vysvětluje zadání daného příkladu. Po načtení bloku se postupně přehrají všechny audio nahrávky, které jsou v daném bloku zadefinovány. Díky tomu například uživatel nemusí číst text se zadáním, ale může si ho poslechnout a následně hned vyplnit dané cvičení.
+
+% Review
+Díky audio nahrávkám a flexibilní struktuře bloků cvičení a vysvětlování látky je tak možné pro uživatele vytvářet vysoce interaktivní průchody lekcemi a opakováním. Přístup této aplikace se tak blíží vysoce interaktivním lekcím konkurenční aplikace Scrimba, kterou jsem analyzoval v rámci analýzy existujících řešení.
 
 \subsection{Registrace a přihlášení pomocí účtu Google}
 
