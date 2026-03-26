@@ -6,35 +6,46 @@
 % - Google OAuth: frontend flow + integrace s backendem.
 % - PWA přizpůsobení: manifest, service worker, HTTPS.
 
+% Review
 \section{Implementace funkcí}
 
-Při implementaci jsem se zaměřil na tři hlavní epiky, které měly největší dopad na výslednou podobu aplikace: novou strukturu učení, registraci a přihlášení pomocí účtu Google a přizpůsobení aplikace pro režim PWA. Největší část práce byla věnována prvnímu epiku, protože představuje základní mechanismus, na kterém stojí samotné učení i opakování látky.
+% Review
+V této podkapitole podrobněji popíšu implementaci vybraných funkcí této aplikace. Nejprve popíšu implementaci nové struktury učení, která zásadně mění způsob učení a opakování látky v aplikaci. Této funkci budu věnovat největší pozornost, protože se jedná o nejvýznamnější část celé aplikace. Dále popíšu implementaci registrace a přihlašování pomocí účtu Google, díky čemuž mohou uživatelé snadněji přistupovat do aplikace. Nakonec popíšu, jakým způsobem jsem z webové aplikace vytvořil progresivní webovou aplikaci, díky čemuž si mohou uživatelé aplikaci stáhnout a nainstalovat na svá zařízení.
 
+% Review
 \subsection{Nová struktura učení}
 
-Základním doménovým prvkem nové struktury je \textit{atom}, který reprezentuje konkrétní znalost nebo koncept. Lekce se skládá z více atomů a každý atom je dále tvořen sadou \textit{StudyBlocků}, které definují konkrétní průchod uživatele danou látkou.
+% Review
+Se změnou domény původní aplikace bylo třeba zásadně změnit strukturu učení a opakování. Nejenže aplikace při učení musí důkladně zkoušet uživatele z dané látky, nyní musí uživateli také danou látku detailně a přehledně vysvětlit. V následujících částech textu popíšu nový model učení a jak nové učení vypadá z pohledu uživatele. 
 
-V systému používám dva hlavní typy bloků:
+\subsubsection{Lekce, atomy a bloky učení}
+
+% Review
+Základním prvkem učení je \texttt{Atom}, který reprezentuje konkrétní znalost nebo koncept, který se uživatel může naučit. Každá lekce je tvořena jedním nebo více atomy. Ke každému atomu je pak přiřazen jeden nebo více tzv. \texttt{StudyBlock} bloků. Každý blok reprezentuje jednu stránku v učení, na které je uživateli buď vysvětlena nová látka, nebo je uživatel vyzkoušen z dané látky pomocí cvičení. 
+
+% Review
+Tyto bloky se dělí do dvou hlavních typů.
+
+% Review
 \begin{itemize}
-    \item \texttt{ExplanationStudyBlock}, který slouží k vysvětlení látky,
-    \item \texttt{ExerciseStudyBlock}, který slouží k procvičení a vyhodnocení porozumění.
+    \item \texttt{ExplanationStudyBlock}, který slouží k vysvětlení nové látky,
+    \item \texttt{ExerciseStudyBlock}, který slouží k procvičení dané látky a sběru dat o tom, jak uživatel dané látce rozumí.
 \end{itemize}
 
-Tímto rozdělením jsem dosáhl toho, že je možné odděleně řídit způsob prezentace látky a způsob ověřování znalostí, aniž by bylo nutné měnit celý tok lekce.
+% Write - vytvořit diagram a změnit referenci
+Popsaný model je vyobrazen na diagramu \ref{fig:navrh-5}. 
 
-\paragraph{Tok \texttt{learn} a tok \texttt{review}}
+% Review
+\subsubsection{Průběh učení a opakování}
 
-Při režimu \texttt{learn} jsou uživateli ve stanoveném pořadí zobrazovány vysvětlující a cvičební bloky označené jako \texttt{learn}. Uživatel tak nejprve získá kontext, následně ihned aplikuje nové znalosti a postupně se učí více atomů v rámci jedné lekce.
+% Review
+Při spuštění učení je uživateli zobrazena sekvence bloků učení, tedy objektů \texttt{ExplanationStudyBlock} a \texttt{ExerciseStudyBlock} s označením \texttt{learn} v předem stanoveném pořadí. Uživateli je tak pro každý atom v lekci nejprve vysvětlena látka pomocí \texttt{ExplanationStudyBlock}. Následně si uživatel látku procvičí pomocí \texttt{ExerciseStudyBlock}. V rámci každé lekce se tak uživatel postupně naučí několik nových atomů. V průběhu učení aplikace sbírá data o tom, jak uživatel odpovídá v jednotlivých cvičeních. Na základě těchto dat je následně po dokončení lekce naplánováno opakování dané látky v backendové části aplikace.
 
-Při režimu \texttt{review} backend vybírá atomy určené k opakování pomocí algoritmu rozloženého opakování (\textit{spaced repetition}). Frontend pro každý vybraný atom zobrazí odpovídající \texttt{ExerciseStudyBlock} označený jako \texttt{review}. V tomto režimu uživatel neprochází celé vysvětlení tématu, ale zaměřuje se na cílené opakování.
+% Review
+Pokud uživatel v průběhu učení odpoví špatně, aplikace mu nabídne možnost si zobrazit vysvětlení odpovědi a zkusit cvičení znovu. Pokud uživatel odpoví špatně třikrát, aplikace mu nabídne možnost cvičení přeskočit.
 
-Po dokončení sezení frontend odesílá agregované hodnocení atomů přes API (\texttt{atomId}, \texttt{rating}), aby backend mohl upravit další plán opakování. Tím je zajištěna průběžná adaptace studijního procesu.
-
-\paragraph{Vyhodnocení odpovědí}
-
-Ve cvičebních blocích je uživatel při nesprávné odpovědi nucen řešení opravit. Pokud odpoví třikrát nesprávně, aplikace mu nabídne možnost cvičení přeskočit. Tento mechanismus omezuje zablokování uživatele na jednom kroku, ale současně zachovává tlak na aktivní opravu chyb.
-
-Po vyhodnocení odpovědi si uživatel může zobrazit vysvětlení, proč byla odpověď správná nebo nesprávná. Toto vysvětlení je dostupné jak při učení, tak při opakování.
+% Review
+Při spuštění opakování je uživateli pouze zobrazena sekvence bloků \texttt{ExerciseStudyBlock} s označením \texttt{review}, které prověří, zda si uživatel danou látku pamatuje. Tyto bloky jsou vybrány v backendové části aplikace na základě toho, které atomy by si měl uživatel dle naplánovaného opakování zopakovat. Na základě odpovědí uživatele je látka opět po dokončení učení naplánována k dalšímu opakování v backendové části aplikace.
 
 \subsubsection{Vysvětlování látky pomocí \texttt{ExplanationStudyBlock}}
 
