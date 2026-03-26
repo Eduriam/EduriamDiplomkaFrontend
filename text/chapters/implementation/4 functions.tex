@@ -105,7 +105,23 @@ Celkově tak tato forma vysvětlování látky má zásadní výhody a několik 
 \subsubsection{Responzivita videí s vysvětlením látky}
 
 % Review
-V této podkapitole popíšu, jakým způsobem jsem implementoval responzivitu vysvětlovacích videí, kterou jsem zmínil v předchozí kapitole.
+V této podkapitole stručně popíšu, jakým způsobem jsem zajistil responzivitu vysvětlovacích videí, kterou jsem zmínil v předchozí kapitole.
+
+% Review
+Aby bylo docíleno responzivního chování videí, bylo třeba, aby videa dodržovala přesně danou a jednoduchou strukturu. Z tohoto důvodu jsem zavedl následující strukturu videí. Každý \texttt{ExplanationStudyBlock} se skládá z několika scén \texttt{Scene}. Každá scéna se pak skládá ze stránek \texttt{Slide}, které významově odpovídají stránkám v prezentacích. Každý \texttt{Slide} je pak rozdělen do jednoho až tří sloupců \texttt{Column}, ve kterých jsou následně zadefinovány jednotlivé komponenty, které se mají zobrazit. Komponenty ve sloupcích se vždy zobrazují pod sebou v pořadí, ve kterém jsou ve sloupci zadefinovány.
+
+% Review
+Na širokých displejích, tedy například na monitorech nebo mobilních zařízeních orientovaných na šířku, jsou jednotlivé sloupce vykreslovány vedle sebe. Pokud uživatel ovšem sleduje video na zařízení s úzkým displejem, tedy typicky na mobilním zařízení otočeným na výšku, jsou pak sloupce vykreslovány pod sebou. Jednotlivé komponenty se dále přizpůsobují dostupnému místu, podobně jako responzivní komponenty na webových stránkách. Tento systém tak umožňuje snadno umisťovat komponenty na obrazovku tak, aby se jejich rozložení přizpůsobovalo velikosti a orientaci obrazovky.
+
+% Review
+Limitací tohoto přístupu je množství komponentů, které je možné ve videu na jedné stránce zobrazit. Do sloupců například není vhodné umisťovat přehršel komponentů s pevně danou výškou, protože by se z důvodu přesunu sloupců na menších displejích pod sebe nevešly. V důsledku tohoto systému by videa měla být tvořena tak, aby obsahovala více jednodušších stránek s méně komponenty, než méně stránek s mnoha komponenty. Dále, pokud je například třeba zobrazit komplexnější komponent, který obsahuje více detailů nebo textu, je vhodné na obrazovce zobrazit pouze tento komponent v jednom sloupci. Díky tomu bude mít sloupec na všech velikostech obrazovky maximální výšku a šířku a komponent tak bude možné dobře vidět.
+
+% Write - sem někam přidat diagram struktury slidů
+
+% Review
+Samotné komponenty bylo také třeba vytvářet s ohledem na responzivitu videí. Například komponenty zobrazující kód jsem implementoval tak, aby bylo možné v jejich definici určit, v jaké fázi videa se má zvýraznit jaká část kódu. Pokud by tak například bylo třeba ve videu ukázat kód s mnoha řádky a vysvětlovat různé části tohoto kódu, je možné v definici komponentu označit jednotlivé části, o kterých se bude ve videu ve vybraném čase mluvit. Aplikace pak bude automaticky v daném čase scrollovat na danou část kódu, díky čemuž bude uživatel vždy na obrazovce vidět, o které části kódu se mluví.
+
+% Write - zde dát ukázku komponentu s kódem CodeExplainer
 
 \subsubsection{Artefakty a diagramy pro dokumentaci struktury učení}
 
