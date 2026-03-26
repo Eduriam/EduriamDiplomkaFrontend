@@ -153,14 +153,20 @@ Po návratu z Google se zpracování provádí na callback stránce \texttt{/sig
 
 Součástí implementace je i explicitní mapování chybových stavů. Například stav 404 je mapován na \uv{Google účet nenalezen} a stav 409 na \uv{Google účet již existuje}. Uživateli se následně zobrazí odpovídající kontext na přihlašovací nebo registrační stránce.
 
+% Review
 \subsection{Přizpůsobení aplikace pro PWA}
 
-V rámci nefunkčního požadavku na PWA jsem doplnil konfiguraci nutnou pro to, aby prohlížeče aplikaci klasifikovaly jako progresivní webovou aplikaci. V souboru \texttt{manifest.ts} jsem definoval metadata aplikace (název, krátký název, start URL, scope, režim zobrazení \texttt{standalone}, barevné parametry a ikony).
+% Review
+V rámci nefunkčního požadavku jsem doplnil konfiguraci aplikace nutnou pro to, aby prohlížeče aplikaci klasifikovaly jako progresivní webovou aplikaci. V souboru \texttt{manifest.ts} jsem definoval metadata aplikace, jako například název, jazyk aplikace, základní barvy a ikony. V rámci této konfigurace jsem také vytvořil několik základních ikon, které může progresivní webová aplikace využívat.
 
-Dále jsem doplnil registraci service workeru na klientu. Registrace probíhá pouze v produkčním režimu a pouze v bezpečném kontextu (HTTPS nebo localhost). Využitý service worker je záměrně jednoduchý a řeší základní lifecycle události (\texttt{install}, \texttt{activate}) bez pokročilé cache strategie.
+% Review
+Dále jsem do aplikace doplnil registraci tzv. Service Worker služby. Service Worker je skript běžící v prohlížeči, jehož životní cyklus je takřka nezávislý na životním cyklu aplikace. Service Worker tak může běžet ve vlastním vlákně nezávisle na samotné aplikaci. Tato služba se využívá například pro správu cache aplikace, podporu offline funkcí a jako proxy mezi odchozími a příchozími požadavky a samotnou aplikací. V rámci této práce jsem se těmto funkcím nevěnoval a proto jsem pouze zaregistroval prázdný Service Worker skript, který je nutný pro vytvoření PWA. \cite{ServiceWorker}
 
-Výsledkem je možnost instalace aplikace přímo z prohlížeče na mobilní i desktopová zařízení. Publikace do obchodů typu Google Play, App Store nebo Microsoft Store je technicky možná po dalších krocích, ale je mimo rozsah této práce.
+% Review
+Nakonec bylo třeba zajistit, aby byla aplikace dostupná přes HTTPS protokol \cite{PWABuilder}. To jsem zajistil v rámci nasazení aplikace, kterému se věnuji v podkapitole \nameref{sec:deployment}.
 
-\subsection{Vazba implementace na testovací scénáře}
+% Review
+Díky výše zmíněné konfiguraci se tak aplikace stala progresivní webovou aplikací. Uživatelé si tak mohou aplikaci stáhnout a nainstalovat do svých zařízení přímo z prohlížeče na stránkách této aplikace.
 
-Výše popsané implementační části jsou přímo navázány na testovací scénáře, které uvádím v kapitole \uv{Testování}. Konkrétně jde o scénáře průchodu režimy \texttt{learn} a \texttt{review}, vyhodnocování cvičení včetně limitu tří chybných pokusů, OAuth scénáře pro Google registraci a přihlášení (včetně chybových větví) a základní ověření PWA chování a nasazení v prostředích \texttt{dev}, \texttt{stage} a \texttt{production}.
+% Review
+Aplikaci tak bude možné v budoucnu po dalších konfiguracích, například s pomocí nástroje PWABuilder \cite{PWABuilder}, zabalit a publikovat na platformách Google Play, App Store nebo například Microsoft Store. Publikace na tyto platformy je časově značně náročná a týká se spíše právních otázek, nežli softwarového inženýrství. Proto se samotné publikaci v rámci této práce nebudu věnovat.
