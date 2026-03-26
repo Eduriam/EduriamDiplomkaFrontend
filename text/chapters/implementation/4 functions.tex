@@ -47,30 +47,46 @@ Pokud uživatel v průběhu učení odpoví špatně, aplikace mu nabídne možn
 % Review
 Při spuštění opakování je uživateli pouze zobrazena sekvence bloků \texttt{ExerciseStudyBlock} s označením \texttt{review}, které prověří, zda si uživatel danou látku pamatuje. Tyto bloky jsou vybrány v backendové části aplikace na základě toho, které atomy by si měl uživatel dle naplánovaného opakování zopakovat. Na základě odpovědí uživatele je látka opět po dokončení učení naplánována k dalšímu opakování v backendové části aplikace.
 
+% Review
 \subsubsection{Vysvětlování látky pomocí \texttt{ExplanationStudyBlock}}
 
-\texttt{ExplanationStudyBlock} využívá vizualizace připomínající krátká videa doplněná audiovýkladem. Klíčové je, že tyto vizualizace nejsou ve výchozím stavu streamované jako předrenderované soubory \texttt{mp4}, ale jsou vykreslovány za běhu aplikace pomocí knihovny Remotion\footnote{Dostupné na: \href{https://www.remotion.dev/}{https://www.remotion.dev/}} na základě JSON definice.
+% Review
+Vysvětlování látky pomocí \texttt{ExplanationStudyBlock} je tvořeno vizualizacemi doplněnými o audio nahrávku vysvětlující danou látku. Stránky s vysvětlením látky tak připomínají krátká videa, díky kterým uživatel může pochopit danou látku. Klíčovým rozdílem oproti klasickým videím je způsob, jakým jsou tato videa vykreslována.
 
-Tento přístup měl několik významných výhod:
-\begin{itemize}
-    \item sjednocení stylu a technologií mezi \uv{videem} a zbytkem React aplikace,
-    \item jednodušší globální změny vzhledu po vydání nové verze komponent,
-    \item přirozená responzivita pro různé velikosti a orientace obrazovky,
-    \item návaznost na režim světlého a tmavého motivu,
-    \item znovupoužitelnost komponent napříč vysvětlením a cvičeními.
-\end{itemize}
+% Review
+Na rozdíl od videí, která jsou například uložena ve formátu \texttt{mp4} a následně streamována přes síť, jsou tyto vizualizace animovány v prohlížeči za běhu samotné aplikace pomocí knihovny Remotion na základě JSON definice obsažené v daném \texttt{ExplanationStudyBlock} bloku. Tento přístup má několik zásadních výhod a také několik limitací. % Write přidat odkaz na remotion
 
-Současně jsem musel zohlednit i limitace. Vykreslování animací v prohlížeči je citlivé na výkon zařízení, proto není vhodné touto formou řešit graficky extrémně náročný obsah. U složitějších vizualizací je možné použít \textit{fallback} ve formě předrenderovaného videa vloženého do bloku přes komponentu typu \texttt{Video}.
+% Konzistence + změna vzhledu
+% Znovuvyužitelnost
+% Dark theme
+% Responsivita
+% Změna obsahu videí je snadná (stačí změnit JSON) + vylepšování komponentů a opravování komponentů
+% Interaktivita (například zobrazení počasí)
 
-Další limitací je nutnost držet jednoduchou strukturu prezentace, aby bylo dosaženo responzivního chování. V praxi jsem proto strukturoval vysvětlení hierarchií \textit{scéna} -> \textit{slide} -> \textit{sloupec} -> \textit{komponenta}. Na širokých displejích se sloupce zobrazují vedle sebe, na úzkých displejích pod sebou.
+% Review
+Zaprvé, díky použité knihovně Remotion, která umožňuje snadno animovat UI komponenty za běhu aplikace, je tak možné vytvořit knihovnu UI komponentů, které mohou být využity při vytváření vysvětlovacích videí. Protože knihovna Remotion pracuje s React komponenty, je možné komponenty videí vytvářet analogickým způsobem, jako zbytek UI komponentů v aplikaci. Díky tomu lze v komponentech videí snadno aplikovat existující styly aplikace a zachovat tak naprosto konzistentní vzhled mezi samotnou aplikací a obsahem videí. Pokud bychom se například rozhodli změnit primární barvu nebo jiné styly aplikace, stejná změna bude automaticky aplikována ve všech vysvětlovacích videích. Vzhled videí tak bude vždy aktuální a konzistentní se vzhledem celé aplikace.
 
-Z hlediska přístupnosti jsem doplnil možnost titulků pro případy, kdy uživatel nemůže poslouchat audio. Tento režim není ekvivalentní plnohodnotnému audiovýkladu, ale prakticky zvyšuje použitelnost systému v reálných podmínkách.
+% Review
+Se zmíněnými styly komponentů se pojí i další výhoda, která je spíše vedlejším efektem použitého přístupu. Protože komponenty videí dodržují stejný styl jako zbytek aplikace, je ve videích reflektován i světlý či tmavý režim aplikace. Byť tento efekt nebyl primárním záměrem použitého přístupu, může výrazně zlepšit uživatelskou zkušenost při sledování videí. Pokud například uživatel preferuje používání aplikace v tmavém režimu při učení se večer, aplikace bude automaticky i všechna videa zobrazovat v tmavém režimu. Učení tak může být pro uživatele výrazně příjemnější.
 
-\subsubsection{\texttt{ExerciseStudyBlock} a flexibilní struktura cvičení}
+% Review
+Další výhodou je znovupoužitelnost komponentů uživatelského rozhraní. Pokud bychom například vytvořili v aplikaci komponentu vizualizující algoritmus Bubble Sort, můžeme tuto komponentu využít jak v samotných cvičeních, tak ve vysvětlovacích videích. Tato znovupoužitelnost tak může zásadně zefektivnit tvorbu obsahu a zvýšit jeho kvalitu. Při tvorbě obsahu tak bude možné investovat více času do tvorby samotných komponentů a následně je využívat na mnoha místech napříč cvičeními a videi.
 
-\texttt{ExerciseStudyBlock} kombinuje pasivní komponenty (například text, diagram, vizualizace) a interaktivní komponenty, se kterými uživatel aktivně pracuje. Na rozdíl od vysvětlujícího bloku zde nepoužívám rigidní šablonu, což umožňuje navrhovat různé typy cvičení podle charakteru látky.
+% Review
+Další kuriózní výhodou je responzivita samotných videí. Jelikož jsou videa tvořena responzivními UI komponenty, které jsou vykreslovány za běhu aplikace, jsou i samotná videa responzivní. Videa tak lze sledovat na zařízeních s různě velkými displeji, tedy na počítačích, tabletech i mobilních zařízeních. Docílení této responzivity samozřejmě nebylo přímočaré a bylo třeba zavést řadu opatření, aby bylo této responzivity dosaženo. Tomuto tématu se budu věnovat v následující podkapitole tohoto textu.
 
-V praxi to znamená, že jedno cvičení může obsahovat zadání, kontextový diagram i editor kódu, zatímco jiné cvičení může být složené z jiných interaktivních prvků. Tato flexibilita byla důležitá pro škálovatelnost řešení při přidávání dalších typů obsahu.
+% Review
+Kromě výše zmíněných výhod je další zásadní výhodou snadná udržovatelnost vysvětlovacích videí. Pokud například text ve videu obsahuje chybu nebo nepřesnost, stačí ji opravit v JSON definici \texttt{ExplanationStudyBlock} bloku v databázi a uživatelům se začne po načtení učení ihned zobrazovat opravená verze. Tyto opravy se netýkají jen obsahu, ale i samotných komponentů videí. Pokud se například některý prvek zobrazuje chybně, jeho oprava bude po nasazení frontendu ihned reflektována ve všech videích. Tyto změny se netýkají pouze chyb, ale i zdokonalování obsahu, resp. jednotlivých komponentů videí. Díky tomu, že mohou být všechny změny takřka okamžitě aplikovány, je tak možné velice rychle vyvíjet a vylepšovat kvalitu obsahu celé aplikace.
+
+% Review
+Poslední výhodou, kterou zde zmíním, je interaktivita samotných videí. Jelikož jsou komponenty videí vykreslovány dynamicky a jedná se o UI komponenty, je možné docílit různých interaktivních efektů. Ve videích je tak možné například vykreslit tlačítko, které bude reagovat na kliknutí uživatele. Jiný komponent může zase například vykreslit aktuální počasí na určitém místě. Byť jsem v rámci této práce do videí žádné interaktivní komponenty nezahrnoval, je možné tuto možnost využít v budoucnu a rozšířit tak videa, aby byly interaktivnější a zajímavější.
+
+% Write
+S výše zmíněnými výhodami se pojí několik limitací, které je třeba brát v úvahu.
+
+% Write
+\subsubsection{Responzivita videí s vysvětlením látky}
+
 
 \subsubsection{Artefakty a diagramy pro dokumentaci struktury učení}
 
