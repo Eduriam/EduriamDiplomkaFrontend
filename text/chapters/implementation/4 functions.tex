@@ -81,12 +81,31 @@ Kromě výše zmíněných výhod je další zásadní výhodou snadná udržova
 % Review
 Poslední výhodou, kterou zde zmíním, je interaktivita samotných videí. Jelikož jsou komponenty videí vykreslovány dynamicky a jedná se o UI komponenty, je možné docílit různých interaktivních efektů. Ve videích je tak možné například vykreslit tlačítko, které bude reagovat na kliknutí uživatele. Jiný komponent může zase například vykreslit aktuální počasí na určitém místě. Byť jsem v rámci této práce do videí žádné interaktivní komponenty nezahrnoval, je možné tuto možnost využít v budoucnu a rozšířit tak videa, aby byly interaktivnější a zajímavější.
 
-% Write
-S výše zmíněnými výhodami se pojí několik limitací, které je třeba brát v úvahu.
+% Výkon
+% Responsivita -> jednodušší struktura
+% Audio
 
-% Write
+% Review
+S výše zmíněnými výhodami se pojí několik limitací, které je třeba brát v úvahu. Jelikož jsou animace vytvářeny za běhu aplikace v prohlížeči, je třeba brát v potaz výkon prohlížečů, použitých programovacích jazyků a výkon samotných zařízení. Prohlížeče s jazykem JavaScript ze své podstaty nebyly vytvořeny primárně pro dynamické vykreslování komplexních videí. Uživatelé také mohou používat aplikaci na různě starých a výkonných zařízeních, což může limitovat schopnost prohlížeče přesně animovat jednotlivé komponenty. Kvůli tomu by bylo nepraktické využívat tento způsob vykreslování pro složitější a graficky náročnější animace. Pokud by například bylo třeba vykreslit vizualizaci simulace, v níž by se pohybovalo přes deset tisíc prvků, byl by tento přístup takřka nepoužitelný.
+
+% Review
+Z výše zmíněného důvodu jsem se rozhodl do vysvětlovacích videí zavést komponent \texttt{Video}, díky kterému je možné do videa vložit video ve standardním formátu, tedy například ve formátu \texttt{mp4}. Díky tomu lze přístup popisovaný v této kapitole využít pro jednodušší a graficky méně náročné prvky, a pro složité vizualizace využít zmíněný komponent \texttt{Video}.
+
+Další limitací rozebíraného přístupu je responzivita samotných videí. Pokud chceme docílit responzivních videí, je třeba zásadně přizpůsobit rozložení prvků na obrazovce mobilním zařízení, které ve srovnání většími monitory obsahují výrazně méně prostoru pro zobrazení grafických prvků. Aby bylo dosaženo plně funkční responzivity, bylo třeba zásadně zjednodušit strukturu videí a zredukovat tak počet zobrazovaných komponentů, které lze v jednu chvíli ve videu zobrazit. Této responzivitě se budu věnovat v následující podkapitole tohoto textu.
+
+Poslední limitací, kterou zde zmíním, je použitelnost videí v situacích, kdy uživatel nemá možnost poslouchat dostupnou audio nahrávku. Pokud například uživatel jede v autobuse nebo vlaku a nemá k dispozici sluchátka, jeho možnost sledovat vysvětlovací videa je značně limitována. Tato limitace vychází spíše z rozhodnutí vysvětlovat látku formou videí, než ze samotného přístupu dynamického vykreslování videí popisovaném v této kapitole. Byť je tato limitace zásadní z hlediska uživatelské zkušenosti, je cenou za získání potenciálně záživnější formy výuky a efektivnějšího vysvětlování látky. V rámci této práce jsem se tak rozhodl, že výhody tohoto přístupu převyšují zmíněnou nevýhodu a rozhodl jsem se tak tento přístup použít.
+
+% Review
+Výše zmíněnou limitaci jsem se snažil minimalizovat tím, že jsem k videím přidal možnost si zobrazit titulky, pokud uživatel nemá možnost poslouchat audio. Uživatelé, kteří nemají možnost poslouchat audio si tak aspoň mohou při sledování videa číst titulky a získat tak informace touto cestou.
+
+% Review
+Celkově tak tato forma vysvětlování látky má zásadní výhody a několik limitací. V rámci této práce jsem došel k názoru, že zmíněné výhody převažují nad nevýhodami a rozhodl jsem se tak tento přístup použít.
+
+% Review
 \subsubsection{Responzivita videí s vysvětlením látky}
 
+% Review
+V této podkapitole popíšu, jakým způsobem jsem implementoval responzivitu vysvětlovacích videí, kterou jsem zmínil v předchozí kapitole.
 
 \subsubsection{Artefakty a diagramy pro dokumentaci struktury učení}
 
