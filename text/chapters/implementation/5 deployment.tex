@@ -2,41 +2,50 @@
 \section{Nasazení aplikace}\label{sec:deployment}
 %---------------------------------------------------------------
 
-% Outline:
-% - Rozdělení prostředí a jejich role.
-% - Dev prostředí.
-% - Stage prostředí.
-% - Produkční prostředí.
-% - Release proces a rozdíl CI/CD vs release.
+% Review
+V rámci nasazování aplikace jsem vytvořil tři samostatná prostředí \texttt{dev}, \texttt{stage} a \texttt{production}. Každé prostředí má odlišný účel, odlišné napojení na API a odlišný způsob nasazení. Kromě nasazení aplikace bylo třeba také zajistit, aby byly k dispozici pro stažení a instalaci vytvořené knihovny \texttt{eduriam/ui-core} a \texttt{eduriam/ui-x}. Vše podrobněji popíšu v této podkapitole.
 
-V rámci provozu frontendu používám tři samostatná prostředí: \texttt{dev}, \texttt{stage} a \texttt{production}. Každé prostředí má odlišný účel, odlišné napojení na backendové API a odlišný způsob nasazení. Toto rozdělení mi umožnilo oddělit rychlou vývojovou iteraci od stabilního testování na reálném backendu a od produkčního vydání.
-
-% Write - zde někde napsat i nasazení eduriam/ui-core a eduriam/ui-x
-
+% Review
 \subsection{Vývojové prostředí (\texttt{dev})}
 
-Vývojové prostředí je dostupné na adrese \texttt{dev.eduriam.com} a běží na hostingu Vercel. Toto prostředí je napojeno na Mockoon mock backendového API, proto je vhodné zejména pro rychlou validaci frontendových změn v situaci, kdy ještě není k dispozici odpovídající backendový endpoint.
+% Review
+Testovací prostředí \texttt{dev} je dostupné na adrese \texttt{dev.eduriam.com}. Hosting je zajištěn na platformě Vercel. Tento hosting jsem zvolil jednak protože původní aplikace tento hosting využívala a jednak protože společnost Vercel vyvíjí framework Next.js, ve kterém je tato aplikace naprogramována. Aplikace v tomto prostředí využívá mock backend API, který je nasazený na platformě Netlify.
 
-Nasazení do tohoto prostředí probíhá automaticky při každém \textit{push} do větve \texttt{dev}. V praxi jsem toto prostředí využíval pro průběžné interní ověřování implementovaných funkcí nad kontrolovanými testovacími daty.
+% Review
+Nasazení do tohoto prostředí probíhá automaticky při každém provedení \texttt{push} do větve \texttt{dev} v repozitáři frontendu aplikace. Při provedení této akce se provede jak nasazení aplikace, tak nasazení zmíněného mocku API.
 
+% Review
+Toto prostředí slouží k několika účelům. Jednak slouží k rychlému vyvíjení a testování funkcí aplikace, které ještě nejsou podporovány backend API. Dále lze toto prostředí snadno využít pro uživatelské testování a validaci nových funkcí.
+
+% Review
 \subsection{Testovací prostředí (\texttt{stage})}
 
-Stage prostředí je dostupné na adrese \texttt{app.stage.eduriam.com} a běží rovněž na hostingu Vercel. Na rozdíl od \texttt{dev} je napojeno na stage backendové API, tedy na reálnou backendovou implementaci určenou pro testování.
+% Review
+Testovací prostředí \texttt{stage} je dostupné na adrese \texttt{app.stage.eduriam.com} a rovněž běží na hostingu Vercel. Na rozdíl od prostředí \texttt{dev} je toto prostředí napojeno na stage backendové API, tedy na reálnou implementaci API určenou pro testování.
 
-Nasazení do stage probíhá také automaticky při každém \textit{push} do větve \texttt{dev}. Stage prostředí tak představuje hlavní integrační testovací vrstvu, ve které lze ověřovat chování frontendu nad skutečnými endpointy a datovými kontrakty.
+% Review
+Nasazení frontendu do stage probíhá také automaticky při každém provedení \texttt{push} do větve \texttt{dev}. Nasazením backendu se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
 
+% Review
+Stage prostředí tak představuje hlavní testovací prostředí, ve kterém lze ověřovat chování aplikace se skutečnými koncovými body API.
+
+% Review
 \subsection{Produkční prostředí (\texttt{production})}
 
-Produkční prostředí je dostupné na adrese \texttt{app.eduriam.com} a je napojeno na produkční backendové API. Nasazení probíhá až při vytvoření release tagu na větvi \texttt{master}, což odpovídá řízenému vydávání stabilních verzí.
+% Review
+Produkční prostředí \texttt{production} je dostupné na adrese \texttt{app.eduriam.com} a je napojeno na produkční backendové API. Podobně jako ostatní prostředí je toto prostředí nasazeno na platformě Vercel.
 
-Tento postup zajišťuje, že se do produkce nedostávají průběžné experimentální změny z vývojového cyklu. Produkční release je oddělený od kontinuálního nasazování do \texttt{dev} a \texttt{stage} a je spojen s explicitním rozhodnutím o vydání.
+% Review
+Nasazení probíhá při manuálním vytvoření release značky na větvi \texttt{master}, což odpovídá procesu nasazování, který byl zaveden v původní aplikaci. Nasazením produkčního API se opět zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
 
-\subsection{Release proces}
+% Review
+Produkční prostředí tak představuje hlavní prostředí, ve kterém je aplikace veřejně dostupná uživatelům.
 
-Release proces navazuje na postup použitý již v bakalářské práci, byl však aktualizován o aktuální domény a prostředí. Prakticky rozlišuji dva režimy:
-\begin{itemize}
-    \item \textbf{Kontinuální nasazování} do \texttt{dev} a \texttt{stage} při průběžném vývoji.
-    \item \textbf{Release nasazení} do \texttt{production} až po vytvoření release tagu na \texttt{master}.
-\end{itemize}
+% Review
+\subsection{Nasazení knihoven aplikace \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}}
 
-Toto rozdělení mi umožnilo udržet rychlou iteraci během vývoje, ale současně zachovat kontrolovaný a předvídatelný způsob produkčního vydávání. Nasazení přes HTTPS navíc splňuje technický předpoklad pro PWA režim popsaný v předchozí části kapitoly.
+% Review
+Kromě nasazení frontendu bylo třeba zajistit, aby byly k dispozici pro stažení a instalaci nově vytvořené knihovny \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}. Knihovny jsem se rozhodl hostovat na platformě GitHub s využitím služby GitHub Packages\footnote{Dostupné na: \href{https://docs.github.com/packages}{https://docs.github.com/packages}}. Tato platforma umožňuje snadno hostovat a distribuovat knihovny sestavením balíčků přímo z GitHub repozitáře. 
+
+% Review
+Nasazení nové verze probíhá automaticky při vytvoření \texttt{merge} z větve \texttt{dev} do větve \texttt{main} v repozitáři knihoven, pokud byla v rámci změn navýšena verze knihovny v souboru \texttt{package.json}. Po nasazení lze knihovny stáhnout a instalovat pomocí nástrojů \texttt{npm} nebo \texttt{yarn} podobně jako ostatní knihovny.
