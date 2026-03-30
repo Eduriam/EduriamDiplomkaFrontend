@@ -1,5 +1,14 @@
 % Done
 \section{Manuální testování}
 
-% Write
-Prvním prováděným testováním bylo manuální testování. Toto testování mi umožnilo v průběhu vývoje cíleně testovat funkce, které jsem implementoval.
+% Review
+Prvním prováděným testováním bylo manuální testování. Toto testování mi umožnilo v průběhu vývoje cíleně testovat části aplikace, které jsem implementoval. Testování jsem prováděl na několika úrovních.
+
+% Review
+\paragraph{Testování komponentů} Při tvorbě knihoven aplikace \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x} jsem každý UI komponent manuálně testoval v nástroji Storybook. V rámci testování jsem se zaměřoval zejména na testování responzivity a funkčnosti komponentů s různými parametry. Podobné testování jsem prováděl i u komponentů, které jsem implementoval přímo v kódu aplikace.
+
+% Review
+\paragraph{Testování funkcí} Při implementaci každé funkce a po jejím dokončení jsem ji ručně testoval v aplikaci s využitím mocku API. Toto testování jsem prováděl lokálně nebo v testovacím prostředí \texttt{dev.eduriam.com}.
+
+% Review
+\paragraph{Testování funkcí s API} Po tom, co kolega Bc. Jakub Vondráček dokončil v rámci jeho diplomové práce implementaci koncových bodů API týkajících se dané funkce, jsem funkci testoval v prostředí \texttt{stage}, které již využívalo reálné API. Po úspěšném dokončení tohoto testu pak byla funkce připravena k nasazení do produkčního prostředí.
