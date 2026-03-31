@@ -1,11 +1,134 @@
 % Done
 \section{Uživatelské testování}
 
+V rámci testování použitelnosti jsem se rozhodl provést kvalitativní uživatelské testování, při kterém budu postupovat dle doporučení Nielsen Norman Group \cite{UsabilityTesting}. Testování se bude skládat z následujících fází. První fází je plánování, v rámci kterého rozhodnu způsob testování, navrhnu testovací scénáře a dotazníky, a oslovím účastníky testování. V další fázi provedu samotné testování s jednotlivými účastníky. Po dokončení testování pak vyhodnotím výsledky a určím, jaké úpravy bude třeba na základě výsledků v aplikaci provést.
+
 % Done
 \subsection{Plán testování}
 
+% Review
+Uživatelské testování lze provádět dvěma způsoby, online nebo prezenčně. V této práci jsem se rozhodl provést testování prezenčně z několika důvodů. Prezenční testování mi umožnilo se s účastníky testování osobně setkat a přímo sledovat jejich reakce při testování. Dále jsem byl, díky osobnějšímu přístupu, schopen od účastníků získat cennou zpětnou vazbu i po dokončení testování. Dalším důvodem bylo snazší nastavení testovacího prostředí. Díky tomu, že jsem se s účastníky testování setkal osobně, měl jsem plnou kontrolu nad testovacím prostředím a účastníci tak sami nemuseli stahovat ani nastavovat programy potřebné pro testování. Účastníci se tak naplno mohli soustředit na samotné testování.
+
+% Review
+V rámci přípravy testování bylo dále třeba rozhodnout, s kolika účastníky budu testování provádět. Dle doporučení Nielsen Norman Group jsem se rozhodl testování provést s 5 účastníky. S rostoucím počtem účastníků testování se překrývá jejich zpětná vazba a snižuje se tak hodnota, kterou testováním získáme. Testování s 5 účastníky je tak vhodný kompromis mezi získanou hodnotou a náklady na testování. \cite{WhyOnlyFiveUsers}
+
+% Review
+Účastníky testování jsem vybíral na základě jejich charakteristik, které by měly odpovídat charakteristikám uživatelů, na které je aplikace zaměřena \cite{UsabilityTesting}. Tyto charakteristiky jsem se rozhodl ověřit dotazníkem před testováním, díky kterému jsem mohl vyřadit účastníky, kteří by nesplňovali požadované charakteristiky. Při výběru účastníků jsem se snažil cílit na osoby, kteří se věnují, nebo mají v zájmu se věnovat, programování. Mezi účastníky tak lze nalézt osoby, které se věnují programování profesionálně, ale i osoby, které takřka neprogramovaly a chtějí se pouze naučit základy programování. Přestože aplikaci mohou využívat lidé různých věkových kategorií, vybíral jsem převážně osoby v rozmezí 15 až 50 let, na které aplikace cílí.
+
+% Review
+Co se testovaných funkcí týče, rozhodl jsem se zaměřit na funkce, které jsou klíčové pro poskytnutí hodnoty uživatelům. Zaměřil jsem se tak na registraci, zapisování kurzů, proces učení, studijní plán a učení se konkrétních lekcí.
+
+% Review
+\subsection{Úvodní dotazník}
+
+% Review
+Klíčovou součástí testování je úvodní dotazník, který má za cíl zjistit základní informace o účastníkovi testování a zhodnotit tak, zda je účastník vhodným kandidátem pro testování \cite{NURUserInterfaceTesting}. Vytvořil jsem proto dotazník skládající se z následujících otázek.
+
+% Review
+\begin{itemize}
+    \item Jaký je váš věk?
+    \item Jaké jsou vaše zkušenosti s programováním? Jak dlouho se programování věnujete?
+    \item Plánujete se programování věnovat v budoucnu? Pokud ano, plánujete se programování věnovat profesionálně nebo jako hobby?
+    \item Jak často se v oblasti programování vzděláváte ve volném čase? Pokud se aktivně ve volném čase nevzděláváte, máte v plánu se v oblasti programování vzdělávat v budoucnu?
+    \item Používali jste někdy aplikace na učení se programování? Pokud ano, které?
+\end{itemize}
+
 % Done
 \subsection{Testovací scénáře}
+
+% Review
+V rámci přípravy testování jsem dále vytvořil následující testovací scénáře zaměřené na konkrétní funkce aplikace. Každý scénář se skládá ze zadání, které bude ukázáno účastníkovi testování, a popisu očekávaného průchodu testováním.
+
+% Review
+\subsubsection{TS1 -- Registrace a zapsání kurzu}
+
+% Review
+\paragraph{Zadání} Otevřel/a jste aplikaci na učení se programování. Založte si v aplikaci účet, vyplňte úvodní dotazník a zapište si kurz \textit{HTML}. Při registraci použijte uživatelské jméno \textit{Test}, email \textit{test@example.com} a heslo \textit{Test1234}.
+
+% Review
+\paragraph{Očekávaný průchod aplikací}
+
+% Review
+\begin{enumerate}
+    \item Uživatel začíná na úvodní stránce aplikace.
+    \item Uživatel se z úvodní stránky přesune na stránku registrace, vyplní registrační formulář a zvolí možnost zaregistrovat se. Aplikace přesune uživatele na stránku úvodního dotazníku.
+    \item V dotazníku uživatel vyplní svoji úroveň programování, témata, která se chce učit, a cíl, kterého chce dosáhnout.
+    \item Následně uživatel vybere jeden z doporučených kurzů.
+    \item Nakonec uživatel zvolí svůj denní cíl učení.
+    \item Aplikace oznámí uživateli, že je jeho účet připraven a uživatel zvolí možnost pokračovat, čímž se přesune na hlavní stránku aplikace.
+\end{enumerate}
+
+% Review
+\subsubsection{TS2 -- Učení a opakování dle studijního plánu}
+
+% Review
+\paragraph{Zadání} Otevřel/a jste aplikaci a chcete se začít učit vámi zapsaný kurz. Spusťte nadcházející lekci kurzu a splňte v ní všechna cvičení. Po dokončení učení spusťte opakování a opět splňte všechna cvičení.
+
+% Review
+\paragraph{Očekávaný průchod aplikací}
+
+% Review
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel zvolí možnost spustit nadcházející lekci kurzu.
+    \item Aplikace přesune uživatele na stránku učení, kde mu zobrazí látku nadcházející lekce.
+    \item Uživatel splní všechna cvičení v lekci a aplikace mu oznámí, že lekce byla dokončena. Po dokončení učení aplikace nabídne uživateli možnost spustit opakování.
+    \item Uživatel zvolí možnost spustit opakování.
+    \item Aplikace přesune uživatele na stránku opakování, kde mu zobrazí látku k zopakování.
+    \item Uživatel splní všechna cvičení v rámci opakování a aplikace mu oznámí, že bylo opakování dokončeno.
+    \item Uživatel zvolí možnost pokračovat, čímž bude přesměrován na hlavní stránku aplikace.
+\end{enumerate}
+
+% Review
+\subsubsection{TS3 -- Zapsání nového kurzu}
+
+% Review
+\paragraph{Zadání} Chcete si zapsat nový kurz \textit{CSS}. Zapište si tento kurz a spusťte v něm první lekci. Lekci nemusíte dokončit.
+
+% Review
+\paragraph{Očekávaný průchod aplikací}
+
+% Review
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel se pomocí hlavní nabídky přesune na stránku výběru kurzů.
+    \item Na stránce výběru kurzů uživatel zvolí kurz \textit{CSS}, čímž se přesune na stránku kurzu.
+    \item Na stránce kurzu pak uživatel zvolí možnost začít kurz, čímž mu bude kurz zapsán a uživatel bude přesměrován na stránku učení první lekce kurzu.
+\end{enumerate}
+
+% Review
+\subsubsection{TS4 -- Úprava studijního plánu}
+
+% Review
+\paragraph{Zadání} Máte zapsané kurzy \textit{HTML} a \textit{CSS}, které jste se nějakou dobu učili. Při učení se nyní chcete zaměřit pouze na kurz CSS a z kurzu HTML se již nechcete učit nové lekce. Naučenou látku z kurzu HTML ovšem nechcete zapomenout. Zařiďte, aby vám aplikace na hlavní stránce nezobrazovala nové lekce z kurzu HTML, ale aby vám při opakování stále zobrazovala látku z kurzu HTML.
+
+% Review
+\paragraph{Očekávaný průchod aplikací}
+
+% Review
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel zvolí možnost úpravy studijního plánu, čímž se přesune na stránku studijního plánu.
+    \item Na stránce studijního plánu uživatel přesune kurz \textit{HTML} ze sekce Učení a opakování do sekce Opakování. Aplikace mu tak nebude zobrazovat nové lekce z kurzu HTML, ale stále mu bude zobrazovat látku z kurzu HTML při opakování.
+\end{enumerate}
+
+% Review
+\subsubsection{TS5 -- Spuštění konkrétní lekce}
+
+% Review
+\paragraph{Zadání} V rámci kurzu HTML se chcete naučit látku z lekce \textit{Obrázky}. Spusťte tuto konkrétní lekci.
+
+% Review
+\paragraph{Očekávaný průchod aplikací}
+
+% Review
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel se pomocí hlavní nabídky přesune na stránku svého profilu, kde uvidí seznam zapsaných kurzů.
+    \item V seznamu kurzů uživatel zvolí kurz \textit{HTML}, čímž se přesune na stránku kurzu.
+    \item Na stránce kurzu uživatel vybere první sekci kurzu, čímž se přesune na stránku sekce kurzu.
+    \item Na stránce sekce kurzu uživatel najde lekci \textit{Obrázky} a zvolí možnost spuštění lekce.
+\end{enumerate}
 
 % Done
 \subsection{Průběh testování}
