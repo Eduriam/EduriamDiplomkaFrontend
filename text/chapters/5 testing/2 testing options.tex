@@ -2,7 +2,7 @@
 \section{Volba vhodných forem testování}
 
 % Review
-V této sekci se budu věnovat volbě vhodných forem testování. Forem testování existuje celá řada a každá forma testování je vhodná pro různé účely a projekty. Při volbě testování jsem zvažoval různé formy testování, včetně manuálního testování, automatizovaných testů a uživatelských testů.
+V této sekci se budu věnovat volbě vhodných forem testování. Forem testování existuje celá řada a každá forma testování je vhodná pro různé účely a projekty. Při volbě testování jsem zvažoval různé formy testování, včetně manuálního testování, automatizovaných testů a testů použitelnosti.
 
 % Review
 Jako první formu testování jsem zvolil manuální testování, které mi umožnilo v průběhu vývoje aplikace cíleně testovat části, které jsem implementoval. Způsob využití tohoto testování podrobněji popíšu v dalších částech tohoto textu.
@@ -14,8 +14,7 @@ Dále jsem se v rámci volby vhodných forem testování rozhodl zavést do apli
 V rámci automatizovaných testů jsem se rozhodl zavést do aplikace automatizované end-to-end testy. Tyto testy umožní testovat funkčnost aplikace jako celku a ověřit tak, že se aplikace skutečně chová dle očekávání a specifikovaných požadavků. Tento typ automatizovaných testů jsem zvolil zejména kvůli tomu, že frontendová část aplikace cíleně neobsahuje velké množství byznys logiky a její komponenty jsou cíleně navrženy co nejjednodušším způsobem. End-to-end testy jsem tak vyhodnotil jako nejlepší přístup, protože v kombinaci se zvolenou metodikou BDD a nástrojem Cucumber popsanými v kapitole \nameref{sec:gherkin-specification} umožňují velice efektivně ověřit základní funkčnost všech implementovaných funkcí. S ohledem na přínos těchto testů a jejich efektivitu implementace jsem tak vyhodnotil, že tyto testy přinesou nejvyšší přínos v poměru k množství investovaného času a zdrojů.
 
 % Review
-% Write za kvalitativní testování dát ještě link na přednášku z NUR
-V rámci zajištění kvality celé aplikace jsem se dále rozhodl provést uživatelské testování. Konkrétně jsem se rozhodl provést kvalitativní uživatelské tetování, které umožní ověřit, že jsou implementované funkce snadno a srozumitelně použitelné z pohledu uživatele. Tomuto testování se opět budu podrobněji věnovat v následujících částech tohoto textu.
+V rámci zajištění kvality celé aplikace jsem se dále rozhodl provést testy použitelnosti. Konkrétně jsem se rozhodl provést kvalitativní uživatelské testování, které umožní ověřit, že jsou implementované funkce snadno a srozumitelně použitelné z pohledu uživatele \cite{NURUserInterfaceTesting}. Tomuto testování se opět budu podrobněji věnovat v následujících částech tohoto textu.
 
 % Review
 Kombinací zvolených testů tak vznikne ucelený systém testování, díky kterému bude možné zajistit vyšší kvalitu a stabilitu celé aplikace. Automatizované end-to-end testy zajistí základní funkčnost všech implementovaných funkcí a dále zajistí, že kriticky důležité funkce aplikace stále fungují před nasazením aplikace do produkčního prostředí. Manuální testování pak umožňuje se efektivně zaměřit na specifické problémy a chyby v aplikaci. Kvalitativní uživatelské testování dále umožní zajistit, že aplikace skutečně pokrývá potřeby uživatelů a že jsou funkce pro uživatele srozumitelné a snadno použitelné.
