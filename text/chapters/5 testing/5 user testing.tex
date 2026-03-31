@@ -13,10 +13,13 @@ Uživatelské testování lze provádět dvěma způsoby, online nebo prezenčn�
 V rámci přípravy testování bylo dále třeba rozhodnout, s kolika účastníky budu testování provádět. Dle doporučení Nielsen Norman Group jsem se rozhodl testování provést s 5 účastníky. S rostoucím počtem účastníků testování se překrývá jejich zpětná vazba a snižuje se tak hodnota, kterou testováním získáme. Testování s 5 účastníky je tak vhodný kompromis mezi získanou hodnotou a náklady na testování. \cite{WhyOnlyFiveUsers}
 
 % Review
-Účastníky testování jsem vybíral na základě jejich charakteristik, které by měly odpovídat charakteristikám uživatelů, na které je aplikace zaměřena \cite{UsabilityTesting}. Tyto charakteristiky jsem se rozhodl ověřit dotazníkem před testováním, díky kterému jsem mohl vyřadit účastníky, kteří by nesplňovali požadované charakteristiky. Při výběru účastníků jsem se snažil cílit na osoby, kteří se věnují, nebo mají v zájmu se věnovat, programování. Mezi účastníky tak lze nalézt osoby, které se věnují programování profesionálně, ale i osoby, které takřka neprogramovaly a chtějí se pouze naučit základy programování. Přestože aplikaci mohou využívat lidé různých věkových kategorií, vybíral jsem převážně osoby v rozmezí 15 až 50 let, na které aplikace cílí.
+Účastníky testování jsem vybíral na základě jejich charakteristik, které by měly odpovídat charakteristikám uživatelů, na které je aplikace zaměřena \cite{UsabilityTesting}. Tyto charakteristiky jsem se rozhodl ověřit úvodním dotazníkem před testováním, díky kterému jsem mohl vyřadit účastníky, kteří by nesplňovali požadované charakteristiky. Při výběru účastníků jsem se snažil cílit na osoby, kteří se věnují, nebo mají v zájmu se věnovat, programování. Mezi účastníky tak lze nalézt osoby, které se věnují programování profesionálně, ale i osoby, které takřka neprogramovaly a chtějí se pouze naučit základy programování. Přestože aplikaci mohou využívat lidé různých věkových kategorií, vybíral jsem převážně osoby v rozmezí 15 až 50 let, na které aplikace cílí.
 
 % Review
 Co se testovaných funkcí týče, rozhodl jsem se zaměřit na funkce, které jsou klíčové pro poskytnutí hodnoty uživatelům. Zaměřil jsem se tak na registraci, zapisování kurzů, proces učení, studijní plán a učení se konkrétních lekcí.
+
+% Write
+V rámci plánování bylo dále třeba sestavit dotazník po testování, který má za cíl zjistit zpětnou vazbu od účastníka testování a jeho dojmy z aplikace.
 
 % Review
 \subsection{Úvodní dotazník}
@@ -32,6 +35,11 @@ Klíčovou součástí testování je úvodní dotazník, který má za cíl zji
     \item Jak často se v oblasti programování vzděláváte ve volném čase? Pokud se aktivně ve volném čase nevzděláváte, máte v plánu se v oblasti programování vzdělávat v budoucnu?
     \item Používali jste někdy aplikace na učení se programování? Pokud ano, které?
 \end{itemize}
+
+% Write
+\subsection{Dotazník po testování}
+
+Po dokončení testování
 
 % Done
 \subsection{Testovací scénáře}
@@ -132,6 +140,18 @@ V rámci přípravy testování jsem dále vytvořil následující testovací s
 
 % Done
 \subsection{Průběh testování}
+
+% Review
+Testování jsem prováděl v testovacím prostředí \texttt{dev.eduriam.com} popsaném v kapitole \nameref{sec:deployment}. Díky tomu, že byla aplikace nasazená v tomto testovacím prostředí, bylo k ní možné snadno přistupovat skrze webový prohlížeč a nebylo třeba instalovat žádné další programy pro její spuštění.
+
+% Write - přidat odkaz na nahrávky obrazovky
+Při testování jsem každému účastníkovi poskytl mobilní zařízení Samsung S24, na kterém následně testování probíhalo. Při testování jsem nahrával zvuk a obrazovku\footnote{Dostupné na: \href{https://www.example.com}{https://www.example.com}} pomocí nativní aplikace Záznam obrazovky, která je výchozí aplikací pro záznam obrazovky na zařízeních Samsung. Tuto aplikaci jsem zvolil převážně z důvodu, že byla při nahrávání obrazovky nejspolehlivější ze všech aplikací, které jsem vyzkoušel.
+
+% Write - přidat výsledky dotazníku Úvodní dotazník
+% Write - přidat výsledky dotazníku Dotazník po testování
+Testování probíhalo následujícím způsobem. Nejprve jsem účastníkovi testování vysvětlil, jakým způsobem bude testování probíhat a zeptal jsem se ho, zda souhlasí s nahráváním zvuku a obrazovky. Poté účastník odpověděl na otázky z úvodního dotazníku, jehož výsledky jsou dostupné v příloze ???. Po dokončení úvodního dotazníku začalo samotné testování aplikace. Nejprve jsem účastníkovi vysvětlil, jak bude testování probíhat a umožnil jsem mu se zeptat na případné otázky. Poté jsem poskytl účastníkovi zadání úkolů, které měl vykonat. Účastník pak postupně vykonával všechny úkoly. Po vykonání každého úkolu měl účastník sám oznámit, že úkol dokončil, abych předešel předčasnému ukončení testu, pokud si uživatel například nebyl jistý, jestli úkol skutečně dokončil. Mezi jednotlivými úkoly jsem vždy nastavil aplikaci tak, aby uživatel začínal na správné stránce dle testovacího scénáře. Po dokončení všech úkolů jsem se účastníka zeptal na otázky z dotazníku po testování. Výsledky tohoto dotazníku jsou k dispozici v příloze ???.
+
+Po dokončení testování jsem dále cíleně vedl neformální konverzaci s účastníkem testování o aplikaci, díky které jsem získal další cennou zpětnou vazbu ohledně celkového dojmu z aplikace a návrhů na její zlepšení.
 
 % Done
 \subsection{Výsledky testování}
