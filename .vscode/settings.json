@@ -27,23 +27,43 @@
       "command": "arara",
       "args": ["%DOC%"],
       "env": {}
+    },
+    {
+      "name": "mermaid-setup",
+      "command": "yarn",
+      "args": ["diagrams:setup"],
+      "env": {}
+    },
+    {
+      "name": "mermaid-diagrams",
+      "command": "yarn",
+      "args": ["diagrams:build"],
+      "env": {}
     }
   ],
   "latex-workshop.latex.recipes": [
     {
+      "name": "mermaid diagrams",
+      "tools": ["mermaid-setup", "mermaid-diagrams"]
+    },
+    {
       "name": "xelatex (CTU)",
-      "tools": ["xelatex"]
+      "tools": ["mermaid-setup", "mermaid-diagrams", "xelatex"]
+    },
+    {
+      "name": "mermaid -> xelatex -> biber -> xelatex",
+      "tools": ["mermaid-setup", "mermaid-diagrams", "xelatex", "biber", "xelatex"]
     },
     {
       "name": "xelatex -> biber -> xelatex",
-      "tools": ["xelatex", "biber", "xelatex"]
+      "tools": ["mermaid-setup", "mermaid-diagrams", "xelatex", "biber", "xelatex"]
     },
     {
       "name": "arara",
-      "tools": ["arara"]
+      "tools": ["mermaid-setup", "mermaid-diagrams", "arara"]
     }
   ],
-  "latex-workshop.latex.recipe.default": "xelatex -> biber -> xelatex",
+  "latex-workshop.latex.recipe.default": "mermaid -> xelatex -> biber -> xelatex",
   "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.autoClean.run": "onBuilt",
   "latex-workshop.latex.outDir": "%DIR%",

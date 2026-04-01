@@ -12,6 +12,34 @@
     # Verify git and needed tools are installed
     RUN apt-get install --no-install-recommends -y git procps
     RUN apt-get update && apt-get install -y --no-install-recommends openssh-client
+
+    # Install Node.js tooling for Mermaid diagram generation
+    RUN apt-get update && apt-get install -y --no-install-recommends nodejs npm
+    RUN npm install --global corepack && corepack enable && corepack prepare yarn@4.12.0 --activate
+    # Runtime libraries required by Puppeteer/Chrome (used by Mermaid CLI)
+    RUN apt-get update && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        fonts-liberation \
+        libatk-bridge2.0-0 \
+        libatk1.0-0 \
+        libcups2 \
+        libdbus-1-3 \
+        libdrm2 \
+        libgbm1 \
+        libglib2.0-0 \
+        libgtk-3-0 \
+        libnspr4 \
+        libnss3 \
+        libx11-6 \
+        libx11-xcb1 \
+        libxcb1 \
+        libxcomposite1 \
+        libxdamage1 \
+        libxext6 \
+        libxfixes3 \
+        libxrandr2 \
+        xdg-utils \
+        && (apt-get install -y --no-install-recommends libasound2t64 || apt-get install -y --no-install-recommends libasound2)
     
     # Install Tex Live with XeLaTeX support
     RUN apt-get update && apt-get -y upgrade \

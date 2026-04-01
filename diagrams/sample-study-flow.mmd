@@ -1,0 +1,12 @@
+flowchart LR
+  A[User opens app] --> B{Authenticated!}
+  B -->|No| C[Show login form]
+  C --> D[Submit credentials]
+  D --> E[Validate via backend API]
+  E -->|Success| F[Load dashboard]
+  E -->|Failure| G[Show error message]
+  B -->|Yes| F[Load dashboard]
+  F --> H[Start study session]
+  H --> I[Complete exercise]
+  I --> J[Store progress]
+  J --> K[Update streak and XP]
