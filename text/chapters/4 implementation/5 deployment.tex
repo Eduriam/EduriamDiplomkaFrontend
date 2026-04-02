@@ -6,7 +6,7 @@
 V rámci nasazování aplikace jsem vytvořil tři samostatná prostředí \texttt{dev}, \texttt{stage} a \texttt{production}. Každé prostředí má odlišný účel, odlišné napojení na API a odlišný způsob nasazení. Kromě nasazení aplikace bylo třeba také zajistit, aby byly k dispozici pro stažení a instalaci vytvořené knihovny \texttt{eduriam/ui-core} a \texttt{eduriam/ui-x}. Vše podrobněji popíšu v této podkapitole.
 
 % Review
-\subsection{Vývojové prostředí (\texttt{dev})}
+\subsection{Vývojové prostředí \texttt{dev}}
 
 % Review
 Testovací prostředí \texttt{dev} je dostupné na adrese \texttt{dev.eduriam.com}. Hosting je zajištěn na platformě Vercel. Tento hosting jsem zvolil jednak protože původní aplikace tento hosting využívala a jednak protože společnost Vercel vyvíjí framework Next.js, ve kterém je tato aplikace naprogramována. Aplikace v tomto prostředí využívá mock backend API, který je nasazený na platformě Netlify.
@@ -18,7 +18,7 @@ Nasazení do tohoto prostředí probíhá automaticky při každém provedení \
 Toto prostředí slouží k několika účelům. Jednak slouží k rychlému vyvíjení a testování funkcí aplikace, které ještě nejsou podporovány backend API. Dále lze toto prostředí snadno využít pro uživatelské testování a validaci nových funkcí.
 
 % Review
-\subsection{Testovací prostředí (\texttt{stage})}
+\subsection{Testovací prostředí \texttt{stage}}
 
 % Review
 Testovací prostředí \texttt{stage} je dostupné na adrese \texttt{app.stage.eduriam.com} a rovněž běží na hostingu Vercel. Na rozdíl od prostředí \texttt{dev} je toto prostředí napojeno na stage backendové API, tedy na reálnou implementaci API určenou pro testování.
@@ -30,7 +30,7 @@ Nasazení frontendu do stage probíhá také automaticky při každém proveden�
 Stage prostředí tak představuje hlavní testovací prostředí, ve kterém lze ověřovat chování aplikace se skutečnými koncovými body API.
 
 % Review
-\subsection{Produkční prostředí (\texttt{production})}
+\subsection{Produkční prostředí \texttt{production}}
 
 % Review
 Produkční prostředí \texttt{production} je dostupné na adrese \texttt{app.eduriam.com} a je napojeno na produkční backendové API. Podobně jako ostatní prostředí je toto prostředí nasazeno na platformě Vercel.
