@@ -34,16 +34,24 @@ V kódu je také používána řada knihoven a nástrojů, které nebyly za posl
 % Review
 Za posledních několik let došlo k významnému nárůstu používání nástrojů umělé inteligence pro asistenci při tvorbě kódu, dokumentací a testů. Současný frontend aplikace ovšem vůbec není pro práci s těmito nástroji přizpůsoben. Proto by bylo vhodné zavést pravidla, konvence a konfigurace, které by umožnily vývojářům pracovat s těmito nástroji a zefektivnit tak celý proces vývoje aplikace.
 
+% Review
+\subsection{Analýza testů}
+
+% Review
+V rámci mé bakalářské práce, která se věnovala frontendu stávající aplikace, jsem provedl testy použitelnosti s uživateli. Většina problémů, které byly v rámci těchto testů objeveny, byla již opravena, nicméně stále existují některé problémy, které opraveny nebyly. Tyto problémy jsou popsány v mé bakalářské práci a bude třeba je zohlednit při sestavování požadavků a při návrhu této aplikace. \cite{Jenicek2024BachelorThesis}
+
+% Review
+Frontend aplikace v současné době neobsahuje žádné automatizované testy. Jelikož se aplikace bude zásadně měnit a rozšiřovat, bude vhodné zavést určitou formu automatizovaných testů. Zavedení automatizovaných testů je také v souladu s mým návrhem úprav do budoucna, který jsem popsal v rámci mé bakalářské práce. \cite{Jenicek2024BachelorThesis}
+
+% Review
+V aplikaci dále existují základní nástroje pro formátování a kontrolu kvality kódu ESLint a Prettier. Tyto nástroje by ovšem mohly využívat přísnější pravidla a konvence pro zamezení vzniku nejednoznačného kódu a chyb. Z tohoto důvodu navrhuji aktualizovat tyto nástroje a jejich konfigurace.
+
 \subsection{Analýza existujících funkcí}
 
 % Sepsat jaké funkce odstranit
 % Sepsat info o mapě (viz níže)
 
-\subsection{Analýza testů}
 
-% Byly provedeny testy použitelnosti
-% Aplikace obsahuje základní lintery a formattery, mohly by místy ovšem využívat přísnější pravidla a konvence
-% V aplikaci nejsou automatizované testy. Bylo by tak vhodné nějaké zavést (dle návrhu úprav v mé bakalářké práci)
 
 \subsubsection{Analýza návrhu uživatelského rozraní}
 
