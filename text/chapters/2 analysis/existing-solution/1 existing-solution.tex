@@ -13,22 +13,26 @@ Frontend aplikace komunikuje s backendovou částí přes REST API. Kromě samot
 % Review
 Kromě frontendové části a backendové části aplikace existují v rámci tohoto projektu také webové stránky a dále systém pro správu obsahu aplikace. Těmto částem projektu se v této práci věnovat nebudu, nicméně i tak je bude třeba zohlednit, například při tvorbě a návrhu komponentů uživatelského rozhraní.
 
+% Review
 \subsection{Analýza kódu}
 
-% Některé části kódu nejsou dobře rozšiřitelné (např. komponenty pro učení a opakování látky).
-% Dále se v kódu nachází části, které jsou přímo spojené s doménou výuky jazyků, přestože by bylo možné je navrhnout obecněji tak, aby implementace nebyla přímo spjata s doménou výuky jazyků a bylo ji tak možné využívat nezávisle na vyučované doméně.
-% V kodu by tak chtělo udělat refaktoring, aby byl rozšiřitelnější
+% Review
+Nejprve jsem provedl analýzu kódu aplikace, v rámci které jsem nalezl několik příležitostí ke zlepšení celkové kvality kódu. Zaprvé, některé části kódu, zejména komponenty týkající se učení a opakování látky, nejsou dobře rozšiřitelné. Komponenty nemají flexibilní strukturu a může tak být obtížné přidávat nové typy cvičení. Dále se v kódu nacházejí části, které jsou přímo spjaty s konkrétní doménou výuky jazyků, přestože by dané části kódu mohly být navrženy obecněji tak, aby byla implementace nezávislá na vyučované doméně. Proto by bylo vhodné tyto části změnit tak, aby bylo možné kód využívat nezávisle na vyučované doméně.
 
-% Co se organizace kódu týče, komponenty aplikace jsou rozděleny do složek dle jejich typu
-% - \texttt{atoms} pro základní komponenty, \texttt{molecules} pro složitější komponenty a \texttt{layouts} pro komponenty týkající se struktury aplikace.
-% - přestože to pro základní organizaci komponentů bylo použitelné, pro větší aplikaci by bylo vhodné zvolit například strukturu organizace, kde by komponenty byly seskupeny do podsložek v rámci jejich funkcí. Do složky \texttt{components} by se tak mohly dávat pouze komponenty, které jsou sdílené napříč funkcemi.
-% - Základní komponenty by také bylo vhodné přesunout do samostatné knihovny, aby bylo možné je používat i v jiných částech projektu (například na webových stránkách)
+% Review
+Všechny komponenty jsou v současné aplikaci seskupeny do jedné složky \texttt{components}, v rámci které jsou dále rozděleny do podsložek pro základní komponenty, složitější komponenty a komponenty týkající se rozložení stránek. Tato základní organizace komponentů může být vhodná pro malé projekty, nicméně s narůstajícím počtem komponentů a stránek může být značně nepřehledná a špatně udržitelná. Proto by bylo vhodné přeorganizovat komponenty například tak, aby byly stránky a komponenty seskupeny podle daných funkcí. Do globálních složek, jako například do složky \texttt{components}, by tak bylo možné vkládat pouze komponenty, které jsou sdíleny napříč jednotlivými funkcemi. Díky této struktuře by tak mohlo být snazší se v kódu orientovat a přidávat nové funkce a komponenty.
 
-% Nevýhodou kódu je, že přestože existuje OpenAPI specifikace backendového API, jsou ve frontendu definovány třídy API ručně. To může vést ke značné nekonzistenci mezi definovanými třídami a reálným API. Stálo by tak za úvahu zavést například automaticky generované třídy API na základě OpenAPI specifikace. Díky tomu by byla zajištěna přesná konzistence mezi API a definovanými třídami.
+% Review
+Základní komponenty aplikace by také bylo vhodné přesunout do samostatné knihovny, aby bylo možné tyto komponenty využívat ve všech částech projektu, jako například na webových stránkách, a zajistit tak konzistenci vzhledu napříč celým projektem.
 
-% Dále by bylo vhodné aktualizovat používané knihovny a nástroje. Většina knihoven nebyla za poslední 2 roky vůbec aktualizována a jejich novější verze by mohly přinést vyšší stabilitu, bezpečnost a vyšší efektivitu vývoje.
+% Review
+Další příležitostí pro zlepšení kvality kódu jsou samotné třídy, se kterými frontend pracuje. Třídy v kódu jsou definovány ručně tak, aby reflektovaly OpenAPI specifikaci backendového API. Zásadní nevýhodou tohoto přístupu je časová náročnost definice a udržování jednotlivých tříd. Tento přístup dále může snadno vést k nekonzistencím mezi definovanými třídami a reálným API, což může vést k následným chybám v aplikaci. Z tohoto důvodu navrhuji zavést do kódu automaticky generované třídy na základě OpenAPI specifikace backendového API. Díky tomu pak budou třídy snadno udržitelné a bude zajištěna přesná konzistence mezi specifikací API a frontendovou částí aplikace.
 
-% Kód dále vůbec není přizpůsoben na práci s nástroji umělé inteligence, které by mohly být využity pro efektivnější vývoj. Použití zavedení pravidel a konvencí pro AI asistenty by mohlo značně zefektivnit vývoj aplikace.
+% Review
+V kódu je také používána řada knihoven a nástrojů, které nebyly za poslední 2 roky vůbec aktualizovány, přestože většina z nich vydala nové verze. Jejich aktualizace by tak mohla přinést řadu výhod, jako například vyšší stabilitu a bezpečnost aplikace nebo vyšší efektivitu vývoje. 
+
+% Review
+Za posledních několik let došlo k významnému nárůstu používání nástrojů umělé inteligence pro asistenci při tvorbě kódu, dokumentací a testů. Současný frontend aplikace ovšem vůbec není pro práci s těmito nástroji přizpůsoben. Proto by bylo vhodné zavést pravidla, konvence a konfigurace, které by umožnily vývojářům pracovat s těmito nástroji a zefektivnit tak celý proces vývoje aplikace.
 
 \subsection{Analýza existujících funkcí}
 
