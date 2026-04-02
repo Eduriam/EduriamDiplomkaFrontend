@@ -1,19 +1,53 @@
 % Done
 \section{Analýza stávající aplikace}
 
-Existující řešení je webová aplikace zaměřena na výuku anglického jazyka. Frontendová část aplikace je naprogramována pomocí technologií NextJS a React. Dále využívá knihovny, jako například Material UI. Celé uživatelské rozhraní je navrženo v nástroji Figma \cite{Jenicek2024BachelorThesis}.
+% Review
+Jako první krok analýzy jsem provedl analýzu existující aplikace. V této části textu nejprve popíšu strukturu celého projektu a následně se zaměřím na analýzu kódu, existujících funkcí, testů a návrhu uživatelského rozhraní frontendové části aplikace.
 
-S backendovou částí frontend komunikuje přes REST API. Kromě aplikace existuje i kompletní mock backendového REST API, který byl vytvořen pomocí nástroje Mockoon \cite{Jenicek2024BachelorThesis}.
+% Review
+Existující aplikace je webová aplikace zaměřena na výuku anglického jazyka. Frontendová část aplikace je postavena na knihovnách React a Next.js. Dále aplikace využívá knihovnu komponentů uživatelského rozhraní Material UI a knihovnu Storybook pro dokumentaci jednotlivých komponentů aplikace. Celé uživatelské rozhraní včetně všech komponentů je navrženo v nástroji Figma. Aplikace je nasazena v testovacím prostředí, kde využívá mock API, a dále v produkčním prostředí, kde je napojena na reálné backendové API. \cite{Jenicek2024BachelorThesis}
 
-V následujících částech textu se zaměřím nejprve na analýzu existujícího kódu a architektury a následně na jednotlivé funkcionality aplikace.
+% Review
+Frontend aplikace komunikuje s backendovou částí přes REST API. Kromě samotného API existuje i mock tohoto api, který byl vytvořen pomocí nástroje Mockoon. Souběžně s mou diplomovou prací, která se týká frontendové části aplikace, se věnuje kolega Bc. Jakub Vondráček backendové části aplikace v rámci jeho diplomové práce. Proto s dále v rámci této analýzy a dalších částech textu budu věnovat zejména frontendové části aplikace. \cite{Jenicek2024BachelorThesis}
 
-\subsection{Analýza kódu a architektury}
+% Review
+Kromě frontendové části a backendové části aplikace existují v rámci tohoto projektu také webové stránky a dále systém pro správu obsahu aplikace. Těmto částem projektu se v této práci věnovat nebudu, nicméně i tak je bude třeba zohlednit, například při tvorbě a návrhu komponentů uživatelského rozhraní.
 
-%% Momentální stav
+\subsection{Analýza kódu}
 
-% Write - přidat sem že nemáme error handling podle standardu RFC 9457
+% Některé části kódu nejsou dobře rozšiřitelné (např. komponenty pro učení a opakování látky).
+% Dále se v kódu nachází části, které jsou přímo spojené s doménou výuky jazyků, přestože by bylo možné je navrhnout obecněji tak, aby implementace nebyla přímo spjata s doménou výuky jazyků a bylo ji tak možné využívat nezávisle na vyučované doméně.
+% V kodu by tak chtělo udělat refaktoring, aby byl rozšiřitelnější
 
-\subsubsection{Design system}
+% Co se organizace kódu týče, komponenty aplikace jsou rozděleny do složek dle jejich typu
+% - \texttt{atoms} pro základní komponenty, \texttt{molecules} pro složitější komponenty a \texttt{layouts} pro komponenty týkající se struktury aplikace.
+% - přestože to pro základní organizaci komponentů bylo použitelné, pro větší aplikaci by bylo vhodné zvolit například strukturu organizace, kde by komponenty byly seskupeny do podsložek v rámci jejich funkcí. Do složky \texttt{components} by se tak mohly dávat pouze komponenty, které jsou sdílené napříč funkcemi.
+% - Základní komponenty by také bylo vhodné přesunout do samostatné knihovny, aby bylo možné je používat i v jiných částech projektu (například na webových stránkách)
+
+% Nevýhodou kódu je, že přestože existuje OpenAPI specifikace backendového API, jsou ve frontendu definovány třídy API ručně. To může vést ke značné nekonzistenci mezi definovanými třídami a reálným API. Stálo by tak za úvahu zavést například automaticky generované třídy API na základě OpenAPI specifikace. Díky tomu by byla zajištěna přesná konzistence mezi API a definovanými třídami.
+
+% Dále by bylo vhodné aktualizovat používané knihovny a nástroje. Většina knihoven nebyla za poslední 2 roky vůbec aktualizována a jejich novější verze by mohly přinést vyšší stabilitu, bezpečnost a vyšší efektivitu vývoje.
+
+% Kód dále vůbec není přizpůsoben na práci s nástroji umělé inteligence, které by mohly být využity pro efektivnější vývoj. Použití zavedení pravidel a konvencí pro AI asistenty by mohlo značně zefektivnit vývoj aplikace.
+
+\subsection{Analýza existujících funkcí}
+
+% Sepsat jaké funkce odstranit
+% Sepsat info o mapě (viz níže)
+
+\subsection{Analýza testů}
+
+% Byly provedeny testy použitelnosti
+% Aplikace obsahuje základní lintery a formattery, mohly by místy ovšem využívat přísnější pravidla a konvence
+% V aplikaci nejsou automatizované testy. Bylo by tak vhodné nějaké zavést (dle návrhu úprav v mé bakalářké práci)
+
+\subsubsection{Analýza návrhu uživatelského rozraní}
+
+% Jak již byl zmíněno, návrh je proveden v nástroji Figma.
+% Příležitosti ke zlepšení:
+% Lepší organizace stránek a komponentů dle jednotlivých funkcí
+% Zavést stránku s přehledem typografie a palety barev
+% Komponenty jsou tvořeny tak, že je upravována knihovna existujících komponentů, což má za důsledek značně komplexnější strukturu komponentů. Často je tak třeba pracovat s prvky a parametry, které v rámci návrhu této aplikace vůbec nejsou potřeba. Komponenty jsou tak výrazně komplexnější, než by bylo potřeba a práce s nimi je časově neefektivní. Stálo by tak za úvahu zvolit jiný přístup při tvorbě komponentů. 
 
 Aplikace využívá knihovnu Material UI, %% write - přidat citaci
 která poskytuje základní komponenty uživatelského rozhraní. Komponenty jsou přizpůsobeny především globálními styly tak, aby odpovídaly navrženému designu v nástroji Figma. Ze základních komponentů jsou následně sestaveny komplexnější komponenty, které jsou využívány v aplikaci. 
