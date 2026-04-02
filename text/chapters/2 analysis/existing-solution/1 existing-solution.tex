@@ -64,26 +64,15 @@ Značným problémem je také samotná struktura komponentů. V současném náv
 % Review
 Nakonec by bylo vhodné vytvořit stránku s přehledem stylů, barev a typografie, které aplikace využívá. Díky tomu by pak bylo možné se styly snadněji pracovat a upravovat je.
 
+% Review
 \subsection{Analýza existujících funkcí}
 
-% Sepsat jaké funkce odstranit
-% Sepsat info o mapě (viz níže)
+% Review
+Jelikož bude aplikace zásadně měnit svoje zaměření z domény výuky jazyků na doménu výuky programování, je třeba odebrat některé přebytečné funkce, které již nebudou relevantní pro novou doménu. Mezi tyto funkce patří například cvičení týkající se výuky jazyků, správa vlastních kolekcí slovíček nebo možnost vybírání preferovaných témat slovní zásoby.
 
+% Review
+Kromě odstranění přebytečných funkcí bude dále třeba upravit některé existující funkce. Příkladem toho je stránka kurzu, která v současné době zobrazuje lekce ve formě bodů s ikonou, které jsou umístěny na čáře připomínající cestu kurzem. Lekce jsou tak na mapě reprezentovány pouze ikonou a zkráceným názvem. Přestože může být toto vyobrazení lekcí pro uživatele vizuálně poutavé, může být pro uživatele obtížné na první pohled poznat, co je obsahem dané lekce. Vyhledávání konkrétních lekcí také může být pro uživatele značně obtížné. S měnící se doménou tak bude třeba změnit i strukturu kurzů a jejich sekcí a lekcí, aby mohli uživatelé kurzy snadněji procházet a vyhledávat konkrétní lekce.
 
+\subsection{Závěr analýzy}
 
-% Write - přidat se subsubsection o tom, že v aplikaci je Mock API a že by mohlo být vhodnější napojit na skutečné testovací API a že by API mohlo být generování automaticky podle openapi specifikace API - formulovat to jako "příležitost ke zlepšení" a říct proč mi to přijde lepší než mock API
-
-\subsection{Analýza existujících funkcí}
-
-% Write - funkce, které bude třeba odebrat a proč
-
-\begin{itemize}
-    \item Stránka lekce % Write - napsat, že stránka momentálně slouží pouze k 
-\end{itemize}
-
-\subsection{Návrh uživatelského rozhraní}
-
-% Zde můžu krátce sepsat, na které nedostatky jsem narazil ve Figmě (už jsem to trochu popsal v sekci Tvorba prototypu) při návrhu
-
-% Review - tyhle argumenty bych možná přehodil do analýzy stávajícího řešení
-Tato mapa sice může zachytit svým vzhledem pozornost uživatele, nicméně má několik zásadních nevýhod z hlediska použitelnosti. Lekce jsou na mapě reprezentovány pouze ikonou a zkráceným názvem. Kvůli tomu může být pro uživatele obtížné na první pohled poznat, co je obsahem dané lekce. Dále, pokud se uživatel snaží najít konkrétní lekci v aplikaci, může to pro něj být velice obtížné, pokud mapa učení obsahuje větší množství lekcí.
+V rámci analýzy stávající aplikace jsem tak nalezl řadu podnětů ke zlepšení celkové kvality aplikace. Tyto podněty budu brát ve všech následujících fázích vývoje, při specifikaci požadavků, návrhu funkcí a následné implementaci.
