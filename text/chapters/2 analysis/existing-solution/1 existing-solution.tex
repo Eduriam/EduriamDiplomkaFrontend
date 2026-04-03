@@ -1,78 +1,80 @@
-% Done
+% Final
 \section{Analýza stávající aplikace}
 
-% Review
-Jako první krok analýzy jsem provedl analýzu existující aplikace. V této části textu nejprve popíšu strukturu celého projektu a následně se zaměřím na analýzu kódu, existujících funkcí, testů a návrhu uživatelského rozhraní frontendové části aplikace.
+% Final
+Jako první krok analýzy jsem provedl analýzu existující aplikace. V této části textu nejprve popíšu strukturu celého projektu a následně se zaměřím na analýzu kódu, existujících funkcí, testů a existujícího návrhu uživatelského rozhraní frontendové části aplikace.
 
-% Review
-Existující aplikace je webová aplikace zaměřena na výuku anglického jazyka. Frontendová část aplikace je postavena na knihovnách React a Next.js. Dále aplikace využívá knihovnu komponentů uživatelského rozhraní Material UI a knihovnu Storybook pro dokumentaci jednotlivých komponentů aplikace. Celé uživatelské rozhraní včetně všech komponentů je navrženo v nástroji Figma. Aplikace je nasazena v testovacím prostředí, kde využívá mock API, a dále v produkčním prostředí, kde je napojena na reálné backendové API. \cite{Jenicek2024BachelorThesis}
+% Final
+Existující aplikace je webová aplikace zaměřena na výuku anglického jazyka. Frontendová část aplikace je postavena na knihovnách React a Next.js. Dále aplikace využívá knihovnu komponentů uživatelského rozhraní Material UI a nástroj Storybook pro vytvoření dokumentace jednotlivých komponentů aplikace. Celé uživatelské rozhraní včetně všech komponentů je navrženo v nástroji Figma. Aplikace je nasazena v testovacím prostředí, kde využívá mock API, a dále v produkčním prostředí, kde je napojena na reálné backendové API. \cite{Jenicek2024BachelorThesis}
 
-% Review
-Frontend aplikace komunikuje s backendovou částí přes REST API. Kromě samotného API existuje i mock tohoto api, který byl vytvořen pomocí nástroje Mockoon. Souběžně s mou diplomovou prací, která se týká frontendové části aplikace, se věnuje kolega Bc. Jakub Vondráček backendové části aplikace v rámci jeho diplomové práce. Proto s dále v rámci této analýzy a dalších částech textu budu věnovat zejména frontendové části aplikace. \cite{Jenicek2024BachelorThesis}
+% Final
+Frontend aplikace komunikuje s backendovou částí přes REST API. Kromě samotného API existuje i mock tohoto API, který byl vytvořen pomocí nástroje Mockoon. Souběžně s mou diplomovou prací, která se týká frontendové části aplikace, se kolega Bc. Jakub Vondráček věnuje vývoji backendové části aplikace v rámci jeho diplomové práce. Proto se v rámci této analýzy a dalších částech textu budu věnovat zejména frontendové části aplikace. \cite{Jenicek2024BachelorThesis}
 
-% Review
+% Final
 Kromě frontendové části a backendové části aplikace existují v rámci tohoto projektu také webové stránky a dále systém pro správu obsahu aplikace. Těmto částem projektu se v této práci věnovat nebudu, nicméně i tak je bude třeba zohlednit, například při tvorbě a návrhu komponentů uživatelského rozhraní.
 
-% Review
+% Final
 \subsection{Analýza kódu}
 
-% Review
-Nejprve jsem provedl analýzu kódu aplikace, v rámci které jsem nalezl několik příležitostí ke zlepšení celkové kvality kódu. Zaprvé, některé části kódu, zejména komponenty týkající se učení a opakování látky, nejsou dobře rozšiřitelné. Komponenty nemají flexibilní strukturu a může tak být obtížné přidávat nové typy cvičení. Dále se v kódu nacházejí části, které jsou přímo spjaty s konkrétní doménou výuky jazyků, přestože by dané části kódu mohly být navrženy obecněji tak, aby byla implementace nezávislá na vyučované doméně. Proto by bylo vhodné tyto části změnit tak, aby bylo možné kód využívat nezávisle na vyučované doméně.
+% Final
+Nejprve jsem provedl analýzu kódu aplikace, v rámci které jsem nalezl několik příležitostí ke zlepšení celkové kvality kódu. Zaprvé, některé části kódu, zejména komponenty týkající se učení a opakování látky, nejsou dobře rozšiřitelné. Komponenty nemají flexibilní strukturu a může tak být obtížné do aplikace například přidávat nové typy cvičení. Dále se v kódu nacházejí části, které jsou přímo spjaty s doménou výuky jazyků, přestože by dané části kódu mohly být navrženy obecněji tak, aby byla implementace nezávislá na vyučované doméně. Proto by bylo vhodné tyto části změnit tak, aby bylo možné kód využívat nezávisle na vyučované doméně.
 
-% Review
-Všechny komponenty jsou v současné aplikaci seskupeny do jedné složky \texttt{components}, v rámci které jsou dále rozděleny do podsložek pro základní komponenty, složitější komponenty a komponenty týkající se rozložení stránek. Tato základní organizace komponentů může být vhodná pro malé projekty, nicméně s narůstajícím počtem komponentů a stránek může být značně nepřehledná a špatně udržitelná. Proto by bylo vhodné přeorganizovat komponenty například tak, aby byly stránky a komponenty seskupeny podle daných funkcí. Do globálních složek, jako například do složky \texttt{components}, by tak bylo možné vkládat pouze komponenty, které jsou sdíleny napříč jednotlivými funkcemi. Díky této struktuře by tak mohlo být snazší se v kódu orientovat a přidávat nové funkce a komponenty.
+% Final
+Všechny komponenty jsou v současné aplikaci seskupeny do jedné složky \texttt{components}, v rámci které jsou dále rozděleny do podsložek pro základní komponenty, složitější komponenty a komponenty týkající se rozložení jednotlivých stránek. Tato základní organizace komponentů může být vhodná pro malé projekty, nicméně s narůstajícím počtem komponentů a stránek může být značně nepřehledná a špatně udržitelná. Proto by bylo vhodné přeorganizovat komponenty například tak, aby byly stránky a komponenty seskupeny podle daných funkcí. Do globálních složek, jako například do složky \texttt{components}, by tak bylo možné vkládat pouze komponenty, které jsou sdíleny napříč jednotlivými funkcemi. Díky této struktuře by tak mohlo být snazší se v kódu orientovat a přidávat nové funkce a další komponenty.
 
-% Review
-Základní komponenty aplikace by také bylo vhodné přesunout do samostatné knihovny, aby bylo možné tyto komponenty využívat ve všech částech projektu, jako například na webových stránkách, a zajistit tak konzistenci vzhledu napříč celým projektem.
+% Final
+Základní komponenty aplikace by také bylo vhodné přesunout do samostatné knihovny, aby je bylo možné využívat ve všech částech projektu, jako například na webových stránkách, a zajistit tak konzistenci vzhledu napříč celým projektem.
 
-% Review
+% Final
 Další příležitostí pro zlepšení kvality kódu jsou samotné třídy, se kterými frontend pracuje. Třídy v kódu jsou definovány ručně tak, aby reflektovaly OpenAPI specifikaci backendového API. Zásadní nevýhodou tohoto přístupu je časová náročnost definice a udržování jednotlivých tříd. Tento přístup dále může snadno vést k nekonzistencím mezi definovanými třídami a reálným API, což může vést k následným chybám v aplikaci. Z tohoto důvodu navrhuji zavést do kódu automaticky generované třídy na základě OpenAPI specifikace backendového API. Díky tomu pak budou třídy snadno udržitelné a bude zajištěna přesná konzistence mezi specifikací API a frontendovou částí aplikace.
 
-% Review
-V kódu je také používána řada knihoven a nástrojů, které nebyly za poslední 2 roky vůbec aktualizovány, přestože většina z nich vydala nové verze. Jejich aktualizace by tak mohla přinést řadu výhod, jako například vyšší stabilitu a bezpečnost aplikace nebo vyšší efektivitu vývoje. 
+% Final
+V kódu je dále používána řada knihoven a nástrojů, které nebyly v aplikaci za poslední 2 roky vůbec aktualizovány, přestože byly za tu dobu vydány nové verze těchto nástrojů. Jejich aktualizace by tak mohla přinést řadu výhod, jako například vyšší stabilitu a bezpečnost aplikace, nebo vyšší efektivitu vývoje. 
 
-% Review
-Za posledních několik let došlo k významnému nárůstu používání nástrojů umělé inteligence pro asistenci při tvorbě kódu, dokumentací a testů. Současný frontend aplikace ovšem vůbec není pro práci s těmito nástroji přizpůsoben. Proto by bylo vhodné zavést pravidla, konvence a konfigurace, které by umožnily vývojářům pracovat s těmito nástroji a zefektivnit tak celý proces vývoje aplikace.
+% Final
+Za posledních několik let došlo dále k významnému nárůstu používání nástrojů umělé inteligence pro tvorbu kódu, dokumentací a testů. Současný frontend aplikace ovšem vůbec není pro práci s těmito nástroji přizpůsoben. Proto by bylo vhodné zavést pravidla, konvence a konfigurace, které by umožnily vývojářům pracovat s těmito nástroji a zefektivnit tak celý proces vývoje.
 
-% Review
-Kromě samotného kódu jsem také nalezl možnost zlepšení nasazení aplikace. Současná aplikace je nasazena v testovacím prostředí, kde využívá mock API, a v produkčním prostředí, kde využívá produkční backendové API. Neexistuje ovšem testovací prostředí, kde by aplikace mohla být testována se skutečným API. Z tohoto důvodu by bylo vhodné toto prostředí vytvořit, aby v něm mohla být aplikace manuálně testována s reálným API před nasazením do produkčního prostředí. 
+% Final
+Kromě samotného kódu je také možné provést změny v nasazení aplikace. Současná aplikace je nasazena v testovacím prostředí, kde využívá mock API, a v produkčním prostředí, kde využívá produkční backendové API. Neexistuje ovšem testovací prostředí, kde by aplikace mohla být testována se skutečným API. Z tohoto důvodu by bylo vhodné toto prostředí vytvořit, aby v něm mohla být aplikace manuálně testována například před nasazením do produkčního prostředí.
 
-% Review
+% Final
 \subsection{Analýza testů}
 
-% Review
+% Final
 V rámci mé bakalářské práce, která se věnovala frontendu stávající aplikace, jsem provedl testy použitelnosti s uživateli. Většina problémů, které byly v rámci těchto testů objeveny, byla již opravena, nicméně stále existují některé problémy, které opraveny nebyly. Tyto problémy jsou popsány v mé bakalářské práci a bude třeba je zohlednit při sestavování požadavků a při návrhu této aplikace. \cite{Jenicek2024BachelorThesis}
 
-% Review
-Frontend aplikace v současné době neobsahuje žádné automatizované testy. Jelikož se aplikace bude zásadně měnit a rozšiřovat, bude vhodné zavést určitou formu automatizovaných testů. Zavedení automatizovaných testů je také v souladu s mým návrhem úprav do budoucna, který jsem popsal v rámci mé bakalářské práce. \cite{Jenicek2024BachelorThesis}
+% Final
+Frontend aplikace v současné době neobsahuje žádné automatizované testy. Jelikož se aplikace bude zásadně měnit a rozšiřovat, bude do ní vhodné zavést určitou formu těchto testů. Zavedení automatizovaných testů je také v souladu s mým návrhem úprav do budoucna, který jsem popsal v rámci mé bakalářské práce. \cite{Jenicek2024BachelorThesis}
 
-% Review
-V aplikaci dále existují základní nástroje pro formátování a kontrolu kvality kódu ESLint a Prettier. Tyto nástroje by ovšem mohly využívat přísnější pravidla a konvence pro zamezení vzniku nejednoznačného kódu a chyb. Z tohoto důvodu navrhuji aktualizovat tyto nástroje a jejich konfigurace.
+% Final
+V aplikaci dále existují základní nástroje pro formátování a kontrolu kvality kódu Prettier a ESLint. Tyto nástroje by ovšem mohly využívat přísnější pravidla a konvence pro zamezení vzniku nejednoznačného kódu a chyb. Z tohoto důvodu navrhuji aktualizovat tyto nástroje a jejich konfigurace.
 
-% Review
+% Final
 \subsubsection{Analýza návrhu uživatelského rozraní}
 
-% Review
-Návrh uživatelského rozhraní stávající aplikace jsem provedl v rámci mé bakalářské práce v nástroji Figma. Při analýze tohoto návrhu jsem nalezl několik příležitostí ke zlepšení.
+% Final
+Návrh uživatelského rozhraní stávající aplikace jsem vytvořil v rámci mé bakalářské práce v nástroji Figma. Při analýze jsem nalezl několik příležitostí pro zlepšení tohoto návrhu.
 
-% Review
-Zaprvé, komponenty a stránky aplikace by bylo vhodné lépe zorganizovat. V současné aplikaci je struktura přehledná, nicméně s narůstajícím počtem stránek a komponentů se může stát značně nepřehlednou.
+% Final
+Zaprvé, komponenty a stránky aplikace by bylo vhodné lépe zorganizovat. V současném návrhu je struktura přehledná, nicméně s narůstajícím počtem stránek a komponentů se může stát značně nepřehlednou.
 
-% Review
-Značným problémem je také samotná struktura komponentů. V současném návrhu jsou komponenty tvořeny tak, že rozšiřují či upravují komponenty externí knihovny komponentů. Knihovna ovšem často obsahuje zbytečně komplexní strukturu komponentů a parametrů, které nejsou v rámci návrhu této aplikace nijak využívány. Všechny komponenty jsou tak zbytečně komplexní a práce s nimi je neefektivní. Z tohoto důvodu by bylo vhodné zvolit jiný přístup při tvorbě komponentů, například využití jiné knihovny, nebo vytvoření komponentů ručně. 
+% Final
+Značným problémem je také samotná struktura komponentů. V současném návrhu jsou komponenty tvořeny tak, že rozšiřují či upravují komponenty externí knihovny komponentů. Knihovna ovšem často obsahuje zbytečně komplexní strukturu komponentů a parametrů, které nejsou v rámci návrhu této aplikace nijak využívány. Všechny komponenty jsou tak zbytečně komplexní a práce s nimi je neefektivní. Z tohoto důvodu by bylo vhodné zvolit jiný přístup při tvorbě komponentů, například využití jiné knihovny, nebo vytvoření komponentů ručně bez využití externích knihoven.
 
-% Review
-Nakonec by bylo vhodné vytvořit stránku s přehledem stylů, barev a typografie, které aplikace využívá. Díky tomu by pak bylo možné se styly snadněji pracovat a upravovat je.
+% Final
+Nakonec by bylo vhodné v rámci návrhu vytvořit stránku s přehledem stylů, barev a typografie, které aplikace využívá. Díky tomu by pak bylo možné se styly snadněji pracovat.
 
-% Review
+% Final
 \subsection{Analýza existujících funkcí}
 
-% Review
+% Final
 Jelikož bude aplikace zásadně měnit svoje zaměření z domény výuky jazyků na doménu výuky programování, je třeba odebrat některé přebytečné funkce, které již nebudou relevantní pro novou doménu. Mezi tyto funkce patří například cvičení týkající se výuky jazyků, správa vlastních kolekcí slovíček nebo možnost vybírání preferovaných témat slovní zásoby.
 
-% Review
-Kromě odstranění přebytečných funkcí bude dále třeba upravit některé existující funkce. Příkladem toho je stránka kurzu, která v současné době zobrazuje lekce ve formě bodů s ikonou, které jsou umístěny na čáře připomínající cestu kurzem. Lekce jsou tak na mapě reprezentovány pouze ikonou a zkráceným názvem. Přestože může být toto vyobrazení lekcí pro uživatele vizuálně poutavé, může být pro uživatele obtížné na první pohled poznat, co je obsahem dané lekce. Vyhledávání konkrétních lekcí také může být pro uživatele značně obtížné. S měnící se doménou tak bude třeba změnit i strukturu kurzů a jejich sekcí a lekcí, aby mohli uživatelé kurzy snadněji procházet a vyhledávat konkrétní lekce.
+% Final
+Kromě odstranění přebytečných funkcí bude dále třeba upravit některé existující funkce. Příkladem toho je stránka kurzu, která v současné době zobrazuje lekce ve formě bodů, které jsou umístěny na čáře připomínající cestu kurzem. Pod jednotlivými body jsou pak uvedeny zkrácené názvy těchto lekcí. Přestože může být toto vyobrazení lekcí pro uživatele vizuálně poutavé, může být pro uživatele značně obtížné na první pohled poznat, co je obsahem dané lekce. Vyhledání konkrétní lekce tak může být pro uživatele velice zdlouhavé a složité. S měnící se doménou tak bude třeba změnit i strukturu kurzů a jejich sekcí a lekcí, aby je uživatelé mohli snadněji procházet a lépe se v nich orientovat.
 
+% Final
 \subsection{Závěr analýzy}
 
-V rámci analýzy stávající aplikace jsem tak nalezl řadu podnětů ke zlepšení celkové kvality aplikace. Tyto podněty budu brát ve všech následujících fázích vývoje, při specifikaci požadavků, návrhu funkcí a následné implementaci.
+% Final
+V rámci analýzy jsem tak nalezl řadu podnětů ke zlepšení celkové kvality aplikace. Tyto podněty budu brát v potaz ve všech následujících fázích vývoje, zejména při specifikaci požadavků, návrhu funkcí a následné implementaci.
