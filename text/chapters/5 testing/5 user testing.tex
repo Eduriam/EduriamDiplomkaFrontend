@@ -63,10 +63,10 @@ V rámci přípravy testování jsem dále vytvořil následující testovací s
 \end{enumerate}
 
 % Review
-\subsubsection{TS2 -- Učení a opakování dle studijního plánu}
+\subsubsection{TS2 -- Učení se dle studijního plánu}
 
 % Review
-\paragraph{Zadání} Otevřel/a jste aplikaci a chcete se začít učit vámi zapsaný kurz. Spusťte nadcházející lekci kurzu a splňte v ní všechna cvičení. Po dokončení učení spusťte opakování a opět splňte všechna cvičení.
+\paragraph{Zadání} Otevřel/a jste aplikaci a chcete se začít učit vámi zapsaný kurz. Spusťte nadcházející lekci kurzu a splňte v ní všechna cvičení. % Write - tohle jsem nakonec asi vyřadil, protože by se to na stage špatně simulovalo "Po dokončení učení spusťte opakování a opět splňte všechna cvičení."
 
 % Review
 \paragraph{Očekávaný průchod aplikací}
@@ -79,7 +79,7 @@ V rámci přípravy testování jsem dále vytvořil následující testovací s
     \item Uživatel splní všechna cvičení v lekci a aplikace mu oznámí, že lekce byla dokončena. Po dokončení učení aplikace nabídne uživateli možnost spustit opakování.
     \item Uživatel zvolí možnost spustit opakování.
     \item Aplikace přesune uživatele na stránku opakování, kde mu zobrazí látku k zopakování.
-    \item Uživatel splní všechna cvičení v rámci opakování a aplikace mu oznámí, že bylo opakování dokončeno.
+    \item Uživatel splní všechna cvičení v rámci opakování a aplikace mu oznámí, že bylo opakování dokončeno. % Write - tento krok odstranit, pokud jsem ho nakonec nedělal
     \item Uživatel zvolí možnost pokračovat, čímž bude přesměrován na hlavní stránku aplikace.
 \end{enumerate}
 
@@ -87,7 +87,7 @@ V rámci přípravy testování jsem dále vytvořil následující testovací s
 \subsubsection{TS3 -- Zapsání nového kurzu}
 
 % Review
-\paragraph{Zadání} Chcete si zapsat nový kurz \textit{CSS}. Zapište si tento kurz a spusťte v něm první lekci. Lekci nemusíte dokončit.
+\paragraph{Zadání} Chcete si zapsat nový kurz \textit{CSS}. Zapište si tento kurz a spusťte v něm první lekci. Tuto lekci dokončete.
 
 % Review
 \paragraph{Očekávaný průchod aplikací}
@@ -98,13 +98,15 @@ V rámci přípravy testování jsem dále vytvořil následující testovací s
     \item Uživatel se pomocí hlavní nabídky přesune na stránku výběru kurzů.
     \item Na stránce výběru kurzů uživatel zvolí kurz \textit{CSS}, čímž se přesune na stránku kurzu.
     \item Na stránce kurzu pak uživatel zvolí možnost začít kurz, čímž mu bude kurz zapsán a uživatel bude přesměrován na stránku učení první lekce kurzu.
+    \item Uživatel splní všechna cvičení v lekci a aplikace mu oznámí, že lekce byla dokončena.
+    \item Uživatel zvolí možnost pokračovat, čímž bude přesměrován na hlavní stránku aplikace.
 \end{enumerate}
 
 % Review
 \subsubsection{TS4 -- Úprava studijního plánu}
 
 % Review
-\paragraph{Zadání} Máte zapsané kurzy \textit{HTML} a \textit{CSS}, které jste se nějakou dobu učili. Při učení se nyní chcete zaměřit pouze na kurz CSS a z kurzu HTML se již nechcete učit nové lekce. Naučenou látku z kurzu HTML ovšem nechcete zapomenout. Zařiďte, aby vám aplikace na hlavní stránce nezobrazovala nové lekce z kurzu HTML, ale aby vám při opakování stále zobrazovala látku z kurzu HTML.
+\paragraph{Zadání} Máte zapsané kurzy \textit{HTML} a \textit{CSS}, které jste se nějakou dobu učili. Nyní se chcete zaměřit pouze na kurz CSS a z kurzu HTML se již nechcete učit nové lekce. Zařiďte, aby vám aplikace na hlavní stránce již nezobrazovala nové lekce z kurzu HTML, ale abyste nepřišli o váš pokrok v kurzu HTML.
 
 % Review
 \paragraph{Očekávaný průchod aplikací}
@@ -120,7 +122,7 @@ V rámci přípravy testování jsem dále vytvořil následující testovací s
 \subsubsection{TS5 -- Spuštění konkrétní lekce}
 
 % Review
-\paragraph{Zadání} V rámci kurzu HTML se chcete naučit látku z lekce \textit{Obrázky}. Spusťte tuto konkrétní lekci.
+\paragraph{Zadání} V rámci kurzu HTML se chcete naučit látku z lekce \textit{Obrázky}. Spusťte tuto konkrétní lekci. Lekci nemusíte dokončovat.
 
 % Review
 \paragraph{Očekávaný průchod aplikací}
