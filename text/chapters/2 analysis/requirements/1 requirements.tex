@@ -1,314 +1,312 @@
-﻿% Done
+﻿% Final
 \section{Analýza požadavků}
 
-% Review
-V této sekci sepíšu funkční a nefunkční požadavky vznikající aplikace. Při sepisování požadavků budu vycházet zejména z analýzy stávajícího řešení a analýzy existujících aplikací. Dále budu také vycházet z výsledků uživatelských testů, které byly provedeny v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis} zabývající se stávající aplikací, a také z návrhu úprav do budoucna, které byly popsány ve zmíněné práci.
+% Final
+V této sekci sepíšu funkční a nefunkční požadavky vznikající aplikace. Při sepisování požadavků budu vycházet zejména z analýzy stávajícího řešení a analýzy konkurenčních aplikací. Dále budu vycházet z výsledků uživatelských testů, které jsem provedl v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis} zabývající se stávající aplikací. Vycházet budu také z návrhu úprav do budoucna, které jsem popsal ve zmíněné práci.
 
-% Review
-Po sepsání jednotlivých požadavků se zaměřím na určení jejich priorit pomocí metody MoSCoW \cite{Moscow}. Tato metoda umožňuje jednoduše rozdělit požadavky do čtyř kategorií dle jejich priority. Požadavky v kategorii \textit{must have} musí být při implementaci splněny, požadavky kategorie \textit{should have} by měly být splněny, požadavky kategorie \textit{could have} mohou být splněny, a požadavky kategorie \textit{won't have} nebudou v rámci této práce implementovány.
+% Final
+Po sepsání jednotlivých požadavků se zaměřím na určení jejich priorit pomocí metody MoSCoW \cite{Moscow}. Tato metoda umožňuje snadno rozdělit požadavky do čtyř kategorií dle jejich priority. Požadavky v kategorii \textit{must have} musí být při implementaci splněny, požadavky kategorie \textit{should have} by měly být splněny, požadavky kategorie \textit{could have} mohou být splněny, a požadavky kategorie \textit{won't have} nebudou v rámci této práce implementovány.
 
-% Done
-Na základě předchozí analýzy stávajícího řešení a analýzy konkurenčních aplikací jsem identifikoval a sepsal následující funkční a nefunkční požadavky.
-
-% Done
+% Final
 \subsection{Funkční požadavky}
 
-% Review
-Při analýze jsem identifikoval a sepsal následující funkční požadavky, kterým se budu věnovat v rámci této práce.
+% Final
+Na základě předchozí analýzy stávajícího řešení a analýzy konkurenčních aplikací jsem identifikoval a sepsal následující funkční požadavky.
 
-% Done
+% Final
 \subsubsection{FP-1 Úvodní stránka aplikace}\label{sec:fp-welcome-page}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-Aplikace by měla obsahovat úvodní stránku, která bude uživateli zobrazena, když není přihlášen, nebo když poprvé otevře aplikaci. Na této stránce by měl mít uživatel možnost zvolit, jestli se chce přihlásit nebo registrovat. Stránka by měla obsahovat logo a název aplikace a krátký popis hlavní hodnoty, kterou aplikace uživateli přinese.
+% Final
+Aplikace by měla obsahovat úvodní stránku, která bude uživateli zobrazena, když není přihlášen, nebo když poprvé otevře aplikaci. Na této stránce by měl mít uživatel možnost zvolit, jestli se chce přihlásit nebo registrovat. Stránka by měla obsahovat logo a název aplikace a krátký popis hlavní hodnoty, kterou aplikace uživateli přináší.
 
-% Done
-Tento požadavek vychází z analýzy konkurence, kde většina aplikací obsahuje kromě stánky pro přihlášení a registraci i úvodní stránku s grafikou či textem, který prezentuje hlavní přínosy aplikace pro uživatele.
+% Final
+Tento požadavek vychází z analýzy konkurence, ve které většina aplikací obsahovala kromě stánky pro přihlášení a registraci i úvodní stránku s grafikou či textem, který prezentuje hlavní přínosy aplikace pro uživatele.
 
-% Done
-\subsubsection{FP-2 Nový úvodní dotazník a doporučování kurzů}\label{sec:fp-onboarding}
+% Final
+\subsubsection{FP-2 Úvodní dotazník a doporučování kurzů}\label{sec:fp-onboarding}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
+    \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
+% Final
 Aplikace by měla obsahovat úvodní dotazník zaměřený na získání informací o uživateli. Tyto informace by se měly týkat zejména cílů uživatele a jeho zkušeností s programováním. Na základě dotazníku by měla aplikace nabídnout uživateli několik kurzů, které odpovídají jeho cílům a zkušenostem.
 
-% Done
-Tato funkce je inspirována konkurenční aplikací Codecademy, která využívá úvodní dotazník pro doporučování kurzů uživateli.
+% Final
+Tato funkce vychází z analýzy konkurenční aplikace Codecademy, která využívá úvodní dotazník pro doporučování kurzů uživateli.
 
-% Done
+% Final
 \subsubsection{FP-3 Prohlížení a doporučování kurzů}\label{sec:fp-course-browse}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Uživatel by měl mít v aplikaci možnost zobrazit přehled dostupných kurzů a jednoduše je prohledávat. U každého kurzu by měl mít možnost se přesunout na stránku daného kurzu.
+% Final
+Uživatel by měl mít možnost si v aplikaci zobrazit přehled všech dostupných kurzů a jednoduše mezi nimi hledat. U každého kurzu by měl mít dále možnost se přesunout na stránku s podrobnějšími informacemi o daném kurzu.
 
-% Done
-Součástí prohlížení kurzů by měla být sekce s doporučenými kurzy. Tato doporučení by měla být založena na úvodním dotazníku, který uživatele vyplnil při registraci. Uživatel by měl mít možnost dotazník kdykoliv vyplnit znovu a přizpůsobit si tak svoje preference při zapisování kurzů.
+% Final
+Součástí přehledu kurzů by také měla být sekce s doporučenými kurzy. Tato doporučení by měla být založena na úvodním dotazníku, který uživatele vyplnil při registraci. Uživatel by měl mít možnost dotazník kdykoliv vyplnit znovu a přizpůsobit si tak svoje preference při zapisování kurzů.
 
-% Done
+% Final
 \subsubsection{FP-4 Stránka kurzu}\label{sec:fp-course-page}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Každý kurz v aplikaci by měl mít vlastní stránku s jeho popisem a přehledem kapitol, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit. Dále by měl mít možnost se přesunout na stránku pro správu zapsaných kurzů, kde se bude moci z kurzu odhlásit. Pokud je uživatel do kurzu zapsaný, měl by mít možnost jednoduše pokračovat v učení daného kurzu. Uživatel by měl mít také možnost zobrazit svůj certifikát o dokončení kurzu, pokud už jej získal.
+% Final
+Každý kurz v aplikaci by měl mít vlastní stránku s detailním popisem a přehledem kapitol, které jsou v kurzu obsaženy. Uživatel by měl mít možnost se do kurzu přihlásit. Pokud má uživatel již kurz zapsaný, měl by mít možnost snadno pokračovat v učení se daného kurzu. Dále by měl mít uživatel možnost se z kurzu odhlásit.
 
-% Done
-Tento požadavek vychází z analýzy konkurence, kde většina aplikací obsahuje stránky kurzů s jejich popisem a s přehledem lekcí, které jsou v kurzu obsaženy.
+% Final
+Uživatelé s premium účtem by měli mít také možnost si zobrazit svůj certifikát o dokončení kurzu, pokud již kurz dokončili.
 
-% Done
+% Final
+Tento požadavek vychází z analýzy konkurence, ve které většina aplikací obsahovala stránky kurzů s jejich popisem a s přehledem lekcí, které jsou v kurzu obsaženy.
+
+% Final
 \subsubsection{FP-5 Stránka kapitoly kurzu}\label{sec:fp-course-chapter-page}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Aplikace by měla umožnit uživateli si zobrazit stránku kapitoly kurzu. Na této stránce by měly být zobrazeny všechny lekce dané kapitoly. Lekce by měly být seskupeny dle jejich témat do sekcí. Lekce by měly být označeny jako dokončené nebo nedokončené podle toho, zda uživatel danou lekci dokončil. Aplikace by také měla vizuálně zvýraznit lekci, kterou by se uživatel měl učit dále.
+% Final
+Aplikace by měla umožnit uživateli si zobrazit stránku kapitoly kurzu. Na této stránce by měly být zobrazeny všechny lekce dané kapitoly, které by měly být seskupeny dle jejich témat do sekcí. Jednotlivé lekce by měly být označeny jako dokončené či nedokončené podle toho, zda uživatel danou lekci dokončil. V aplikaci by měla být také vizuálně zvýrazněna lekce, kterou by se uživatel měl učit dále.
 
-% Done
-Ve stávající aplikaci jsou lekce kurzu vyobrazeny jako body na čáře připomínající cestu, po které se uživatel při postupování kurzem pohybuje. V rámci tohoto zobrazení tak nejsou zobrazeny názvy lekcí. Byť je toto zobrazení vizuálně poutavé, a například konkurenční aplikace Mimo toto zobrazení využívá, může být velice nepraktické zejména z důvodu, že je pro uživatele značně obtížné najít konkrétní lekci, pokud se ji chce naučit nebo si ji zopakovat.
+% Final
+Ve stávající aplikaci jsou lekce kurzu vyobrazeny jako body na čáře připomínající cestu, po které se uživatel při postupování kurzem pohybuje. Jak jsem již popsal v kapitole \nameref{sec:existing-solution}, toto zobrazení může být vizuálně poutavé, nicméně z hlediska použitelnosti může být nepraktické. Proto by měl být v rámci tohoto požadavku navržen nový vzhled přehledu lekcí. V rámci přehledu by měly být lekce uspořádány do seznamu, ve kterém se bude moci uživatel snadno orientovat. Seznam by ovšem měl stále zachovat vizuálně poutavý vzhled a znázorňovat chronologickou posloupnost jednotlivých lekcí.
 
-% Done
-Z hlediska použitelnosti jsem tak vyhodnotil, že by v rámci tohoto požadavku měl být navržen nový vzhled seznamu lekcí, který bude možné použít na stránce kapitoly kurzu. Tento vzhled by měl v základu fungovat jako seznam lekcí rozdělených do sekcí. Vizuálně by měl ale také částečně připomínat původní vizuální vyobrazení ve formě připomínající cestu s lekcemi. Cílem je tak vytvořit vizuálně poutavý vzhled znázorňující chronologickou posloupnost lekcí, který ovšem bude praktičtější a bude umožňovat uživateli se lépe v lekcích orientovat.
-
-% Done
+% Final
 \subsubsection{FP-6 Certifikáty o dokončení kurzu}\label{sec:fp-course-certificate}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-Po dokončení kurzu by měl uživateli s premium účtem být vygenerován certifikát o dokončení daného kurzu. Certifikát by měl být zobrazen na veřejně dostupné stránce a měl by obsahovat základní informace o dokončeném kurzu a uživateli, který kurz dokončil. Uživatel by měl mít možnost odkaz na certifikát jednoduše sdílet s ostatními uživateli. Uživatelům, kteří nemají premium účet, by měla být zobrazena informace, že si budou moci certifikát vygenerovat po zakoupení premium předplatného.
+% Final
+Po dokončení kurzu by měl být uživateli s premium účtem vygenerován certifikát o dokončení daného kurzu. Certifikát by měl být zobrazen na veřejně dostupné stránce a měl by obsahovat základní informace o dokončeném kurzu a uživateli, který kurz dokončil. Uživatel by měl mít možnost odkaz na certifikát jednoduše sdílet. Uživatelům, kteří nemají premium účet, by měla být zobrazena informace, že si budou moci certifikát vygenerovat po zakoupení premium účtu.
 
-% Done
-\subsubsection{FP-7 Správa zapsaných kurzů}\label{sec:fp-course-management}
+% Final
+\subsubsection{FP-7 Cesty učení}\label{sec:fp-learning-paths}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Uživatel by měl mít možnost si zobrazit přehled zapsaných kurzů. U každého kurzu by měl uživatel mít možnost se z něj odhlásit.
+% Final
+Aplikace by kromě kurzů měla nabízet tzv. cesty učení, neboli kariérní cesty. Každá cesta učení by měla seskupovat několik kurzů a poskytnout tak uživateli snadnější možnost se učit více kurzů týkajících se dané profese nebo daného tématu.
 
-% Done
-\subsubsection{FP-8 Cesty učení}\label{sec:fp-learning-paths}
+% Final
+Podobně jako u kurzů by měla mít každá kariérní cesta vlastní stránku s podrobnějším popisem. Na této stránce by měl být také zobrazen přehled všech kurzů, které jsou v této cestě obsaženy. 
 
-% Done
+% Final
+Uživatel by měl mít možnost si kariérní cestu zapsat. Pokud je již do kariérní cesty zapsaný, měl by mít možnost na stránce cesty jednoduše pokračovat v učení se nadcházející lekce. Dále by měl mít uživatel možnost se z kariérní cesty odhlásit.
+
+% Final
+Uživatelé s premium účtem by měli mít také možnost si zobrazit svůj certifikát o dokončení kariérní cesty, pokud již kariérní cestu dokončili.
+
+% Final
+Tento požadavek vychází z analýzy konkurence, ve které většina analyzovaných aplikací nabízela určitou formu kariérních cest, díky kterým se uživatel mohl snadno naučit témata týkající se konkrétní profese.
+
+% Final
+\subsubsection{FP-8 Správa zapsaných kurzů a cest učení}\label{sec:fp-course-management}
+
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Aplikace by kromě kurzů měla nabízet tzv. cesty učení, neboli kariérní cesty. Tyto cesty by měly sdružovat jednotlivé kurzy do skupin podle daného tématu. Podobně jako u kurzů by každá kariérní cesta měla mít vlastní stránku s popisem a přehledem kurzů, které jsou v kariérní cestě obsaženy. Uživatel by měl mít možnost si kariérní cestu zapsat. Dále by měl mít možnost se přesunout na stránku pro správu zapsaných kurzů, kde se bude moci z kariérní cesty odhlásit. Pokud je uživatel do kariérní cesty zapsaný, měl by mít možnost na stránce cesty jednoduše pokračovat v učení dané cesty. Uživatel by měl mít také možnost zobrazit svůj certifikát o dokončení kariérní cesty, pokud jej získal.
+% Final
+Uživatel by měl mít možnost si v aplikaci zobrazit přehled zapsaných kurzů a cest učení. V rámci tohoto přehledu by měl mít dále možnost se přesunout na stránku libovolného kurzu či cesty učení. Dále by měl mít uživatel možnost se z libovolného kurzu nebo cesty učení odhlásit.
 
-% Done
-Tento požadavek vychází z analýzy konkurence, kde většina analyzovaných aplikací nabízela určitou formu kariérních cest, díky kterým se uživatel mohl snadno naučit témata týkající se konkrétní profese.
-
-% Done
+% Final
 \subsubsection{FP-9 Studijní plán}\label{sec:fp-study-plan}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Aplikace by měla obsahovat stránku studijního plánu uživatele, na které bude zobrazen seznam všech zapsaných kurzů uživatele. Na této stránce by měl mít uživatel možnost si ze zapsaných kurzů zvolit, které kurzy se chce učit, které si chce pouze opakovat a které se nechce momentálně vůbec učit. Podle studijního plánu pak bude aplikace doporučovat uživateli lekce při učení a opakování.
+% Final
+Aplikace by měla obsahovat stránku studijního plánu, na které bude zobrazen seznam všech zapsaných kurzů daného uživatele. Na této stránce by měl mít uživatel možnost si zvolit, které kurzy se chce učit, které si chce pouze opakovat a které se nechce momentálně vůbec učit. Podle studijního plánu pak bude aplikace doporučovat uživateli lekce při učení a opakování.
 
-% Done
-Funkce studijního plánu vychází z analýzy konkurenční aplikace Codecademy, která umožňuje uživateli si vygenerovat studijní plán. Funkce dále vychází z problému, který nastává v konkurenčních aplikacích, pokud se uživatel chce učit více kurzů zároveň. Uživatel při učení více kurzů bývá nucen často přepínat mezi jednotlivými kurzy a sám si plánovat, kterou látku se bude dále učit. Studijní plán by měl tomuto problému předejít a umožnit uživateli se snadno učit látku napříč mnoha kurzy.
+% Final
+Funkce studijního plánu vychází z analýzy konkurenční aplikace Codecademy, která umožňuje uživateli si vygenerovat studijní plán. Funkce dále vychází z problému, který nastává v konkurenčních aplikacích, pokud se chce uživatel učit více kurzů zároveň. Uživatel při učení více kurzů bývá nucen často přepínat mezi jednotlivými kurzy a sám si plánovat, kterou látku se bude dále učit. Studijní plán by měl tomuto problému předejít a umožnit tak uživateli se snadno učit látku napříč mnoha kurzy.
 
-% Done
-\subsubsection{FP-10 Učení se a opakování podle studijního plánu}\label{sec:fp-study-plan-learning}
+% Final
+\subsubsection{FP-10 Učení a opakování podle studijního plánu}\label{sec:fp-study-plan-learning}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Aplikace by měla uživateli na hlavní stránce zobrazit nadcházející lekci, kterou by se uživatel měl dle jeho studijního plánu učit. Lekce by měla být vybrána ze zapsaných kurzů uživatele, které jsou ve studijním plánu v režimu učení. Uživatel by měl mít možnost si tuto lekci spustit.
+% Final
+Aplikace by měla uživateli na hlavní stránce zobrazit nadcházející lekci, kterou by se měl podle studijního plánu učit. Lekce by měla být vybrána ze zapsaných kurzů uživatele, které jsou ve studijním plánu v režimu učení. Uživatel by měl mít možnost si tuto lekci snadno spustit.
 
-% Done
-Dále by měl uživatel mít možnost si na hlavní stránce aplikace spustit opakování, v rámci kterého mu aplikace vybere látku k zopakování podle toho, jak dobře si uživatel danou látku pamatuje. Látka k opakování by měla být vybrána z kurzů, které jsou ve studijním plánu buď v režimu učení, nebo v režimu opakování.
+% Final
+Dále by měl mít uživatel možnost si na hlavní stránce aplikace spustit opakování, v rámci kterého mu aplikace vybere látku k zopakování podle toho, jak dobře si uživatel danou látku pamatuje. Látka k opakování by měla být vybrána z kurzů, které jsou ve studijním plánu buď v režimu učení, nebo v režimu opakování.
 
-% Done
-Dále by měl mít uživatel možnost si snadno spustit učení konkrétního kurzu, pokud se zrovna nechce učit doporučenou lekci podle studijního plánu.
-
-% Done
+% Final
 Tato hlavní stránka by měla být nastavena jako výchozí stránka aplikace, na kterou bude uživatel přesměrován po spuštění aplikace.
 
-% Done
-Cílem této funkce je poskytnout uživateli co nejjednodušší způsob spuštění učení a využít tak princip návrhu uživatelského rozhraní \textit{microbreaks} \cite{Tidwell2020DesigningInterfaces}. Hlavní myšlenkou tohoto principu je přizpůsobit aplikaci tak, aby ji mohl uživatel použít kdykoliv, kdy má v průběhu dne jen pár minut volného času a získat tak hodnotu, kterou aplikace nabízí. Když uživatel například čeká chvíli na zastávce, může aplikaci na pár minut zapnout a využít tak efektivně svůj čas. Klíčovým prvkem tohoto principu je umožnit uživateli se ihned po spuštění aplikace přesunout k dané hodnotě, kterou aplikace nabízí. V případě této aplikace je tak snaha umožnit uživateli se ihned po spuštění aplikace přesunout k samotnému učení. Tento princip je využíván například aplikacemi sociálních sítí, které jsou pečlivě navrženy tak, aby je mohl uživatel kdykoliv v průběhu dne na pár minut zapnout a použít.
+% Final
+Cílem této funkce je poskytnout uživateli co nejjednodušší způsob spuštění učení a využít tak princip návrhu uživatelského rozhraní \textit{microbreaks}. Hlavní myšlenkou tohoto principu je přizpůsobit aplikaci tak, aby ji mohl uživatel použít kdykoliv, kdy má v průběhu dne jen pár minut volného času a získat tak hodnotu, kterou aplikace nabízí. Když uživatel například čeká chvíli na zastávce autobusu, může aplikaci na pár minut zapnout a využít tak efektivně svůj čas. Klíčovým prvkem tohoto principu je umožnit uživateli se ihned po spuštění aplikace přesunout k dané hodnotě, kterou aplikace nabízí. V případě této aplikace je tak cílem umožnit uživateli se ihned po spuštění aplikace přesunout k samotnému učení. Tento princip je využíván například aplikacemi sociálních sítí, které jsou pečlivě navrženy tak, aby je mohl uživatel kdykoliv v průběhu dne na pár minut zapnout a použít. \cite{Tidwell2020DesigningInterfaces}
 
-% Done
+% Final
 \subsubsection{FP-11 Opakování po dokončení lekce}\label{sec:fp-post-lesson-review}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Zásadní funkcí této aplikace je poskytnout uživateli možnost si jednoduše opakovat již naučenou látku tak, aby ji nezapomněl. Po dokončení každé nové lekce by tak měla být uživateli nabídnuta možnost opakování již naučené látky. Uživatel bude moci opakování odmítnout a přesunout se tak na stránku ze které spustil učení nové lekce. Dále bude mít možnost spustit opakování.
+% Final
+Zásadní funkcí této aplikace je možnost si jednoduše opakovat již naučenou látku tak, aby ji uživatel nezapomněl. Po dokončení každé nové lekce by měla být uživateli nabídnuta možnost spustit opakování již naučené látky. Uživatel bude moci opakování odmítnout a přesunout se tak na stránku, ze které spustil předchozí učení. Dále bude mít možnost spustit opakování již naučené látky.
 
-% Done
+% Final
 Po spuštění opakování bude uživateli vybrána látka k zopakování. Tato látka by měla být vybrána z kurzů, které jsou ve studijním plánu buď v režimu učení, nebo v režimu opakování.
 
-% Done
+% Final
 \subsubsection{FP-12 Nová struktura učení a opakování}\label{sec:fp-learning-structure}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Write - do use casů vytvořit diagram aktivit pro průchod učení
+% Final
+Učení by mělo být strukturováno tak, aby byla uživateli po malých krocích vysvětlena probíraná látka a aby si uživatel mohl danou látku snadno procvičit. Učení se tak bude skládat z tzv. bloků učení, přičemž některé budou zaměřené na vysvětlení látky a některé na procvičení dané látky. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tato data budou později využita pro doporučování látky k zopakování.
 
-% Done
-Učení by mělo být strukturováno tak, aby uživateli byla jednak po malých krocích vysvětlena probíraná látka a jednak aby si uživatel mohl danou látku procvičit. Učení se tak bude skládat z různých bloků, přičemž některé budou zaměřené na vysvětlení látky a některé na procvičení dané látky. Při procvičování látky by měla aplikace sbírat data o tom, jak uživatel danému tématu rozumí. Tato data budou později využita pro doporučování látky k opakování.
+% Final
+Při učení by měla aplikace uživateli vysvětlovat látku formou připomínající video s audio nahrávkou. V rámci procvičování by pak měla aplikace zobrazovat cvičení, která mohou být také doprovázena audio nahrávkou. Cvičení i vysvětlení látky budou dále doplněna o různé vizuální komponenty, které pomohou uživateli lépe porozumět dané látce. Učení tak bude kombinovat přístup konkurenční aplikace Mimo, která využívá krátká cvičení a vizuální komponenty pro vysvětlení látky, a přístup konkurenční aplikace Scrimba, v níž je látka vyučována pomocí interaktivního prostředí s audio nahrávkou vysvětlující danou látku a cvičení.
 
-% Done
-Při učení by měla aplikace uživateli vysvětlovat látku formou připomínající video s audio nahrávkou. V rámci cvičení by pak měla aplikace zobrazovat cvičení, která opět mohou být doplněna o audio nahrávku. Cvičení i vysvětlení látky budou doplněny o různé vizuální komponenty, které pomohou uživateli lépe porozumět dané látce. Učení tak bude kombinovat přístup konkurenční aplikace Mimo, která využívá různé komponenty pro vysvětlení látky, a přístup konkurenční aplikace Scrimba, v níž je látka vyučována pomocí interaktivního prostředí s audio nahrávkou vysvětlující danou látku.
+% Final
+Při učení by měl mít uživatel možnost se vracet k již dokončeným blokům, tedy k dokončeným cvičením a k předchozím vysvětlením látky.
 
-% Done
-Uživatel by měl mít při učení možnost se vracet k již dokončeným blokům, tedy k dokončeným cvičením a k vysvětlením látky.
+% Final
+Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování původní aplikace, které jsem provedl v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zdali odpověděl v rámci cvičení správně nebo špatně. Proto by měla aplikace uživateli jasněji poskytovat zpětnou vazbu v rámci cvičení.
 
-% Done
-Tato struktura učení se zásadně liší od struktury učení v původní aplikaci, kde probíraná látka nebyla uživateli při učení vysvětlena, učení nebylo doplněno o žádné animace nebo audio nahrávky a uživatel neměl možnost se vracet k již dokončeným blokům.
-
-% Done
-Při řešení tohoto požadavku je třeba také brát v potaz výsledky uživatelského testování stávajícího řešení, které bylo provedené v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. Výsledky tohoto testování ukázaly, že aplikace nedává uživateli dostatečně jasnou zpětnou vazbu o tom, zda-li odpověděl při plnění cvičení správně nebo špatně. Proto by měla aplikace uživateli také zřetelněji poskytovat zpětnou vazbu při cvičeních.
-
-% Done
+% Final
 \subsubsection{FP-13 Bloky cvičení}\label{sec:fp-exercise-blocks}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-V aplikaci by v rámci učení a opakování měly být uživateli zobrazovány bloky cvičení, díky kterým si bude moci procvičit a zopakovat danou látku. Aplikace by měla obsahovat různé komponenty, ze kterých se budou jednotlivé bloky cvičení skládat. Tyto komponenty lze rozdělit do dvou kategorií.
+% Final
+V aplikaci by v rámci učení a opakování měly být uživateli zobrazovány bloky cvičení, díky kterým si bude moci procvičit nebo zopakovat danou látku. Aplikace by měla obsahovat různé komponenty, ze kterých se budou jednotlivé bloky cvičení skládat. Tyto komponenty lze rozdělit do dvou kategorií.
 
-% Done
-První kategorií jsou pasivní komponenty, které mají za cíl pouze zobrazovat informace ve formě textu, obrázků, tabulek, diagramů apod. Tyto komponenty budou sloužit zejména pro specifikaci zadání daného cvičení. Aplikace by měla obsahovat následující pasivní komponenty.
+% Final
+První kategorií jsou pasivní komponenty, které mají za cíl pouze zobrazovat informace ve formě textu, obrázků, tabulek, diagramů apod. Tyto komponenty budou sloužit zejména pro specifikaci zadání daného cvičení. Aplikace by měla obsahovat následující pasivní komponenty:
 
-% Done
+% Final
 \begin{itemize}
-    \item Nadpis
-    \item Odstavec textu
-    \item Jednoduchá tabulka
-    \item Tabulka připomínající tabulku v databázi
-    \item Seznamy číslované a nečíslované
-    \item Obrázky ve formátech PNG, JPG, SVG a GIF
-    \item Diagramy definované pomocí jazyka Mermaid\footnote{Dostupné na: \href{https://mermaid.js.org/}{https://mermaid.js.org/}}.
-    \item Ukázka kódu
-    \item Ukázka výstupu kódu v terminálu
-    \item Ukázka výstupu kódu v podobě webové stránky
-    \item Ukázka výstupu kódu v podobě tabulky
+    \item nadpis
+    \item odstavec textu
+    \item jednoduchou tabulku
+    \item tabulku připomínající tabulku databáze
+    \item číslované a nečíslované seznamy
+    \item obrázky ve formátech PNG, JPG, SVG a GIF
+    \item diagramy definované pomocí jazyka Mermaid\footnote{Dostupné na: \href{https://mermaid.js.org/}{https://mermaid.js.org/}}.
+    \item ukázku kódu
+    \item ukázku výstupu kódu v podobě výpisu v terminálu
+    \item ukázku výstupu kódu v podobě webové stránky
+    \item ukázku výstupu kódu v podobě tabulky
 \end{itemize}
 
-% Done
-Druhou kategorií jsou aktivní komponenty, se kterými bude uživatel moci interagovat a splnit tak dané cvičení. Cílem těchto komponentů je získat data o tom, jak uživatel danému tématu rozumí. Aplikace by měla obsahovat následující aktivní komponenty.
+% Final
+Druhou kategorií jsou aktivní komponenty, se kterými bude uživatel moci interagovat a splnit tak dané cvičení. Cílem těchto komponentů je získat data o tom, jak uživatel danému tématu rozumí. Aplikace by měla obsahovat následující aktivní komponenty:
 
-% Done
+% Final
 \begin{itemize}
-    \item Otázka s výběrem správné odpovědi z nabídky odpovědí
-    \item Vyplnění chybějícího textu v kódu s vynechanými políčky
-    \item Vyplnění chybějícího textu v kódu s vynechanými políčky pomocí nabídky slov
-    \item Psaní nebo přepisování kódu ručně
+    \item otázku s výběrem správné odpovědi z nabídky odpovědí
+    \item kód s vynechanými textovými políčky, které lze vyplnit psaním
+    \item kód s vynechanými textovými políčky, které lze vyplnit výběrem z nabídky slov
+    \item kód, který lze psát nebo upravovat ručně
 \end{itemize}
 
-% Done
-U komponent, v nichž uživatel může psát celý kód, by měla aplikace umožnit uživateli jednoduše zformátovat daný kód. Tato funkce vychází z analýzy konkurence Codecademy, která tuto funkci nabízí a může přispět k lepší uživatelské zkušenosti.
+% Final
+Aplikace by měla dále umožňovat jednotlivé komponenty doplnit o audio nahrávky, které budou komponenty komentovat a doprovázet tak uživatele při vyplňování cvičení. Uživatel si tak bude moci například poslechnout zadání cvičení, aniž by ho musel číst. Při zobrazení bloku cvičení by se měly postupně spustit všechny audio nahrávky jednotlivých komponentů. Uživatel by měl mít možnost si audio kdykoliv ztlumit a používat aplikaci i bez něj.
 
-% Done
-Aplikace by měla umožňovat k jednotlivým komponentům připojit audio nahrávku, která bude daný komponent komentovat a doprovázet tak uživatele při vyplňování cvičení. Při zobrazení bloku cvičení by se měly postupně spustit všechny audio nahrávky, které takto provedou uživatele celým cvičením. Uživatel by měl mít možnost si audio kdykoliv vypnout a používat aplikaci i bez něj.
-
-% Done
+% Final
 \subsubsection{FP-14 Editor kódu}\label{sec:fp-code-editor}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-V rámci složitějších cvičení by měla aplikace obsahovat jednoduchý editor kódu, který bude umožňovat uživateli jednoduše psát a upravovat kód ve více záložkách připomínající různé soubory nebo okna.
+% Final
+V rámci složitějších cvičení by měla aplikace obsahovat jednoduchý editor kódu, který bude umožňovat uživateli jednoduše psát a upravovat kód ve více záložkách.
 
-% Done
-V jednotlivých záložkách by mělo být možné uživateli zobrazovat následující komponenty.
+% Final
+V jednotlivých záložkách by mělo být možné uživateli zobrazit následující komponenty:
 
-% Done
+% Final
 \begin{itemize}
-    \item Vyplnění chybějícího textu v kódu s vynechanými políčky
-    \item Vyplnění chybějícího textu v kódu s vynechanými políčky pomocí nabídky slov
-    \item Napsání nebo přepsání kódu ručně
-    \item Ukázka výstupu kódu v terminálu
-    \item Ukázka výstupu kódu v podobě webové stránky
-    \item Ukázka výstupu kódu v podobě tabulky
+    \item cvičení na vyplnění chybějícího textu v kódu s vynechanými políčky
+    \item cvičení na vyplnění chybějícího textu v kódu s vynechanými políčky pomocí nabídky slov
+    \item cvičení na napsání nebo přepsání kódu ručně
+    \item ukázku výstupu kódu v podobě výpisu v terminálu
+    \item ukázku výstupu kódu v podobě webové stránky
+    \item ukázku výstupu kódu v podobě tabulky
 \end{itemize}
 
-% Done
+% Final
 \subsubsection{FP-15 Bloky vysvětlení látky}\label{sec:fp-explanation-blocks}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-V rámci učení by měly být zobrazovány bloky vysvětlení látky, které mají za cíl uživateli danou látku krátce a srozumitelně vysvětlit před tím, než začne plnit jednotlivá cvičení. Celé vysvětlení látky bude probíhat formou audio výkladu, doplněného o různé animace, vizualizace a další komponenty. Tyto komponenty budou sloužit jednak jako nástroj pro lepší porozumění látky a jednak jako způsob zachycení a udržení pozornosti uživatele během výkladu. Komponenty by tak, na rozdíl od komponent bloků cvičení, měly obsahovat i různé animace a přechody tak, aby byl výklad vizuálně poutavý.
+% Final
+V rámci učení by měly být zobrazovány bloky vysvětlení látky, které mají za cíl uživateli látku krátce a srozumitelně vysvětlit před tím, než začne uživatel plnit jednotlivá cvičení. Celé vysvětlení látky bude probíhat formou audio výkladu, doplněného o různé animace, vizualizace a další komponenty. Tyto prvky budou sloužit jednak jako nástroj pro umožnění lepšího pochopení látky a jednak jako způsob zachycení a udržení pozornosti uživatele během výkladu. Komponenty by tak, na rozdíl od komponentů bloků cvičení, měly obsahovat i různé animace a přechody, aby byl výklad vizuálně poutavý.
 
-% Done
-V rámci bloků vysvětlení látky by mělo být možné uživateli zobrazovat následující komponenty.
+% Final
+V rámci bloků vysvětlení látky by mělo být možné uživateli zobrazovat následující komponenty:
 
-% Done 
+% Final
 \begin{itemize}
-    \item Text s možností zvýraznění určitých slov a s možností vypsání určitých slov ve stylu kódu. % ✅
-    \item Jednoduchá tabulka % ✅
-    \item Tabulka připomínající tabulku v databázi % ✅
-    \item Seznamy číslované a nečíslované % ✅
-    \item Obrázky ve formátech PNG, JPG, SVG a GIF % ✅
-    \item Diagramy definované pomocí jazyka Mermaid\footnote{Dostupné na: \href{https://mermaid.js.org/}{https://mermaid.js.org/}} s animovanými přechody mezi různými kroky úprav diagramu. Aplikace by měla podporovat diagram tříd, ER diagram, stavový diagram, diagram architektury, diagram git větví a vývojový diagram. % ✅
-    \item Ukázka kódu s animovanými přechody mezi různými kroky upravování kódu. % ✅
-    \item Ukázka terminálu s animovanými přechody mezi různými kroky zadávání příkazů do terminálu a vypisování jejich výstupů. % ✅
-    \item Ukázka webové stránky % ✅
-    \item Pozadí ve formě jednobarevného pozadí % ✅
-    \item Pozadí ve formě obrázku % ✅
-    \item Pozadí ve formě videa % ✅
+    \item text s možností zvýraznění určitých slov a s možností vypsání určitých slov ve stylu kódu
+    \item jednoduchou tabulku
+    \item tabulku připomínající tabulku v databázi
+    \item číslované a nečíslované seznamy
+    \item obrázky ve formátech PNG, JPG, SVG a GIF
+    \item diagramy tříd, ER diagramy, stavové diagramy, diagramy architektury, diagramy git větví a vývojové diagramy definované pomocí jazyka Mermaid\footnote{Dostupné na: \href{https://mermaid.js.org/}{https://mermaid.js.org/}}
+    \item ukázku kódu s animovanými přechody mezi různými kroky upravování kódu
+    \item ukázku terminálu s animovanými přechody mezi různými kroky zadávání příkazů do terminálu a vypisování jejich výstupů
+    \item ukázku webové stránky
+    \item pozadí ve formě jednobarevného pozadí
+    \item pozadí ve formě obrázku
+    \item pozadí ve formě videa
 \end{itemize}
 
-% Done
-Výklad látky by mělo být možné ovládat následujícími způsoby. Uživatel by měl mít možnost výklad zastavit, přeskočit na libovolnou část výkladu a nebo výklad zrychlit. Po skončení výkladu by měl mít možnost výklad spustit znovu.
+% Final
+Výklad látky by mělo být možné ovládat následujícími způsoby. Uživatel by měl mít možnost výklad zastavit, přeskočit na libovolnou část výkladu, nebo ho po přehrání znovu spustit. 
 
-% Done
-Jelikož se může stát, že uživatel nemá vždy možnost poslouchat audio výklad, měl by mít možnost si zvuk vypnout. V takovém případě by mu měly být zobrazeny titulky, které budou vysvětlovat látku místo audio výkladu.
+% Final
+Jelikož se může stát, že uživatel nemá vždy možnost poslouchat audio výklad, měl by mít možnost si zvuk vypnout. V takovém případě by mu měly být zobrazeny titulky, které budou vysvětlovat látku namísto audio výkladu.
 
-% Done
-Zásadní vlastností celého bloku vysvětlení látky je, že by měl být responzivní a mělo by tak být možné výklad jednoduše sledovat jak na malých, tak na velkých displejích. Dále by měl výklad brát v potaz světlý resp. tmavý režim aplikace a zobrazovat všechny komponenty v příslušném režimu. 
+% Final
+Zásadní vlastností bloků s vysvětlením látky je jejich responzivita. Bloky s vysvětlením látky by měly být responzivní a mělo by tak být možné výklad sledovat jak na malých, tak na velkých displejích.
+
+% Final
+Dále by se měly bloky s vysvětlením látky přizpůsobovat tmavému resp. světlému režimu aplikace a zobrazovat tak všechny komponenty v příslušném režimu. 
 
 % Done
 \subsubsection{FP-16 Vysvětlení odpovědí ve cvičeních}\label{sec:fp-answer-explanation}
@@ -373,7 +371,7 @@ Aplikace by měla při učení a opakování uživatele nově sbírat data o tom
 Uživateli by dále měla na konci učení nebo opakování aplikace zobrazit přehled se statistikami. Na této stránce by měly být zobrazeny informace o tom, kolik času se uživatel učil, jakou měl úspěšnost při plnění cvičení, kolik nových konceptů se naučil nebo kolik konceptů si zopakoval a kolik bodů XP získal.
 
 % Done
-\subsubsection{FP-17 Stav energie}\label{sec:fp-energy-status}
+\subsubsection{FP-19 Stav energie}\label{sec:fp-energy-status}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -395,7 +393,7 @@ Tento požadavek vychází z analýzy konkurence, kde většina aplikací obsahu
 % Write - požadavek na nějakou vizualizaci progressu co se týče znalostí
 
 % Done
-\subsubsection{FP-18 Registrace a přihlášení pomocí účtu Google}\label{sec:fp-google-auth}
+\subsubsection{FP-20 Registrace a přihlášení pomocí účtu Google}\label{sec:fp-google-auth}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -409,7 +407,7 @@ Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí
 Tento požadavek vychází z analýzy konkurence, kde většina konkurenčních aplikací tuto možnost nabízí.
 
 % Done
-\subsubsection{FP-19 Stránka nastavení}\label{sec:fp-settings-page}
+\subsubsection{FP-21 Stránka nastavení}\label{sec:fp-settings-page}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -431,7 +429,7 @@ Původní aplikace obsahovala velice jednoduchou stránku nastavení, která umo
 \end{itemize}
 
 % Done
-\subsubsection{FP-20 Tmavý režim}\label{sec:fp-dark-mode}
+\subsubsection{FP-22 Tmavý režim}\label{sec:fp-dark-mode}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -442,7 +440,7 @@ Původní aplikace obsahovala velice jednoduchou stránku nastavení, která umo
 Rozhraní aplikace by mělo být dostupné ve dvou režimech, ve světlém a tmavém. Uživatel by měl mít možnost v nastavení zvolit, zda chce používat světlý režim, tmavý režim, nebo režim dle systémového nastavení. Rozhraní aplikace by se pak mělo zobrazovat uživateli v tomto režimu.
 
 % Review
-\subsubsection{FP-21 Push Notifikace}\label{sec:fp-push-notifications}
+\subsubsection{FP-23 Push Notifikace}\label{sec:fp-push-notifications}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -469,7 +467,7 @@ Aplikace by měla být schopna uživateli posílat push notifikace. Tyto notifik
 V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace.
 
 % Review
-\subsubsection{FP-22 Připomínání učení}
+\subsubsection{FP-24 Připomínání učení}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -485,7 +483,7 @@ Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má
 Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". Pokud uživatel tuto funkci zapne, nebude mu aplikace připomínat učení podle nastaveného času, ale na základě předchozího používání aplikace. Tato možnost by měla být v aplikaci nastavena jako výchozí.
 
 % Done
-\subsubsection{FP-23 Systém zobrazování reklam}\label{sec:fp-advertisement}
+\subsubsection{FP-25 Systém zobrazování reklam}\label{sec:fp-advertisement}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -508,7 +506,7 @@ Nově by aplikace měla umožňovat zobrazování dalších typů reklam, v záv
 Tento požadavek vychází z analýzy konkurenčních řešení, kde většina aplikací zobrazuje reklamy v průběhu používání aplikace.
 
 % Done
-\subsubsection{FP-24 Nový systém předplatného}\label{sec:fp-subscription-system}
+\subsubsection{FP-26 Nový systém předplatného}\label{sec:fp-subscription-system}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -528,7 +526,7 @@ V původní aplikaci měl uživatel možnost si zaplatit předplatné a tím zí
 V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenost a informovanost uživatelů, které funkce jsou dostupné v premium verzi aplikace. Pokud uživatel například chce využít funkci, která je dostupná pouze uživatelům s předplatným, měla by mu být zobrazena stránka, která ho bude informovat, že je daná funkce dostupná pouze v premium verzi aplikace.
 
 % Done
-\subsubsection{FP-25 Zkušební verze předplatného}\label{sec:fp-free-trial}
+\subsubsection{FP-27 Zkušební verze předplatného}\label{sec:fp-free-trial}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -551,7 +549,7 @@ Uživatel se bude moci kdykoliv během zkušební doby od předplatného odhlás
 Součástí této funkce by mělo být také pravidelné nabízení zkušební verze uživatelům, kteří zkušební dobu v posledním roce nevyužili, pomocí rozšířených oznámení popsaných v požadavku \nameref{sec:fp-extended-notifications}.
 
 % Done
-\subsubsection{FP-26 Přizpůsobení avatara uživatele}
+\subsubsection{FP-28 Přizpůsobení avatara uživatele}
 
 % Done
 \label{sec:fp-avatar-customization}
@@ -571,7 +569,7 @@ Uživatel by měl mít možnost si u svého avatara přizpůsobit barvu pleti, o
 Tento požadavek vychází z principů gamifikace, konkrétně z principu vlastnictví \cite{Chou2019ActionableGamification}. Tento princip říká, že uživatelé mohou být více motivování, pokud mají pocit, že v rámci aplikace něco vlastní. Příkladem toho je právě přizpůsobování avatara, díky kterému si uživatelé mohou s postavou vytvořit pouto a zvýšit tak svoji motivaci pro používání aplikace. Přizpůsobování avatara tak může mít za následek častější a pravidelnější používání aplikace \cite{Birk2018CombatingAttrition}. Tento princip například využívá i velice známá vzdělávací aplikace Duolingo\footnote{Dostupné na: \href{https://www.duolingo.com/}{https://www.duolingo.com/}}, která podobnou funkci přizpůsobení avatara uživatelům nabízí.
 
 % Done
-\subsubsection{FP-27 Rozšíření obchodu a odemykání položek}\label{sec:fp-shop-unlock-items}
+\subsubsection{FP-29 Rozšíření obchodu a odemykání položek}\label{sec:fp-shop-unlock-items}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -588,7 +586,7 @@ Dále by v obchodu měla být zavedena nová funkce odemykání položek. Někte
 U zamčených položek by měl uživatel mít možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemknul.
 
 % Done
-\subsubsection{FP-28 Uživatelský profil}
+\subsubsection{FP-30 Uživatelský profil}
 \label{sec:fp-user-profile}
 
 % Done
@@ -608,7 +606,7 @@ V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje
 \end{itemize}
 
 % Done
-\subsubsection{FP-29 Zmrazení streaku}\label{sec:fp-streak-freeze}
+\subsubsection{FP-31 Zmrazení streaku}\label{sec:fp-streak-freeze}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -622,7 +620,7 @@ Aplikace uživateli zobrazuje tzv. streak, neboli skóre, které reprezentuje po
 Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupit do zásoby několik položek tzv. zmrazení streaku. Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné učení nebo opakování, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak, i když se některý den zapomene učit.
 
 % Done
-\subsubsection{FP-30 Rozšířená oznámení v aplikaci}\label{sec:fp-extended-notifications} 
+\subsubsection{FP-32 Rozšířená oznámení v aplikaci}\label{sec:fp-extended-notifications} 
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -648,7 +646,7 @@ V původní aplikaci existoval systém, který umožňoval uživateli zobrazovat
 \end{itemize}
 
 % Done
-\subsubsection{FP-32 Truhla s odměnou}\label{sec:fp-treasure-chest}
+\subsubsection{FP-33 Truhla s odměnou}\label{sec:fp-treasure-chest}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -662,7 +660,7 @@ Po dokončení učení by se uživateli měla zobrazit stránka s truhlou, ktero
 Po otevření truhly by měla být uživateli nabídnuta možnost získat dvojnásobek této odměny, pokud zhlédne reklamu.
 
 % Done
-\subsubsection{FP-31 Žebříček uživatelů}\label{sec:fp-leaderboard}
+\subsubsection{FP-34 Žebříček uživatelů}\label{sec:fp-leaderboard}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -682,7 +680,7 @@ Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pok
 Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Sololearn, v nichž jsou podobné ligy implementovány.
 
 % Done
-\subsubsection{FP-34 Sdílení pokroku mezi uživateli}\label{sec:fp-progress-sharing}
+\subsubsection{FP-35 Sdílení pokroku mezi uživateli}\label{sec:fp-progress-sharing}
 
 % Done
 \begin{tabular}{lp{0.7\linewidth}}
@@ -704,7 +702,7 @@ Nově by stránka měla zobrazovat zprávy o následujících událostech týkaj
 \end{itemize}
 
 % Write - tohle možná je nefunkční požadavek?
-\subsubsection{FP-35 Odstranění přebytečných funkcí}
+\subsubsection{FP-36 Odstranění přebytečných funkcí}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -765,7 +763,7 @@ Aplikace by měla poskytovat uživateli přehlednější a jednodušší způsob
 Změna navigace se bude týkat zejména hlavní navigační lišty, bočního navigačního panelu a stránky sloužící k přepínání mezi jednotlivými kurzy.
 
 % Review
-\subsubsection{NP-2 Aktualizace kódu aplikace}
+\subsubsection{NP-3 Aktualizace kódu aplikace}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -788,7 +786,7 @@ V kódu aplikace by měly být provedeny následující změny se záměrem zvý
 Tento požadavek byl vytvořen na základě výstupů analýzy existujícího řešení.
 
 % Review
-\subsubsection{NP-3 Zavedení automatizovaných testů}
+\subsubsection{NP-4 Zavedení automatizovaných testů}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -802,7 +800,7 @@ Do frontendové části aplikace by měly být zavedeny automatizované testy s 
 Tento požadavek vychází jednak z analýzy existujícího řešení a jednak z návrhu úprav do budoucna v mé bakalářské práci \cite{Jenicek2024BachelorThesis} zabývající se zmíněným řešením.
 
 % Review
-\subsubsection{NP-4 Automaticky generované třídy API}
+\subsubsection{NP-5 Automaticky generované třídy API}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -815,7 +813,7 @@ V rámci kódu frontendu by měly být automaticky generovány třídy reprezent
 % Review
 Požadavek vychází z analýzy existujícího řešení. Jeho cílem je zjednodušení implementace a zajištění konzistence mezi frontendovou a backendovou částí aplikace.
 
-\subsubsection{NP-5 Animace a efekty}
+\subsubsection{NP-6 Animace a efekty}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -829,7 +827,7 @@ Do aplikace by měly být přidány základní animace s cílem zlepšit uživat
 Tento požadavek vychází zejména z analýzy konkurenčních řešení, ve které konkurenční aplikace jako Mimo nebo Scrimba využívají animace a efekty.
 
 % Review
-\subsubsection{NP-6 Sestavování a nasazování PWA}
+\subsubsection{NP-7 Sestavování a nasazování PWA}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
