@@ -308,157 +308,154 @@ Zásadní vlastností bloků s vysvětlením látky je jejich responzivita. Blok
 % Final
 Dále by se měly bloky s vysvětlením látky přizpůsobovat tmavému resp. světlému režimu aplikace a zobrazovat tak všechny komponenty v příslušném režimu. 
 
-% Done
+% Final
 \subsubsection{FP-16 Vysvětlení odpovědí ve cvičeních}\label{sec:fp-answer-explanation}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-Po tom, co uživatel odpoví v rámci cvičení, by mu měla aplikace poskytnout možnost si zobrazit vysvětlení dané odpovědi. Díky tomu bude moci získat podrobnější vysvětlení, proč byla jeho odpověď ve cvičení špatná nebo správná.
+% Final
+V rámci učení uživatel může vyplňovat jednotlivá cvičení. Po vyplnění cvičení by měla aplikace uživateli poskytnout možnost si zobrazit vysvětlení správné odpovědi. Díky tomu bude uživatel moci získat podrobnější vysvětlení, proč byla jeho odpověď ve cvičení špatná nebo správná.
 
-% Done
+% Final
 \subsubsection{FP-17 Nahlašování problému při učení}\label{sec:fp-report-learning-issue}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-Uživatel by měl mít při učení možnost u každého cvičení nebo vysvětlení látky nahlásit problém, který při dané aktivitě nastal. Při nahlašování by měl mít možnost zvolit o který typ problému z následujícího výběru se jedná.
+% Final
+Uživatel by měl mít při učení možnost u každého cvičení nebo vysvětlení látky nahlásit problém, který při dané aktivitě nastal. Při nahlašování by měl mít možnost zvolit, o který typ problému se jedná. K dispozici by měly být následující typy problémů:
 
-% Done
+% Final
 \begin{itemize}
-    \item Uživatel považuje svou odpověď ve cvičení za správnou, i přes to, že ji aplikace označila jako špatnou.
-    \item Uživatel považuje svou odpověď ve cvičení za špatnou, i přes to, že ji aplikace označila jako správnou.
-    \item Zadání cvičení je pro uživatele matoucí nebo nejasné.
-    \item Vysvětlení látky je pro uživatele matoucí nebo nejasné.
-    \item Audio nahrávka chybí nebo není v pořádku.
-    \item Nastala jiná chyba. V tomto případě by měl uživatel mít možnost sám uvést, o jakou chybu se jedná.
+    \item uživatel považuje svou odpověď ve cvičení za správnou, i přes to, že ji aplikace označila jako špatnou
+    \item uživatel považuje svou odpověď ve cvičení za špatnou, i přes to, že ji aplikace označila jako správnou
+    \item zadání cvičení je pro uživatele matoucí nebo nejasné
+    \item vysvětlení látky je pro uživatele matoucí nebo nejasné
+    \item audio nahrávka chybí nebo není v pořádku
+    \item nastala jiná chyba
 \end{itemize}
 
-% Done
-Uživatelé s rolí korektora by měli kromě předchozích možností nahlášení problému, mít také k dispozici následující možnosti.
+% Final
+Uživatel by měl mít dále možnost detailněji popsat daný problém vlastními slovy.
 
-% Done
+% Final
+Uživatelé s rolí korektora by také měli mít, kromě předchozích možností, k dispozici následující typy problémů:
+
+% Final
 \begin{itemize}
-    \item Vysvětlení látky je třeba upravit.
-    \item Strukturu cvičení je třeba upravit.
-    \item Struktura lekce by měla být upravena. Tato možnost se využije například pokud v lekci není dostatek cvičení nebo vysvětlení látky.
+    \item vysvětlení látky je třeba upravit
+    \item strukturu cvičení je třeba upravit
+    \item struktura celé lekce by měla být upravena
 \end{itemize}
 
-% Done
-Korektoři by také měli mít možnost u každé odpovědi detailněji popsat vlastními slovy daný problém. 
+% Final
+Korektoři, stejně jako běžní uživatelé, by také měli mít možnost u každé odpovědi detailněji popsat vlastními slovy daný problém. 
 
-% Done
+% Final
 Nahlášení problému od uživatelů s rolí korektora by mělo být označeno tak, aby bylo možné jej rozlišit od nahlášení problému běžných uživatelů. Role korektora bude nastavována uživatelům mimo frontend této aplikace. Tuto roli využijí zejména lidé zodpovědní za tvorbu a korekci jednotlivých kurzů.
 
-% Done
+% Final
 \subsubsection{FP-18 Statistiky o učení}\label{sec:fp-learning-stats}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-Aplikace by měla při učení a opakování uživatele nově sbírat data o tom, jak dlouho uživatel plnil jednotlivá cvičení, jak dlouho procházel vysvětlení látky a jakou úspěšnost měl při plnění jednotlivých cvičení. Tato data by měla být odeslána do backendové části aplikace, kde budou následně zpracována a použita pro úpravu odhadů časové náročnosti jednotlivých cvičení. Touto funkcí backendové části aplikace se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci.
+% Final
+Aplikace by měla při učení a opakování nově sbírat data o tom, jak dlouho uživatel plnil jednotlivá cvičení, jak dlouho procházel vysvětlení látky a jakou úspěšnost měl při plnění jednotlivých cvičení.
 
-% Done
-Uživateli by dále měla na konci učení nebo opakování aplikace zobrazit přehled se statistikami. Na této stránce by měly být zobrazeny informace o tom, kolik času se uživatel učil, jakou měl úspěšnost při plnění cvičení, kolik nových konceptů se naučil nebo kolik konceptů si zopakoval a kolik bodů XP získal.
+% Final
+Na konci učení nebo opakování by pak měla aplikace zobrazit uživateli přehled se statistikami. Na této stránce by měly být zobrazeny informace o tom, kolik času se uživatel učil, jakou měl úspěšnost při plnění cvičení, kolik konceptů se naučil a kolik bodů XP získal.
 
-% Done
+% Final
 \subsubsection{FP-19 Stav energie}\label{sec:fp-energy-status}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
+% Final
 Uživatel by měl mít možnost si v aplikaci zobrazit svůj stav energie, který bude reprezentovat, kolik lekcí nebo opakování látky může uživatel ještě za daný den spustit.
 
-% Done
+% Final
 Každým spuštěním lekce nebo opakování látky se stav energie sníží. Pokud uživatel všechny body energie spotřebuje, nebude mu umožněno se dále učit. Body energie se budou každý den obnovovat.
 
-% Done
-Uživatelé s premium účtem budou mít k dispozici neomezené množství energie, tedy učení nebude body energie snižovat.
+% Final
+Uživatelé s premium účtem budou mít k dispozici neomezené množství energie. Učení a opakování látky jim tak nebude body energie snižovat.
 
-% Done
-Tento požadavek vychází z analýzy konkurence, kde většina aplikací obsahuje určitou podobu omezení učení pro uživatele, kteří nemají premium účet. Tato funkce slouží primárně k motivaci uživatele, aby vybudoval pravidelný návyk učení a také k tomu, aby byl uživatel motivován si zakoupit premium účet.
+% Final
+Tento požadavek vychází z analýzy konkurence, ve které většina aplikací obsahovala určitou podobu omezení učení pro uživatele, kteří nemají premium účet. Funkce tak bude sloužit k motivaci uživatele, aby si vybudoval pravidelný návyk učení. Dále bude také sloužit k tomu, aby byl uživatel motivován si zakoupit premium účet.
 
-% Write - požadavek na nějakou vizualizaci progressu co se týče znalostí
-
-% Done
+% Final
 \subsubsection{FP-20 Registrace a přihlášení pomocí účtu Google}\label{sec:fp-google-auth}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Could have \\
 \end{tabular}
 
-% Done
-Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí účtu Google. 
+% Final
+Uživatel by měl mít možnost se registrovat a přihlásit do aplikace pomocí účtu Google. Tento požadavek vychází z analýzy konkurence, ve které většina konkurenčních aplikací tuto možnost nabízí.
 
-% Done
-Tento požadavek vychází z analýzy konkurence, kde většina konkurenčních aplikací tuto možnost nabízí.
-
-% Done
+% Final
 \subsubsection{FP-21 Stránka nastavení}\label{sec:fp-settings-page}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-Původní aplikace obsahovala velice jednoduchou stránku nastavení, která umožňovala uživateli nastavit pouze několik základních funkcí. Jelikož bude do aplikace přidána řada nových funkcí, bude nutné tuto stránku zásadně změnit a rozšířit tak, aby umožňovala uživateli přehledně nastavovat potřebné funkce. Stránka nastavení by tak měla poskytovat uživateli následující možnosti.
+% Final
+Původní aplikace obsahovala velice jednoduchou stránku nastavení, která umožňovala uživateli nastavit pouze několik základních funkcí. Jelikož bude do aplikace přidána řada nových funkcí, bude nutné tuto stránku zásadně změnit a rozšířit tak, aby umožňovala uživateli přehledně nastavovat potřebné funkce. Stránka nastavení by tak měla poskytovat uživateli následující možnosti:
 
-% Done
+% Final
 \begin{itemize}
-    \item Nastavení účtu uživatele, tedy uživatelského jména, jména, emailu, hesla a avatara.
-    \item Nastavení režimu vzhledu aplikace dle požadavku \nameref{sec:fp-dark-mode}.
-    \item Nastavení notifikací, tedy které notifikace uživatel chce dostávat a které ne.
-    \item Odhlášení se ze zapsaného kurzu.
-    \item Zobrazení základní nápovědy v aplikaci.
-    \item Nahlášení problému nebo chyby v aplikaci.
-    \item Zobrazení podmínek a dalších právních informací o používání aplikace.
+    \item nastavení účtu uživatele, tedy uživatelského jména, jména, emailu, hesla a avatara
+    \item nastavení režimu vzhledu aplikace dle požadavku \nameref{sec:fp-dark-mode}
+    \item nastavení notifikací, tedy které notifikace uživatel chce dostávat a které ne
+    \item odhlášení se ze zapsaného kurzu
+    \item zobrazení základní nápovědy v aplikaci
+    \item nahlášení problému nebo chyby v aplikaci
+    \item zobrazení podmínek používání a dalších právních informací o používání aplikace
 \end{itemize}
 
-% Done
+% Final
 \subsubsection{FP-22 Tmavý režim}\label{sec:fp-dark-mode}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
+% Final
 Rozhraní aplikace by mělo být dostupné ve dvou režimech, ve světlém a tmavém. Uživatel by měl mít možnost v nastavení zvolit, zda chce používat světlý režim, tmavý režim, nebo režim dle systémového nastavení. Rozhraní aplikace by se pak mělo zobrazovat uživateli v tomto režimu.
 
-% Review
+% Final
 \subsubsection{FP-23 Push Notifikace}\label{sec:fp-push-notifications}
 
-% Review
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
 % Review
-Aplikace by měla být schopna uživateli posílat push notifikace. Tyto notifikace by měly uživatele upozorňovat v následujících situacích:
+Aplikace by měla uživateli posílat push notifikace na základě událostí v systému. Tyto notifikace by se měly uživateli posílat v následujících případech:
 
 % Review
 \begin{itemize}
-    \item Pokud se uživatel ještě neučil v daný den.
-    \item Pokud se uživatel delší dobu v aplikaci nic neučil.
-    \item Pokud uživateli končí předplatné aplikace a ještě ho neobnovil.
-    \item Pokud uživatele začal sledovat jiný uživatel.
-    \item Pokud bylo použito zmrazení streaku.
-    \item Pokud byla zveřejněna aktivita jiného uživatele, kterého daný uživatel sleduje.
-    \item Pokud se blíží konec týdne a uživateli hrozí propadnutí do nižší ligy.
+    \item pokud se uživatel ještě neučil v daný den
+    \item pokud se uživatel delší dobu v aplikaci nic neučil
+    \item pokud uživateli končí jeho zkušební doba předplatného
+    \item pokud uživatele začal sledovat jiný uživatel
+    \item pokud bylo použito zmrazení streaku z požadavku \nameref{sec:fp-streak-freeze}
+    \item pokud se blíží konec týdne a uživateli hrozí propadnutí do nižší ligy
 \end{itemize}
 
 % Write- zde nezapomenout naimplementovat tohle: Pokud uživatel nemá zapnuté notifikace z požadavku \nameref{sec:fp-push-notifications}. Už to mám zahrnuté v požadavku pro in-app ozámení, ale neimplementoval jsem zatím tu mechaniku toho kdy se do Notices přidá toto oznámení. 
@@ -466,43 +463,42 @@ Aplikace by měla být schopna uživateli posílat push notifikace. Tyto notifik
 % Review
 V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace.
 
-% Review
+% Final
 \subsubsection{FP-24 Připomínání učení}
 
-% Review
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Could have \\
 \end{tabular}
 
-% Write - nakonec jsem se rozhodl, že bude povolené pouze chytré připomínání a uživatel nebude mít možnost si nastavit konkrétní čas.
-
-% Review - tohle se ještě rozhodnout, jestli tam chci mít nebo ne
-Uživatel by měl mít možnost si v aplikaci nastavit připomenutí, že se má v určitý čas učit. Aplikace by pak měla uživateli posílat push notifikace, které ho na učení upozorní, pokud se ještě v daný den neučil. Tato funkce je inspirována konkurenčními aplikacemi, které umožňují uživateli si nastavit každodenní připomenutí učení.
+% Review
+Uživatel by měl mít možnost si zapnout nebo vypnout připomínání učení. Pokud uživatel toto připomínání zapne, aplikace by mu měla posílat push notifikace, které ho upozorní, že se má daný den učit. Čas odeslání notifikace by se měl odvíjet od času, kdy se uživatel typicky učí. Možnost připomínání učení by měla být ve výchozím nastavení zapnutá.
 
 % Review
-Dále by aplikace měla uživateli umožnit zapnout "chytré připomínání". Pokud uživatel tuto funkci zapne, nebude mu aplikace připomínat učení podle nastaveného času, ale na základě předchozího používání aplikace. Tato možnost by měla být v aplikaci nastavena jako výchozí.
+Tato funkce je inspirována konkurenčními aplikacemi, které umožňují uživateli si nastavit připomínání učení.
 
-% Done
+% Final
 \subsubsection{FP-25 Systém zobrazování reklam}\label{sec:fp-advertisement}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-V původní aplikaci existoval velice jednoduchý systém pro zobrazování reklam. Po úspěšném dokončení učení se uživateli zobrazila jednoduchá reklama formou banneru.  
+% Final
+V původní aplikaci existoval velice jednoduchý systém pro zobrazování reklam. Po úspěšném dokončení učení se uživateli zobrazila jednoduchá reklama formou banneru.
 
-% Done
-Nově by aplikace měla umožňovat zobrazování dalších typů reklam, v závislosti na zařízení uživatele. Na mobilních zařízeních by aplikace měla primárně zobrazovat reklamy přes celou obrazovku. Na desktopových zařízeních by pak aplikace měla zobrazovat reklamy v podobě bannerů. Reklamy by měla aplikace zobrazovat v následujících případech.
+% Final
+Nově by se měly zobrazovat různé velikosti reklamy v závislosti na velikosti dostupného místa na obrazovce uživatele. Reklamy by měla aplikace zobrazovat v následujících případech:
 
-% Done
+% Final
 \begin{itemize}
-    \item Po skončení učení, ať už po úspěšném dokončení nebo po předčasném ukončení učení uživatelem.
-    \item Pokud uživatel dostal odměnu s virtuální měnou a zvolil možnost získání dvojnásobku odměny při zhlédnutí reklamy.
+    \item po úspěšném dokončení učení
+    \item po předčasném ukončení učení uživatelem
+    \item pokud uživatel otevřel truhlu s odměnou a zvolil možnost získání dvojnásobku odměny při zhlédnutí reklamy
 \end{itemize}
 
-% Done
+% Final
 Tento požadavek vychází z analýzy konkurenčních řešení, kde většina aplikací zobrazuje reklamy v průběhu používání aplikace.
 
 % Done
