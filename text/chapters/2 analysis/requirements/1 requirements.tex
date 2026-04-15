@@ -11,7 +11,7 @@ Po sepsání jednotlivých požadavků se zaměřím na určení jejich priorit 
 \subsection{Funkční požadavky}
 
 % Final
-Na základě předchozí analýzy stávajícího řešení a analýzy konkurenčních aplikací jsem identifikoval a sepsal následující funkční požadavky.
+Na základě předchozí analýzy stávajícího řešení a analýzy konkurenčních aplikací jsem sestavil funkční požadavky této aplikace. Funkční požadavky specifikují chování a funkce, které by měla aplikace obsahovat \cite[4]{UseCases}. Na základě těchto požadavků budu následně provádět návrh a implementaci jednotlivých funkcí. V rámci této analýzy jsem specifikoval následující funkční požadavky. 
 
 % Final
 \subsubsection{FP-1 Úvodní stránka aplikace}\label{sec:fp-welcome-page}
@@ -572,7 +572,7 @@ Tento požadavek vychází ze základních principů gamifikace, konkrétně z p
 V aplikaci již existuje stránka obchodu, v němž si uživatel může zakoupit pomocí virtuální měny profilové obrázky. Vzhledem k novým požadavkům aplikace je třeba tento obchod rozšířit tak, aby bylo možné si zakoupit položky, které jsou popsány v požadavku \nameref{sec:fp-avatar-customization}.
 
 % Final
-Dále by v obchodu měla být zavedena nová funkce odemykání položek. Některé položky by měly být dostupné ke koupi pouze pokud uživatel dosáhl určitého ocenění v aplikaci. Pokud uživatel ještě nedosáhl daného ocenění, měly by se položky uživateli zobrazovat jako zamčené. U těchto položek by měl mít uživatel možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemkl.
+Dále by v obchodu měla být zavedena nová funkce odemykání položek. Některé položky by měly být dostupné ke koupi pouze pokud uživatel dosáhl určitého ocenění v aplikaci. Pokud uživatel ještě nedosáhl daného ocenění, měly by se položky uživateli zobrazovat jako zamčené. U těchto položek by měl mít uživatel možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemknul.
 
 % Final
 \subsubsection{FP-30 Uživatelský profil}\label{sec:fp-user-profile}
@@ -694,127 +694,131 @@ Nově by stránka měla zobrazovat zprávy o následujících událostech týkaj
 % Final
 \subsection{Nefunkční požadavky}
 
-% Write
-Po identifikaci funkčních požadavků jsem dále identifikoval nefunkční požadavky. Nefunkční požadavky definují vlastnosti, které by systém měl splňovat.
+% Final
+Po specifikaci funkčních požadavků jsem dále definoval nefunkční požadavky. Nefunkční požadavky definují omezení kladená na daný systém a vlastnosti, které by systém měl splňovat. Tyto požadavky se týkají například spolehlivosti, použitelnosti, výkonu a rozšiřitelnosti systému. \cite[4-5]{UseCases}
 
 % Final
-Na základě předchozí analýzy jsem dále identifikoval následující nefunkční požadavky.
+Nefunkčním požadavkům původní aplikace se věnoval kolega Bc. Jan Hlaváč v jeho bakalářské práci \cite{Hlavac2024BachelorThesis} a proto je zde nebudu opakovat. Zaměřím se tedy zejména na nové požadavky, které se týkají frontendové části aplikace.
+
+% Final
+Na základě předchozí analýzy jsem tak definoval následující nefunkční požadavky. Podobně jako u funkčních požadavků jsem specifikoval priority jednotlivých požadavků. Dále jsem požadavky rozdělil do kategorií dle jejich charakteru.
 
 % Final
 \subsubsection{NP-1 Odstranění přebytečných funkcí}
 
-% Review
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
+    \textbf{Kategorie:} & Udržovatelnost systému \\
 \end{tabular}
 
-% Review
-Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, bude třeba odstranit funkce týkající se původní domény výuky jazyků. Mezi tyto funkce patří následující.
+% Final
+Jelikož se nově vznikající aplikace bude zaměřovat na výuku programování, bude třeba odstranit funkce týkající se původní domény výuky jazyků. Tyto funkce jsem specifikoval v rámci analýzy stávajícího řešení.
 
-\subsubsection{NP-1 Nový design uživatelského rozhraní}
+% Final
+\subsubsection{NP-2 Nový design uživatelského rozhraní}
 
-% Review
+% Final
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Must have \\
+    \textbf{Kategorie:} & Použitelnost systému \\
+\end{tabular}
+
+% Final
+Jelikož aplikace mění své zaměření z výuky jazyků na výuku programování, je třeba kompletně změnit a přizpůsobit i celý vzhled uživatelského rozhraní. Měl by tak být vytvořen kompletně nový návrh uživatelského rozhraní, který se bude zahrnovat jak nové, tak i existující funkce aplikace.
+
+% Final
+\subsubsection{NP-3 Zpřehlednění navigace v aplikaci}
+
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
+    \textbf{Kategorie:} & Použitelnost systému \\
 \end{tabular}
 
-% Review
-Jelikož aplikace mění své zaměření z výuky jazyků na výuku softwarového inženýrství, je třeba změnit a přizpůsobit i samotný vzhled aplikace.
+% Final
+Aplikace by měla uživateli poskytovat přehlednější a jednodušší způsob navigace mezi jednotlivými stránkami. Z výsledků uživatelského testování v mé bakalářské práci \cite{Jenicek2024BachelorThesis}, která se zabývala původní aplikací, vyplynulo, že mají uživatelé problém s navigací mezi jednotlivými stránkami aplikace, zejména mezi jednotlivými sekcemi kurzů. Jelikož bude do aplikace také přidána řada nových funkcí, bude třeba navigaci aktualizovat tak, aby se uživatel mohl snadno orientovat v aplikaci a využívat všechny dostupné funkce.
 
-% Review
-Měl by být vytvořen nový design uživatelského rozhraní, který bude aplikován jak na nové funkce, tak na funkce existující.
+% Final
+\subsubsection{NP-4 Vytvoření knihovny komponentů}
 
-% Review
-Základní komponenty používané při implementaci by dále měly být extrahovány do samostatné knihovny tak, aby bylo možné je využít i v dalších částech projektu, jako například na webových stránkách.
-
-% Review
-Tato knihovna komponentů by měla stavět na již existujících komponentech a měla by využívat již zavedené technologie, tedy knihovny React, TypeScript, Storybook a Material UI.
-
-% Done
-\subsubsection{NP-2 Zpřehlednění navigace v aplikaci}
-
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
+    \textbf{Kategorie:} & Rozšiřitelnost systému \\
 \end{tabular}
 
-% Done
-Aplikace by měla poskytovat uživateli přehlednější a jednodušší způsob navigace mezi jednotlivými stránkami. Z výsledků uživatelského testování v mé bakalářské práci \cite{Jenicek2024BachelorThesis}, která se zabývala původní aplikací, vyplynulo, že mají uživatelé problém s navigací mezi jednotlivými stránkami aplikace, zejména mezi jednotlivými sekcemi v daném kurzu. Jelikož do aplikace bude také přidána řada nových funkcí, bude třeba aktualizovat navigaci tak, aby uživatel se uživatel snadno orientoval v aplikaci a aby mohl snadno využívat všechny dostupné funkce.
+% Final
+Frontend aplikace využívá různé komponenty uživatelského rozhraní. Tyto komponenty by měly být přesunuty do samostatné knihovny tak, aby je bylo možné využít i v dalších částech projektu, jako například na webových stránkách nebo v systému pro správu obsahu aplikace.
 
-% Done
-Změna navigace se bude týkat zejména hlavní navigační lišty, bočního navigačního panelu a stránky sloužící k přepínání mezi jednotlivými kurzy.
+% Final
+Tato knihovna komponentů by měla stavět na již existujících komponentech a měla by využívat již zavedené technologie, tedy jazyk TypeScript a knihovny React, Storybook a Material UI.
 
-% Review
-\subsubsection{NP-3 Zvýšení udržovatelnosti kódu}
+% Final
+\subsubsection{NP-5 Zvýšení udržovatelnosti kódu}
 
-% Review
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
+    \textbf{Kategorie:} & Udržovatelnost systému \\
 \end{tabular}
 
-% Review
-V kódu aplikace by měly být provedeny následující změny se záměrem zvýšit jeho kvalitu a udržitelnost a zjednodušit budoucí vývoj.
+% Final
+Na základě analýzy stávající aplikace jsem se rozhodl přizpůsobit kód aplikace tak, aby byl lépe udržovatelný a rozšiřitelný. Konkrétní změny, které bude třeba provést, jsem popsal v rámci analýzy stávajícího řešení.
 
-% Review
-\begin{itemize}
-    \item Aktualizace používaných knihoven, nástrojů a jejich konfigurací.
-    \item Aktualizace používaných formatterů a linterů.
-    \item Dockerizace frontendové části aplikace.
-    \item Zavedení pravidel a konvencí pro nástroje, které využívají umělou inteligenci pro generaci kódu, dokumentačních komentářů a testů, s cílem podpoření vývoje aplikace a zvýšení efektivity práce.
-    \item Odstranění existujícího mocku API, místo kterého by měla aplikace využívat testovací prostředí poskytované backendovou částí aplikace.
-\end{itemize}
+% Final
+\subsubsection{NP-6 Zavedení automatizovaných testů}
 
-% Review
-Tento požadavek byl vytvořen na základě výstupů analýzy existujícího řešení.
-
-% Review
-\subsubsection{NP-4 Zavedení automatizovaných testů}
-
-% Review
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
+    \textbf{Kategorie:} & Použitelnost systému \\
 \end{tabular}
 
-% Review
-Do frontendové části aplikace by měly být zavedeny automatizované testy s cílem zajištění správného fungování aplikace a zvýšení její kvality. Automatizované testy by se měly zaměřit na klíčové části aplikace, kterými jsou proces učení, registrace a přihlášení uživatele, výběr a zápis kurzů, a kupování předplatného.
+% Final
+Do frontendové části aplikace by měly být zavedeny automatizované testy s cílem zajištění správného fungování aplikace a zvýšení její kvality a použitelnosti.
 
-% Review
-Tento požadavek vychází jednak z analýzy existujícího řešení a jednak z návrhu úprav do budoucna v mé bakalářské práci \cite{Jenicek2024BachelorThesis} zabývající se zmíněným řešením.
+% Final
+Tento požadavek vychází jednak z analýzy existujícího řešení a jednak z návrhu úprav do budoucna, který jsem popsal v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}, která se věnovala původní aplikaci.
 
-% Review
-\subsubsection{NP-5 Automaticky generované třídy API}
+% Final
+\subsubsection{NP-7 Automaticky generované třídy API}
 
-% Review
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
+    \textbf{Kategorie:} & Udržovatelnost systému \\
 \end{tabular}
 
-% Review
-V rámci kódu frontendu by měly být automaticky generovány třídy reprezentující backendové API na základě OpenAPI specifikace \cite{OpenAPISpecification} poskytované backendovou částí aplikace.
+% Final
+V kódu frontendové části aplikace by měly být automaticky generovány třídy reprezentující backendové API na základě OpenAPI specifikace \cite{OpenAPISpecification}, která je poskytována backendovou částí aplikace.
 
-% Review
-Požadavek vychází z analýzy existujícího řešení. Jeho cílem je zjednodušení implementace a zajištění konzistence mezi frontendovou a backendovou částí aplikace.
+% Final
+Požadavek vychází z analýzy existujícího řešení. Cílem tohoto požadavku je zjednodušit implementaci a zajistit konzistenci mezi frontendovou a backendovou částí aplikace.
 
-\subsubsection{NP-6 Animace a efekty}
+% Final
+\subsubsection{NP-8 Animace a efekty}
 
-% Review
+% Final
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Priorita:} & Could have \\
+    \textbf{Kategorie:} & Použitelnost systému \\
+\end{tabular}
+
+% Final
+Do aplikace by měly být přidány základní animace a efekty s cílem zlepšit uživatelskou zkušenost a udržet pozornost uživatelů. Uživatelské rozhraní by tak mělo působit vizuálně poutavějším dojmem a mělo by výrazněji reagovat na interakce s uživatelem.
+
+% Final
+Tento požadavek vychází zejména z analýzy konkurenčních řešení, ve které konkurenční aplikace Mimo nebo Scrimba využívají různé animace a efekty.
+
+% Final
+\subsubsection{NP-9 Nasazení aplikace jako PWA}
+
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
+    \textbf{Kategorie:} & Použitelnost systému \\
 \end{tabular}
 
-% Review
-Do aplikace by měly být přidány základní animace s cílem zlepšit uživatelskou zkušenost a udržet pozornost uživatelů. Uživatelské rozhraní by tak mělo působit vizuálně poutavějším dojmem a mělo by výrazněji reagovat na interakce s uživatelem.
-
-% Review
-Tento požadavek vychází zejména z analýzy konkurenčních řešení, ve které konkurenční aplikace jako Mimo nebo Scrimba využívají animace a efekty.
-
-% Review
-\subsubsection{NP-7 Sestavování a nasazování PWA}
-
-% Review
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
-\end{tabular}
-
-% Review
-Aplikace by měla být přizpůsobena tak, aby bylo možné ji sestavit a nasadit jako PWA, neboli progresivní webovou aplikaci. Tomu by měly být přizpůsobeny i devops procesy, v rámci kterých by měla být aplikace automaticky sestavována a nasazována jako PWA.
+% Final
+Aplikace by měla být přizpůsobena tak, aby bylo možné ji sestavit a nasadit jako PWA, neboli jako progresivní webovou aplikaci. V důsledku toho by mělo být možné aplikaci stáhnout a nainstalovat na zařízení s operačními systémy Windows, Android či iOS. K aplikaci by tak mělo být možné přistupovat buď na webových stránkách, nebo přímo na zařízení uživatele.
