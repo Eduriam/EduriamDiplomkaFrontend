@@ -649,50 +649,59 @@ Po dokončení učení by se uživateli měla zobrazit stránka s obrázkem truh
 % Final
 Po otevření truhly by měla být uživateli nabídnuta možnost získat dvojnásobek této odměny, pokud uživatel zhlédne reklamu. Pokud uživatel tuto možnost zvolí, měla by mu být zobrazena reklama a následně by měl obdržet dvojnásobek získané virtuální měny.
 
-% Done
+% Final
 \subsubsection{FP-34 Žebříček uživatelů}\label{sec:fp-leaderboard}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Could have \\
 \end{tabular}
 
-% Done
-V aplikaci by měly být zavedeny žebříčky uživatelů, které by měly fungovat následujícím způsobem. Každý uživatel bude přiřazen do tzv. ligy učení. Každá liga učení bude reprezentovat, jak často se daný uživatel učí.
+% Final
+V aplikaci by měly být zavedeny žebříčky uživatelů, které by měly fungovat následujícím způsobem. Každý uživatel bude přiřazen do tzv. ligy učení. Každá liga bude reflektovat, jak často se daný uživatel učí. Ve vyšších ligách se tak budou nacházet uživatelé, kteří se učí častěji.
 
-% Done
-Začátkem každého týdne by měl být každý uživatel zařazen do skupiny s omezeným počtem uživatelů, kteří se nachází ve stejné lize, tedy získali předchozí týden podobné množství bodů XP. V rámci této skupiny jsou uživatelé seřazeni podle počtu bodů XP, které získali v momentálním týdnu.
+% Final
+Začátkem každého týdne by měl být uživatel zařazen do skupiny s omezeným počtem uživatelů, kteří se nachází ve stejné lize. V rámci této skupiny budou uživatelé průběžně řazeni podle počtu bodů XP, které získali v daném týdnu. Skupina tak bude tvořit žebříček uživatelů seřazený podle toho, kolik lekcí a opakování jednotliví uživatelé v daném týdnu dokončili.
 
-% Done
-Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pokud se nacházel v žebříčku uživatelů na prvních několika pozicích. Pokud se uživatel nacházel v žebříčku na posledních několika pozicích, měl by být přesunut do nižší ligy. Pokud se uživatel nacházel v žebříčku mezi těmito pozicemi, měl by zůstat v aktuální lize. Uživatel si bude moci kdykoliv zobrazit svoji pozici v žebříčku.
+% Final
+Na konci každého týdne by měl být uživatel přesunut do vyšší ligy, pokud se nacházel v žebříčku uživatelů na prvních několika pozicích. Pokud se uživatel nacházel v žebříčku na posledních několika pozicích, měl by být přesunut do nižší ligy. Pokud se uživatel nacházel v žebříčku mezi těmito pozicemi, měl by zůstat v aktuální lize. Uživatel by měl mít možnost si kdykoliv zobrazit žebříček a svou pozici v něm.
 
-% Done
+% Final
 Tento požadavek vychází z analýzy konkurenčních řešení, zejména z analýzy aplikací Mimo a Sololearn, v nichž jsou podobné ligy implementovány.
 
-% Done
+% Final
 \subsubsection{FP-35 Sdílení pokroku mezi uživateli}\label{sec:fp-progress-sharing}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
+% Final
 V aplikaci existuje základní funkce pro sdílení pokroku mezi uživateli. V rámci této funkce si může uživatel zobrazit stránku se zprávami o pokroku ostatních uživatelů, které daný uživatel sleduje. Uživatel následně může reagovat na tyto zprávy pomocí emotikonů. Tato funkce je ovšem příliš jednoduchá a je třeba ji přizpůsobit novým funkcím aplikace.
 
-% Done
-Nově by stránka měla zobrazovat zprávy o následujících událostech týkajících se pokroku sledovaných uživatelů.
+% Final
+Nově by stránka měla zobrazovat zprávy o následujících událostech týkajících se pokroku sledovaných uživatelů:
 
-% Done
+% Final
 \begin{itemize}
-    \item Zpráva o tom, že uživatel dosáhl významné hranice denní řady učení.
-    \item Zpráva o tom, že uživatel získal určité ocenění.
-    \item Zpráva o tom, že uživatel postoupil do vyšší ligy učení.
-    \item Zpráva o tom, že uživatel dokončil kurz.
+    \item zpráva o tom, že uživatel dosáhl významné hranice streaku
+    \item zpráva o tom, že uživatel získal určité ocenění
+    \item zpráva o tom, že uživatel postoupil do vyšší ligy učení
+    \item zpráva o tom, že uživatel dokončil některý kurz nebo kariérní cestu
 \end{itemize}
 
-% Write - tohle možná je nefunkční požadavek?
-\subsubsection{FP-36 Odstranění přebytečných funkcí}
+% Final
+\subsection{Nefunkční požadavky}
+
+% Write
+Po identifikaci funkčních požadavků jsem dále identifikoval nefunkční požadavky. Nefunkční požadavky definují vlastnosti, které by systém měl splňovat.
+
+% Final
+Na základě předchozí analýzy jsem dále identifikoval následující nefunkční požadavky.
+
+% Final
+\subsubsection{NP-1 Odstranění přebytečných funkcí}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -702,22 +711,7 @@ Nově by stránka měla zobrazovat zprávy o následujících událostech týkaj
 % Review
 Jelikož se aplikace bude zaměřovat na výuku softwarového inženýrství, bude třeba odstranit funkce týkající se původní domény výuky jazyků. Mezi tyto funkce patří následující.
 
-% Write - tento seznam extrahovat do kapitoly analýza stávajícího systému a zde na to pouze odkázat.
-\begin{itemize}
-    \item Vyhledávání slovíček
-    \item Přidávání slovíček do seznamu oblíbených slovíček
-    \item Cvičení zaměřená na výuku jazyků a která nejsou využitelná pro výuku softwarového inženýrství
-    \item Rozdělení typů lekcí dle aspektu výuky jazyků, například gramatické lekce, lekce slovní zásoby apod.
-    \item Stránka slovíčka
-    \item Výběr preferovaných témat kurzu. Tato funkce v původní aplikaci sloužila jako způsob přeskočení skupin lekcí slovíček, které se netýkaly zájmů a cílů uživatele. Uživatel tak například mohl vypnutím tématu "Příroda a životní prostřední" jednoduše ze svého učení vyřadit všechny lekce týkající se tohoto tématu. V nové aplikaci ovšem bude struktura kurzů a domény změněna natolik, že tato funkce již nebude relevantní a její ponechání by mohlo mít za následek značné navýšení komplexity celého systému.
-    \item Přidávání lekcí do seznamu oblíbených lekcí. Žádná z analyzovaných aplikací tuto funkci nenabízí. Funkce v rámci původní domény výuky jazyků mohla být užitečná, nicméně nyní by zbytečně mohla komplikovat uživatelské rozhraní.
-    \item Odebrání stránky lekce. Tato stránka dříve zobrazovala například seznam vyučovaných slovíček v dané lekci. Zároveň bylo možné na této stránce přidávat lekci do seznamu oblíbených lekcí. V rámci domény výuky softwarového inženýrství žádná z analyzovaných aplikací samostatnou stránku pro lekci neobsahuje. Nyní ovšem stránka žádné výhody nemá a pouze komplikuje uživatelské rozhraní.
-    \item Vytváření vlastních lekcí slovíček. Původní aplikace umožňovala uživatelům seskupovat slovíčka v aplikaci do vlastních lekcí. Tato funkce již není relevantní z důvodu nové domény a struktury kurzů.
-\end{itemize}
-
-\subsection{Nefunkční požadavky}
-
-\subsubsection{NP-1 Nový design aplikace}
+\subsubsection{NP-1 Nový design uživatelského rozhraní}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
@@ -736,8 +730,6 @@ Základní komponenty používané při implementaci by dále měly být extraho
 % Review
 Tato knihovna komponentů by měla stavět na již existujících komponentech a měla by využívat již zavedené technologie, tedy knihovny React, TypeScript, Storybook a Material UI.
 
-% Write - přidat sem požadavek pro error handling podle standardu RFC 9457
-
 % Done
 \subsubsection{NP-2 Zpřehlednění navigace v aplikaci}
 
@@ -753,7 +745,7 @@ Aplikace by měla poskytovat uživateli přehlednější a jednodušší způsob
 Změna navigace se bude týkat zejména hlavní navigační lišty, bočního navigačního panelu a stránky sloužící k přepínání mezi jednotlivými kurzy.
 
 % Review
-\subsubsection{NP-3 Aktualizace kódu aplikace}
+\subsubsection{NP-3 Zvýšení udržovatelnosti kódu}
 
 % Review
 \begin{tabular}{lp{0.7\linewidth}}
