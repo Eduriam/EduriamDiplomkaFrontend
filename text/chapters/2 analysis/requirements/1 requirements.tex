@@ -452,7 +452,6 @@ Aplikace by měla uživateli posílat push notifikace na základě událostí v 
 \begin{itemize}
     \item pokud se uživatel ještě neučil v daný den
     \item pokud se uživatel delší dobu v aplikaci nic neučil
-    \item pokud uživateli končí jeho zkušební doba předplatného
     \item pokud uživatele začal sledovat jiný uživatel
     \item pokud bylo použito zmrazení streaku z požadavku \nameref{sec:fp-streak-freeze}
     \item pokud se blíží konec týdne a uživateli hrozí propadnutí do nižší ligy
@@ -501,159 +500,154 @@ Nově by se měly zobrazovat různé velikosti reklamy v závislosti na velikost
 % Final
 Tento požadavek vychází z analýzy konkurenčních řešení, kde většina aplikací zobrazuje reklamy v průběhu používání aplikace.
 
-% Done
+% Final
 \subsubsection{FP-26 Nový systém předplatného}\label{sec:fp-subscription-system}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Must have \\
 \end{tabular}
 
-% Done
-V původní aplikaci měl uživatel možnost si zaplatit předplatné a tím získat přístup k pokročilejším funkcím aplikace. Jelikož se aplikace v rámci této práce zásadně změní a budou přidány nové funkce, je třeba tomu přizpůsobit i systém předplatného. Uživatelé by tak měli být rozděleni do následujících skupin.
+% Final
+V původní aplikaci měl uživatel možnost si zaplatit předplatné a tím získat přístup k pokročilejším funkcím aplikace. Jelikož se aplikace v rámci této práce zásadně změní a budou přidány nové funkce, je s těmito změnami třeba přizpůsobit i systém předplatného. Uživatelé by měli být v rozděleni do dvou skupin.
 
-% Done
-\begin{itemize}
-    \item \textbf{Uživatelé bez předplatného} budou mít přístup k základním kurzům a kariérním cestám v aplikaci. Uživatelé budou mít také přístup k chytrému opakování látky. Při učení i opakování budou ovšem omezeni systémem energie popsaném v požadavku \nameref{sec:fp-energy-status}. Těmto uživatelům budou dále zobrazovány v aplikaci reklamy a nebude jim umožněno získat certifikáty o dokončení kurzů.
-    \item \textbf{Uživatelé s předplatným} budou mít neomezený přístup ke všem kurzům a kariérním cestám aplikace. Při učení a chytrém opakování nebudou nijak omezeni systémem energie. Těmto uživatelům nebudou zobrazovány reklamy a budou moci získávat certifikáty o dokončení kurzů.
-\end{itemize}
+% Final
+Uživatelé bez předplatného budou mít přístup k základním kurzům a kariérním cestám v aplikaci. Uživatelé budou mít také přístup k opakování látky. Při učení i opakování budou ovšem omezeni systémem energie popsaném v požadavku \nameref{sec:fp-energy-status}. Těmto uživatelům budou dále zobrazovány v aplikaci reklamy a nebude jim umožněno získat certifikáty o dokončení kurzů a kariérních cest.
 
-% Done
-V rámci této funkce bude dále třeba zajistit lepší uživatelskou zkušenost a informovanost uživatelů, které funkce jsou dostupné v premium verzi aplikace. Pokud uživatel například chce využít funkci, která je dostupná pouze uživatelům s předplatným, měla by mu být zobrazena stránka, která ho bude informovat, že je daná funkce dostupná pouze v premium verzi aplikace.
+% Final
+Uživatelé s předplatným budou mít neomezený přístup ke všem kurzům a kariérním cestám aplikace. Při učení a chytrém opakování nebudou nijak omezeni systémem energie. Těmto uživatelům nebudou zobrazovány reklamy a budou moci získávat certifikáty o dokončení kurzů a kariérních cest.
 
-% Done
+% Final
+V rámci tohoto požadavku bude dále třeba zajistit lepší informovanost uživatelů o tom, které funkce jsou dostupné zdarma a které funkce jsou dostupné pouze s aktivním předplatným. Pokud uživatel bez předplatného například chce využít funkci, která je dostupná pouze uživatelům s aktivním předplatným, měla by mu aplikace tuto skutečnost oznámit a odkázat ho na možnost zaplatit si předplatné.
+
+% Final
 \subsubsection{FP-27 Zkušební verze předplatného}\label{sec:fp-free-trial}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
+% Final
 Aplikace by měla umožnit uživateli spustit zkušební verzi předplatného na určitou dobu zdarma. Tuto možnost by měli mít pouze uživatelé bez premium účtu, kteří zkušební verzi v posledním roce nevyužili.
 
-% Done
-Pro spuštění zkušební verze premium účtu bude po uživateli vyžadováno, aby zadal své platební údaje. Před zadáním údajů by mělo být uživateli vysvětleno, jak zkušební doba funguje.
+% Final
+Pro spuštění zkušební verze premium účtu bude po uživateli vyžadováno, aby zadal své platební údaje. Před zadáním údajů by měla aplikace uživateli vysvětlit, jak zkušební doba funguje.
 
-% Done
-Několik dní před koncem zkušební doby by mělo být uživateli odesláno oznámení, že bude zkušební doba končit. Toto oznámení bude zobrazeno jednak jako oznámení přímo v aplikaci podle požadavku \nameref{sec:fp-extended-notifications} a jednak jako oznámení ve formě e-mailu.
+% Final
+Několik dní před koncem zkušební doby by mělo být uživateli odesláno oznámení, že mu bude zkušební doba předplatného končit. Toto oznámení bude zobrazeno jednak jako oznámení přímo v aplikaci podle požadavku \nameref{sec:fp-extended-notifications} a jednak jako oznámení ve formě e-mailu.
 
-% Done
+% Final
 Uživatel se bude moci kdykoliv během zkušební doby od předplatného odhlásit. Pokud tak neučiní do konce zkušební doby, bude mu automaticky spuštěno plnohodnotné předplatné.
 
-% Done
-Součástí této funkce by mělo být také pravidelné nabízení zkušební verze uživatelům, kteří zkušební dobu v posledním roce nevyužili, pomocí rozšířených oznámení popsaných v požadavku \nameref{sec:fp-extended-notifications}.
+% Final
+Aplikace by také měla pravidelně nabízet zkušební verzi předplatného uživatelům, kteří zkušební verzi v posledním roce nevyužili, pomocí rozšířených oznámení popsaných v požadavku \nameref{sec:fp-extended-notifications}.
 
-% Done
-\subsubsection{FP-28 Přizpůsobení avatara uživatele}
+% Final
+\subsubsection{FP-28 Přizpůsobení avatara uživatele}\label{sec:fp-avatar-customization}
 
-% Done
-\label{sec:fp-avatar-customization}
-
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-Uživatel by měl mít možnost si přizpůsobit svého avatara, tedy postavu na profilovém obrázku, pomocí položek, které zakoupil v obchodě za virtuální měnu. To se liší od původní aplikace, kde měl uživatel pouze možnost měnit obrázek na svém profilu.
+% Final
+Uživatel by měl mít možnost si přizpůsobit svého avatara, tedy postavu na profilovém obrázku, pomocí položek, které zakoupil v obchodě za virtuální měnu. To se liší od původní aplikace, kde měl uživatel pouze možnost změnit obrázek na svém profilu.
 
-% Done
+% Final
 Uživatel by měl mít možnost si u svého avatara přizpůsobit barvu pleti, oči, barvu očí, výraz v obličeji, vlasy, barvu vlasů, doplňky, barvu brýlí, vousy, barvu vousů, pokrývku hlavy, oblečení a barvu pozadí profilového obrázku.
 
-% Done
-Tento požadavek vychází z principů gamifikace, konkrétně z principu vlastnictví \cite{Chou2019ActionableGamification}. Tento princip říká, že uživatelé mohou být více motivování, pokud mají pocit, že v rámci aplikace něco vlastní. Příkladem toho je právě přizpůsobování avatara, díky kterému si uživatelé mohou s postavou vytvořit pouto a zvýšit tak svoji motivaci pro používání aplikace. Přizpůsobování avatara tak může mít za následek častější a pravidelnější používání aplikace \cite{Birk2018CombatingAttrition}. Tento princip například využívá i velice známá vzdělávací aplikace Duolingo\footnote{Dostupné na: \href{https://www.duolingo.com/}{https://www.duolingo.com/}}, která podobnou funkci přizpůsobení avatara uživatelům nabízí.
+% Final
+Tento požadavek vychází ze základních principů gamifikace, konkrétně z principu vlastnictví \cite{Chou2019ActionableGamification}. Tento princip říká, že mohou být uživatelé více motivováni používat aplikaci, pokud mají pocit, že v rámci aplikace něco vlastní. Příkladem toho je právě přizpůsobování avatara, díky kterému si uživatelé mohou vytvořit vlastní postavu a vytvořit si tak s ní osobní pouto. Přizpůsobování avatara tak může mít za následek častější a pravidelnější používání aplikace \cite{Birk2018CombatingAttrition}. Tento princip využívá například i velice známá vzdělávací aplikace Duolingo\footnote{Dostupné na: \href{https://www.duolingo.com/}{https://www.duolingo.com/}}, kterou jsem analyzoval v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis} a která podobnou funkci přizpůsobení avatara nabízí.
 
-% Done
+% Final
 \subsubsection{FP-29 Rozšíření obchodu a odemykání položek}\label{sec:fp-shop-unlock-items}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Could have \\
 \end{tabular}
 
-% Done
-V aplikaci již existuje stránka obchodu, v němž si uživatel může zakoupit pomocí virtuální měny profilové obrázky. Vzhledem k novým požadavkům aplikace je třeba tento obchod rozšířit tak, aby bylo možné si zakoupit i položky, které jsou popsány v požadavku \nameref{sec:fp-avatar-customization}.
+% Final
+V aplikaci již existuje stránka obchodu, v němž si uživatel může zakoupit pomocí virtuální měny profilové obrázky. Vzhledem k novým požadavkům aplikace je třeba tento obchod rozšířit tak, aby bylo možné si zakoupit položky, které jsou popsány v požadavku \nameref{sec:fp-avatar-customization}.
 
-% Done
-Dále by v obchodu měla být zavedena nová funkce odemykání položek. Některé položky by měly být dostupné ke koupi pouze pokud uživatel dosáhl určitého ocenění v aplikaci. Pokud uživatel ještě nedosáhl daného úspěchu, měly by se položky uživateli zobrazovat jako zamčené.
+% Final
+Dále by v obchodu měla být zavedena nová funkce odemykání položek. Některé položky by měly být dostupné ke koupi pouze pokud uživatel dosáhl určitého ocenění v aplikaci. Pokud uživatel ještě nedosáhl daného ocenění, měly by se položky uživateli zobrazovat jako zamčené. U těchto položek by měl mít uživatel možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemkl.
 
-% Done
-U zamčených položek by měl uživatel mít možnost si zobrazit informace o tom, co musí splnit, aby danou položku odemknul.
+% Final
+\subsubsection{FP-30 Uživatelský profil}\label{sec:fp-user-profile}
 
-% Done
-\subsubsection{FP-30 Uživatelský profil}
-\label{sec:fp-user-profile}
-
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-V aplikaci se již nachází stránka s uživatelským profilem, která obsahuje základní informace o daném uživateli. Po zavedení nových funkcí do aplikace je třeba tuto stránku aktualizovat  a upravit její vzhled tak, aby kromě již zobrazovaných informací o uživateli přehledně zobrazovala i následující informace.
+% Final
+V původní aplikaci se již nachází stránka s uživatelským profilem, která obsahuje základní informace o daném uživateli. Po zavedení nových funkcí do aplikace je třeba tuto stránku aktualizovat a upravit tak, aby kromě již zobrazovaných informací o uživateli přehledně zobrazovala i následující informace:
 
-% Done
+% Final
 \begin{itemize}
-    \item Avatar uživatele, kterého si bude uživatel moci přizpůsobit dle požadavku \nameref{sec:fp-avatar-customization}.
-    \item Liga, ve které se uživatel nachází, podle požadavku \nameref{sec:fp-leaderboard}.
-    \item Krátký seznam zapsaných kurzů uživatele s možností zobrazení kompletního seznamu zapsaných kurzů. Společně s kurzy by měl být zobrazen i pokrok uživatele v rámci těchto kurzů.
-    \item Krátký seznam ocenění uživatele s možností zobrazení kompletního seznamu ocenění.
+    \item avatara uživatele, kterého si bude uživatel moci přizpůsobit dle požadavku \nameref{sec:fp-avatar-customization}
+    \item ligu, ve které se uživatel nachází, podle požadavku \nameref{sec:fp-leaderboard}
+    \item přehled zapsaných kurzů a kariérních cest uživatele s pokrokem daného uživatele
+    \item přehled ocenění, která uživatel v rámci aplikace získal
 \end{itemize}
 
-% Done
+% Final
 \subsubsection{FP-31 Zmrazení streaku}\label{sec:fp-streak-freeze}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-Aplikace uživateli zobrazuje tzv. streak, neboli skóre, které reprezentuje počet dní v řadě, v nichž uživatel splnil alespoň jedno učení nebo opakování.
+% Final
+Aplikace uživateli zobrazuje tzv. streak, neboli skóre, které reprezentuje počet dní v řadě, v rámci kterých uživatel splnil alespoň jednu lekci nebo opakování látky.
 
-% Done
+% Final
 Uživatel by nově měl mít v obchodě s virtuální měnou možnost si zakoupit do zásoby několik položek tzv. zmrazení streaku. Pokud uživatel bude mít zakoupenou jednu nebo více těchto položek, a nesplní daný den žádné učení nebo opakování, jeho streak se tím nezruší a jedna tato položka se spotřebuje. Díky tomu bude uživatel moci zachovat svůj streak, i když se některý den zapomene učit.
 
-% Done
+% Final
+Tato funkce vychází z analýzy vzdělávací aplikace Duolingo, kterou jsem se zabýval v rámci analýzy konkurence v mé bakalářské práci \cite{Jenicek2024BachelorThesis}.
+
+% Final
 \subsubsection{FP-32 Rozšířená oznámení v aplikaci}\label{sec:fp-extended-notifications} 
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-V původní aplikaci existoval systém, který umožňoval uživateli zobrazovat oznámení při otevření hlavní stránky aplikace. Tento jednoduchý systém z důvodu přidání nových funkcí bude třeba rozšířit tak, aby uživateli oznámil, pokud v aplikaci nastaly následující události.
+% Final
+V původní aplikaci existoval jednoduchý systém, který umožňoval uživateli zobrazovat oznámení při otevření hlavní stránky aplikace. Tento systém bude třeba z důvodu přidání nových funkcí rozšířit tak, aby informoval uživatele, pokud v aplikaci nastala některá z následujících událostí:
 
-% Done
+% Final
 \begin{itemize}
-    \item Pokud aplikace automaticky použila zmrazení streaku z požadavku \nameref{sec:fp-streak-freeze}.
-    \item Pokud aplikace resetovala streak uživatele.
-    \item Pokud uživatel dosáhl nové významné hranice streaku, například 100 dní.
-    \item Pokud byl uživatel přesunut do vyšší ligy z požadavku \nameref{sec:fp-leaderboard}.
-    \item Pokud byl uživatel přesunut do nižší ligy z požadavku \nameref{sec:fp-leaderboard}.
-    \item Pokud uživatel dosáhl nového úspěchu.
-    \item Pokud uživatel získal truhlu s odměnou z požadavku \nameref{sec:fp-treasure-chest}.
-    \item Pokud uživatel nemá zapnuté notifikace z požadavku \nameref{sec:fp-push-notifications}.
-    \item Pokud by se uživateli měla zobrazit reklama z požadavku \nameref{sec:fp-advertisement}.
-    \item Pokud uživatel bez premium účtu ještě nevyzkoušel za dané období zkušební verzi předplatného z požadavku \nameref{sec:fp-free-trial}.
-    \item Pokud uživateli bude za několik dní končit zkušební verze předplatného z požadavku \nameref{sec:fp-free-trial}.
+    \item aplikace automaticky použila zmrazení streaku z požadavku \nameref{sec:fp-streak-freeze}
+    \item aplikace resetovala streak uživatele
+    \item uživatel dosáhl nové významné hranice streaku, například 100 dní
+    \item uživatel přesunut do vyšší ligy z požadavku \nameref{sec:fp-leaderboard}
+    \item uživatel přesunut do nižší ligy z požadavku \nameref{sec:fp-leaderboard}
+    \item uživatel dosáhl nového úspěchu
+    \item uživatel získal truhlu s odměnou z požadavku \nameref{sec:fp-treasure-chest}
+    \item uživatel nemá zapnuté notifikace z požadavku \nameref{sec:fp-push-notifications}
+    \item uživatel bez premium účtu ještě nevyzkoušel za dané období zkušební verzi předplatného z požadavku \nameref{sec:fp-free-trial}
+    \item pokud bude uživateli za několik dní končit zkušební verze předplatného z požadavku \nameref{sec:fp-free-trial}
 \end{itemize}
 
-% Done
+% Final
 \subsubsection{FP-33 Truhla s odměnou}\label{sec:fp-treasure-chest}
 
-% Done
+% Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Done
-Po dokončení učení by se uživateli měla zobrazit stránka s truhlou, kterou bude moci uživatel otevřít. Po otevření truhly by měl uživatel získat náhodné množství virtuální měny, jako odměnu za jeho učení. Virtuální měnu bude moci následně využít k nákupu položek v obchodě dle požadavku \nameref{sec:fp-shop-unlock-items}.
+% Final
+Po dokončení učení by se uživateli měla zobrazit stránka s obrázkem truhly, kterou bude moci otevřít. Po otevření truhly by měl uživatel obdržet náhodné množství virtuální měny, jako odměnu za jeho učení. Virtuální měnu bude moci následně využít k nákupu položek v obchodě s virtuální měnou dle požadavku \nameref{sec:fp-shop-unlock-items}.
 
-% Done
-Po otevření truhly by měla být uživateli nabídnuta možnost získat dvojnásobek této odměny, pokud zhlédne reklamu.
+% Final
+Po otevření truhly by měla být uživateli nabídnuta možnost získat dvojnásobek této odměny, pokud uživatel zhlédne reklamu. Pokud uživatel tuto možnost zvolí, měla by mu být zobrazena reklama a následně by měl obdržet dvojnásobek získané virtuální měny.
 
 % Done
 \subsubsection{FP-34 Žebříček uživatelů}\label{sec:fp-leaderboard}
@@ -832,8 +826,3 @@ Tento požadavek vychází zejména z analýzy konkurenčních řešení, ve kte
 
 % Review
 Aplikace by měla být přizpůsobena tak, aby bylo možné ji sestavit a nasadit jako PWA, neboli progresivní webovou aplikaci. Tomu by měly být přizpůsobeny i devops procesy, v rámci kterých by měla být aplikace automaticky sestavována a nasazována jako PWA.
-
-%\subsubsection{(NP-8 Sběr statistik o uživatelském chování)}
-% Review - tenhle požadavek spíš dělat nebudu.. zabere to zbytečně moc času.. RESP můžu dělat třeba základní sběr statistik o tom, jak dlouho zaberou uživatelům jednotlivá cvičení, ale to bych dal rovnou do požadavku o změně učení.. DOBRÝ BY ALE BYLO, ŽE BYCH DO KAPITOLY TESTOVÁNÍ MOHL ZAPSAT I KVANTITATIVNÍ STUDII - nicméně na to bych stejně potřeboval aby to vyplnilo hodně uživatelů, takže bych stejně asi neměl žádné výsledky té studie..
-
-
