@@ -1,57 +1,55 @@
-﻿% Done
-\section{Návrh funkcí aplikace}
+﻿% Final
+\section{Návrh funkcí}
 
-% Review
-V této sekci se budu věnovat podrobnější specifikaci funkcí navrhované aplikace. Nejprve se zaměřím na popis jednotlivých aktérů, kteří budou s aplikací interagovat. Následně na základě funkčních požadavků sepíšu seznam případů užití, které budou podrobněji specifikovat, jak mají jednotlivé části aplikace fungovat z pohledu uživatele. Nakonec na základě případů užití sepíšu podrobnou specifikaci vybraných funkcí v jazyce Gherkin. Tato specifikace umožní efektivní spouštění automatizovaných testů pomocí nástroje Cucumber a bude také sloužit jako dokumentace toho, jak se aplikace skutečně chová. Mimo jiné bude možné tuto specifikaci využít také jako zadání pro AI agenty, kteří mohou v budoucnu na základě této specifikace přesně implementovat požadované funkce, nebo například generovat dokumentaci a testy.
+% Final
+V této sekci se budu věnovat podrobnější specifikaci funkcí navrhované aplikace. Nejprve se zaměřím na popis jednotlivých aktérů, kteří budou s aplikací interagovat. Následně na základě funkčních požadavků sepíšu seznam případů užití, které budou podrobněji specifikovat, jak mají jednotlivé části aplikace fungovat z pohledu uživatele. Nakonec pro jednotlivé případy užití sepíšu podrobnou specifikaci jejich scénářů v jazyce Gherkin. Tyto scénáře budou sloužit jako zadání pro implementaci, ale také jako podklad pro spouštění automatizovaných testů pomocí nástroje Cucumber. Jelikož scénáře přesně popisují, jak se aplikace skutečně chová, bude je také možné v budoucnu využít jako podklad pro AI agenty, kteří budou moci například generovat nové funkce, testy nebo například uživatelskou dokumentaci aplikace.
 
-% Review
+% Final
 \subsection{Popis aktérů}
 
-% Review
-V rámci specifikace funkcí je třeba popsat tzv. aktéry, kteří reprezentují role, které mohou s aplikací interagovat a vykonávat v ní určité akce. Tito aktéři budou využiti jak v popisu případů užití, tak ve specifikaci funkcí pomocí jazyka Gherkin. Na základě požadavků aplikace jsem identifikoval následující aktéry.
+% Final
+V rámci specifikace funkcí je třeba popsat tzv. aktéry, kteří reprezentují role, které mohou s aplikací interagovat a vykonávat v ní určité akce \cite[21-22]{UseCases}. Tito aktéři budou využiti jak v popisu případů užití, tak ve specifikaci funkcí pomocí jazyka Gherkin. Na základě požadavků aplikace jsem identifikoval následující aktéry.
 
-% Review
+% Final
 \subsubsection{Uživatel}
 
-% Review
-Uživatel je osoba, která využívá aplikaci k učení se programování. Mezi jeho hlavní aktivity patří například zapisování si kurzů, učení se programování, interakce s ostatními uživateli a interakce s prvky gamifikace v aplikaci.
+% Final
+Uživatel je osoba, která využívá aplikaci k učení se programování. Mezi jeho hlavní aktivity patří například zapisování si kurzů, učení se programování, opakování látky, interakce s ostatními uživateli a interakce s prvky gamifikace v aplikaci.
 
-% Review
+% Final
 \subsubsection{Nepřihlášený uživatel}
 
-% Review
+% Final
 Nepřihlášený uživatel je osoba, která v aplikaci není přihlášena a nemá tak přístup k většině funkcí aplikace. Může se však přihlásit nebo se registrovat v aplikaci.
 
-% Review
+% Final
 \subsubsection{Premium uživatel}
 
-% Review
-Premium uživatel je osoba, která má aktivní předplatné nebo zkušební verzi předplatného. Premium uživatel může využívat všechny funkce jako uživatel. Kromě těchto akcí může vykonávat i další akce, ke kterým nemá běžný uživatel přístup.
+% Final
+Premium uživatel je osoba, která má aktivní předplatné nebo jeho zkušební verzi. Premium uživatel může využívat všechny funkce aplikace jako běžný uživatel. Kromě těchto akcí může vykonávat i další akce, ke kterým nemá běžný uživatel přístup.
 
-% Review
+% Final
 \subsubsection{Korektor}
 
-% Review
-Korektor je osoba zodpovědná za kontrolu kvality výukového obsahu, aby byl správný a srozumitelný. V rámci aplikace může používat funkce podobně jako premium uživatel. Kromě toho může využívat podrobnější nahlašování chyb při učení.
+% Final
+Korektor je osoba zodpovědná za kontrolu kvality výukového obsahu, tedy například za kontrolu lekcí, cvičení a vysvětlení látky. Funkce aplikace může využívat ve stejném rozsahu jako premium uživatel. Kromě toho může využívat podrobnější nahlašování chyb při učení.
 
-% Review
+% Final
 \subsection{Specifikace případů užití}
 
-% Write - zde někde ještě napsat, že se zaměřím na ty nejpodstatnější případy užití (protože kdybych to dělal fakt 100%, tak bych jich měl tak 3x víc)
-
-% Review
+% Final
 Jako další krok při návrhu funkcí jsem se rozhodl sepsat případy užití. Případy užití představují způsob, jak specifikovat funkční chování systému z pohledu jeho aktérů. Každý případ užití popisuje konkrétní cíl aktéra a interakce se systémem, které k dosažení tohoto cíle vedou. Díky tomuto přístupu je tak možné detailněji formulovat požadavky a identifikovat okrajové případy, které je třeba při návrhu a implementaci ošetřit. Případy užití tak mohou být užitečné pro vývojáře, protože jim poskytnou detailnější popis toho, jak má daná část systému fungovat. Dále mohou být využity testery například jako podklad pro vytváření automatizovaných testů. Díky tomu, že bývají případy užití specifikovány pomocí přirozeného jazyka, mohou být čitelné i pro osoby, které nejsou technicky zaměřené. Celkově tak tvoří přesnější specifikaci systému, na základě které lze následně postupovat při návrhu a implementaci samotné aplikace. \cite{UseCases}
 
-% Review
-V průběhu let se vyvinulo několik způsobů, jak k případům užití přistupovat a jak je specifikovat. Základy techniky specifikace případů užití položil Ivar Jacobson v roce 1986. Alistair Cockburn \cite{Cockburn2001WritingEffectiveUseCases} následně popsal metodiku pro psaní podrobnějších případů užití. Přesto však prosazoval názor, že by forma specifikace případů užití měla odpovídat potřebám a rozsahu konkrétního projektu. Další techniku specifikace případů užití také popsal například Martin Fowler, který prosazoval názor, že neexistuje jeden standardní způsob, jak specifikovat případy užití, a že formát a rozsah případů užití by měl být zvolen dle potřeb konkrétního projektu. \cite[22-27]{NURUIDesignSteps}
+% Final
+V průběhu let se vyvinulo několik způsobů, jak k případům užití přistupovat a jak je specifikovat. Základy specifikace případů užití položil Ivar Jacobson v roce 1986. Alistair Cockburn \cite{Cockburn2001WritingEffectiveUseCases} následně popsal metodiku pro psaní podrobnějších případů užití. Přesto však prosazoval názor, že by forma specifikace případů užití měla odpovídat potřebám a rozsahu konkrétního projektu. Další techniku specifikace případů užití také popsal například Martin Fowler, který prosazoval názor, že neexistuje jeden standardní způsob, jak specifikovat případy užití, a že formát a rozsah případů užití by měly být zvoleny dle potřeb konkrétního projektu. \cite[22-27]{NURUIDesignSteps}
 
-% Review
+% Final
 V této práci jsem se tak rozhodl vycházet z práce Alistaira Cockburna \cite{Cockburn2001WritingEffectiveUseCases} a specifikovat případy užití způsobem, který bude užitečný pro vývoj této konkrétní aplikace. Pro každý případ užití tak budu specifikovat jeho identifikátor, název, popis, hlavního aktéra, hlavní scénář a případné alternativní scénáře. 
 
-% Review
-Pro specifikaci scénářů jsem se rozhodl využít jazyk Gherkin, který přináší několik zásadních výhod, kterým se budu věnovat v následující sekci. Jelikož se v jazyce Gherkin definují scénáře přímo v repozitáři aplikace v souborech s příponou \texttt{.feature} \cite{CucumberDocs}, rozhodl jsem se nejprve v rámci specifikace případů užití popsat hlavní a alternativní scénáře pouze stručným popisem a detailně je pak specifikovat přímo v repozitáři aplikace pomocí jazyka Gherkin. Díky tomu budu moci nejprve získat přehled o všech scénářích a okrajových případech a až poté provést jejich podrobnější specifikaci. Výsledkem tak bude využití jak výhod specifikace případů užití, tak i výhod jazyka Gherkin, kterému se budu věnovat v následující sekci.
+% Final
+Pro specifikaci scénářů jsem se rozhodl využít jazyk Gherkin, který přináší několik zásadních výhod, kterým se budu věnovat v dalších částech této kapitoly. Scénáře se v jazyce Gherkin specifikují přímo v repozitáři aplikace v souborech s příponou \texttt{.feature} \cite{CucumberDocs}. Proto jsem se rozhodl v tomto textu popsat jednotlivé scénáře pouze stručným popisem a detailně je pak specifikovat přímo v repozitáři aplikace. Díky tomuto přístupu tak budu moci využít jak výhod specifikace případů užití, tak i výhod jazyka Gherkin.
 
-% Review
+% Final
 V rámci specifikace případů užití jsem tak sestavil následující seznam případů užití.
 
 % Done
