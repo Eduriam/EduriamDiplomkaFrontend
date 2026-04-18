@@ -1,63 +1,67 @@
-% Review
+% Final
 \section{Návrh vzhledu uživatelského rozhraní}
 
-% Review
-V této sekci se zaměřím na samotný vzhled uživatelského rozhraní a na volbu barev, písem, ikon a vhodných animací. Cílem je vytvořit konzistentní vzhled, který bude následně možné použít v prototypu a samotné aplikaci.
+% Final
+V této sekci se zaměřím na samotný vzhled uživatelského rozhraní, konkrétně na volbu barev, písma, ikon a vhodných animací. Cílem je vytvořit konzistentní vzhled, který bude následně možné použít v návrhu uživatelského rozhraní a následně v samotné aplikaci.
 
-% Review
-Jelikož stávající aplikace využívá knihovnu Material UI, která implementuje standard Material Design 2 \cite{MaterialUI}, budu celý návrh zakládat na tomto standardu. Zmíněný standard klade důraz na konzistentní využívání palety barev, typografické hierarchie a komponentů. Dále se také zaměřuje na přístupnost uživatelského rozhraní, podporu světlého i tmavého režimu a dodržování doporučených osvědčených při návrhu uživatelského rozhraní \cite{MaterialDesign2}.
+% Final
+Jelikož stávající aplikace využívá knihovnu Material UI, která implementuje standard Material Design 2 \cite{MaterialUI}, budu celý návrh zakládat na tomto standardu. Zmíněný standard klade důraz na konzistentní využívání palety barev, typografické hierarchie a jednotlivých komponentů. Dále se také zaměřuje na přístupnost uživatelského rozhraní, podporu světlého i tmavého režimu a dodržování osvědčených postupů při návrhu uživatelského rozhraní \cite{MaterialDesign2}.
 
-% Review - přidat reference
-Na tomto místě je vhodné zmínit, že v současné době již existuje nová verze tohoto standardu Material Design 3, nicméně v době psaní tohoto textu nejsou k dispozici žádné knihovny, které by tento standard implementovaly v takové míře, aby je bylo možné pro tento projekt vhodně využít. Proto budu nadále pro aplikaci využívat knihovnu Material UI, která se řídí standardem Material Design 2.
+% Final
+Na tomto místě je vhodné zmínit, že v současné době již existuje nová verze tohoto standardu Material Design 3\footnote{Dostupné na: \href{https://m3.material.io/}{https://m3.material.io/}}, nicméně v době psaní tohoto textu nejsou k dispozici žádné knihovny, které by tento standard implementovaly v takové míře, aby je bylo možné pro tento projekt vhodně využít. Proto budu nadále pro aplikaci využívat knihovnu Material UI, která se řídí standardem Material Design 2.
 
-% Write - tohle přejmenovat na něco jako charakteristika návrhu (nebo možná cíle návrhu nebo zjistit, jestli není nějaký spešl název pro tyhle "principy"). Taky podle toho změnit jak to nazývám v následujících odstavcích.
-\subsection{Principy návrhu}
+% Final
+\subsection{Zásady návrhu}
 
-% Review
-Před samotnou tvorbou návrhu je třeba stanovit základní principy, kterými se bude nový vzhled uživatelského rozhraní řídit. Při sestavování těchto principů budu vycházet z několika zdrojů. Zaprvé budu vycházet z analýzy existujících řešení, které jsem se věnoval v předchozí kapitole.
+% Final
+Před samotnou tvorbou návrhu je třeba stanovit základní zásady, kterými se bude nový vzhled uživatelského rozhraní řídit. Při sestavování těchto zásad budu vycházet z několika zdrojů. Zaprvé budu vycházet z analýzy existujících aplikací, které jsem se věnoval v předchozí kapitole.
 
-% Review
-Zadruhé budu vycházet z toho, jakým způsobem by měla aplikace působit na uživatele. Aplikace by například měla působit jako důvěryhodný zdroj informací, aby uživatel byl ochotný se pomocí ní vzdělávat.
+% Final
+Zadruhé budu vycházet z toho, jakým způsobem by měla aplikace působit na cílové uživatele. Aplikace by například měla působit jako důvěryhodný zdroj informací, aby ji uživatel vnímal jako vhodný nástroj pro své vzdělávání.
 
-% Review
-Zatřetí jsem se rozhodl zaměřit na návrh s ohledem na emocionální potřeby uživatelů \cite[385]{Hartson2019TheUxBook}. Emoční potřeby uživatelů mohou být při návrhu určitých typů systémů klíčové a mohou aplikaci zásadně odlišit od konkurenčních řešení \cite[387]{Hartson2019TheUxBook}. Pokud například navrhujeme aplikaci pro děti, můžeme se cíleně zaměřit na návrh uživatelského rozhraní, které bude barevné, interaktivní a zábavné na používání. U jiných typů systémů, jako například v aplikaci obchodní burzy, by podobný způsob designu pravděpodobně působil dětinsky, neprofesionálně a nedůvěryhodně. Jelikož se v rámci této práce zaměřuji na tvorbu vzdělávací aplikace, mohou být emoční potřeby, jako motivace, pocit pokroku a úspěchu klíčové a proto na nich budu zakládat návrh uživatelského rozhraní.
+% Final
+Zatřetí jsem se rozhodl zaměřit na návrh s ohledem na emoční potřeby uživatelů \cite[385]{Hartson2019TheUxBook}. Emoční potřeby uživatelů mohou být při návrhu určitých typů systémů klíčové a mohou aplikaci zásadně odlišit od konkurenčních řešení \cite[387]{Hartson2019TheUxBook}. Pokud například navrhujeme aplikaci pro děti, můžeme se cíleně zaměřit na návrh uživatelského rozhraní, které bude barevné, interaktivní a zábavné na používání. U jiných typů systémů, jako například v aplikaci obchodní burzy, by podobný způsob designu pravděpodobně působil dětinsky, neprofesionálně a nedůvěryhodně. Jelikož se v rámci této práce zaměřuji na tvorbu vzdělávací aplikace, mohou být motivace a pocity pokroku a úspěchu klíčové, a proto se na ně také zaměřím při návrhu uživatelského rozhraní.
 
-% Review
-Na základě zmíněných zdrojů jsem identifikoval tyto základní principy, kterými se budu při návrhu řídit.
+% Final
+Na základě zmíněných zdrojů jsem tak identifikoval následující zásady, kterými se budu při návrhu řídit.
 
-% Review - zde checknout, jak správně stylisticky psát ten seznam
-\begin{itemize}
-    \item \textbf{Minimalismus} -- Hlavním cílem aplikace je učit uživatele programování. Při takové činnosti je ovšem po uživateli vyžadována vysoká úroveň pozornosti a koncentrace. Ve srovnání s ostatními aplikacemi tak může být používání této aplikace značně kognitivně náročné. Proto jsem se rozhodl při návrhu zaměřit na minimalistický design. Design by tak měl co nejvíce omezit zbytečné informace a zjednodušit prvky uživatelského rozhraní tak, aby nepřehlcovaly uživatele a neodváděly jeho pozornost od samotného učení. Uživatelské rozhraní by tak mělo svým minimalismem pomoci uživateli při učení a používání aplikace. % Write - zde bych mohl najít článek o tom, že minimalistický design je kognitivně méně naročný než ostatní (ale imo to není zas tak potřeba.. jen kdyby mi náhodou zbyl čas na konci)
-    \item \textbf{Důvěryhodnost} -- Jelikož se aplikace zaměřuje na výuku a předávání informací uživatelům, je naprosto klíčové, aby působila jako důvěryhodný zdroj informací. Uživatelské rozhraní by tak mělo působit moderně, důvěryhodně a profesionálně. % Write - zde bych mohl napsat, že ta aplikace je v roli garanta toho, že prezentované informace jsou správné a kvalitní. A proto je třeba tak i působit  (ale imo to není zas tak potřeba.. jen kdyby mi náhodou zbyl čas na konci)
-    \item \textbf{Zábava} -- Jedním z cílů aplikace je motivovat uživatele k dlouhodobému učení a používání aplikace. Proto by pro uživatele by mělo být učení a používání aplikace zábavné a měl by se chtít k aplikaci dlouhodobě vracet. % Write - zde můžu doplnit nějaký článek o tom, že když se člověk baví, tak se lépe učí  (ale imo to není zas tak potřeba.. jen kdyby mi náhodou zbyl čas na konci)
-    \item \textbf{Pokrok a úspěch} -- Při používání aplikace a zejména při učení by měl mít uživatel pocit, že dělá pravidelně pokrok a že se posouvá blíže ke svému cíli. Aplikace by tak měla uživateli často ukazovat jeho pokroky a úspěchy.
-\end{itemize}
+% Final
+\paragraph{Minimalismus} Hlavním zaměřením aplikace je učit uživatele programování. Při takové činnosti je po uživateli vyžadována vysoká úroveň pozornosti a koncentrace. Ve srovnání s ostatními aplikacemi tak může být používání této aplikace značně kognitivně náročné. Proto jsem se rozhodl při návrhu zaměřit na minimalistický design. Design by tak měl co nejvíce omezit zbytečné informace a zjednodušit prvky uživatelského rozhraní tak, aby nepřehlcovaly uživatele a neodváděly jeho pozornost od učení a dalších klíčových funkcí. Uživatelské rozhraní by tak mělo svým minimalismem pomoci uživateli při učení a používání aplikace.
 
-% Review
-V následujících sekcích na základě těchto charakteristik vyberu konkrétní barvy, typografii, ikony a animace.
+% Final
+\paragraph{Důvěryhodnost} Jelikož se aplikace zaměřuje na výuku a předávání informací uživatelům, je naprosto klíčové, aby působila jako důvěryhodný zdroj informací. Uživatelské rozhraní by tak mělo působit moderně, důvěryhodně a profesionálně.
 
-% Review
+% Final
+\paragraph{Zábava} Jedním z cílů návrhu je motivovat uživatele k dlouhodobému učení a používání aplikace. Proto by pro uživatele by mělo být učení a používání aplikace zábavné a měl by se chtít k aplikaci dlouhodobě vracet.
+
+% Final
+\paragraph{Pokrok a úspěch} Při používání aplikace, zejména při učení, by měl mít uživatel pocit, že dělá pravidelně pokrok a že se posouvá blíže ke svému cíli. Aplikace by tak měla uživateli často připomínat a zobrazovat jeho pokroky a úspěchy.
+
+% Final
+V následujících sekcích na základě těchto zásad vyberu konkrétní barvy, písma, ikony a animace.
+
+% Final
 \subsection{Výběr palety barev}
 
-% Review
+% Final
 Jako první krok návrhu vzhledu jsem se rozhodl zvolit paletu barev\footnote{Dostupné na: \href{https://www.figma.com/design/VZFuqWojrXq8yWjrBIq4OH}{https://www.figma.com/design/VZFuqWojrXq8yWjrBIq4OH}}. Vybrané barvy pak budu konzistentně využívat napříč prototypem a celou aplikací. Barvy budu volit v souladu se standardem Material Design 2 a budu volit barvy jak pro světlý, tak pro tmavý režim uživatelského rozhraní. Při volbě palety barev se také budu řídit standardem přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}, díky kterému by mělo být uživatelské rozhraní dobře použitelné napříč různými zařízeními a také použitelné osobami se zdravotním postižením, jako například osobami se sníženým barvocitem.
 
-% Review
+% Final
 \subsubsection{Primární barva}
 
-% Review
-První barvu, kterou budu volit je primární barva. Tato barva reprezentuje samotnou značku aplikace a je napříč aplikací nejčastěji používána \cite{MaterialDesignColorSystem}. Využívá se zejména ke zvýraznění důležitých prvků, kterými jsou například tlačítka nebo navigační lišty.
+% Final
+Jako první se zaměřím na volbu primární barvy. Tato barva reprezentuje samotnou značku aplikace a je napříč aplikací nejčastěji používána \cite{MaterialDesignColorSystem}. Využívá se zejména ke zvýraznění důležitých prvků, kterými jsou například tlačítka nebo navigační lišty.
 
-% Review
-Barvu jsem se rozhodl zvolit v souladu se stanovenými principy tak, aby aplikace působila důvěryhodně a profesionálně. Proto jsem jako primární barvu zvolil odstín modré, protože bývá tato barva považována za barvu důvěryhodnosti, inteligence a přesnosti \cite{NURColors}.
+% Final
+Barvu jsem se rozhodl zvolit v souladu se stanovenými zásadami tak, aby aplikace působila důvěryhodně a profesionálně. Proto jsem jako primární barvu zvolil odstín modré, protože tato barva bývá považována za barvu důvěryhodnosti, inteligence a přesnosti \cite{NURColors}.
 
-% Review
-Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \texttt{\#90D5FF}. Tato barva by měla evokovat pocit důvěryhodnosti a klidu \cite{FigmaLightBlue}. Jelikož se jedná o světlou barvu, zvolil jsem následně její dvě tmavší varianty \texttt{\#57B7FB} a \texttt{\#4889D4}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral kontrastní barvu textu \texttt{\#000000}, která bude používána pro text zobrazovaný na primární barvě. Vybraná černá barva textu dodržuje s primární barvou kontrastní poměr 4.5:1 dle AA standardu přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}. Díky tomu bude text na primární barvě dostatečně kontrastní a bude tedy snadno čitelný.
+% Final
+Jako základ pro volbu primární barvy jsem vybral světle modrou s kódem \texttt{\#90D5FF}. Tato barva by měla evokovat pocit důvěryhodnosti a klidu \cite{FigmaLightBlue}. Jelikož se jedná o světlou barvu, zvolil jsem následně její dvě tmavší varianty \texttt{\#57B7FB} a \texttt{\#4889D4}. Pro volbu těchto variant jsem využil oficiální nástroj Material palette generator\footnote{Dostupné na: \href{https://m2.material.io/design/color/the-color-system.html}{https://m2.material.io/design/color/the-color-system.html}}, který umožňuje pro danou barvu vygenerovat různě světlé varianty. Dále jsem pomocí tohoto nástroje vybral kontrastní barvu textu \texttt{\#000000}, která bude používána pro texty zobrazované na primární barvě. Vybraná černá barva textu dodržuje s primární barvou kontrastní poměr 4.5:1 dle AA standardu přístupnosti \textit{Web Content Accessibility Guidelines 2.2} \cite{WCAG22}. Díky tomu bude text na primární barvě dostatečně kontrastní a bude tedy snadno čitelný.
 
-% Review
-Všechny tyto barvy generovány zmíněným nástrojem jsou v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}. Výslednou volbu primární barvy a jednotlivých variant lze nalézt na obrázku \ref{fig:primary-color}.
+% Final
+Všechny barvy generovány zmíněným nástrojem Material palette generator jsou v souladu se standardy přístupnosti UI \cite{MaterialDesignColorSystem}. Výslednou volbu primární barvy a jednotlivých variant lze nalézt na obrázku \ref{fig:primary-color}.
 
-% Review
+% Final
 \begin{figure}[!h]
     \centering
     \begin{minipage}{0.7\textwidth}
