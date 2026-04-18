@@ -145,13 +145,14 @@ Podobně jako bloky s vysvětlením látky, mohou bloky se cvičeními obsahovat
 % Review
 Díky audio nahrávkám a flexibilní struktuře bloků cvičení a vysvětlování látky je tak možné pro uživatele vytvářet vysoce interaktivní průchody lekcemi a opakováním. Přístup této aplikace se tak blíží vysoce interaktivním lekcím konkurenční aplikace Scrimba, kterou jsem analyzoval v rámci analýzy existujících řešení.
 
+% Write - tuhle sekci asi odstranit
 \subsection{Registrace a přihlášení pomocí účtu Google}
 
 Pro externí autentizaci jsem implementoval OAuth workflow nad integrační vrstvou frontendu a backendových endpointů. Ve frontendu začíná tok funkcí \texttt{startGoogleAuth}, která uloží zdroj akce (\texttt{signin} nebo \texttt{signup}) do \texttt{sessionStorage}, získá autorizační URL z endpointu \texttt{external-auth/google/authorize} a přesměruje uživatele na autorizační stránku Google.
 
 Po návratu z Google se zpracování provádí na callback stránce \texttt{/signin/callback}. Frontend načte autorizační kód z query parametru \texttt{code} a předá jej backendu přes endpoint \texttt{/authorize}. Po úspěšném dokončení frontend uloží autentizační data (\texttt{idToken}, \texttt{refreshToken}, uživatele), nastaví autorizační hlavičku pro další API volání a přesměruje uživatele buď na hlavní stránku, nebo na onboarding podle stavu účtu.
 
-Součástí implementace je i explicitní mapování chybových stavů. Například stav 404 je mapován na \uv{Google účet nenalezen} a stav 409 na \uv{Google účet již existuje}. Uživateli se následně zobrazí odpovídající kontext na přihlašovací nebo registrační stránce.
+Součástí implementace je i explicitní mapování chybových stavů. Například stav 404 je mapován na Google účet nenalezen a stav 409 na Google účet již existuje. Uživateli se následně zobrazí odpovídající kontext na přihlašovací nebo registrační stránce.
 
 % Review
 \subsection{Přizpůsobení aplikace pro PWA}
