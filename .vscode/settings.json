@@ -166,8 +166,11 @@
     "templating",
     "verzování",
     "desktopových",
+    "desktopová",
     "microbreaks",
     "Tetradické",
+    "tetradickému",
+    "triadické",
     "WCAG",
     // Názvy produktů
     "Mockoon",
@@ -182,6 +185,7 @@
     "Segoe", // font
     "Aeonik", // font
     "Fira", // font
+    "Typescale",
     // Jména lidí
     "Ivar",
     "Cockburn",

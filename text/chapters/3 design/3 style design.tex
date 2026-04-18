@@ -172,60 +172,59 @@ Po vybrání barvy pozadí je třeba přizpůsobit saturaci primární barvy, ba
 % Final
 Nakonec jsem vybral barvy textu pro tmavý režim. Jako primární barvu textu jsem zvolil výchozí bílou barvu \texttt{\#FFFFFF} a jako sekundární barvu jsem zvolil \texttt{\#989898}. Obě barvy opět splňují požadovaný kontrastní poměr.
 
-% Review
+% Final
 \subsection{Typografie}
 
-% Review
+% Final
 V této sekci se zaměřím na volbu písma. Podobně jako u volby palety barev budu vycházet ze standardu Material Design 2 a budu volit vlastnosti písma v souladu se standardem přístupnosti WCAG 2.2 \cite{WCAG22}.
 
-% Review
+% Final
 \subsubsection{Výběr písma}
 
-% Review
-Jako základní písmo jsem se rozhodl využít rodinu písem Inter. Tato rodina písem byla publikována v roce 2017 zaměřuje se na moderní a čistý vzhled, podporuje přes 147 jazyků a je široce využívána napříč různými obory. Pro tuto rodinu písem jsem se rozhodl zejména z důvodu moderního a profesionálního vzhledu a její široké podpory a rozšířenosti. \cite{Inter}
+% Final
+Jako základní písmo jsem se rozhodl využít rodinu písem Inter\footnote{Dostupné na: \href{https://rsms.me/inter/}{https://rsms.me/inter/}}. Tato rodina písem byla publikována v roce 2017, zaměřuje se na moderní a čistý vzhled, podporuje přes 147 jazyků a je široce využívána napříč různými obory. Pro tuto rodinu písem jsem se rozhodl zejména z důvodu moderního a profesionálního vzhledu a její široké podpory a rozšířenosti. \cite{Inter}
 
-% Review
+% Final
 Při volbě písma je možné dále využít tzv. párování fontů \cite[271-272]{Tidwell2020DesigningInterfaces}, při kterém se pro nadpisy využije jiná rodina písma, než pro běžný text. Díky tomu lze dosáhnout výraznějšího rozlišení mezi nadpisy a běžným textem a také zajímavějšího vzhledu rozhraní. Při tomto párování je ovšem třeba použít písma, která jsou od sebe dostatečně odlišná a využít tak například patková a bezpatková písma. Pro zachování minimalismu jsem se rozhodl toto párování nevyužít a použít tak rodinu písem Inter pro nadpisy i běžný text.
 
-% Review
-Dále, jelikož budou v aplikaci často zobrazovány ukázky kódu, bylo potřeba zvolit písmo pro zobrazování kódu. Pro tento účel jsem se rozhodl využít rodinu písem JetBrains Mono\footnote{Dostupné na: \href{https://www.jetbrains.com/lp/mono/}{https://www.jetbrains.com/lp/mono/}}, která je speciálně navržena tak, aby byla dobře použitelná v editorech kódu a aby byl samotný kód dobře čitelný. \cite{JetBrainsMono}
+% Final
+Dále, jelikož budou v aplikaci často využívány ukázky kódu, bylo potřeba zvolit písmo pro zobrazování kódu. Pro tento účel jsem se rozhodl využít rodinu písem JetBrains Mono\footnote{Dostupné na: \href{https://www.jetbrains.com/lp/mono/}{https://www.jetbrains.com/lp/mono/}}, která je speciálně navržena tak, aby byla dobře použitelná v editorech kódu a aby byl samotný kód dobře čitelný. \cite{JetBrainsMono}
 
-% Review
+% Final
 \subsubsection{Hierarchie a škálování}
 
-% Review
-Po volbě rodiny písma je třeba zvolit typografickou škálu, která určuje velikosti jednotlivých textových prvků rozhraní, jako například velikosti nadpisů, podnadpisů a odstavců. Prvním krokem při volbě škály je zvolení základní velikosti písma, například 16 pixelů. Tato velikost reprezentuje velikost běžného textu v odstavcích. Následně, na základě zvolené škály, se toto číslo násobí daným poměrem, čímž se získají velikosti nadpisů, podnadpisů a dalších textových prvků. 
+% Final
+Po výběru rodiny písma je třeba dále zvolit typografickou škálu, která bude určovat velikosti jednotlivých textových prvků rozhraní, jako například velikosti nadpisů, podnadpisů a odstavců. Prvním krokem při volbě škály je zvolení základní velikosti písma, například 16 pixelů. Tato velikost reprezentuje velikost běžného textu v odstavcích. Následně se, na základě zvolené škály, toto číslo násobí daným poměrem, čímž se získají velikosti nadpisů, podnadpisů a dalších textových prvků.
 
-% Review
-Volba typografické škály tak určuje, jaký je rozdíl mezi velikostmi jednotlivých textových prvků. Tento rozdíl pak ovlivňuje, jak velký bude vizuální kontrast mezi jednotlivými prvky. Škály s vysokým kontrastem, jako například \textit{Golden ratio} s poměrem 1,618, jsou vhodné pro velké obrazovky \cite{TypographicScales}. Naopak škály s nízkým kontrastem, jako například \textit{Major Second} s poměrem 1,125, umožňují zobrazit větší množství textu na jedné stránce, jelikož jednotlivé nadpisy nezabírají tolik prostoru. Takové škály se často používají například na mobilních zařízeních, kde je prostor na obrazovce omezený.
+% Final
+Volba typografické škály tak určuje, jaký je rozdíl mezi velikostmi jednotlivých textových prvků. Tento rozdíl pak ovlivňuje, jak velký bude vizuální kontrast mezi jednotlivými prvky. Škály s vysokým kontrastem, jako například \textit{Golden ratio} s poměrem 1,618, jsou vhodné pro velké obrazovky \cite{TypographicScales}. Naopak škály s nízkým kontrastem, jako například \textit{Major Second} s poměrem 1,125, umožňují zobrazit větší množství textu na jedné stránce, jelikož jednotlivé textové prvky nezabírají tolik prostoru. Takové škály se často používají například na mobilních zařízeních, kde je prostor na obrazovce omezený.
 
-% Review
-Při volbě škály jsem nejprve použil oficiální nástroj pro generaci typografické škály dle standardu Material Design 2 \cite{MaterialDesign2TypeSystem}. Po aplikaci této škály při návrhu uživatelského rozhraní jsem ovšem došel k názoru, že tato škála vytváří příliš vysoký kontrast mezi textovými prvky. Velké nadpisy zabírají příliš mnoho prostoru a jsou při návrhu rozhraní pro tento typ aplikace takřka nepoužitelné. Nedostatek menších nadpisů tak neumožňuje dosáhnout detailnějšího odlišení jednotlivých sekcí a podsekcí, což značně znepřehledňuje například stránky se cvičeními a vysvětlením látky. Došel jsem tak k závěru, že výchozí oficiální typografická škála Material Design 2 není pro tuto aplikaci vhodná.
+% Final
+Při volbě škály jsem nejprve použil oficiální nástroj pro generaci typografické škály dle standardu Material Design 2 \cite{MaterialDesign2TypeSystem}. Po aplikaci této škály při návrhu uživatelského rozhraní jsem ovšem došel k názoru, že tato škála vytváří příliš vysoký kontrast mezi textovými prvky. Velké nadpisy zabíraly příliš mnoho prostoru a byly při návrhu rozhraní pro tento typ aplikace takřka nepoužitelné. Nedostatek menších nadpisů tak neumožňoval dosáhnout detailnějšího odlišení jednotlivých sekcí a podsekcí v aplikaci, což značně znepřehledňovalo například stránky se cvičeními a vysvětlením látky. Došel jsem tak k závěru, že výchozí typografická škála Material Design 2 není pro tuto aplikaci vhodná.
 
-% Review
-Z tohoto důvodu jsem se rozhodl zvolit vlastní typografickou škálu, která bude vhodnější pro tento typ aplikace. Rozhodl jsem se vybrat dvě škály, jednu pro mobilní zařízení a jednu pro desktopová zařízení. Pro mobilní zařízení jsem se rozhodl využít škálu s nižším kontrastem \textit{Minor Third} s poměrem 1.200 a pro desktopová zařízení škálu \textit{Major Third} s poměrem 1,250. Díky těmto škálám tak bude možné plně využít všechny velikosti nadpisů a text tak bude přizpůsoben jednotlivým zařízením. \cite{TypographicScales}
+% Final
+Z tohoto důvodu jsem se rozhodl zvolit vlastní typografickou škálu, která bude vhodnější pro tento typ aplikace. Rozhodl jsem se vybrat dvě škály, jednu pro mobilní zařízení a jednu pro desktopová zařízení. Pro mobilní zařízení jsem se rozhodl využít škálu s nižším kontrastem \textit{Minor Third} s poměrem 1.200 a pro desktopová zařízení škálu \textit{Major Third} s poměrem 1,250. Díky těmto škálám tak bude možné plně využít všechny velikosti nadpisů a text tak bude lépe přizpůsoben velikostem jednotlivých zařízení. \cite{TypographicScales}
 
-% Review
-Pro generaci jednotlivých velikostí písma jsem následně využil nástroj Typescale\footnote{Dostupné na: \href{https://typescale.com/}{https://typescale.com/}}. Při aplikaci vygenerované škály v návrhu rozhraní jsem následně dodržoval standardy Material Design 2, které se týkají vlastností jednotlivých textových prvků a definují například doporučenou velikost písma.
+% Final
+Pro generaci konkrétních velikostí písma jsem následně využil nástroj Typescale\footnote{Dostupné na: \href{https://typescale.com/}{https://typescale.com/}}. Při aplikaci vygenerované škály v návrhu rozhraní jsem následně dodržoval standardy Material Design 2, které se týkají vlastností jednotlivých textových prvků a definují například doporučené rozmezí velikostí písma.
 
-% Review
+% Final
 \subsection{Ikony a ilustrace}
 
-% Review
+% Final
 V rámci návrhu rozhraní je dále třeba zvolit vhodnou kolekci ikon a ilustrací. Pro vzhled ikon jsem se rozhodl využít kolekci Material Icons\footnote{Dostupné na: \href{https://fonts.google.com/icons}{https://fonts.google.com/icons}}. Pro návrh jsem se rozhodl využít zaoblenou variantu těchto ikon, aby rozhraní působilo hravějším a zábavnějším dojmem.
 
-% Review
-Jelikož bude aplikace obsahovat různé formy gamifikace a dalších motivačních prvků, je třeba do návrhu zahrnout kromě ikon i různé ilustrace. Jako zdroj ilustrací jsem se rozhodl využít repozitář ilustrací publikovaných pod svobodnými licencemi SVG Repo\footnote{Dostupné na: \href{https://www.svgrepo.com/}{https://www.svgrepo.com/}}. Jednotlivé ilustrace jsem se pak snažil volit tak, aby měly vzájemně konzistentní styl.
+% Final
+Jelikož bude aplikace obsahovat různé formy gamifikace a další motivační prvky, je třeba do návrhu zahrnout, kromě základních ikon, i různé ilustrace. Jako zdroj ilustrací jsem se rozhodl využít repozitář ilustrací publikovaných pod svobodnými licencemi SVG Repo\footnote{Dostupné na: \href{https://www.svgrepo.com/}{https://www.svgrepo.com/}}. Jednotlivé ilustrace jsem se pak snažil volit tak, aby měly vzájemně konzistentní styl.
 
-% Review
+% Final
 \subsection{Animace a zvukové efekty}
 
-% Review
-V rámci návrhu jsem se rozhodl v souladu s nefunkčními požadavky navrhnout i animace a efekty, které by měly být při implementaci použity. Příslušné animace a efekty jsem vyznačil poznámkami u jednotlivých stránek v návrhu uživatelského rozhraní.
+% Final
+V rámci návrhu jsem se dále rozhodl, v souladu s nefunkčními požadavky, navrhnout i animace a efekty, které by měly být při implementaci použity. Příslušné animace a efekty jsem vyznačil poznámkami u jednotlivých stránek v návrhu uživatelského rozhraní.
 
-% Review
-Mezi použité animace patří například animace přechodu mezi stránkami, animace zmáčknutí tlačítka, animace konfet při dokončení lekce nebo získání ocenění, animace indikátoru pokroku při učení a další.
+% Final
+Mezi použité animace patří například animace přechodu mezi stránkami, animace zmáčknutí tlačítka, animace konfet při dokončení lekce, animace indikátoru pokroku při učení a další.
 
-% Review
-Kuriozitou při návrhu rozhraní bylo využití zvukových efektů. Zvukové efekty bývají ve webových aplikacích využívány velice zřídka, zejména kvůli tomu, že nejsou pro interakci s uživatelem potřeba a zbytečně by uživatele rušily při používání aplikace. V jistých případech mohou být ovšem zvukové efekty vhodné pro podpoření určitých emocí u uživatele a pro zvýšení intenzity požitku z vykonání určitých akcí. V této aplikaci budu například využívat zvukové efekty při samotném učení uživatele pro indikaci správných a špatných odpovědí. Jako zdroj zvukových efektů jsem se rozhodl využít soubor efektů Material Product Sounds\footnote{Dostupné na: \href{https://m2.material.io/design/sound/sound-resources.html}{https://m2.material.io/design/sound/sound-resources.html}}. Podobně jako u animací jsem vyznačil zvukové efekty v návrhu uživatelského rozhraní na místech, kde by měly být použity. \cite {MaterialDesign2ApplyingSounds}
-
+% Final
+Kuriozitou při návrhu rozhraní bylo využití zvukových efektů. Zvukové efekty bývají ve webových aplikacích využívány velice zřídka, zejména kvůli tomu, že často nejsou pro interakci s uživatelem potřeba a zbytečně by uživatele rušily při práci s aplikací. V jistých případech mohou být ovšem zvukové efekty vhodné pro podpoření určitých emocí u uživatele a pro zvýšení intenzity požitku z vykonání určitých akcí. V této aplikaci tak budu využívat zvukové efekty například při samotném učení uživatele pro indikaci správných a špatných odpovědí nebo při úspěšném dokončení lekce. Jako zdroj zvukových efektů jsem se rozhodl využít soubor efektů Material Product Sounds\footnote{Dostupné na: \href{https://m2.material.io/design/sound/sound-resources.html}{https://m2.material.io/design/sound/sound-resources.html}}. Podobně jako u animací jsem vyznačil zvukové efekty v návrhu uživatelského rozhraní na místech, kde by měly být použity. \cite {MaterialDesign2ApplyingSounds}
