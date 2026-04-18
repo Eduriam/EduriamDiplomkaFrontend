@@ -180,6 +180,11 @@
     "Segoe", // font
     "Aeonik", // font
     "Fira", // font
+    // Jména lidí
+    "Ivar",
+    "Cockburn",
+    "Cockburna",
+    "Alistaira",
     // Oficiálně správná slova podle https://prirucka.ujc.cas.cz/
     "personalizovaně",
     "streamována",

@@ -56,7 +56,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-1 Volba přihlášení nebo registrace}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí úvodní stránku aplikace a zvolí, zda se chce přihlásit nebo registrovat. \\
   \textbf{Požadavek:} & \nameref{sec:fp-welcome-page} \\
   \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
@@ -69,7 +69,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-2 Vyplnění úvodního dotazníku}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel vyplní úvodní dotazník zaměřený na jeho cíle a zkušenosti s programováním. Aplikace uživateli na základě dotazníku doporučí kurzy a kariérní cesty, které si může zapsat. \\
   \textbf{Požadavek:} & \nameref{sec:fp-onboarding} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -82,7 +82,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-3 Zobrazení přehledu kurzů a kariérních cest}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku s přehledem kurzů a kariérních cest. Kliknutím na kurz nebo kariérní cestu se přesune na jeho resp. její stránku. \\
   \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -94,7 +94,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-4 Zobrazení přehledu doporučených kurzů a kariérních cest}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si na stránce přehledu kurzů a kariérních cest zobrazí přehled všech doporučených kurzů a kariérních cest. Kliknutím na kurz nebo kariérní cestu se pak přesune na jeho resp. její stránku. \\
   \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -106,8 +106,8 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-5 Vyplnění dotazníku pro úpravu doporučení kurzů a kariérních cest}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
-  \textbf{Popis:} & Uživatel na stránce přehledu doporučených kurzů a kariérních cest vyplní dotazník pro úpravu doporučení kurzů a kariérních cest. \\
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel na stránce přehledu všech doporučených kurzů a kariérních cest vyplní dotazník pro úpravu doporučení kurzů a kariérních cest. \\
   \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel zvolí možnost úpravy doporučených kurzů a kariérních cest a aplikace ho přesune na stránku dotazníku. V dotazníku uživatel vyplní jeho úroveň programování, témata, která se chce učit a cíl, kterého chce dosáhnout. Aplikace mu zobrazí informaci, že uživatel dokončil dotazník. Uživatel zvolí možnost zobrazení nových doporučení a aplikace ho tak přesune zpět na stránku doporučených kurzů a kariérních cest. \\
@@ -117,30 +117,30 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-6 Zobrazení stránky kurzu a zápis do kurzu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku kurzu a přihlásí se do něj. \\
   \textbf{Požadavek:} & \nameref{sec:fp-course-page}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel se přesune na stránku daného kurzu, aplikace mu zobrazí přehled kurzu včetně jeho popisu a přehledu kapitol kurzu. Uživatel zvolí možnost zapsání se do kurzu. Aplikace uživatele zapíše do kurzu a přesměruje ho na stránku učení se první lekce kurzu. \\
-  \textbf{Alternativní scénář 1:} & Uživatel bez předplatného se přesune na stránku kurzu, který je dostupný pouze pro uživatele s premium účtem, a zvolí možnost zapsání do kurzu. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že kurz je dostupný pouze s aktivním předplatným. \\
+  \textbf{Alternativní scénář 1:} & Uživatel bez aktivního předplatného se přesune na stránku kurzu, který je dostupný pouze pro uživatele s premium účtem, a zvolí možnost zapsání do kurzu. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že kurz je dostupný pouze s aktivním předplatným. \\
 \end{tabular}
 
 % Final
 \subsubsection{UC-7 Zobrazení stránky kurzu a pokračování v učení}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku kurzu, který má již zapsaný, a zvolí možnost pokračovat v učení. \\
   \textbf{Požadavek:} & \nameref{sec:fp-course-page} \\
   \textbf{Hlavní aktér:} & Uživatel \\
-  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku kurzu, který má již zapsaný, a aplikace mu zobrazí přehled kurzu včetně popisu a přehledu kapitol kurzu. Uživatel zvolí možnost pokračovat v učení. Aplikace přesměruje uživatele na stránku učení, kde mu zobrazí následující lekci, kterou by se měl uživatel v rámci daného kurzu učit. \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku kurzu, který má zapsaný, a aplikace mu zobrazí přehled kurzu včetně popisu a přehledu kapitol kurzu. Uživatel zvolí možnost pokračovat v učení. Aplikace přesměruje uživatele na stránku učení, kde mu zobrazí následující lekci, kterou by se měl uživatel v rámci daného kurzu učit. \\
 \end{tabular}
 
 % Final
 \subsubsection{UC-8 Spuštění lekce na stránce kapitoly kurzu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel se ze stránky kurzu přesune na stránku kapitoly kurzu a spustí danou lekci. \\
   \textbf{Požadavek:} & \nameref{sec:fp-course-chapter-page} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -153,7 +153,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-9 Zobrazení certifikátu o dokončení kurzu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel s premium účtem si zobrazí certifikát o dokončení daného kurzu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-course-certificate}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Premium uživatel \\
@@ -166,7 +166,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-10 Odhlášení se z kurzu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku pro správu zapsaných kurzů a zvolí možnost odhlášení se z daného kurzu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-course-management} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -178,7 +178,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-11 Zápis do kariérní cesty}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku kariérní cesty a zapíše si danou kariérní cestu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-learning-paths}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -190,7 +190,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-12 Zobrazení stránky kariérní cesty a pokračování v učení}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku kariérní cesty, kterou má již zapsanou, a zvolí možnost pokračovat v učení se kariérní cesty. \\
   \textbf{Požadavek:} & \nameref{sec:fp-learning-paths} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -201,7 +201,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-13 Zobrazení certifikátu o dokončení dané kariérní cesty}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel s premium účtem si zobrazí stránku kariérní cesty a zvolí možnost zobrazit certifikát o dokončení kariérní cesty. \\
   \textbf{Požadavek:} & \nameref{sec:fp-learning-paths}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Premium uživatel \\
@@ -214,7 +214,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-14 Zobrazení studijního plánu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku se svým studijním plánem, tedy přehledem všech zapsaných kurzů a jejich aktuálního režimu učení. \\
   \textbf{Požadavek:} & \nameref{sec:fp-study-plan} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -225,7 +225,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-15 Změna režimu učení kurzu ve studijním plánu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel změní režim učení kurzu v jeho studijním plánu. Uživatel může vybrat mezi režimy učení, opakování a pozastavení kurzu.  \\
   \textbf{Požadavek:} & \nameref{sec:fp-study-plan} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -236,7 +236,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-16 Spuštění lekce podle studijního plánu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel na hlavní stránce aplikace spustí nadcházející lekci podle jeho studijního plánu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -248,7 +248,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-17 Spuštění opakování podle studijního plánu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel na hlavní stránce aplikace spustí opakování látky, kterou aplikace doporučí na základě studijního plánu a na základě toho, jak si uživatel naučenou látku pamatuje. \\
   \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -260,7 +260,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-18 Spuštění lekce ze stránky studijního plánu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel se rozhodne učit jinou lekci, než doporučenou lekci podle studijního plánu. Přesune se tak na stránku studijního plánu a spustí nadcházející lekci v jiném kurzu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -271,7 +271,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-19 Spuštění opakování po dokončení lekce}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Umožňuje uživateli ihned po dokončení lekce spustit opakování dříve naučené látky. \\
   \textbf{Požadavek:} & \nameref{sec:fp-post-lesson-review} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -283,7 +283,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-20 Učení se dané lekce}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel spustí učení dané lekce, splní jednotlivá cvičení a dokončí učení. \\
   \textbf{Požadavek:} & \nameref{sec:fp-learning-structure}, \nameref{sec:fp-exercise-blocks}, \nameref{sec:fp-explanation-blocks} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -296,7 +296,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-21 Opakování látky}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel spustí opakování látky, splní jednotlivá cvičení a dokončí opakování. \\
   \textbf{Požadavek:} & \nameref{sec:fp-learning-structure}, \nameref{sec:fp-exercise-blocks} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -309,7 +309,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-22 Vyplnění cvičení pomocí editoru kódu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživateli se v rámci průchodu lekcí zobrazí cvičení s editorem kódu. Uživatel použije editor kódu k vyplnění cvičení.  \\
   \textbf{Požadavek:} & \nameref{sec:fp-code-editor} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -321,7 +321,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-23 Zobrazení vysvětlení odpovědi při učení}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel v rámci učení nebo opakování vyplní cvičení a zvolí možnost vysvětlení, proč byla jeho odpověď správná nebo špatná. \\
   \textbf{Požadavek:} & \nameref{sec:fp-answer-explanation} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -332,7 +332,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-24 Nahlášení problému při učení}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel nebo korektor nahlásí problém v bloku cvičení nebo v bloku vysvětlení látky. \\
   \textbf{Požadavek:} & \nameref{sec:fp-report-learning-issue} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -345,7 +345,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-25 Zobrazení statistik po dokončení učení nebo opakování}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Po dokončení učení nebo opakování jsou uživateli zobrazeny souhrnné statistiky o učení resp. opakování. \\
   \textbf{Požadavek:} & \nameref{sec:fp-learning-stats} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -357,7 +357,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-26 Zobrazení žebříčku uživatelů v lize učení}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí žebříček uživatelů ve své aktuální lize učení. \\
   \textbf{Požadavek:} & \nameref{sec:fp-leaderboard} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -369,19 +369,19 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-27 Zobrazení stavu energie uživatele}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí jeho aktuální stav energie, který určuje, kolik učení nebo opakování může ještě v daný den spustit. \\
   \textbf{Požadavek:} & \nameref{sec:fp-energy-status}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
   \textbf{Hlavní scénář:} & Uživatel na hlavní stránce aplikace zvolí možnost zobrazení stavu energie. Aplikace zobrazí aktuální počet dostupných bodů energie pro daný den a také možnost odemknutí neomezeného množství energie. \\
-  \textbf{Alternativní scénář 1:} & Premium uživatel zvolí možnost zobrazení stavu energie. Aplikace zobrazí informaci, že učení a opakování nejsou pro premium účet omezeny systémem energie. \\
+  \textbf{Alternativní scénář 1:} & Uživatel s premium účtem zvolí možnost zobrazení stavu energie. Aplikace zobrazí informaci, že učení a opakování nejsou pro premium účet omezeny systémem energie. \\
 \end{tabular}
 
 % Final
 \subsubsection{UC-28 Spuštění učení nebo opakování s nedostatkem bodů energie}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel se z libovolného místa aplikace pokusí spustit učení nebo opakování, přestože nemá dostatek bodů energie. Aplikace ho přesměruje na stránku s přehledem výhod premium účtu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-energy-status}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -392,7 +392,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-29 Nákup položky v obchodě s virtuální měnou}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si na stránce obchodu zakoupí položku za virtuální měnu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-shop-unlock-items} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -404,7 +404,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-30 Přizpůsobení avatara uživatele}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku pro přizpůsobení avatara, upraví vzhled avatara a uloží změny. \\
   \textbf{Požadavek:} & \nameref{sec:fp-avatar-customization} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -416,7 +416,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-31 Zobrazení uživatelského profilu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku svého profilu nebo profilu jiného uživatele. \\
   \textbf{Požadavek:} & \nameref{sec:fp-user-profile} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -429,7 +429,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-32 Zapnutí tmavého režimu}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel otevře nastavení aplikace, změní režim vzhledu a rozhraní aplikace se okamžitě zobrazí v nově zvoleném režimu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-dark-mode} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -440,7 +440,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-33 Nákup zmrazení streaku v obchodě}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si v obchodě zakoupí položku zmrazení streaku za virtuální měnu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-streak-freeze} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -451,7 +451,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-34 Změna nastavení aplikace}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel otevře stránku nastavení, upraví své preference a aplikace změny automaticky uloží. \\
   \textbf{Požadavek:} & \nameref{sec:fp-settings-page} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -462,7 +462,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-35 Zobrazení nových oznámení na hlavní stránce}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel otevře hlavní stránku aplikace a aplikace mu zobrazí nová oznámení o důležitých událostech v aplikaci. \\
   \textbf{Požadavek:} & \nameref{sec:fp-extended-notifications} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -473,7 +473,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-36 Zobrazení reklamy uživateli po ukončení učení nebo opakování}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Po ukončení učení nebo opakování aplikace zobrazí uživateli reklamu. \\
   \textbf{Požadavek:} & \nameref{sec:fp-advertisement}, \nameref{sec:fp-subscription-system} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -485,7 +485,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-37 Otevření truhly s odměnou po dokončení učení}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel po dokončení učení otevře truhlu s odměnou. \\
   \textbf{Požadavek:} & \nameref{sec:fp-treasure-chest}, \nameref{sec:fp-advertisement} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -497,7 +497,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-38 Zobrazení zpráv o pokroku sledovaných uživatelů}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel si zobrazí stránku s novinkami o pokroku sledovaných uživatelů. \\
   \textbf{Požadavek:} & \nameref{sec:fp-progress-sharing} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -509,7 +509,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-39 Registrace pomocí účtu Google}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Nepřihlášený uživatel se zaregistruje do aplikace pomocí účtu Google. \\
   \textbf{Požadavek:} & \nameref{sec:fp-google-auth} \\
   \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
@@ -522,7 +522,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-40 Přihlášení pomocí účtu Google}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Nepřihlášený uživatel se přihlásí do aplikace pomocí svého účtu Google. \\
   \textbf{Požadavek:} & \nameref{sec:fp-google-auth} \\
   \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
@@ -535,7 +535,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-41 Aktivace zkušební verze předplatného}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel bez aktivního premium účtu aktivuje zkušební verzi předplatného. \\
   \textbf{Požadavek:} & \nameref{sec:fp-free-trial} \\
   \textbf{Hlavní aktér:} & Uživatel \\
@@ -547,7 +547,7 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \subsubsection{UC-42 Zrušení zkušební verze předplatného}
 
 % Final
-\begin{tabular}{lp{0.6\linewidth}}
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
   \textbf{Popis:} & Uživatel během zkušební doby zruší předplatné na stránce správy předplatného. \\
   \textbf{Požadavek:} & \nameref{sec:fp-free-trial} \\
   \textbf{Hlavní aktér:} & Premium uživatel \\
