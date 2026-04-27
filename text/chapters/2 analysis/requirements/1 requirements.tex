@@ -445,36 +445,34 @@ Rozhraní aplikace by mělo být dostupné ve dvou režimech, ve světlém a tma
     \textbf{Priorita:} & Should have \\
 \end{tabular}
 
-% Review
+% Final
 Aplikace by měla uživateli posílat push notifikace na základě událostí v systému. Tyto notifikace by se měly uživateli posílat v následujících případech:
 
-% Review
+% Final
 \begin{itemize}
-    \item pokud se uživatel ještě neučil v daný den
-    \item pokud se uživatel delší dobu v aplikaci nic neučil
-    \item pokud uživatele začal sledovat jiný uživatel
-    \item pokud bylo použito zmrazení streaku z požadavku \nameref{sec:fp-streak-freeze}
-    \item pokud se blíží konec týdne a uživateli hrozí propadnutí do nižší ligy
+    \item uživatel se ještě v daný den neučil a aplikace mu připomene, že se má učit dle požadavku \nameref{sec:fp-learning-reminder}
+    \item uživatel se v aplikaci neučil po delší dobu
+    \item uživatele začal sledovat jiný uživatel
+    \item pokud bylo automaticky použito zmrazení streaku z požadavku \nameref{sec:fp-streak-freeze}
+    \item pokud se blíží konec týdne a uživateli hrozí propadnutí do nižší ligy z požadavku \nameref{sec:fp-leaderboard}
 \end{itemize}
 
-% Write- zde nezapomenout naimplementovat tohle: Pokud uživatel nemá zapnuté notifikace z požadavku \nameref{sec:fp-push-notifications}. Už to mám zahrnuté v požadavku pro in-app ozámení, ale neimplementoval jsem zatím tu mechaniku toho kdy se do Notices přidá toto oznámení. 
-
-% Review
-V rámci této práce se budu zabývat pouze zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se bude zabývat kolega Bc. Jakub Vondráček jeho diplomové práci, která se zabývá backendovou částí této aplikace.
+% Final
+V rámci této práce se budu zabývat zprovozněním zobrazování push notifikací uživateli ve frontendové části aplikace. Podrobným fungováním odesílání push notifikací se zabývá kolega Bc. Jakub Vondráček v jeho diplomové práci, která se zabývá backendovou částí této aplikace.
 
 % Final
-\subsubsection{FP-24 Připomínání učení}
+\subsubsection{FP-24 Připomínání učení}\label{sec:fp-learning-reminder}
 
 % Final
 \begin{tabular}{lp{0.7\linewidth}}
     \textbf{Priorita:} & Could have \\
 \end{tabular}
 
-% Review
-Uživatel by měl mít možnost si zapnout nebo vypnout připomínání učení. Pokud uživatel toto připomínání zapne, aplikace by mu měla posílat push notifikace, které ho upozorní, že se má daný den učit. Čas odeslání notifikace by se měl odvíjet od času, kdy se uživatel typicky učí. Možnost připomínání učení by měla být ve výchozím nastavení zapnutá.
+% Final
+Uživatel by měl mít možnost si zapnout nebo vypnout připomínání učení. Pokud má uživatel toto připomínání zapnuté, aplikace by mu měla posílat push notifikace, které ho upozorní, že se má daný den učit. Čas odeslání notifikace by se měl odvíjet od času, kdy se uživatel typicky učí. Notifikace by se neměla uživateli odeslat, pokud se daný den již učil. Možnost připomínání učení by měla být ve výchozím nastavení zapnutá.
 
-% Review
-Tato funkce je inspirována konkurenčními aplikacemi, které umožňují uživateli si nastavit připomínání učení.
+% Final
+Tato funkce vychází z analýzy konkurenčních aplikací, které umožňují uživateli si nastavit připomínání učení.
 
 % Final
 \subsubsection{FP-25 Systém zobrazování reklam}\label{sec:fp-advertisement}
