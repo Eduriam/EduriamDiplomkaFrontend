@@ -555,6 +555,41 @@ V rámci specifikace případů užití jsem tak sestavil následující seznam 
 \end{tabular}
 
 % Final
+\subsubsection{UC-43 Zapnutí odesílání notifikací}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel povolí v aplikaci zasílání push notifikací. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-push-notifications} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace. Aplikace uživateli nabídne možnost zapnout odesílání notifikací. Uživatel zvolí možnost zapnout notifikace. Prohlížeč uživatele zobrazí možnost pro udělení oprávnění k odesílání notifikací. Uživatel oprávnění potvrdí a aplikace nastavení uloží. \\
+  \textbf{Alternativní scénář 1:} & Uživatel zvolí, že nechce notifikace zapnout, nebo v systémovém dialogu oprávnění odmítne. Aplikace volbu uloží a nebude uživateli push notifikace posílat. \\
+\end{tabular}
+
+% Final
+\subsubsection{UC-44 Zobrazení notifikace}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel obdrží push notifikaci vyvolanou událostí v aplikaci. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-push-notifications} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & V aplikaci nastane událost, u které má uživatel v nastavení zapnuté odesílání oznámení. Aplikace uživateli zobrazí příslušnou notifikaci. Uživatel na notifikaci klikne a aplikace ho přesměruje na hlavní stránku aplikace. \\
+  \textbf{Alternativní scénář 1:} & V aplikaci nastane událost, o které má být uživatel informován pomocí notifikace. Uživatel ovšem nemá u dané notifikace zapnuté odesílání oznámení. Aplikace notifikaci uživateli nezobrazí. \\
+\end{tabular}
+
+% Final
+\subsubsection{UC-45 Vypnutí nebo zapnutí připomínání učení}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel v nastavení zapne nebo vypne připomínání učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-reminder} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře nastavení aplikace v sekci oznámení a změní stav připomínání učení. Aplikace změnu uloží. Pokud je připomínání zapnuté, aplikace bude následně uživateli odesílat každý den připomenutí k učení podle požadavku \nameref{sec:fp-push-notifications}. \\
+\end{tabular}
+
+% Final
 \subsection{Specifikace funkcí pomocí jazyka Gherkin}\label{sec:gherkin-specification}
 
 % Final
