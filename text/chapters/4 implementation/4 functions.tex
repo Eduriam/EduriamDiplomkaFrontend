@@ -2,7 +2,7 @@
 \section{Implementace funkcí}
 
 % Final
-V této podkapitole podrobněji popíšu implementaci vybraných funkcí této aplikace. Nejprve popíšu implementaci nové struktury učení, která zásadně mění způsob učení a opakování látky v aplikaci. Této funkci se budu věnovat nejpodrobněji, protože se jedná o nejvýznamnější část celé aplikace. Dále popíšu implementaci registrace a přihlašování pomocí účtu Google, díky čemuž mohou uživatelé získat snadnější přístup do aplikace. Dále popíšu, jakým způsobem jsem z webové aplikace vytvořil progresivní webovou aplikaci, kterou si mohou uživatelé stáhnout a nainstalovat na svá zařízení. Nakonec popíšu implementaci push notifikací, díky kterým mohou být uživatelé lépe informováni o událostech v aplikaci.
+V této podkapitole podrobněji popíšu implementaci vybraných funkcí této aplikace. Nejprve popíšu implementaci nové struktury učení, která zásadně mění způsob učení a opakování látky v aplikaci. Této funkci se budu věnovat nejpodrobněji, protože se jedná o nejvýznamnější část celé aplikace. Dále popíšu, jakým způsobem jsem z webové aplikace vytvořil progresivní webovou aplikaci, kterou si mohou uživatelé stáhnout a nainstalovat na svá zařízení. Nakonec popíšu implementaci push notifikací, díky kterým mohou být uživatelé lépe informováni o událostech v aplikaci.
 
 % Final
 \subsection{Nová struktura učení}
@@ -105,7 +105,7 @@ Pro zjednodušení tvorby stránek ve videích jsem dále zavedl dva typy strán
 % Review - přizpůsobit textwidth tak, aby se to vešlo do diplomky
 \begin{figure}[!h]
     \centering
-    \begin{minipage}{0.9\textwidth}
+    \begin{minipage}{0.83\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./images/diagrams/explanation-model.png}
         \caption{Základní model videí s vysvětlením látky}
@@ -140,23 +140,23 @@ Podobně jako bloky s vysvětlením látky, mohou bloky se cvičeními obsahovat
 % Final
 Díky audio nahrávkám a flexibilní struktuře bloků cvičení a vysvětlování látky je tak možné pro uživatele vytvářet vysoce interaktivní průchody učením a opakováním. Způsob výuky v této aplikaci se tak blíží interaktivním lekcím konkurenčních aplikací Scrimba a Mimo, které jsem analyzoval v rámci analýzy existujících řešení.
 
-% Write - tuhle sekci sepsat
-\subsection{Push Notifikace}
+% Final
+\subsection{Vytvoření progresivní webové aplikace}
 
-% Review
-\subsection{Přizpůsobení aplikace pro PWA}
+% Final
+V rámci nefunkčního požadavku jsem doplnil konfiguraci aplikace nutnou pro to, aby prohlížeče aplikaci klasifikovaly jako progresivní webovou aplikaci. V souboru \texttt{manifest.ts} jsem definoval metadata aplikace, jako například název, jazyk aplikace nebo základní barvy. V rámci této konfigurace jsem také vytvořil několik základních ikon, které může progresivní webová aplikace využívat.
 
-% Review
-V rámci nefunkčního požadavku jsem doplnil konfiguraci aplikace nutnou pro to, aby prohlížeče aplikaci klasifikovaly jako progresivní webovou aplikaci. V souboru \texttt{manifest.ts} jsem definoval metadata aplikace, jako například název, jazyk aplikace, základní barvy a ikony. V rámci této konfigurace jsem také vytvořil několik základních ikon, které může progresivní webová aplikace využívat.
+% Final
+Dále jsem do aplikace doplnil registraci tzv. Service Worker skriptu. Service Worker je skript běžící v prohlížeči, jehož životní cyklus je takřka nezávislý na životním cyklu aplikace. Service Worker tak může běžet ve vlastním vlákně nezávisle na samotné aplikaci. Tato služba se využívá například pro správu cache aplikace, podporu offline funkcí a jako proxy mezi odchozími a příchozími požadavky a samotnou aplikací. V rámci této práce jsem se zmíněným funkcím nevěnoval a proto jsem pouze zaregistroval prázdný Service Worker skript, který je nutný pro vytvoření PWA. \cite{ServiceWorker}
 
-% Review
-Dále jsem do aplikace doplnil registraci tzv. Service Worker služby. Service Worker je skript běžící v prohlížeči, jehož životní cyklus je takřka nezávislý na životním cyklu aplikace. Service Worker tak může běžet ve vlastním vlákně nezávisle na samotné aplikaci. Tato služba se využívá například pro správu cache aplikace, podporu offline funkcí a jako proxy mezi odchozími a příchozími požadavky a samotnou aplikací. V rámci této práce jsem se těmto funkcím nevěnoval a proto jsem pouze zaregistroval prázdný Service Worker skript, který je nutný pro vytvoření PWA. \cite{ServiceWorker}
-
-% Review
+% Final
 Nakonec bylo třeba zajistit, aby byla aplikace dostupná přes HTTPS protokol \cite{PWABuilder}. To jsem zajistil v rámci nasazení aplikace, kterému se věnuji v podkapitole \nameref{sec:deployment}.
 
-% Review
-Díky výše zmíněné konfiguraci se tak aplikace stala progresivní webovou aplikací. Uživatelé si tak mohou aplikaci stáhnout a nainstalovat do svých zařízení přímo z prohlížeče na stránkách této aplikace.
+% Final
+Díky výše zmíněné konfiguraci se tak aplikace stala progresivní webovou aplikací. Uživatelé si tak mohou aplikaci stáhnout a nainstalovat do svých zařízení přímo z prohlížeče na stránkách aplikace.
 
-% Review
-Aplikaci tak bude možné v budoucnu po dalších konfiguracích, například s pomocí nástroje PWABuilder \cite{PWABuilder}, zabalit a publikovat na platformách Google Play, App Store nebo například Microsoft Store. Publikace na tyto platformy je časově značně náročná a týká se spíše právních otázek, nežli softwarového inženýrství. Proto se samotné publikaci v rámci této práce nebudu věnovat.
+% Final
+Aplikaci také bude možné v budoucnu po doplnění dalších konfigurací, například s pomocí nástroje PWABuilder \cite{PWABuilder}, zabalit a publikovat na platformách Google Play, App Store nebo například Microsoft Store. Publikace na tyto platformy je časově značně náročná a týká se z velké části spíše právních otázek nežli softwarového inženýrství. Proto se samotné publikaci v rámci této práce nebudu věnovat.
+
+% Write - tuhle sekci sepsat
+\subsection{Push notifikace}
