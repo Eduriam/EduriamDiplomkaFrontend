@@ -90,67 +90,58 @@ Výše zmíněnou limitaci jsem se snažil minimalizovat tím, že jsem k videí
 % Final
 Celkově tak tato forma vysvětlování látky má několik zásadních výhod a limitací. V rámci této práce jsem došel k názoru, že zmíněné výhody převažují nad nevýhodami a rozhodl jsem se tak v této práci popsaný přístup použít.
 
-% Review
+% Final
 \subsubsection{Responzivita videí s vysvětlením látky}
 
-% Review
-V této podkapitole stručně popíšu, jakým způsobem jsem zajistil responzivitu vysvětlovacích videí, kterou jsem zmínil v předchozí kapitole.
+% Final
+V této části textu popíšu, jakým způsobem jsem zajistil responzivitu vysvětlovacích videí, kterou jsem zmínil v předchozí kapitole.
 
-% Review
-Aby bylo docíleno responzivního chování videí, bylo třeba, aby videa dodržovala přesně danou a jednoduchou strukturu. Z tohoto důvodu jsem zavedl následující strukturu videí. Každý \texttt{ExplanationStudyBlock} se skládá z několika scén \texttt{Scene}. Každá scéna se pak skládá ze stránek \texttt{Slide}, které významově odpovídají stránkám v prezentacích. Každý \texttt{Slide} je pak rozdělen do jednoho až tří sloupců \texttt{Column}, ve kterých jsou následně zadefinovány jednotlivé komponenty, které se mají zobrazit. Komponenty ve sloupcích se vždy zobrazují pod sebou v pořadí, ve kterém jsou ve sloupci zadefinovány.
+% Final
+Aby bylo docíleno responzivního chování videí, bylo třeba, aby videa dodržovala jednoduchou a přesně danou strukturu. Z tohoto důvodu jsem zavedl následující strukturu videí. Každý \texttt{ExplanationStudyBlockContent} se skládá z několika scén \texttt{Scene}. Každá scéna se pak skládá ze stránek \texttt{Slide}, které významově odpovídají stránkám v prezentacích. Každý \texttt{Slide} je pak rozdělen do jednoho až tří sloupců \texttt{Column}, ve kterých jsou následně zobrazovány jednotlivé komponenty. Komponenty ve sloupcích se vždy zobrazují pod sebou v pořadí, ve kterém jsou ve sloupci zadefinovány. 
 
-% Write
+% Final
+Pro zjednodušení tvorby stránek ve videích jsem dále zavedl dva typy stránek. Prvním typem je \texttt{RawSlide}, který umožňuje přesně definovat, které komponenty se mají na stránce zobrazit. Druhým typem je \texttt{SlideTemplate}, který je možné dále rozšiřovat a vytvářet tak předpřipravené šablony stránek. Tyto šablony poskytují oproti \texttt{RawSlide} stránkám zapouzdření jednotlivých komponentů a jednodušší rozhraní. Šablony je tak možné využívat pro efektivnější tvorbu videí. Popsaný model je vyobrazen na diagramu \ref{fig:explanation-model}.
+
+% Review - přizpůsobit textwidth tak, aby se to vešlo do diplomky
 \begin{figure}[!h]
     \centering
-    \begin{minipage}{1\textwidth}
+    \begin{minipage}{0.9\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./images/diagrams/explanation-model.png}
-        \caption{Základní model vysvětlovacích videí}
+        \caption{Základní model videí s vysvětlením látky}
         \label{fig:explanation-model}
     \end{minipage}
 \end{figure}
 
-% Review
+% Final
 Na širokých displejích, tedy například na monitorech nebo mobilních zařízeních orientovaných na šířku, jsou jednotlivé sloupce vykreslovány vedle sebe. Pokud uživatel ovšem sleduje video na zařízení s úzkým displejem, tedy typicky na mobilním zařízení otočeným na výšku, jsou pak sloupce vykreslovány pod sebou. Jednotlivé komponenty se dále přizpůsobují dostupnému místu, podobně jako responzivní komponenty na webových stránkách. Tento systém tak umožňuje snadno umisťovat komponenty na obrazovku tak, aby se jejich rozložení přizpůsobovalo velikosti a orientaci obrazovky.
 
-% Review
-Limitací tohoto přístupu je množství komponentů, které je možné ve videu na jedné stránce zobrazit. Do sloupců například není vhodné umisťovat přehršel komponentů s pevně danou výškou, protože by se z důvodu přesunu sloupců na menších displejích pod sebe nevešly. V důsledku tohoto systému by videa měla být tvořena tak, aby obsahovala více jednodušších stránek s méně komponenty, než méně stránek s mnoha komponenty. Dále, pokud je například třeba zobrazit komplexnější komponent, který obsahuje více detailů nebo textu, je vhodné na obrazovce zobrazit pouze tento komponent v jednom sloupci. Díky tomu bude mít sloupec na všech velikostech obrazovky maximální výšku a šířku a komponent tak bude možné dobře vidět.
+% Final
+Limitací tohoto přístupu je množství komponentů, které je možné ve videu na jedné stránce zobrazit. Do sloupců například není vhodné umisťovat přehršel komponentů s pevně danou výškou, protože by se z důvodu přesunu sloupců na menších displejích pod sebe jednotlivé komponenty nevešly. V důsledku by videa měla být tvořena tak, aby obsahovala více jednodušších stránek s méně komponenty, než méně stránek s mnoha komponenty. Dále, pokud je například třeba zobrazit komplexnější komponent, který obsahuje více detailů nebo textu, je vhodné na obrazovce zobrazit pouze tento komponent v jednom sloupci. Díky tomu bude mít sloupec na všech velikostech displeje maximální výšku a šířku a komponent tak bude možné lépe vidět.
 
-% Write - sem někam přidat diagram struktury slidů
+% Final
+Samotné komponenty bylo také třeba vytvářet s ohledem na responzivitu videí. Například komponenty zobrazující kód jsem implementoval tak, aby bylo možné při jejich použití určit, v jaké fázi videa se má zobrazit jaká část kódu. Pokud by tak například bylo třeba ve videu ukázat kód s mnoha řádky a vysvětlovat různé části tohoto kódu, je možné v definici komponentu označit jednotlivé části, o kterých se bude ve videu ve vybraném čase mluvit. Aplikace pak bude automaticky v daném čase scrollovat na specifikovanou část kódu, díky čemuž bude moci uživatel vždy na obrazovce vidět, o které části kódu je ve videu řeč.
 
-% Review
-Samotné komponenty bylo také třeba vytvářet s ohledem na responzivitu videí. Například komponenty zobrazující kód jsem implementoval tak, aby bylo možné v jejich definici určit, v jaké fázi videa se má zvýraznit jaká část kódu. Pokud by tak například bylo třeba ve videu ukázat kód s mnoha řádky a vysvětlovat různé části tohoto kódu, je možné v definici komponentu označit jednotlivé části, o kterých se bude ve videu ve vybraném čase mluvit. Aplikace pak bude automaticky v daném čase scrollovat na danou část kódu, díky čemuž bude uživatel vždy na obrazovce vidět, o které části kódu se mluví.
-
-% Write - zde dát ukázku komponentu s kódem CodeExplainer
-
-% Review
+% Final
 \subsubsection{Plnění cvičení pomocí \texttt{ExerciseStudyBlock}}
 
-% Review
-Po tom, co je uživateli vysvětlena látka pomocí dříve popsaných \texttt{ExplanationStudyBlock} bloků, je uživateli zobrazen blok \texttt{ExerciseStudyBlock}, který slouží k procvičení dané látky a sběru dat o tom, jak uživatel dané látce rozumí.
+% Final
+Po tom, co byla v rámci učení uživateli vysvětlena látka pomocí dříve popsaných bloků s vysvětlením látky \texttt{ExplanationStudyBlock}, jsou uživateli zobrazeny bloky \texttt{ExerciseStudyBlock}, které slouží k procvičení dané látky a sběru dat o tom, jak uživatel dané látce rozumí.
 
-% Review
-Každý tento blok je, podobně jako bloky s vysvětlením látky, vykreslen na samostatné stránce v rámci učení. Tento blok může obsahovat jeden nebo více komponentů, které jsou vykresleny pod sebou v jednom sloupci. Komponenty jsou buď pasivní, které pouze zobrazují informace, nebo aktivní, se kterými může uživatel interagovat. Pasivní komponenty jsou například nadpisy, odstavce nebo diagramy. Aktivními komponenty jsou různá cvičení, které musí uživatel vyplnit pro splnění daného bloku. Jeden \texttt{ExerciseStudyBlock} může obsahovat více aktivních bloků. Příkladem toho je editor kódu, který obsahuje více oken s kódem. Každé okno je pak považováno za samostatné cvičení.
+% Final
+Každý tento blok je, podobně jako bloky s vysvětlením látky, vykreslen na samostatné stránce v rámci učení. Tento blok může obsahovat jeden nebo více komponentů \texttt{ExerciseStudyBlockComponent}, které jsou vykresleny pod sebou v jednom sloupci. Komponenty jsou buď pasivní, které pouze zobrazují informace, nebo aktivní, se kterými může uživatel interagovat. Pasivní komponenty jsou například nadpisy, odstavce nebo diagramy. Aktivními komponenty jsou různá cvičení, které musí uživatel vyplnit pro splnění daného bloku. Jeden \texttt{ExerciseStudyBlock} může obsahovat více aktivních komponentů. Příkladem toho je editor kódu, který obsahuje více oken s kódem. Každé okno je pak považováno za samostatný komponent cvičení.
 
-% Write - zde můžu dát 2 ukázky cvičení
+% Final
+Po vyplnění všech aktivních komponentů v rámci daného bloku uživatel zvolí možnost zkontrolovat výsledky, aplikace odpověď ohodnotí a zaznamená. Uživatel má pak možnost pokračovat nebo odpověď opravit v případě, že byla špatná.
 
-% Review
-Po vyplnění všech aktivních komponentů v rámci daného bloku uživatel zvolí možnost zkontrolovat výsledky, aplikace odpověď ohodnotí a zaznamená. Uživatel pak má možnost pokračovat nebo odpověď opravit v případě, že byla špatná.
+% Final
+Podobně jako bloky s vysvětlením látky, mohou bloky se cvičeními obsahovat audio nahrávku, která doprovází uživatele při učení. Na rozdíl od bloků s vysvětlením látky, kde je audio nahrávka přehrávána v rámci celého videa, je v případě bloků se cvičeními audio nahrávka pouze připojena ke konkrétním komponentům. Každý komponent tak k sobě může mít připojenou audio nahrávku, která například vysvětluje zadání daného příkladu. Po načtení \texttt{ExerciseStudyBlock} bloku se postupně přehrají všechny audio nahrávky, které jsou v komponentech daného bloku obsaženy. Díky tomu například uživatel nemusí číst text se zadáním, ale může si ho poslechnout a následně hned vyplnit dané cvičení.
 
-% Review
-Podobně jako bloky s vysvětlením látky, mohou bloky se cvičeními obsahovat audio nahrávku, která doprovází uživatele při učení. Na rozdíl od bloků s vysvětlením látky, kde je audio nahrávka přehrávána v rámci celého videa, je v případě bloků se cvičeními audio nahrávka pouze připojena ke konkrétním komponentům. Každý komponent tak k sobě může mít připojenou audio nahrávku, která například vysvětluje zadání daného příkladu. Po načtení bloku se postupně přehrají všechny audio nahrávky, které jsou v daném bloku zadefinovány. Díky tomu například uživatel nemusí číst text se zadáním, ale může si ho poslechnout a následně hned vyplnit dané cvičení.
+% Final
+Díky audio nahrávkám a flexibilní struktuře bloků cvičení a vysvětlování látky je tak možné pro uživatele vytvářet vysoce interaktivní průchody učením a opakováním. Způsob výuky v této aplikaci se tak blíží interaktivním lekcím konkurenčních aplikací Scrimba a Mimo, které jsem analyzoval v rámci analýzy existujících řešení.
 
-% Review
-Díky audio nahrávkám a flexibilní struktuře bloků cvičení a vysvětlování látky je tak možné pro uživatele vytvářet vysoce interaktivní průchody lekcemi a opakováním. Přístup této aplikace se tak blíží vysoce interaktivním lekcím konkurenční aplikace Scrimba, kterou jsem analyzoval v rámci analýzy existujících řešení.
-
-% Write - tuhle sekci asi odstranit
-\subsection{Registrace a přihlášení pomocí účtu Google}
-
-Pro externí autentizaci jsem implementoval OAuth workflow nad integrační vrstvou frontendu a backendových endpointů. Ve frontendu začíná tok funkcí \texttt{startGoogleAuth}, která uloží zdroj akce (\texttt{signin} nebo \texttt{signup}) do \texttt{sessionStorage}, získá autorizační URL z endpointu \texttt{external-auth/google/authorize} a přesměruje uživatele na autorizační stránku Google.
-
-Po návratu z Google se zpracování provádí na callback stránce \texttt{/signin/callback}. Frontend načte autorizační kód z query parametru \texttt{code} a předá jej backendu přes endpoint \texttt{/authorize}. Po úspěšném dokončení frontend uloží autentizační data (\texttt{idToken}, \texttt{refreshToken}, uživatele), nastaví autorizační hlavičku pro další API volání a přesměruje uživatele buď na hlavní stránku, nebo na onboarding podle stavu účtu.
-
-Součástí implementace je i explicitní mapování chybových stavů. Například stav 404 je mapován na Google účet nenalezen a stav 409 na Google účet již existuje. Uživateli se následně zobrazí odpovídající kontext na přihlašovací nebo registrační stránce.
+% Write - tuhle sekci sepsat
+\subsection{Push Notifikace}
 
 % Review
 \subsection{Přizpůsobení aplikace pro PWA}

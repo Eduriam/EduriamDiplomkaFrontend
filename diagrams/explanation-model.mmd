@@ -1,35 +1,49 @@
 classDiagram
-    class Lesson {
-        +id: number
+    class ExplanationStudyBlockContent
+
+    class Scene {
+        +duration: number
     }
 
-    class Atom {
-        +id: number
+    class `*Slide*` {
+        +startTime: number
     }
 
-    class `*StudyBlock*` {
-        +id: number
-        +mode: StudyBlockMode
+    class RawSlide {
     }
 
-    
-    class StudyBlockMode {
+    class `*SlideTemplate*` {}
+
+    class Column {
         <<enumeration>>
-        Learn
-        Review
+        First
+        Second
+        Third
     }
 
-    class ExplanationStudyBlock {
-        +content: ExplanationStudyBlockContent
+    class VideoComponent {
+        +startTime: number
+        +column: Column
     }
 
-    class ExerciseStudyBlock {
-        +content: ExerciseStudyBlockContent
+    class Audio {
+        +url: string
     }
-    
-    Lesson "1" --> "1..*" Atom
-    Atom "1" *-- "1..*" `*StudyBlock*`
 
-    StudyBlockMode <-- `*StudyBlock*`
-    `*StudyBlock*` <|-- ExplanationStudyBlock
-    `*StudyBlock*` <|-- ExerciseStudyBlock
+    class Caption {
+        +text: string
+        +startMs: number
+        +endMs: number
+    }
+
+    ExplanationStudyBlockContent "1" *-- "1..*" Scene
+    Scene "1" *-- "1..*" `*Slide*`
+
+    `*Slide*` <|-- RawSlide
+    `*Slide*` <|-- `*SlideTemplate*`
+
+    RawSlide "1" *-- "1..*" VideoComponent
+    VideoComponent --> Column
+
+    Scene "1" --> "0..1" Audio
+    Audio "1" *-- "0..*" Caption
