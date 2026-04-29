@@ -1,39 +1,34 @@
-% Outline:
-% - Výběr implementovaných epiků.
-% - Nová struktura učení: Atom, Lekce, StudyBlock, režimy learn/review.
-% - ExplanationStudyBlock + Remotion: přínosy, limity, fallback.
-% - ExerciseStudyBlock: interaktivita, vyhodnocení, sběr dat.
-% - Google OAuth: frontend flow + integrace s backendem.
-% - PWA přizpůsobení: manifest, service worker, HTTPS.
-
-% Review
+% Final
 \section{Implementace funkcí}
 
-% Review
-V této podkapitole podrobněji popíšu implementaci vybraných funkcí této aplikace. Nejprve popíšu implementaci nové struktury učení, která zásadně mění způsob učení a opakování látky v aplikaci. Této funkci budu věnovat největší pozornost, protože se jedná o nejvýznamnější část celé aplikace. Dále popíšu implementaci registrace a přihlašování pomocí účtu Google, díky čemuž mohou uživatelé snadněji přistupovat do aplikace. Nakonec popíšu, jakým způsobem jsem z webové aplikace vytvořil progresivní webovou aplikaci, díky čemuž si mohou uživatelé aplikaci stáhnout a nainstalovat na svá zařízení.
+% Final
+V této podkapitole podrobněji popíšu implementaci vybraných funkcí této aplikace. Nejprve popíšu implementaci nové struktury učení, která zásadně mění způsob učení a opakování látky v aplikaci. Této funkci se budu věnovat nejpodrobněji, protože se jedná o nejvýznamnější část celé aplikace. Dále popíšu implementaci registrace a přihlašování pomocí účtu Google, díky čemuž mohou uživatelé získat snadnější přístup do aplikace. Dále popíšu, jakým způsobem jsem z webové aplikace vytvořil progresivní webovou aplikaci, kterou si mohou uživatelé stáhnout a nainstalovat na svá zařízení. Nakonec popíšu implementaci push notifikací, díky kterým mohou být uživatelé lépe informováni o událostech v aplikaci.
 
-% Review
+% Final
 \subsection{Nová struktura učení}
 
-% Review
-Se změnou domény původní aplikace bylo třeba zásadně změnit strukturu učení a opakování. Nejenže aplikace při učení musí důkladně zkoušet uživatele z dané látky, nyní musí uživateli také danou látku detailně a přehledně vysvětlit. V následujících částech textu popíšu nový model učení a jak nové učení vypadá z pohledu uživatele. 
+% Final
+Se změnou domény aplikace bylo třeba zásadně změnit strukturu učení a opakování látky. Původní aplikace byla zaměřena převážně na zkoušení uživatele z dané látky pomocí cvičení. Aplikace tak při učení neposkytovala uživateli srozumitelné vysvětlení látky. Se změnou domény ovšem vznikla potřeba zavést do učení jasné a srozumitelné vysvětlování látky v průběhu učení. Z tohoto důvodu bylo třeba zásadně změnit model učení, kterému se budu věnovat v následujících částech textu. 
 
+% Final
 \subsubsection{Lekce, atomy a bloky učení}
 
-% Review
-Základním prvkem učení je \texttt{Atom}, který reprezentuje konkrétní znalost nebo koncept, který se uživatel může naučit. Každá lekce je tvořena jedním nebo více atomy. Ke každému atomu je pak přiřazen jeden nebo více tzv. \texttt{StudyBlock} bloků. Každý blok reprezentuje jednu stránku v učení, na které je uživateli buď vysvětlena nová látka, nebo je uživatel vyzkoušen z dané látky pomocí cvičení. 
+% Final
+Základním prvkem učení nového modelu je \texttt{Atom}, který reprezentuje konkrétní znalost nebo koncept, který se uživatel může naučit. Každá lekce je tvořena jedním nebo více atomy. Ke každému atomu je pak přiřazen jeden nebo více tzv. \texttt{StudyBlock} bloků. Každý blok reprezentuje jednu stránku v rámci učení. Na této stránce je uživateli buď vysvětlena nová látka, nebo je uživatel vyzkoušen z dané látky pomocí cvičení. 
 
-% Review
-Tyto bloky se dělí do dvou hlavních typů.
+% Final
+\texttt{StudyBlock} bloky se dělí do dvou typů. \texttt{ExplanationStudyBlock} slouží k vysvětlení nové látky pomocí krátkých videí a animací. \texttt{ExerciseStudyBlock} dále slouží k procvičení dané látky pomocí interaktivních cvičení. Popsaný model je vyobrazen na diagramu \ref{fig:study-model}. Pro zachování přehlednosti jsem do diagramu zahrnul pouze atributy, které jsou relevantní pro popis struktury učení.
 
-% Review
-\begin{itemize}
-    \item \texttt{ExplanationStudyBlock}, který slouží k vysvětlení nové látky,
-    \item \texttt{ExerciseStudyBlock}, který slouží k procvičení dané látky a sběru dat o tom, jak uživatel dané látce rozumí.
-\end{itemize}
-
-% Write - vytvořit diagram a změnit referenci
-Popsaný model je vyobrazen na diagramu \ref{fig:navrh-5}. 
+% Final
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{1\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/diagrams/study-model.png}
+        \caption{Základní model struktury učení}
+        \label{fig:study-model}
+    \end{minipage}
+\end{figure}
 
 % Review
 \subsubsection{Průběh učení a opakování}

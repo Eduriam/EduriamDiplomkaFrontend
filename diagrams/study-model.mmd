@@ -1,0 +1,34 @@
+classDiagram
+    class Lesson {
+        +id: number
+    }
+
+    class Atom {
+        +id: number
+    }
+
+    class `*StudyBlock*` {
+        +id: number
+        +mode: StudyBlockMode
+    }
+
+    `*StudyBlock*` --> StudyBlockMode
+    class StudyBlockMode {
+        <<enumeration>>
+        Learn
+        Review
+    }
+
+    class ExplanationStudyBlock {
+        +content: ExplanationStudyBlockContent
+    }
+
+    class ExerciseStudyBlock {
+        +content: ExerciseStudyBlockContent
+    }
+
+    Lesson "1" --> "1..*" Atom
+    Atom "1" *-- "1..*" `*StudyBlock*`
+
+    `*StudyBlock*` <|-- ExplanationStudyBlock
+    `*StudyBlock*` <|-- ExerciseStudyBlock
