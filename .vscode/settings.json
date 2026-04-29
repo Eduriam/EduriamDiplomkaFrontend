@@ -52,11 +52,23 @@
     },
     {
       "name": "mermaid -> xelatex -> biber -> xelatex",
-      "tools": ["mermaid-setup", "mermaid-diagrams", "xelatex", "biber", "xelatex"]
+      "tools": [
+        "mermaid-setup",
+        "mermaid-diagrams",
+        "xelatex",
+        "biber",
+        "xelatex"
+      ]
     },
     {
       "name": "xelatex -> biber -> xelatex",
-      "tools": ["mermaid-setup", "mermaid-diagrams", "xelatex", "biber", "xelatex"]
+      "tools": [
+        "mermaid-setup",
+        "mermaid-diagrams",
+        "xelatex",
+        "biber",
+        "xelatex"
+      ]
     },
     {
       "name": "arara",
@@ -172,6 +184,9 @@
     "tetradickému",
     "triadické",
     "WCAG",
+    "refaktoring",
+    "refaktoringu",
+    "linterů",
     // Názvy produktů
     "Mockoon",
     "Kanban",
@@ -186,12 +201,14 @@
     "Aeonik", // font
     "Fira", // font
     "Typescale",
+    "Eduriam",
     // Jména lidí
     "Ivar",
     "Cockburn",
     "Cockburna",
     "Alistaira",
     "Nielsenem",
+    "Zimolka",
     // Oficiálně správná slova podle https://prirucka.ujc.cas.cz/
     "personalizovaně",
     "streamována",

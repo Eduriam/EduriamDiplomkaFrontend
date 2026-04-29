@@ -1,23 +1,17 @@
-%---------------------------------------------------------------
+% Final
 \chapter{Implementace a nasazení}
-%---------------------------------------------------------------
 
-% Outline:
-% - Úvod kapitoly a vymezení rozsahu.
-% - Postup při realizaci projektu: příprava, workflow, implementace funkcí.
-% - Nasazení aplikace: dev, stage, produkce.
-
-% Review
+% Final
 V předchozích kapitolách jsem se věnoval analýze a návrhu jednotlivých částí aplikace. V této kapitole navážu na předchozí kapitoly a popíšu, jakým způsobem jsem postupoval při implementaci a nasazení aplikace.
 
-% Review
-Nejprve popíšu úvodní úpravy aplikace, které jsem provedl s cílem připravit aplikaci na nadcházející vývoj. Tyto úpravy se týkaly zejména aktualizace používaných knihoven, aktualizace konvencí a linterů, refaktoringu kódu a zavedení nástrojů umělé inteligence pro asistenci při vývoji.
+% Final
+Nejprve se zaměřím na úvodní úpravy aplikace, které jsem provedl s cílem připravit aplikaci na nadcházející vývoj. Tyto úpravy se týkaly zejména aktualizace používaných knihoven, aktualizace konvencí a linterů, refaktoringu kódu a zavedení nástrojů umělé inteligence pro asistenci při vývoji.
 
-% Review
-Dále popíšu, jakým způsobem jsem při vývoji postupoval a jakým způsobem jsem spolupracoval s kolegou Bc. Jakubem Vondráčkem, který se v jeho diplomové práci zabývá backendovou částí této aplikace.
+% Final
+Dále popíšu, jakým způsobem jsem postupoval při vývoji a jakým způsobem jsem spolupracoval s kolegou Bc. Jakubem Vondráčkem, který se v rámci jeho diplomové práce věnuje backendové části této aplikace.
 
-% Review
-Dále se budu věnovat implementaci nejvýznamnějších funkcí aplikace. Mezi tyto funkce patří například nová struktura učení, notifikační systém, autentizace pomocí účtu Google nebo přizpůsobení aplikace tak, aby splňovala požadavky progresivních webových aplikací a bylo ji tak možné stáhnout a nainstalovat na zařízení uživatele.
+% Final - tady kdyžtak upravit pokud bych nedělal nějakou tu podkapitolu
+Dále podrobněji popíšu implementaci vybraných funkcí aplikace. Mezi tyto funkce patří například nová struktura učení, systém notifikací, autentizace pomocí účtu Google nebo přizpůsobení aplikace tak, aby splňovala požadavky progresivních webových aplikací a bylo ji tak možné stáhnout a nainstalovat na zařízení uživatele.
 
-% Review
-Nakonec popíšu, jakým způsobem jsem nasadil frontendovou část aplikace do jednotlivých prostředí. Nejprve popíšu testovací prostředí využívající mock API, které simuluje reálné API a umožňuje testování nezávisle na stavu backendové části aplikace. Dále popíšu druhé testovací prostředí, které již využívá backendové API nasazené v testovacím režimu. Nakonec popíšu nasazení do produkčního prostředí, kde aplikace využívá produkční verzi backendového API.   
+% Final
+Nakonec popíšu, jakým způsobem jsem nasadil frontendovou část aplikace do jednotlivých prostředí. Nejprve popíšu testovací prostředí, ve kterém aplikace využívá mock API. Tento mock simuluje reálné API a umožňuje tak testování nezávisle na stavu backendové části aplikace. Dále popíšu druhé testovací prostředí, ve kterém aplikace využívá backendové API nasazené v testovacím režimu. Nakonec popíšu nasazení do produkčního prostředí, ve kterém aplikace využívá produkční verzi backendového API. Věnovat se budu také nasazení knihoven, které jsem vytvořil v rámci vývoje této aplikace.
