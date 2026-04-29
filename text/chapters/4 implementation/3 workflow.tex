@@ -1,46 +1,38 @@
-% Outline:
-% - Iterativní implementační cyklus.
-% - Návaznost Gherkin -> implementace -> testy -> OpenAPI.
-% - Stručná spolupráce s backendem.
-
-% Review
+% Final
 \subsection{Postup při implementaci}
 
-% Review
-Po dokončení přípravy projektu jsem začal se samotnou implementací. Před samotnou implementací již byla dokončena většina kroků analýzy a společně s ní také úvodní verze návrhu uživatelského rozhraní. Měl jsem tak veškeré podklady pro zahájení implementace.
+% Final
+Po dokončení přípravy projektu jsem začal se samotnou implementací. Před začátkem implementace již byla dokončena většina kroků analýzy a společně s ní také základní verze návrhu funkcí a uživatelského rozhraní. Měl jsem tak veškeré podklady pro zahájení implementace.
 
-% Review
-Současně s implementací frontendové části projektu také probíhala implementace backendové části, kterou prováděl kolega Bc. Jakub Vondráček v rámci jeho diplomové práce. Z důvodu výrazných změn API bylo třeba zajistit vhodnou formu spolupráce tak, aby probíhal vývoj plynule a efektivně. Rozhodli jsme se tak využít agilní metodiku Kanban, která se osvědčila při vývoji původní aplikace \cite{Jenicek2024BachelorThesis}, kterou jsem vyvíjel s kolegou Bc. Janem Hlaváčem v rámci našich bakalářských prací. Tato metodika nám umožnila pracovat na jednotlivých funkcích takřka nezávisle na sobě a efektivně implementovat jednotlivé funkce. Důvody pro zvolení zmíněné metodiky jsem popsal v rámci mé bakalářské práce.
+% Final
+Současně s implementací frontendové části projektu také probíhala implementace backendové části, kterou prováděl kolega Bc. Jakub Vondráček v rámci jeho diplomové práce. Z důvodu výrazných změn API bylo třeba zajistit vhodnou formu spolupráce tak, aby probíhal vývoj plynule a efektivně. Rozhodli jsme se tak využít agilní metodiku Kanban, která se osvědčila při vývoji původní aplikace \cite{Jenicek2024BachelorThesis}, kterou jsem vyvíjel s kolegou Bc. Janem Hlaváčem v rámci našich bakalářských prací. Tato metodika nám umožnila pracovat na jednotlivých funkcích nezávisle na sobě a přehledně sledovat stav vývoje celé aplikace. Důvody pro zvolení zmíněné metodiky jsem podrobněji popsal v mé bakalářské práci a proto je zde nebudu znovu vypisovat \cite{Jenicek2024BachelorThesis}.
 
-% Review
-Implementaci funkcí jsem tak rozdělil do dvou fází. V první fázi jsem vždy implementoval danou funkci s využitím existujícího mock API, které jsem upravil tak, aby reflektovalo očekávanou strukturu nového API. V druhé fázi, poté co kolega Bc. Jakub Vondráček dokončil implementaci příslušných koncových bodů API, jsem napojil funkci na nové API a provedl případné úpravy v kódu frontendu. Jednotlivé fáze podrobněji popíšu v následujících částech textu.
+% Final
+Implementaci funkcí frontendu jsem dále rozdělil do dvou fází. V první fázi jsem vždy implementoval danou funkci s využitím existujícího mock API, který jsem upravil tak, aby reflektoval očekávanou strukturu nového API. V druhé fázi, poté co kolega Bc. Jakub Vondráček dokončil implementaci příslušných koncových bodů API, jsem napojil funkci na nové API a provedl případné úpravy v kódu frontendu. Jednotlivé fáze podrobněji popíšu v následujících částech textu.
 
-% Review
-\subsubsection{Implementace nových funkcí}
+% Final
+\subsubsection{Implementace funkcí pomocí mock API}
 
-% Review
+% Final
 Při implementaci nových funkcí jsem postupoval iterativním způsobem dle priorit jednotlivých požadavků. V rámci iterativního vývoje jsem postupoval v následujících krocích.
 
-% Review
-Nejprve jsem na základě případů užití a požadavků aplikace provedl podrobnou specifikaci scénářů v jazyce Gherkin. Tuto specifikaci jsem prováděl již přímo v repozitáři aplikace v souborech s příponou \texttt{.feature}. Současně s tím jsem pro danou funkci kompletně dokončil návrh uživatelského rozhraní.
+% Final
+Nejprve jsem na základě případů užití a požadavků aplikace provedl podrobnou specifikaci scénářů funkcí v jazyce Gherkin. Tuto specifikaci jsem prováděl již přímo v repozitáři aplikace v souborech s příponou \texttt{.feature}. Současně s tím jsem pro danou funkci kompletně dokončil návrh uživatelského rozhraní.
 
-% Review
-Na základě přesné specifikace scénářů jsem následně provedl implementaci samotné funkce společně s automatizovanými testy, které s pomocí nástroje Cucumber využívaly specifikované \texttt{.feature} soubory. Součástí implementace bylo také provedení změn v existujícím mocku backend API.
+% Final
+Na základě návrhu UI a přesné specifikace scénářů jsem následně provedl implementaci samotné funkce společně s vytvořením automatizovaných testů. Tyto testy bylo možné následně spouštět pomocí nástroje Cucumber podle specifikovaných \texttt{.feature} souborů. Součástí implementace bylo také provedení změn v existujícím mocku API v nástroji Mockoon.
 
-% Review
-Po dokončení implementace jsem otestoval nově vytvořenou funkci spuštěním automatizovaných testů. Následně jsem také provedl manuální testování dané funkce.
+% Final
+Po dokončení implementace jsem otestoval nově vytvořenou funkci pomocí manuálního testování a dále spuštěním automatizovaných testů.
 
-% Review
+% Final
 \subsubsection{Napojení funkcí na API}
 
-% Review
-Po tom, co kolega Bc. Jakub Vondráček dokončil implementaci příslušných koncových bodů API, jsem provedl napojení funkce na nové API. V rámci této fáze jsem postupoval následujícím způsobem.
+% Final
+Po tom, co kolega Bc. Jakub Vondráček dokončil implementaci příslušných koncových bodů API, jsem provedl napojení funkce na toto API. V rámci toho jsem postupoval následujícím způsobem.
 
-% Review
-Nejprve jsem na základě podrobné OpenAPI specifikace backend API vygeneroval ve frontendové části aplikace třídy a typy, které reflektují novou strukturu API. Díky automatické generaci typů na základě OpenAPI specifikace jsme tak zajistili konzistentnější a přesnější komunikaci mezi frontendovou a backendovou částí aplikace. Následně jsem provedl případné úpravy dané funkce a mocku API tak, aby odpovídaly nové struktuře API.
+% Final
+Nejprve jsem pomocí knihovny Orval\footnote{Dostupné na: \href{https://orval.dev/}{https://orval.dev/}} na základě podrobné OpenAPI specifikace\footnote{Dostupné na: \href{https://swagger.io/specification/}{https://swagger.io/specification/}} API, vygeneroval ve frontendové části TypeScript třídy a typy, které reflektují novou strukturu API. Zmíněná specifikace je součástí diplomové práce kolegy Bc. Jakuba Vondráčka. Díky automatické generaci typů, funkcí a tříd na základě OpenAPI specifikace jsme tak zajistili konzistentní a přesnou komunikaci mezi frontendovou a backendovou částí aplikace. Tato konzistence umožnila zajistit správnou práci s API a zamezit tak chybám, které by mohly kvůli nekonzistencím vznikat. Po vygenerování těchto tříd a typů jsem následně provedl případné úpravy dané funkce a mocku API tak, aby odpovídaly nové struktuře API.
 
-% Review
-Po napojení funkce na nové API jsem znovu provedl testování funkce spuštěním automatizovaných testů. Dále jsem provedl manuální testování dané funkce, tentokrát s využitím testovacího backend API.
-
-% Review
-Po provedení všech výše zmíněných kroků tak byla funkce dokončená a připravená k nasazení do produkčního prostředí.  
+% Final
+Po napojení funkce na API a po provedení změn v kódu jsem opět spustil automatizované testy. Funkci jsem pak nasadil do testovacího prostředí \texttt{stage}, kde jsem tuto funkci finálně otestoval s využitím testovacího backend API. Po provedení všech popsaných kroků pak byla funkce dokončená a připravená k nasazení do produkčního prostředí. 
