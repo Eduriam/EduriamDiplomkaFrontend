@@ -158,6 +158,7 @@
     "backendovou",
     "backendu",
     "backendového",
+    "backendová",
     "frameworku",
     "frameworkem",
     "frameworky",
@@ -188,6 +189,8 @@
     "refaktoring",
     "refaktoringu",
     "linterů",
+    "tokenu",
+    "notificationclick", // název události
     // Názvy produktů
     "Mockoon",
     "Kanban",

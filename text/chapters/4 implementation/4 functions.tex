@@ -158,17 +158,17 @@ Díky výše zmíněné konfiguraci se tak aplikace stala progresivní webovou a
 % Final
 Aplikaci také bude možné v budoucnu po doplnění dalších konfigurací, například s pomocí nástroje PWABuilder \cite{PWABuilder}, zabalit a publikovat na platformách Google Play, App Store nebo například Microsoft Store. Publikace na tyto platformy je časově značně náročná a týká se z velké části spíše právních otázek nežli softwarového inženýrství. Proto se samotné publikaci v rámci této práce nebudu věnovat.
 
-% Review
+% Final
 \subsection{Push notifikace}
 
-% Review
-Pro implementaci push notifikací jsem využil službu Firebase Cloud Messaging. Tato služba umožňuje webové aplikaci získat registrační token konkrétního zařízení a tento token následně využít pro odesílání notifikací ze serverové části aplikace. Ve frontendové části aplikace jsem proto implementoval službu, která po udělení oprávnění od uživatele inicializuje Firebase, získá token zařízení a odešle ho backendové části aplikace. Backend pak může tento token využít pro doručení push notifikací konkrétnímu uživateli.
+% Final
+Pro implementaci push notifikací jsem využil službu Firebase Cloud Messaging\footnote{Dostupné na: \href{https://firebase.google.com/products/cloud-messaging}{https://firebase.google.com/products/cloud-messaging}}. Tato služba umožňuje pro dané zařízení získat registrační token a následně z backendové části aplikace pomocí tohoto tokenu odesílat notifikace do daného zařízení.
 
-% Review
-Aby uživatel mohl notifikace jednoduše zapnout, vytvořil jsem v aplikaci nové upozornění \texttt{NotificationNotice}. Toto upozornění se zobrazuje na hlavní stránce v případě, že dané zařízení nemá povolené notifikace. Upozornění není získáváno z API, ale je vloženo přímo ve frontendové části aplikace do komponentu \texttt{NoticeBoard}, který jinak zobrazuje běžná upozornění získaná ze serveru. Pokud uživatel zvolí možnost zapnout notifikace, aplikace zobrazí systémový dialog prohlížeče pro udělení oprávnění. Pokud uživatel oprávnění udělí, aplikace získá registrační token zařízení a uloží ho pomocí API. Pokud uživatel notifikace odmítne, aplikace tuto volbu uloží lokálně na daném zařízení a upozornění mu dále nezobrazuje.
+% Final
+Celý proces funguje následovně. Nejprve je uživateli zobrazeno upozornění \texttt{NotificationNotice}, které uživateli nabídne možnost zapnout notifikace na daném zařízení. Pokud uživatel možnost odmítne, je do lokálního úložiště zapsána informace o tom, že uživatel notifikace odmítl, a není mu pak toto upozornění zobrazováno znovu. Pokud uživatel možnost zapnutí notifikací přijme, prohlížeč mu ukáže potvrzovací dialog pro udělení oprávnění. Pokud uživatel oprávnění udělí, frontend aplikace pro dané zařízení získá pomocí služby Firebase Cloud Messaging registrační token a ten pak odešle backendové části aplikace. Backend pak toto zařízení registruje a může následně do zařízení začít odesílat push notifikace.
 
-% Review
-Pro samotné zobrazování příchozích notifikací jsem rozšířil již existující Service Worker skript. Ten přijímá události typu \texttt{push} a následně pomocí rozhraní prohlížeče zobrazí uživateli notifikaci. Dále jsem doplnil obsluhu kliknutí na notifikaci, aby byl uživatel po kliknutí přesměrován zpět do aplikace. Aplikace tak dokáže zobrazovat notifikace i v situaci, kdy není otevřená v aktivním okně prohlížeče, což je pro praktické využití push notifikací zásadní.
+% Final
+Pro příjem a zobrazování příchozích notifikací jsem rozšířil již existující Service Worker skript. Ten nově přijímá události typu \texttt{push}, které jsou vyvolané prohlížečem při příchodu push zprávy. Po přijetí zprávy následně tento skript pomocí rozhraní prohlížeče zobrazí notifikaci uživateli. Dále jsem doplnil skript o zpracování události \texttt{notificationclick}, která je vyvolána, když uživatel klikne na danou notifikaci. Po kliknutí na notifikaci skript přesměruje uživatele na hlavní stránku aplikace. Díky využití Service Worker skriptu je tak možné přijímat zprávy a zobrazovat notifikace i v situaci, kdy není aplikace otevřená, což je pro využití push notifikací zásadní.
 
-% Review
-Součástí implementace bylo také doplnění nastavení notifikací v uživatelském nastavení aplikace. Uživatel si zde může zapnout nebo vypnout připomínání učení, které je reprezentováno nastavením \texttt{smartStudyReminderEnabled}. Toto nastavení je ve výchozím stavu zapnuté, protože připomínání učení má uživateli pomoci udržet pravidelnost v učení. V rámci této práce jsem se zaměřil především na frontendovou část implementace, tedy získání oprávnění, registraci zařízení a zobrazení notifikací. Samotné rozhodování o tom, kdy má být konkrétní notifikace odeslána, zůstává zodpovědností backendové části aplikace.
+% Final
+Součástí této implementace bylo také zavedení nových nastavení pro notifikace. Uživatel si nyní může v nastavení aplikace vybrat, které typy notifikací chce přijímat. Tímto nastavením se pak řídí backendová část aplikace při odesílání jednotlivých push notifikací.
