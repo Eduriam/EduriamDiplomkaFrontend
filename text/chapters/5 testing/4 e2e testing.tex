@@ -1,23 +1,23 @@
-% Done
-\section{End-to-end testování s mock API}
+% Final
+\section{End-to-end testování s mockem API}
 
-% Review
-End-to-end testování jsem prováděl pomocí nástrojů Cucumber\footnote{Dostupné na: \href{https://cucumber.io/}{https://cucumber.io/}} a Playwright\footnote{Dostupné na: \href{https://playwright.dev/}{https://playwright.dev/}}. Cucumber je nástroj, který umožňuje specifikovat testovací scénáře pomocí jazyka Gherkin a následně testy dle scénářů automaticky spouštět. Playwright je dále framework, který umožňuje vytváření jednotlivých testů pomocí programovacího jazyka TypeScript a simulovat tak chování uživatele v aplikaci.
+% Final
+End-to-end testování jsem prováděl s využitím nástrojů Cucumber\footnote{Dostupné na: \href{https://cucumber.io/}{https://cucumber.io/}} a Playwright\footnote{Dostupné na: \href{https://playwright.dev/}{https://playwright.dev/}}. Cucumber je nástroj, který umožňuje specifikovat testovací scénáře pomocí jazyka Gherkin a následně testy dle scénářů automaticky spouštět \cite{CucumberDocs}. Playwright je dále framework, který umožňuje vytváření jednotlivých testů pomocí programovacího jazyka TypeScript a simulovat tak chování uživatele v aplikaci.
 
-% Review
-Díky zvoleným nástrojům jsem tak mohl v rámci sepisování případů užití specifikovat scénáře v jazyce Gherkin, které popisovaly, jak by se daná funkce měla chovat z pohledu uživatele. Tyto scénáře pak posloužily jednak jako podklad pro implementaci a jednak jako definice scénářů end-to-end testů. Díky tomu bylo možné na jednom místě přesně specifikovat, jak uživatel očekává, že se daná funkce bude chovat, a následně spustit testy, které ověří, že se tak daná funkce skutečně chová. Tento přístup tak vedl ke značnému zjednodušení tvorby end-to-end testů a k zajištění konzistence mezi požadavky definující chování aplikace, a testy, které toto chování ověřují.
+% Final
+Díky zvoleným nástrojům a postupu jsem tak mohl v rámci sepisování případů užití specifikovat scénáře popisující danou funkci přímo v jazyce Gherkin. Tyto scénáře pak posloužily jednak jako podklad pro implementaci a jednak jako definice end-to-end testů. Díky tomu bylo možné na jednom místě přesně specifikovat, jak se z pohledu uživatele očekává, že se bude daná funkce chovat, a následně spustit testy, které ověří, že se tak daná funkce skutečně chová. Tento přístup tak vedl ke značnému zjednodušení tvorby end-to-end testů a k zajištění konzistence mezi požadavky definující chování aplikace, a testy, které toto chování ověřují.
 
-% Review
-Při tvorbě end-to-end testů jsem se rozhodl využívat mock API, pro simulaci reálného API. Jedná se tedy o zjednodušenou verzi end-to-end testů, protože testy ověřují chování pouze frontendové části aplikace. Pro tento přístup jsem se rozhodl z několika důvodů.
+% Final
+Při tvorbě end-to-end testů jsem se rozhodl využít mock API, pro simulaci reálného API. Jedná se tedy o zjednodušenou verzi end-to-end testů, protože testy ověřují chování pouze frontendové části aplikace. Pro tento přístup jsem se rozhodl z několika důvodů.
 
-% Review
-Zaprvé, díky využití mock API je možné testy vytvářet a spouštět nezávisle na stavu implementace backendové části aplikace. To mi umožnilo pracovat na testech nezávisle na stavu backendové části aplikace a vytvářet tak testy souběžně s implementací jednotlivých funkcí ve frontendové části aplikace.
+% Final
+Zaprvé, díky využití mock API je možné testy vytvářet a spouštět nezávisle na stavu implementace backendové části aplikace. To mi umožnilo vytvářet a spouštět testy průběžně při implementaci jednotlivých funkcí, přestože backendová část aplikace ještě nebyla dokončená.
 
-% Review
-Důležitým limitujícím faktorem end-to-end testů bývají jejich rychlost a náklady na spouštění, které jsou způsobeny komplexností celé aplikace \cite{IBMEndToEndTesting}. Díky využití mock API jsem tak mohl značně zefektivnit a zrychlit spouštění těchto testů. Testy jsem tak mohl často spouštět lokálně v průběhu vývoje, což mi umožnilo rychleji implementovat nové funkce a ihned ověřovat, že fungují dle očekávání.
+% Final
+Podstatným limitujícím faktorem end-to-end testů bývají jejich rychlost a náklady na spouštění, které jsou způsobeny komplexností testovaných systémů \cite{IBMEndToEndTesting}. Díky využití mock API jsem tak mohl značně zefektivnit a zrychlit spouštění těchto testů. Testy jsem tak mohl často spouštět lokálně v průběhu vývoje, což mi umožnilo rychleji implementovat nové funkce a ihned ověřovat, že fungují dle očekávání.
 
-% Review
-Celkem jsem tak v průběhu implementace vytvořil přes 120 testů, které mi umožnily rychle a automatizovaně ověřovat, že se frontend aplikace chová dle specifikovaných případů užití.
+% Final
+Celkem jsem tak v průběhu implementace vytvořil přes 120 testů, které mi umožnily rychle a automatizovaně ověřovat, že se frontend aplikace chová dle specifikovaných scénářů.
 
-% Review
-Testy momentálně ověřují funkčnost frontendové části aplikace. V budoucnu je však bude možné snadno napojit na reálné API upravením pomocných funkcí, které momentálně nastavují mock API prostředí. Testy pak bude možné nasadit do určitých kroků CI/CD a spouštět je tak například před nasazením do produkčního prostředí. Testy jsou tak připraveny na budoucí rozšíření, aby ověřovaly funkčnost i backendové části aplikace.
+% Final
+Testy momentálně ověřují funkčnost frontendové části aplikace. V budoucnu je však bude možné snadno napojit na reálné API upravením pomocných funkcí, které momentálně konfigurují mock API pro testování. Díky této úpravě pak bude možné s pomocí těchto testů ověřovat funkčnost jak frontendové, tak backendové části aplikace. Testy pak bude možné nasadit do určitých kroků CI/CD a spouštět je tak například před nasazením aplikace do produkčního prostředí. Z důvodu rozsahu této práce jsem se rozhodl tuto část ponechat jako možné budoucí rozšíření aplikace.

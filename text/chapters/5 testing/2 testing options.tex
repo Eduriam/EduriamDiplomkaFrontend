@@ -1,20 +1,20 @@
-% Done
+% Final
 \section{Volba vhodných forem testování}
 
-% Review
-V této sekci se budu věnovat volbě vhodných forem testování. Forem testování existuje celá řada a každá forma testování je vhodná pro různé účely a projekty. Při volbě testování jsem zvažoval různé formy testování, včetně manuálního testování, automatizovaných testů a testů použitelnosti.
+% Final
+V této sekci se budu věnovat volbě vhodných forem testování. Forem testování existuje celá řada a každá forma testování je vhodná pro různé účely a typy projektů. Při volbě testování jsem zvažoval různé formy testování, včetně manuálního testování, automatizovaných testů a testů použitelnosti.
 
-% Review
-Jako první formu testování jsem zvolil manuální testování, které mi umožnilo v průběhu vývoje aplikace cíleně testovat části, které jsem implementoval. Způsob využití tohoto testování podrobněji popíšu v dalších částech tohoto textu.
+% Final
+Jako první formu testování jsem zvolil manuální testování, které mi umožnilo v průběhu vývoje cíleně testovat části aplikace, které jsem implementoval. Způsob využití tohoto testování podrobněji popíšu v dalších částech tohoto textu.
 
-% Review
-Dále jsem se v rámci volby vhodných forem testování rozhodl zavést do aplikace automatizované testy. Automatizované testy umožní v aplikaci stanovit určitý standard kvality a stability funkcí, což je klíčové pro dlouhodobé fungování aplikace. Automatizované testy jsem se také rozhodl do aplikace zavést v souladu s návrhem úprav do budoucna původní aplikace, který jsem popsal v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}. 
+% Final
+Dále jsem se v rámci volby vhodných forem testování rozhodl zavést do aplikace automatizované testy. Automatizované testy umožní v aplikaci stanovit určitý standard kvality a stability funkcí, což je klíčové pro dlouhodobé fungování a udržovatelnost aplikace. Automatizované testy jsem se také rozhodl do aplikace zavést v souladu s návrhem úprav do budoucna původní aplikace, který jsem popsal v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}.
 
-% Review
-V rámci automatizovaných testů jsem se rozhodl zavést do aplikace automatizované end-to-end testy. Tyto testy umožní testovat funkčnost aplikace jako celku a ověřit tak, že se aplikace skutečně chová dle očekávání a specifikovaných požadavků. Tento typ automatizovaných testů jsem zvolil zejména kvůli tomu, že frontendová část aplikace cíleně neobsahuje velké množství byznys logiky a její komponenty jsou cíleně navrženy co nejjednodušším způsobem. End-to-end testy jsem tak vyhodnotil jako nejlepší přístup, protože v kombinaci se zvolenou metodikou BDD a nástrojem Cucumber popsanými v kapitole \nameref{sec:gherkin-specification} umožňují velice efektivně ověřit základní funkčnost všech implementovaných funkcí. S ohledem na přínos těchto testů a jejich efektivitu implementace jsem tak vyhodnotil, že tyto testy přinesou nejvyšší přínos v poměru k množství investovaného času a zdrojů.
+% Final
+V rámci automatizovaných testů jsem se rozhodl do aplikace zavést automatizované end-to-end testy, které umožní testovat funkčnost aplikace jako celku a ověřit tak, že se aplikace skutečně chová dle specifikovaných požadavků. Tento typ automatizovaných testů jsem zvolil zejména kvůli tomu, že frontendová část aplikace cíleně neobsahuje velké množství aplikační logiky a její komponenty jsou cíleně navrženy co nejjednodušším způsobem. End-to-end testování jsem tak vyhodnotil jako vhodný přístup, protože v kombinaci se zvolenou metodikou BDD a nástrojem Cucumber popsanými v podkapitole \nameref{sec:gherkin-specification} umožňují velice efektivně ověřit základní funkčnost všech implementovaných funkcí. Při implementaci nových nebo úpravě již existujících funkcí tak lze snadno ověřit, že nedošlo k nežádoucím změnám a že nejpodstatnější části aplikace stále fungují dle očekávání. S ohledem na výhody těchto testů a jejich efektivitu implementace jsem tak vyhodnotil, že tyto testy budou mít pro aplikaci nejvyšší přínos v poměru k množství investovaného času a zdrojů.
 
-% Review
-V rámci zajištění kvality celé aplikace jsem se dále rozhodl provést testy použitelnosti. Konkrétně jsem se rozhodl provést kvalitativní uživatelské testování, které umožní ověřit, že jsou implementované funkce snadno a srozumitelně použitelné z pohledu uživatele \cite{NURUserInterfaceTesting}. Tomuto testování se opět budu podrobněji věnovat v následujících částech tohoto textu.
+% Final
+V rámci zajištění kvality uživatelského rozhraní jsem se dále rozhodl provést testy použitelnosti. Konkrétně jsem se rozhodl provést kvalitativní uživatelské testování, které mi umožní ověřit, že jsou implementované funkce snadno a srozumitelně použitelné z pohledu uživatele \cite{NURUserInterfaceTesting}. Tomuto testování se opět budu podrobněji věnovat v následujících částech tohoto textu.
 
-% Review
-Kombinací zvolených testů tak vznikne ucelený systém testování, díky kterému bude možné zajistit vyšší kvalitu a stabilitu celé aplikace. Automatizované end-to-end testy zajistí základní funkčnost všech implementovaných funkcí a dále zajistí, že kriticky důležité funkce aplikace stále fungují před nasazením aplikace do produkčního prostředí. Manuální testování pak umožňuje se efektivně zaměřit na specifické problémy a chyby v aplikaci. Kvalitativní uživatelské testování dále umožní zajistit, že aplikace skutečně pokrývá potřeby uživatelů a že jsou funkce pro uživatele srozumitelné a snadno použitelné.
+% Final
+Kombinací zvolených přístupů tak vznikne základní systém testů, díky kterému bude možné zajistit vyšší kvalitu a stabilitu celé aplikace. Automatizované end-to-end testy ověří základní funkčnost všech implementovaných částí aplikace. Manuální testování pak umožní se efektivně zaměřit na specifické funkce, problémy a chyby v aplikaci. Kvalitativní uživatelské testování dále umožní zajistit, že aplikace skutečně splňuje očekávání uživatelů a že jsou funkce pro uživatele srozumitelné a snadno použitelné.
