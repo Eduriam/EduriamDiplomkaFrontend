@@ -1,0 +1,92 @@
+% Final
+\chapter{Výsledky uživatelského testování}\label{chapter:test-problems}
+
+V této příloze shrnu výsledky uživatelského testování, konkrétně problémy, nedostatky a návrhy na zlepšení testované aplikace. U každého problému jsem určil jeho závažnost a navrhl jeho možné řešení.
+
+\section*{Problém 1 – Není možné zobrazit heslo při registraci}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Při vyplňování formuláře pro registraci aplikace neumožňuje zobrazit si vyplňované heslo. Většina uživatelů při testování zmínila, že jim tato možnost v aplikaci chybí. Podobný problém nastává i při přihlašování a změně existujícího hesla.\\
+    \textbf{Možné řešení:} & Přidat do textového pole hesla tlačítko s ikonou oka umožňující zobrazit zadávané heslo. \\
+    \textbf{Závažnost:} & Střední \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 2 – Není zřejmé, ze kterého kurzu je vybrána lekce dle studijního plánu}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Na hlavní stránce není uživatelům jasné, ze kterého kurzu je vybrána lekce podle studijního plánu. Uživatelé tak neví, který kurz se momentálně učí. \\
+    \textbf{Možné řešení:} & Přidat na hlavní stránku informace o tom, ze kterého kurzu je daná lekce vybrána. \\
+    \textbf{Závažnost:} & Vysoká \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 3 – Upoutávka na lekci je pro uživatele matoucí}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Na hlavní stránce se zobrazuje upoutávka na nadcházející lekci ve formátu GIFu ukazující průběh vybrané lekce. Cílem tohoto návrhu bylo pomocí GIFu upoutat pozornost uživatele a přimět ho si lekci spustit. Uživatelské testování ovšem ukázalo, že je tato upoutávka z důvodu struktury lekcí příliš nevýrazná a není tak pro uživatele vizuálně poutavá. Pro většinu uživatelů byla naopak tato upoutávka matoucí.  \\
+    \textbf{Možné řešení:} & Nahradit GIF upoutávku statickým obrázkem, který bude reprezentovat danou lekci nebo daný kurz. \\
+    \textbf{Závažnost:} & Vysoká \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 4 – Zvýrazňování tlačítek při kliknutí na mobilních zařízeních}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Jeden z uživatelů vhodně poznamenal, že při kliknutí na libovolné tlačítko se na mobilních zařízeních na krátkou chvíli zobrazí modrý rámeček kolem daného tlačítka. Tento nežádoucí efekt pak má za důsledek to, že z pohledu uživatele aplikace vypadá nefunkčně, obzvláště pokud se rámeček zobrazuje u tlačítek jiných tvarů, jako například u kulatého profilového obrázku uživatele.  \\
+    \textbf{Možné řešení:} & Zadefinovat styly aplikace, které budou tomuto výchozímu chování předcházet. \\
+    \textbf{Závažnost:} & Střední \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 5 – Pomocná nabídka znaků překrývá tlačítko pro pokračování lekce}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Při vyplňování cvičení, ve kterých má uživatel za úkol ručně doplňovat kód, je uživateli na mobilních zařízeních zobrazena pomocná nabídka znaků, díky které má jednodušší přístup k některým znakům. Díky této nabídce může snadno doplňovat do kódu speciální znaky a následně potvrdit svoji odpověď. Testování ovšem ukázalo, že tato nabídka překrývá původní tlačítko pro kontrolu odpovědi v jednotlivých cvičeních a aplikace tak vypadá z pohledu uživatele nefunkčně. \\
+    \textbf{Možné řešení:} & Změnit zobrazování pomocné nabídky tak, aby se zobrazila pouze, pokud má uživatel vybrané některé z textových polí. Po dokončení vyplňování odpovědi pak nebude uživateli překážet při dokončení cvičení. \\
+    \textbf{Závažnost:} & Vysoká \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 6 – Možnost přetahování slov z nabídky slov při cvičení}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & V aplikaci existuje cvičení, ve kterém mají uživatelé za úkol doplnit kód s pomocí slov z nabídky. Momentální implementace umožňuje doplňování pouze pomocí klikání na jednotlivá slova v nabídce. Přestože všichni uživatelé zvládli tímto způsobem cvičení vyplnit, ukázalo se, že část uživatelů má tendenci toto cvičení vyplňovat přetahováním jednotlivých slov z nabídky na daná místa v kódu. Toto přetahování ovšem není v aplikaci implementováno. \\
+    \textbf{Možné řešení:} & Zavést do aplikace možnost vyplňovat do kódu slova z nabídky pomocí přetahování jednotlivých slov. \\
+    \textbf{Závažnost:} & Střední \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 7 – Persistence nastavení hlasu napříč lekcemi}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & V rámci lekcí mohou být lekce doplněny o audio nahrávky vysvětlující dané cvičení. Někteří uživatelé ovšem vyjádřili preferenci cvičení vyplňovat bez zvuku a označili zvuk za rušivý. Aplikace již umožňuje vypnout zvuk pro cvičení v rámci dané lekce, nicméně toto nastavení není zachováno napříč lekcemi. Z důvodu silné preference některých uživatelů by bylo vhodné toto nastavení zachovat napříč lekcemi, aby nebyli uživatelé nuceni zvuk neustále vypínat. \\
+    \textbf{Možné řešení:} & Uložit nastavení audionahrávky, aby bylo zachováno napříč lekcemi. 
+    \textbf{Závažnost:} & Vysoká \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 8 – Zobrazování prohlížeče při učení}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Při učení mají uživatelé možnost si zobrazit výstup kódu například v podobě terminálu nebo webové stránky. Momentálně je záložka tohoto výstupu zobrazována v editoru kódu při vyplňování cvičení, přestože uživatelé mohou zobrazit výstup kódu až po vyplnění cvičení. Tato záložka tak byla pro uživatele matoucí, protože nevěděli, proč nemohou záložku otevřít.  \\
+    \textbf{Možné řešení:} & Zobrazit záložku s výstupem kódu až po vyplnění cvičení. \\ 
+    \textbf{Závažnost:} & Střední \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 9 – V nastavení kurzů nelze snadno přidat nový kurz}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Stránka s nastavením kurzů umožňuje uživateli pouze odstraňovat zapsané kurzy a neumožňuje mu zapisovat kurzy nové.  \\
+    \textbf{Možné řešení:} & Zobrazit na stránce nastavení kurzů možnost si otevřít seznam dostupných kurzů a zapsat si nový kurz. \\ 
+    \textbf{Závažnost:} & Střední \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 10 – Nemožnost vybrat více témat při vyplňování úvodního dotazníku}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Stránka s úvodním dotazníkem neumožňuje uživateli si vybrat více témat, která ho zajímají. Stejný problém nastává i při vyplňování dotazníku pro doporučování kurzů na stránce doporučených kurzů. \\
+    \textbf{Možné řešení:} & Umožnit uživateli si vybrat více témat, která ho zajímají v rámci úvodního dotazníku a dotazníku pro doporučování kurzů. \\ 
+    \textbf{Závažnost:} & Střední \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
+
+\section*{Problém 11 – Responzivita položek na stránkách obchodu a přizpůsobení avatara}
+\begin{tabular}{lp{0.7\linewidth}}
+    \textbf{Popis:} & Stránka obchodu a stránka pro přizpůsobení avatara obsahují tlačítka, která umožňuji zakoupit resp. vybrat danou položku. Tato tlačítka mají ovšem pevně danou velikost a s měnící se velikostí obrazovky se mění pouze jejich rozložení. Kvůli tomuto chování ovšem na některých velikostech obrazovky může stránka působit designově nekompaktně. \\
+    \textbf{Možné řešení:} & Změnit tlačítka tak, aby se jejich velikost a rozložení lépe přizpůsobovaly velikosti obrazovky.  \\ 
+    \textbf{Závažnost:} & Střední \\
+    \textbf{Stav:} & Opraveno  \\
+\end{tabular}
