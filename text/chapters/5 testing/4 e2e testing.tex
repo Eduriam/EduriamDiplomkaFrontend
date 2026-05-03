@@ -17,7 +17,7 @@ Zaprvé, díky využití mock API je možné testy vytvářet a spouštět nezá
 Podstatným limitujícím faktorem end-to-end testů bývají jejich rychlost a náklady na spouštění, které jsou způsobeny komplexností testovaných systémů \cite{IBMEndToEndTesting}. Díky využití mock API jsem tak mohl značně zefektivnit a zrychlit spouštění těchto testů. Testy jsem tak mohl často spouštět lokálně v průběhu vývoje, což mi umožnilo rychleji implementovat nové funkce a ihned ověřovat, že fungují dle očekávání.
 
 % Final
-Celkem jsem tak v průběhu implementace vytvořil přes 120 testů, které mi umožnily rychle a automatizovaně ověřovat, že se frontend aplikace chová dle specifikovaných scénářů.
+Celkem jsem tak v průběhu implementace vytvořil přes 130 testů, které mi umožnily rychle a automatizovaně ověřovat, že se frontend aplikace chová dle specifikovaných scénářů.
 
 % Final
 Testy momentálně ověřují funkčnost frontendové části aplikace. V budoucnu je však bude možné snadno napojit na reálné API upravením pomocných funkcí, které momentálně konfigurují mock API pro testování. Díky této úpravě pak bude možné s pomocí těchto testů ověřovat funkčnost jak frontendové, tak backendové části aplikace. Testy pak bude možné nasadit do určitých kroků CI/CD a spouštět je tak například před nasazením aplikace do produkčního prostředí. Z důvodu rozsahu této práce jsem se rozhodl tuto část ponechat jako možné budoucí rozšíření aplikace.

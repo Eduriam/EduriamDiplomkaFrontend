@@ -1,41 +1,41 @@
 % Final
 \section{Zhodnocení řešení a návrh úprav do budoucna}
 
-% Review
+% Final
 V této části textu shrnu výsledky této práce a navrhnu možnosti dalšího rozvoje aplikace do budoucna.
 
 % Final
 \subsection{Zhodnocení řešení}
 
-% Review
+% Final
 V rámci analýzy aplikace jsem definoval 35 funkčních požadavků. Všechny tyto požadavky se mi podařilo realizovat a otestovat pomocí manuálních a automatizovaných testů. Vybrané požadavky jsem následně také testoval v rámci uživatelského testování.
 
 % Review - zde ověřit, jestli jsem nakonec měl 9 požadavků a že jsem všechny zmínil
-Dále bylo v rámci analýzy definováno 9 nefunkčních požadavků, které se také podařilo v rámci práce realizovat. V rámci úvodních fází vývoje jsem odstranil přebytečné funkce původní aplikace a vytvořil nový návrh uživatelského rozhraní. Vytvořil jsem oddělené knihovny komponentů uživatelského rozhraní, které lze využívat napříč různými částmi projektu. Dále jsem do aplikace zavedl zjednodušené automatizované end-to-end testy, které umožňují ověřovat základní funkčnost aplikace. V rámci úprav kódu jsem déle zavedl automaticky generované typy a třídy dle OpenAPI specifikace backendového API, které umožňují snadnější a konzistentnější práci se zmíněným API. Z aplikace jsem nakonec vytvořil progresivní webovou aplikaci, která umožňuje uživatelům přijímat push notifikace a kterou si mohou uživatelé stáhnout a nainstalovat na svá zařízení.
+Dále bylo v rámci analýzy definováno 9 nefunkčních požadavků, které se mi také podařilo v rámci práce realizovat. V rámci úvodních fází vývoje jsem odstranil přebytečné funkce původní aplikace a vytvořil nový návrh uživatelského rozhraní. Vytvořil jsem také oddělené knihovny komponentů uživatelského rozhraní, které lze využívat napříč různými částmi projektu. Dále jsem do aplikace zavedl zjednodušené automatizované end-to-end testy, které umožňují ověřovat základní funkčnost frontendové části aplikace. V rámci úprav kódu jsem déle zavedl automaticky generované typy a třídy dle OpenAPI specifikace backendového API, které umožňují snadnější a konzistentnější práci se zmíněným API. Z aplikace jsem nakonec vytvořil progresivní webovou aplikaci, která umožňuje uživatelům přijímat push notifikace a kterou si mohou uživatelé stáhnout a nainstalovat na svá zařízení.
 
-% Write - zde ještě ověřit, jestli jsem opravil většinu věcí
-V rámci testování se mi podařilo vytvořit přes 120 automatizovaných zjednodušených end-to-end testů, které ověřují funkčnost frontendové části aplikace s využitím mock API. Tyto testy jsou přizpůsobené tak, aby je bylo možné v budoucnu snadno připojit na reálné API a pokrýt tak těmito testy také backendovou část aplikace. Dále jsem v rámci práce provedl testování použitelnosti, které ukázalo, že jsou základní funkce aplikace pro uživatele snadno použitelné a intuitivní. V rámci těchto testů bylo odhaleno několik nedostatků a problémů, z nichž jsem následně většinu opravil.
+% Review - zde ještě ověřit, jestli jsem opravil většinu věcí
+V rámci testování se mi podařilo vytvořit přes 130 automatizovaných zjednodušených end-to-end testů, které ověřují funkčnost frontendové části aplikace s využitím mock API. Tyto testy jsou přizpůsobené tak, aby je bylo možné v budoucnu snadno připojit na reálné API a pokrýt tak těmito testy také backendovou část aplikace. Dále jsem v rámci práce provedl testování použitelnosti, které ukázalo, že jsou základní funkce aplikace pro uživatele snadno použitelné a intuitivní. V rámci těchto testů bylo také odhaleno několik nedostatků a problémů, z nichž jsem následně většinu opravil.
 
-% Review
-Celkově se tak podařilo na základě definovaných požadavků vytvořit funkční aplikaci a následně ji nasadit do testovacího a produkčního prostředí. 
+% Final
+Celkově se tak podařilo splnit všechny stanovené cíle a na základě definovaných požadavků vytvořit funkční aplikaci a následně ji nasadit do testovacího a produkčního prostředí.
 
 % Final
 \subsection{Návrh úprav do budoucna}
 
-% Review
-V rámci budoucího vývoje bude možné aplikaci rozšířit o další funkce a zdokonalit ji v mnoha různých ohledech. V této části textu navrhnu možná rozšíření aplikace, která by bylo vhodné v budoucnu implementovat.
+% Final
+V rámci budoucího vývoje bude možné aplikaci rozšířit o další funkce a zdokonalit ji v mnoha různých ohledech. V této části textu navrhnu možná rozšíření aplikace, která by bylo vhodné v budoucnu realizovat.
 
-% Review
-Prvním mým návrhem je postupná implementace, testování a rozšiřování komponentů pro cvičení a vysvětlování látky. V současné době aplikace obsahuje komponenty, díky kterým lze vyučovat základy programování. Tyto komponenty lze ovšem dále rozšiřovat a zdokonalovat. Při vývoji a testování by bylo vhodné se zaměřit zejména na zajištění snadné použitelnosti komponentů, pečlivé testování responzivity a zajištění konzistentního designu. Kromě toho by bylo vhodné se dále zaměřit na interaktivitu, animace, přechody a efekty, díky kterým bude moci být učení poutavější a záživnější. Celkově by tak bylo vhodné vytvořit kompletní knihovnu komponentů, se zaměřením na jejich kvalitu, interaktivitu a použitelnost.
+% Final
+Prvním mým návrhem je postupná implementace, testování a rozšiřování komponentů pro cvičení a vysvětlování látky. V současné době aplikace obsahuje komponenty, díky kterým lze vyučovat základy programování. Tyto komponenty lze však dále rozšiřovat a zdokonalovat. Bylo by vhodné se zaměřit zejména na zajištění snadné použitelnosti komponentů, pečlivé testování responzivity a zajištění konzistentního designu. Kromě toho by bylo dále vhodné se zaměřit na interaktivitu, animace, přechody a efekty, díky kterým bude moci být učení poutavější a záživnější. Celkově tak lze v budoucnu vytvořit kompletní knihovnu komponentů pro výuku programování, se zaměřením na jejich kvalitu, interaktivitu a použitelnost.
 
-% Review
-Druhým návrhem je rozšíření automatizovaných testů. Ve stávající aplikaci jsou zavedeny základní automatizované end-to-end testy, které využívají mock API. V budoucnu by bylo vhodné tyto testy napojit na reálné API a pokrýt tak testováním i backendovou část aplikace. Testy je také možné rozšířit tak, aby pokryly více různých případů užití aplikace. Testy by dále bylo vhodné zavést do CI/CD a spouštět je tak například před nasazením aplikace do produkčního prostředí.
+% Final
+Druhým návrhem je rozšíření automatizovaných testů. Ve stávající aplikaci jsou zavedeny základní automatizované end-to-end testy, které využívají mock API. V budoucnu by bylo vhodné tyto testy napojit na reálné API a pokrýt tak testováním i backendovou část aplikace. Testy je také možné rozšířit tak, aby pokryly více různých případů užití aplikace. Testy by dále bylo vhodné zavést do CI/CD a spouštět je tak automaticky například před nasazením aplikace do produkčního prostředí.
 
-% Review
-Třetím návrhem je postupné zdokonalování již existujících funkcí s pomocí iterativního testování. Současná aplikace již obsahuje řadu funkcí, díky kterým je možné uživatele učit a motivovat ho k dlouhodobému používání aplikace. Budoucí vývoj by se tak měl zaměřit zejména na postupné zdokonalování již existujících funkcí a zajištění jejich kvality, stability a použitelnosti. Toho lze docílit postupným testováním jednotlivých funkcí se zaměřením na testování použitelnosti.
+% Final
+Třetím návrhem je postupné zdokonalování již existujících funkcí s pomocí iterativního testování. Současná aplikace již obsahuje řadu funkcí, díky kterým je možné uživatele učit a motivovat ho k dlouhodobému používání aplikace. Budoucí vývoj by se tak měl zaměřit zejména na postupné zdokonalování již existujících funkcí a na zajištění jejich kvality, stability a použitelnosti. Toho lze docílit postupným testováním jednotlivých funkcí, zejména se zaměřením na testování použitelnosti.
 
-% Review
+% Final
 Čtvrtým návrhem je zavedení systematického sledování provozu aplikace a sběru zpětné vazby od uživatelů. Jelikož byla aplikace nasazena do produkčního prostředí, bude v budoucnu vhodné sledovat nejen technické chyby, ale také způsob, jakým uživatelé jednotlivé části aplikace skutečně používají. Na základě těchto informací bude možné lépe určit, které části aplikace jsou pro uživatele problematické, které funkce jsou využívány nejčastěji a které oblasti by měly být dále upraveny.
 
-% Review
+% Final
 Celkově tak aplikace může být dále rozvíjena jak po stránce funkční, tak po stránce technické kvality a použitelnosti. Budoucí vývoj by se měl zaměřit zejména na rozšiřování výukových komponentů, doplnění automatizovaného testování, iterativní zdokonalování existujících funkcí a průběžné sledování provozu aplikace společně se sběrem relevantních informací o chování uživatelů. Díky tomu bude možné aplikaci dlouhodobě udržovat a systematicky zvyšovat její kvalitu.
