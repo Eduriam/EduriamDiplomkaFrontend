@@ -9,10 +9,11 @@ V této příloze lze nalézt seznam všech nefunkčních požadavků aplikace.
 \section{NP-1 Odstranění přebytečných funkcí}\label{sec:np-remove-extra-functions}
 
 % Final
-\begin{tabular}{lp{0.7\linewidth}}
+\begin{tabularx}{\linewidth}{lX}
     \textbf{Priorita:} & Must have \\
     \textbf{Kategorie:} & Udržovatelnost systému \\
-\end{tabular}
+    \textbf{Kritérium splnění:} & Požadavek je splněn, pokud ve frontendové aplikaci nejsou pro běžného uživatele dostupné stránky, navigační položky a cvičení, které se týkají původní domény výuky jazyků. \\
+\end{tabularx}
 
 % Final
 Jelikož se nově vznikající aplikace bude zaměřovat na výuku programování, bude třeba odstranit funkce týkající se původní domény výuky jazyků. Tyto funkce jsem specifikoval v rámci analýzy stávajícího řešení.
@@ -21,34 +22,24 @@ Jelikož se nově vznikající aplikace bude zaměřovat na výuku programován�
 \section{NP-2 Nový design uživatelského rozhraní}\label{sec:np-new-ui-design}
 
 % Final
-\begin{tabular}{lp{0.7\linewidth}}
+\begin{tabularx}{\linewidth}{lX}
     \textbf{Priorita:} & Must have \\
     \textbf{Kategorie:} & Použitelnost systému \\
-\end{tabular}
+    \textbf{Kritérium splnění:} & Požadavek je splněn, pokud existuje nový \textit{high fidelity} prototyp uživatelského rozhraní pokrývající všechny definované funkční a nefunkční požadavky aplikace. \\
+\end{tabularx}
 
 % Final
 Jelikož aplikace mění své zaměření z výuky jazyků na výuku programování, je třeba kompletně změnit a přizpůsobit i celý vzhled uživatelského rozhraní. Měl by tak být vytvořen kompletně nový návrh uživatelského rozhraní, který se bude zahrnovat jak nové, tak i existující funkce aplikace.
 
 % Final
-\section{NP-3 Zpřehlednění navigace v aplikaci}\label{sec:np-navigation-clarity}
+\section{NP-3 Vytvoření knihovny komponentů}\label{sec:np-component-library}
 
 % Final
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
-    \textbf{Kategorie:} & Použitelnost systému \\
-\end{tabular}
-
-% Final
-Aplikace by měla uživateli poskytovat přehlednější a jednodušší způsob navigace mezi jednotlivými stránkami. Z výsledků uživatelského testování v mé bakalářské práci \cite{Jenicek2024BachelorThesis}, která se zabývala původní aplikací, vyplynulo, že mají uživatelé problém s navigací mezi jednotlivými stránkami aplikace, zejména mezi jednotlivými sekcemi kurzů. Jelikož bude do aplikace také přidána řada nových funkcí, bude třeba navigaci aktualizovat tak, aby se uživatel mohl snadno orientovat v aplikaci a využívat všechny dostupné funkce.
-
-% Final
-\section{NP-4 Vytvoření knihovny komponentů}\label{sec:np-component-library}
-
-% Final
-\begin{tabular}{lp{0.7\linewidth}}
+\begin{tabularx}{\linewidth}{lX}
     \textbf{Priorita:} & Should have \\
     \textbf{Kategorie:} & Rozšiřitelnost systému \\
-\end{tabular}
+    \textbf{Kritérium splnění:} & Požadavek je splněn, pokud byla vytvořena samostatná knihovna komponentů uživatelského rozhraní, kterou lze přidat a nainstalovat jako závislost v hlavní aplikaci. Tato knihovna by měla obsahovat všechny komponenty potřebné pro spuštění učení, včetně komponentů pro procvičování a vysvětlování látky. \\
+\end{tabularx}
 
 % Final
 Frontend aplikace využívá různé komponenty uživatelského rozhraní. Tyto komponenty by měly být přesunuty do samostatné knihovny tak, aby je bylo možné využít i v dalších částech projektu, jako například na webových stránkách nebo v systému pro správu obsahu aplikace.
@@ -57,25 +48,14 @@ Frontend aplikace využívá různé komponenty uživatelského rozhraní. Tyto 
 Tato knihovna komponentů by měla stavět na již existujících komponentech a měla by využívat již zavedené technologie, tedy jazyk TypeScript a knihovny React, Storybook a Material UI.
 
 % Final
-\section{NP-5 Zvýšení udržovatelnosti kódu}\label{sec:np-maintainability}
+\section{NP-4 Zavedení automatizovaných testů}\label{sec:np-automated-tests}
 
 % Final
-\begin{tabular}{lp{0.7\linewidth}}
-    \textbf{Priorita:} & Should have \\
-    \textbf{Kategorie:} & Udržovatelnost systému \\
-\end{tabular}
-
-% Final
-Na základě analýzy stávající aplikace jsem se rozhodl přizpůsobit kód aplikace tak, aby byl lépe udržovatelný a rozšiřitelný. Konkrétní změny, které bude třeba provést, jsem popsal v rámci analýzy stávajícího řešení.
-
-% Final
-\section{NP-6 Zavedení automatizovaných testů}\label{sec:np-automated-tests}
-
-% Final
-\begin{tabular}{lp{0.7\linewidth}}
+\begin{tabularx}{\linewidth}{lX}
     \textbf{Priorita:} & Should have \\
     \textbf{Kategorie:} & Použitelnost systému \\
-\end{tabular}
+    \textbf{Kritérium splnění:} & Požadavek je splněn, pokud frontendová část aplikace obsahuje pro každý definovaný scénář případu užití alespoň jeden automatizovaný test, který ověřuje, že se daná funkce chová v souladu s definovaný scénářem. \\
+\end{tabularx}
 
 % Final
 Do frontendové části aplikace by měly být zavedeny automatizované testy s cílem zajištění správného fungování aplikace a zvýšení její kvality a použitelnosti.
@@ -84,13 +64,14 @@ Do frontendové části aplikace by měly být zavedeny automatizované testy s 
 Tento požadavek vychází jednak z analýzy existujícího řešení a jednak z návrhu úprav do budoucna, který jsem popsal v rámci mé bakalářské práce \cite{Jenicek2024BachelorThesis}, která se věnovala původní aplikaci.
 
 % Final
-\section{NP-7 Automaticky generované třídy API}\label{sec:np-generated-api-classes}
+\section{NP-5 Automaticky generované třídy API}\label{sec:np-generated-api-classes}
 
 % Final
-\begin{tabular}{lp{0.7\linewidth}}
+\begin{tabularx}{\linewidth}{lX}
     \textbf{Priorita:} & Should have \\
     \textbf{Kategorie:} & Udržovatelnost systému \\
-\end{tabular}
+    \textbf{Kritérium splnění:} & Požadavek je splněn, pokud všechna volání koncových bodů backendového API jsou prováděna skrze automaticky generované funkce, které jsou generovány na základě OpenAPI specifikace backendového API. \\
+\end{tabularx}
 
 % Final
 V kódu frontendové části aplikace by měly být automaticky generovány třídy reprezentující backendové API na základě OpenAPI specifikace \cite{OpenAPISpecification}, která je poskytována backendovou částí aplikace.
@@ -99,13 +80,14 @@ V kódu frontendové části aplikace by měly být automaticky generovány tř�
 Požadavek vychází z analýzy existujícího řešení. Cílem tohoto požadavku je zjednodušit implementaci a zajistit konzistenci mezi frontendovou a backendovou částí aplikace.
 
 % Final
-\section{NP-8 Animace a efekty}\label{sec:np-animations-effects}
+\section{NP-6 Animace a efekty}\label{sec:np-animations-effects}
 
 % Final
-\begin{tabular}{lp{0.7\linewidth}}
+\begin{tabularx}{\linewidth}{lX}
     \textbf{Priorita:} & Could have \\
     \textbf{Kategorie:} & Použitelnost systému \\
-\end{tabular}
+    \textbf{Kritérium splnění:} & Požadavek je splněn, pokud aplikace na mobilních zařízeních využívá animovaný přechod při návratu na předchozí stránku pomocí tlačítka zpět v rozhraní aplikace. Dále musí aplikace obsahovat odlišné zvukové efekty pro správnou odpověď, špatnou odpověď a dokončení učení nebo opakování. \\
+\end{tabularx}
 
 % Final
 Do aplikace by měly být přidány základní animace a efekty s cílem zlepšit uživatelskou zkušenost a udržet pozornost uživatelů. Uživatelské rozhraní by tak mělo působit vizuálně poutavějším dojmem a mělo by výrazněji reagovat na interakce s uživatelem.
@@ -114,13 +96,14 @@ Do aplikace by měly být přidány základní animace a efekty s cílem zlepši
 Tento požadavek vychází zejména z analýzy konkurenčních řešení, ve které konkurenční aplikace Mimo nebo Scrimba využívají různé animace a efekty.
 
 % Final
-\section{NP-9 Nasazení aplikace jako PWA}\label{sec:np-pwa-deployment}
+\section{NP-7 Nasazení aplikace jako PWA}\label{sec:np-pwa-deployment}
 
 % Final
-\begin{tabular}{lp{0.7\linewidth}}
+\begin{tabularx}{\linewidth}{lX}
     \textbf{Priorita:} & Should have \\
     \textbf{Kategorie:} & Použitelnost systému \\
-\end{tabular}
+    \textbf{Kritérium splnění:} & Požadavek je splněn, pokud je v aplikaci obsažen platný soubor webového manifestu, service worker skript a konfigurace umožňující instalaci aplikace jako progresivní webovou aplikaci. \\
+\end{tabularx}
 
 % Final
 Aplikace by měla být přizpůsobena tak, aby bylo možné ji sestavit a nasadit jako PWA, neboli jako progresivní webovou aplikaci. V důsledku toho by mělo být možné aplikaci stáhnout a nainstalovat na zařízení s operačními systémy Windows, Android či iOS. K aplikaci by tak mělo být možné přistupovat buď na webových stránkách, nebo přímo na zařízení uživatele.
