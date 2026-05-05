@@ -125,6 +125,7 @@
 \usepackage{minted}
 \usepackage{csquotes}
 \usepackage{booktabs}
+\usepackage{longtable}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % PACKAGES SETTINGS END
@@ -302,9 +303,12 @@
 \appendix\appendixinit % do not remove these two commands
 
 % Chapter: Test results
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \include{text/appendix/requirements-list}
 \include{text/appendix/non-functional-requirements-list}
+\include{text/appendix/use-case-list}
 \include{text/appendix/test-results}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 \backmatter % do not remove this command
 

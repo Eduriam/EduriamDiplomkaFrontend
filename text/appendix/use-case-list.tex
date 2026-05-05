@@ -1,0 +1,542 @@
+﻿% Final
+\chapter{Seznam případů užití}\label{chapter:use-case-list}
+
+% Final
+V této příloze lze nalézt seznam všech případů užití aplikace.
+
+% Final
+\section{UC-1 Volba přihlášení nebo registrace}\label{sec:uc-1}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí úvodní stránku aplikace a zvolí, zda se chce přihlásit nebo registrovat. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-welcome-page} \\
+  \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
+  \textbf{Hlavní scénář:} & Nepřihlášený uživatel otevře aplikaci a aplikace mu zobrazí úvodní stránku. Uživatel zvolí možnost přihlášení a aplikace ho přesměruje na stránku přihlášení. \\
+  \textbf{Alternativní scénář 1:} & Nepřihlášený uživatel otevře aplikaci a aplikace mu zobrazí úvodní stránku. Uživatel zvolí možnost registrace a aplikace ho přesměruje na stránku registrace. \\
+  \textbf{Alternativní scénář 2:} & Přihlášený uživatel otevře aplikaci na úvodní stránce. Aplikace ho automaticky přesměruje na hlavní stránku v aplikaci. \\
+\end{tabular}
+
+% Final
+\section{UC-2 Vyplnění úvodního dotazníku}\label{sec:uc-2}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel vyplní úvodní dotazník zaměřený na jeho cíle a zkušenosti s programováním. Aplikace uživateli na základě dotazníku doporučí kurzy a kariérní cesty, které si může zapsat. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-onboarding} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Po registraci uživatele aplikace zobrazí dotazník. Uživatel vyplní svoji úroveň programování, témata, která se chce učit a cíl, kterého chce dosáhnout. Aplikace zobrazí uživateli stránku, která ujistí uživatele, že daného cíle může s pomocí aplikace dosáhnout. Následně uživateli zobrazí seznam doporučených kurzů a kariérních cest. Uživatel vybere jeden z doporučených kurzů. Následně vybere svůj denní cíl. Aplikace uživateli oznámí, že byl úvodní dotazník dokončen. Uživatel zvolí možnost pokračovat a aplikace ho přesměruje na hlavní stránku aplikace. \\
+  \textbf{Alternativní scénář 1:} & Uživatel při průchodu hlavním scénářem nevybere kurz ze seznamu doporučených kurzů, ale zvolí možnost zobrazení všech kurzů v aplikaci. Aplikace mu zobrazí přehled všech dostupných kurzů. Uživatel vybere jeden z kurzů a pokračuje dle hlavního scénáře vyplněním svého denního cíle. \\
+  \textbf{Poznámka:} & Zapsání kariérní cesty se od zápisu kurzu nijak neliší a bude fungovat analogicky. \\
+\end{tabular}
+
+% Final
+\section{UC-3 Zobrazení přehledu kurzů a kariérních cest}\label{sec:uc-3}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku s přehledem kurzů a kariérních cest. Kliknutím na kurz nebo kariérní cestu se přesune na jeho resp. její stránku. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Aplikace zobrazí uživateli stránku s přehledem kurzů a kariérních cest. Na této stránce aplikace zobrazí krátký přehled doporučených kurzů a kariérních cest a dále seznam všech dostupných kurzů a kariérních cest rozřazených do kategorií. Uživatel se vybráním kurzu přesune na jeho stránku. \\
+  \textbf{Alternativní scénář 1:} & Při průchodu hlavním scénářem uživatel nevybere kurz ale kariérní cestu a přesune se tak na stránku kariérní cesty. \\
+\end{tabular}
+
+% Final
+\section{UC-4 Zobrazení přehledu doporučených kurzů a kariérních cest}\label{sec:uc-4}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si na stránce přehledu kurzů a kariérních cest zobrazí přehled všech doporučených kurzů a kariérních cest. Kliknutím na kurz nebo kariérní cestu se pak přesune na jeho resp. její stránku. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se ze stránky přehledu kurzů a kariérních cest přesune na stránku přehledu doporučených kurzů a kariérních cest. Aplikace mu zobrazí seznam všech doporučených kurzů a kariérních cest. Uživatel se vybráním kurzu přesune na jeho stránku. \\
+  \textbf{Alternativní scénář 1:} & Při průchodu hlavním scénářem uživatel nevybere kurz ale kariérní cestu a přesune se tak na stránku kariérní cesty. \\
+\end{tabular}
+
+% Final
+\section{UC-5 Vyplnění dotazníku pro úpravu doporučení kurzů a kariérních cest}\label{sec:uc-5}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel na stránce přehledu všech doporučených kurzů a kariérních cest vyplní dotazník pro úpravu doporučení kurzů a kariérních cest. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-browse} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel zvolí možnost úpravy doporučených kurzů a kariérních cest a aplikace ho přesune na stránku dotazníku. V dotazníku uživatel vyplní jeho úroveň programování, témata, která se chce učit a cíl, kterého chce dosáhnout. Aplikace mu zobrazí informaci, že uživatel dokončil dotazník. Uživatel zvolí možnost zobrazení nových doporučení a aplikace ho tak přesune zpět na stránku doporučených kurzů a kariérních cest. \\
+\end{tabular}
+
+% Final
+\section{UC-6 Zobrazení stránky kurzu a zápis do kurzu}\label{sec:uc-6}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku kurzu a přihlásí se do něj. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-page}, \nameref{sec:fp-subscription-system} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku daného kurzu, aplikace mu zobrazí přehled kurzu včetně jeho popisu a přehledu kapitol kurzu. Uživatel zvolí možnost zapsání se do kurzu. Aplikace uživatele zapíše do kurzu a přesměruje ho na stránku učení se první lekce kurzu. \\
+  \textbf{Alternativní scénář 1:} & Uživatel bez aktivního předplatného se přesune na stránku kurzu, který je dostupný pouze pro uživatele s premium účtem, a zvolí možnost zapsání do kurzu. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že kurz je dostupný pouze s aktivním předplatným. \\
+\end{tabular}
+
+% Final
+\section{UC-7 Zobrazení stránky kurzu a pokračování v učení}\label{sec:uc-7}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku kurzu, který má již zapsaný, a zvolí možnost pokračovat v učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-page} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku kurzu, který má zapsaný, a aplikace mu zobrazí přehled kurzu včetně popisu a přehledu kapitol kurzu. Uživatel zvolí možnost pokračovat v učení. Aplikace přesměruje uživatele na stránku učení, kde mu zobrazí následující lekci, kterou by se měl uživatel v rámci daného kurzu učit. \\
+\end{tabular}
+
+% Final
+\section{UC-8 Spuštění lekce na stránce kapitoly kurzu}\label{sec:uc-8}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel se ze stránky kurzu přesune na stránku kapitoly kurzu a spustí danou lekci. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-chapter-page} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se nachází na stránce daného kurzu, zvolí některou kapitolu kurzu a aplikace ho přesměruje na stránku dané kapitoly, kde dále zobrazí seznam lekcí rozdělených do sekcí. Uživatel vybere jednu z lekcí a aplikace ho přesměruje na stránku učení se dané lekce. \\
+  \textbf{Poznámka 1:} & Pokud uživatel ještě nemá kurz zapsaný a spustí lekci, aplikace ho automaticky zapíše do kurzu a následně ho přesměruje na stránku učení dané lekce. \\
+  \textbf{Poznámka 2:} & Uživatel bude moci v kurzu spustit libovolnou lekci nehledě na to, které lekce již dříve dokončil.
+\end{tabular}
+
+% Final
+\section{UC-9 Zobrazení certifikátu o dokončení kurzu}\label{sec:uc-9}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel s premium účtem si zobrazí certifikát o dokončení daného kurzu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-certificate}, \nameref{sec:fp-subscription-system} \\
+  \textbf{Hlavní aktér:} & Premium uživatel \\
+  \textbf{Hlavní scénář:} & Premium uživatel, který dokončil daný kurz, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli stránku s certifikátem, který uživatel získal za dokončení daného kurzu. \\
+  \textbf{Alternativní scénář 1:} & Premium uživatel, který daný kurz ještě nedokončil, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli informaci, že musí nejprve dokončit kurz, aby mohl certifikát zobrazit. \\
+  \textbf{Alternativní scénář 2:} & Uživatel, který nemá premium účet, se přesune na stránku daného kurzu a zvolí možnost zobrazit certifikát. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že daná funkce je dostupná pouze s aktivním předplatným. \\
+\end{tabular}
+
+% Final
+\section{UC-10 Odhlášení se z kurzu}\label{sec:uc-10}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku pro správu zapsaných kurzů a zvolí možnost odhlášení se z daného kurzu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-course-management} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku pro správu zapsaných kurzů, aplikace mu zobrazí seznam zapsaných kurzů. Uživatel zvolí kurz, ze kterého se chce odhlásit. Aplikace uživateli zobrazí upozornění, že se daná akce nedá vrátit. Uživatel potvrdí akci odhlášení se z kurzu. Aplikace uživatele odhlásí z kurzu a přesměruje ho na stránku přehledu zapsaných kurzů. \\
+\end{tabular}
+
+
+% Final
+\section{UC-11 Zápis do kariérní cesty}\label{sec:uc-11}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku kariérní cesty a zapíše si danou kariérní cestu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-paths}, \nameref{sec:fp-subscription-system} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku kariérní cesty, aplikace zobrazí přehled kariérní cesty včetně jejího popisu a přehledu kurzů, které jsou v kariérní cestě obsaženy. Uživatel zvolí možnost zapsání se do kariérní cesty. Aplikace uživatele zapíše do kariérní cesty a přesměruje ho na stránku učení se první lekce prvního kurzu v rámci dané kariérní cesty. \\
+  \textbf{Alternativní scénář 1:} & Uživatel bez aktivního předplatného se přesune na stránku kariérní cesty, která je dostupná pouze pro uživatele s premium účtem, a zvolí možnost zapsání se do kariérní cesty. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že kariérní cesta je dostupná pouze s aktivním předplatným. \\
+\end{tabular}
+
+% Final
+\section{UC-12 Zobrazení stránky kariérní cesty a pokračování v učení}\label{sec:uc-12}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku kariérní cesty, kterou má již zapsanou, a zvolí možnost pokračovat v učení se kariérní cesty. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-paths} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku kariérní cesty, kterou má již zapsanou, a aplikace mu zobrazí přehled kariérní cesty včetně jejího popisu a přehledu kurzů, které jsou v kariérní cestě obsaženy. Uživatel zvolí možnost pokračovat v učení se kariérní cesty. Aplikace přesměruje uživatele na stránku učení, kde mu zobrazí následující lekci, kterou by se měl uživatel učit v rámci dané kariérní cesty. \\
+\end{tabular}
+
+% Final
+\section{UC-13 Zobrazení certifikátu o dokončení dané kariérní cesty}\label{sec:uc-13}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel s premium účtem si zobrazí stránku kariérní cesty a zvolí možnost zobrazit certifikát o dokončení kariérní cesty. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-paths}, \nameref{sec:fp-subscription-system} \\
+  \textbf{Hlavní aktér:} & Premium uživatel \\
+  \textbf{Hlavní scénář:} & Premium uživatel, který dokončil danou kariérní cestu, se přesune na stránku dané kariérní cesty a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli stránku s certifikátem. \\
+  \textbf{Alternativní scénář 1:} & Premium uživatel, který danou kariérní cestu ještě nedokončil, se přesune na stránku dané kariérní cesty a zvolí možnost zobrazit certifikát. Aplikace zobrazí uživateli informaci, že musí nejprve dokončit kariérní cestu, aby mohl certifikát zobrazit. \\
+  \textbf{Alternativní scénář 2:} & Uživatel, který nemá premium účet, se přesune na stránku dané kariérní cesty a zvolí možnost zobrazit certifikát. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že je daná funkce dostupná pouze s aktivním předplatným aplikace. \\
+\end{tabular}
+
+% Final
+\section{UC-14 Zobrazení studijního plánu}\label{sec:uc-14}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku se svým studijním plánem, tedy přehledem všech zapsaných kurzů a jejich aktuálního režimu učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel se přesune na stránku svého studijního plánu. Aplikace mu zobrazí seznam zapsaných kurzů a jejich aktuální režimy učení. \\
+\end{tabular}
+
+% Final
+\section{UC-15 Změna režimu učení kurzu ve studijním plánu}\label{sec:uc-15}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel změní režim učení kurzu v jeho studijním plánu. Uživatel může vybrat mezi režimy učení, opakování a pozastavení kurzu.  \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel si zobrazí stránku studijního plánu a změní režim učení jednoho z kurzů. Aplikace změnu uloží a začne režim kurzu zohledňovat při doporučování látky k učení a opakování. \\
+\end{tabular}
+
+% Final
+\section{UC-16 Spuštění lekce podle studijního plánu}\label{sec:uc-16}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel na hlavní stránce aplikace spustí nadcházející lekci podle jeho studijního plánu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace. Aplikace uživateli zobrazí náhled nadcházející lekce podle studijního plánu, uživatel spustí tuto lekci a aplikace ho přesměruje na stránku učení, kde mu zobrazí látku z dané lekce. \\
+  \textbf{Alternativní scénář 1:} & Uživatel otevře hlavní stránku, ale aplikace nenalezne žádnou nadcházející lekci, například protože má uživatel všechny lekce zapsaných kurzů dokončené. Aplikace zobrazí informaci, že nenalezla žádnou lekci k učení a zobrazí možnost zapsání si nového kurzu. Uživatel zvolí možnost pro zapsání nového kurzu a aplikace ho přesměruje na stránku s přehledem kurzů. \\
+\end{tabular}
+
+% Final
+\section{UC-17 Spuštění opakování podle studijního plánu}\label{sec:uc-17}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel na hlavní stránce aplikace spustí opakování látky, kterou aplikace doporučí na základě studijního plánu a na základě toho, jak si uživatel naučenou látku pamatuje. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace a zvolí možnost opakování. Aplikace podle studijního plánu a historie učení vybere vhodnou látku k zopakování ze zapsaných kurzů, které jsou v režimu učení nebo opakování. Aplikace zobrazí informaci, ze kterého kurzu látku k zopakování vybrala a dále zobrazí možnost spustit opakování. Uživatel spustí opakování a aplikace ho přesměruje na stránku opakování. \\
+  \textbf{Alternativní scénář 1:} & Uživatel otevře hlavní stránku aplikace a zvolí možnost opakování. Aplikace nenajde žádnou látku k zopakování a zobrazí informaci, že byla všechna látka ze zapsaných kurzů již zopakována. \\
+\end{tabular}
+
+% Final
+\section{UC-18 Spuštění lekce ze stránky studijního plánu}\label{sec:uc-18}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel se rozhodne učit jinou lekci, než doporučenou lekci podle studijního plánu. Přesune se tak na stránku studijního plánu a spustí nadcházející lekci v jiném kurzu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-study-plan-learning} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace a zvolí možnost otevření studijního plánu. Aplikace mu zobrazí studijní plán, tedy seznam zapsaných kurzů a jejich aktuální režimy učení. U každého kurzu dále zobrazí možnost spustit učení se daného kurzu. Uživatel zvolí možnost učení se konkrétního kurzu a aplikace ho přesměruje na stránku učení, kde mu zobrazí látku z nadcházející lekce v rámci daného kurzu. \\
+\end{tabular}
+
+% Final
+\section{UC-19 Spuštění opakování po dokončení lekce}\label{sec:uc-19}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Umožňuje uživateli ihned po dokončení lekce spustit opakování dříve naučené látky. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-post-lesson-review} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel dokončí učení a aplikace mu nabídne možnost spustit opakování. Uživatel opakování spustí, aplikace vybere vhodnou látku z kurzů ve studijním plánu v režimu učení nebo opakování a přesměruje uživatele na stránku opakování. \\
+  \textbf{Alternativní scénář 1:} & Uživatel po dokončení nové lekce možnost opakování odmítne. Aplikace uživatele vrátí na stránku, ze které učení dané lekce spustil. \\
+\end{tabular}
+
+% Final
+\section{UC-20 Učení se dané lekce}\label{sec:uc-20}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel spustí učení dané lekce, splní jednotlivá cvičení a dokončí učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-structure}, \nameref{sec:fp-exercise-blocks}, \nameref{sec:fp-explanation-blocks} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel spustí učení se dané lekce. Aplikace ho přesměruje na stránku učení a začne uživateli postupně zobrazovat bloky s vysvětlením látky a bloky se cvičeními. Uživatel projde všechny bloky s vysvětlením látky a splní správně všechna cvičení. Po dokončení posledního bloku aplikace zobrazí uživateli stránku se statistikami o provedeném učení. Uživatel zvolí možnost pokračovat a tím dokončí učení. \\
+  \textbf{Alternativní scénář 1:} & Uživatel v průběhu plnění lekce odpoví špatně. V takovém případě mu aplikace zobrazí možnost si zobrazit vysvětlení odpovědi a zkusit cvičení znovu. Uživatel si zobrazí vysvětlení odpovědi a vyplní znovu cvičení, tentokrát správně. Dále scénář pokračuje dle hlavního scénáře. \\
+  \textbf{Alternativní scénář 2:} & Uživatel v průběhu plnění lekce odpoví špatně. V takovém případě mu aplikace zobrazí možnost si zobrazit vysvětlení odpovědi a zkusit cvičení znovu. Uživatel zkusí cvičení ještě dvakrát a v obou případech odpoví špatně. Po třetí špatné odpovědi aplikace zobrazí uživateli možnost přeskočit dané cvičení a pokračovat v učení. Uživatel tuto možnost zvolí a aplikace mu zobrazí následující blok lekce. \\
+\end{tabular}
+
+% Final
+\section{UC-21 Opakování látky}\label{sec:uc-21}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel spustí opakování látky, splní jednotlivá cvičení a dokončí opakování. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-structure}, \nameref{sec:fp-exercise-blocks} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel spustí opakování a aplikace ho přesměruje na stránku opakování. Aplikace začne uživateli postupně zobrazovat bloky cvičení tak, aby si zopakoval vybranou látku. Uživatel postupně splní všechna cvičení. Po dokončení posledního cvičení aplikace zobrazí uživateli stránku se statistikami o opakování. Uživatel zvolí možnost pokračovat a tím dokončí opakování. \\
+  \textbf{Alternativní scénář 1:} & Uživatel odpoví ve cvičení špatně. Aplikace zobrazí stejnou negativní zpětnou vazbu jako při učení a dané cvičení znovu zařadí do opakování, aby bylo uživateli během stejného opakování zobrazeno ještě jednou. Uživatel následně odpoví na cvičení správně a pokračuje v dalších cvičeních. \\
+  \textbf{Alternativní scénář 2:} & Uživatel odpoví na cvičení špatně. Aplikace zobrazí stejnou negativní zpětnou vazbu jako při učení. Uživatel zkusí cvičení ještě dvakrát a v obou případech odpoví špatně. Po třetí špatné odpovědi aplikace zobrazí uživateli možnost přeskočit cvičení a pokračovat v opakování. Uživatel zvolí tuto možnost. Aplikace mu dané cvičení již znovu zobrazovat nebude a zobrazí uživateli následující blok opakování. \\
+\end{tabular}
+
+% Final
+\section{UC-22 Vyplnění cvičení pomocí editoru kódu}\label{sec:uc-22}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživateli se v rámci průchodu lekcí zobrazí cvičení s editorem kódu. Uživatel použije editor kódu k vyplnění cvičení.  \\
+  \textbf{Požadavek:} & \nameref{sec:fp-code-editor} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel spustí lekci. Aplikace mu zobrazí blok cvičení s editorem kódu. Uživatel správně vyplní všechna cvičení v záložkách editoru a zvolí možnost zkontrolovat řešení. Aplikace zobrazí informaci, že byla odpověď správná, a ukáže uživateli výstup daného kódu, pokud je k dispozici. Uživatel zvolí možnost pokračovat a tím dokončí cvičení. \\
+  \textbf{Alternativní scénář 1:} & Uživatel při vyplňování cvičení odpoví špatně. V takovém případě aplikace nezobrazí výstup daného kódu a zobrazí pouze negativní zpětnou vazbu. Uživatel opraví svou odpověď a dokončí cvičení. \\
+\end{tabular}
+
+% Final
+\section{UC-23 Zobrazení vysvětlení odpovědi při učení}\label{sec:uc-23}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel v rámci učení nebo opakování vyplní cvičení a zvolí možnost vysvětlení, proč byla jeho odpověď správná nebo špatná. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-answer-explanation} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel v rámci učení nebo opakování vyplní cvičení a zvolí možnost zkontrolovat jeho řešení. Aplikace mu zobrazí možnost si zobrazit vysvětlení, proč byla jeho odpověď správná nebo špatná. Uživatel zvolí tuto možnost a zobrazí si tak vysvětlení odpovědi.\\
+\end{tabular}
+
+% Final
+\section{UC-24 Nahlášení problému při učení}\label{sec:uc-24}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel nebo korektor nahlásí problém v bloku cvičení nebo v bloku vysvětlení látky. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-report-learning-issue} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel při učení nebo opakování vyplní cvičení a zvolí možnost nahlásit problém. Aplikace zobrazí formulář pro nahlášení problému. Uživatel zvolí typ problému, popíše slovy problém a odešle formulář. Aplikace přesměruje uživatele zpět na stránku se cvičením. \\
+  \textbf{Alternativní scénář 1:} & Uživatel při učení nebo opakování na stránce bloku vysvětlení látky zvolí možnost nahlásit problém. Aplikace zobrazí formulář pro nahlášení problému. Uživatel zvolí typ problému, popíše slovy problém a odešle formulář. Aplikace přesměruje uživatele zpět na stránku s blokem vysvětlení látky. \\
+  \textbf{Alternativní scénář 2:} & Korektor při nahlášení využije rozšířené typy problémů a provede nahlášení problému podle předchozích scénářů. \\
+\end{tabular}
+
+% Final
+\section{UC-25 Zobrazení statistik po dokončení učení nebo opakování}\label{sec:uc-25}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Po dokončení učení nebo opakování jsou uživateli zobrazeny souhrnné statistiky o učení resp. opakování. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-stats} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel dokončí poslední blok učení nebo opakování. Aplikace zobrazí uživateli stránku se statistikami. Na této stránce aplikace zobrazí délku učení nebo opakování, počet naučených konceptů, úspěšnost uživatele při odpovědích a počet bodů XP, které uživatel získal. \\
+\end{tabular}
+
+
+% Final
+\section{UC-26 Zobrazení žebříčku uživatelů v lize učení}\label{sec:uc-26}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí žebříček uživatelů ve své aktuální lize učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-leaderboard} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel si zobrazí stránku s žebříčkem uživatelů. Aplikace zobrazí jeho aktuální ligu a pořadí uživatelů v dané skupině podle bodů XP získaných v aktuálním týdnu, včetně pozice daného uživatele. \\
+  \textbf{Alternativní scénář 1:} & Uživatel se v aktuálním týdnu ještě neučil. Aplikace zobrazí informaci, že bude uživatel zařazen do žebříčku po dokončení libovolné lekce nebo opakování. \\
+\end{tabular}
+
+% Final
+\section{UC-27 Zobrazení stavu energie uživatele}\label{sec:uc-27}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí jeho aktuální stav energie, který určuje, kolik učení nebo opakování může ještě v daný den spustit. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-energy-status}, \nameref{sec:fp-subscription-system} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel na hlavní stránce aplikace zvolí možnost zobrazení stavu energie. Aplikace zobrazí aktuální počet dostupných bodů energie pro daný den a také možnost odemknutí neomezeného množství energie. \\
+  \textbf{Alternativní scénář 1:} & Uživatel s premium účtem zvolí možnost zobrazení stavu energie. Aplikace zobrazí informaci, že učení a opakování nejsou pro premium účet omezeny systémem energie. \\
+\end{tabular}
+
+% Final
+\section{UC-28 Spuštění učení nebo opakování s nedostatkem bodů energie}\label{sec:uc-28}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel se z libovolného místa aplikace pokusí spustit učení nebo opakování, přestože nemá dostatek bodů energie. Aplikace ho přesměruje na stránku s přehledem výhod premium účtu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-energy-status}, \nameref{sec:fp-subscription-system} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel bez aktivního předplatného, který již nemá žádné body energie, z libovolného místa aplikace spustí učení nebo opakování. Aplikace uživatele přesměruje na stránku s přehledem výhod premium účtu a informuje ho, že může získat neomezené množství energie, pokud si zakoupí premium účet. \\
+\end{tabular}
+
+% Final
+\section{UC-29 Nákup položky v obchodě s virtuální měnou}\label{sec:uc-29}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si na stránce obchodu zakoupí položku za virtuální měnu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-shop-unlock-items} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře obchod, vybere odemčenou položku. Aplikace mu zobrazí detaily dané položky. Uživatel vybere možnost zakoupit položku. Aplikace odečte odpovídající množství virtuální měny a označí položku jako zakoupenou. \\
+  \textbf{Alternativní scénář 1:} & Uživatel vybere zamčenou položku. Aplikace zobrazí informaci, jaké podmínky musí uživatel splnit, aby položku odemknul a mohl ji zakoupit. \\
+\end{tabular}
+
+% Final
+\section{UC-30 Přizpůsobení avatara uživatele}\label{sec:uc-30}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku pro přizpůsobení avatara, upraví vzhled avatara a uloží změny. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-avatar-customization} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře stránku pro přizpůsobení avatara. Aplikace zobrazí aktuální vzhled avatara a dostupné položky, které si uživatel již zakoupil. Uživatel provede úpravy vzhledu avatara a zvolí možnost uložení změn. Aplikace změny uloží a přesměruje uživatele na předchozí stránku. \\
+  \textbf{Alternativní scénář 1:} & Uživatel otevře stránku pro přizpůsobení avatara a provede úpravy, ale před uložením se rozhodne změny zahodit a zvolí možnost opustit stránku. Aplikace se zeptá uživatele, zda chce skutečně opustit stránku. Uživatel zvolí možnost opustit stránku. Aplikace změny neuloží a přesune uživatele na předchozí stránku. \\
+\end{tabular}
+
+% Final
+\section{UC-31 Zobrazení uživatelského profilu}\label{sec:uc-31}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku svého profilu nebo profilu jiného uživatele. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-user-profile} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře stránku profilu. Aplikace zobrazí základní informace o uživateli, jeho avatar, aktuální ligu, stručný seznam zapsaných kurzů včetně jejich pokroku a stručný seznam získaných ocenění. \\
+  \textbf{Alternativní scénář 1:} & Uživatel na stránce profilu zvolí možnost zobrazení kompletního seznamu ocenění. Aplikace mu zobrazí přehled všech získaných ocenění. \\
+  \textbf{Alternativní scénář 2:} & Uživatel na stránce profilu zvolí možnost zobrazení kompletního seznamu zapsaných kurzů. Aplikace mu zobrazí přehled všech zapsaných kurzů včetně pokroku. \\
+\end{tabular}
+
+% Final
+\section{UC-32 Zapnutí tmavého režimu}\label{sec:uc-32}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel otevře nastavení aplikace, změní režim vzhledu a rozhraní aplikace se okamžitě zobrazí v nově zvoleném režimu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-dark-mode} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře stránku nastavení. Aplikace mu zobrazí dostupné sekce nastavení. Uživatel zvolí sekci preferencí a aplikace mu zobrazí možnost přizpůsobit své preference. Uživatel zvolí jiný režim vzhledu než dosud používaný. Aplikace nastavení uloží a všechny obrazovky začne zobrazovat v nově zvoleném režimu. \\
+\end{tabular}
+
+% Final
+\section{UC-33 Nákup zmrazení streaku v obchodě}\label{sec:uc-33}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si v obchodě zakoupí položku zmrazení streaku za virtuální měnu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-streak-freeze} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře obchod a vybere položku zmrazení streaku. Aplikace se ho zeptá, zda chce položku skutečně zakoupit. Uživatel nákup potvrdí. Aplikace odečte virtuální měnu a navýší počet dostupných zmrazení streaku u uživatele. \\
+\end{tabular}
+
+% Final
+\section{UC-34 Změna nastavení aplikace}\label{sec:uc-34}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel otevře stránku nastavení, upraví své preference a aplikace změny automaticky uloží. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-settings-page} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře stránku nastavení aplikace a změní jednu nebo více svých preferencí. Ihned po úpravě dané preference aplikace změnu automaticky uloží. \\
+\end{tabular}
+
+% Final
+\section{UC-35 Zobrazení nových oznámení na hlavní stránce}\label{sec:uc-35}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel otevře hlavní stránku aplikace a aplikace mu zobrazí nová oznámení o důležitých událostech v aplikaci. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-extended-notifications} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace. Aplikace mu zobrazí nová oznámení na základě událostí, které v aplikaci nastaly. Uživatel si přečte oznámení a zvolí možnost pokračovat na hlavní stránku aplikace. Aplikace ho přesměruje na hlavní stránku. \\
+\end{tabular}
+
+% Final
+\section{UC-36 Zobrazení reklamy uživateli po ukončení učení nebo opakování}\label{sec:uc-36}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Po ukončení učení nebo opakování aplikace zobrazí uživateli reklamu. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-advertisement}, \nameref{sec:fp-subscription-system} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel dokončí nebo předčasně ukončí učení či opakování. Aplikace uživateli zobrazí reklamu v závislosti dostupném místě na obrazovce. Uživatel zhlédne reklamu a zvolí možnost pokračovat. Aplikace ho přesměruje na následující stránku. \\
+  \textbf{Alternativní scénář 1:} & Uživatel s premium účtem dokončí nebo předčasně ukončí učení či opakování. Aplikace reklamu nezobrazí a uživatele přesměruje přímo na následující stránku. \\
+\end{tabular}
+
+% Final
+\section{UC-37 Otevření truhly s odměnou po dokončení učení}\label{sec:uc-37}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel po dokončení učení otevře truhlu s odměnou. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-treasure-chest}, \nameref{sec:fp-advertisement} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Po dokončení učení nebo opakování aplikace zobrazí uživateli stránku s truhlou, která se sama otevře. Aplikace zobrazí uživateli množství obdržené virtuální měny. Uživatel zvolí možnost pokračovat. Aplikace ho přesune na následující stránku. \\
+  \textbf{Alternativní scénář 1:} & Po otevření truhly uživatel zvolí možnost získat dvojnásobek odměny. Aplikace zobrazí uživateli reklamu. Uživatel reklamu zhlédne. Aplikace po jejím úspěšném přehrání zobrazí uživateli informaci, že získal dvojnásobek odměny. Uživatel zvolí možnost pokračovat. Aplikace přesune uživatele na následující stránku. \\
+\end{tabular}
+
+% Final
+\section{UC-38 Zobrazení zpráv o pokroku sledovaných uživatelů}\label{sec:uc-38}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel si zobrazí stránku s novinkami o pokroku sledovaných uživatelů. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-progress-sharing} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře stránku s novinkami. Aplikace zobrazí zprávy o pokroku uživatelů, které daný uživatel sleduje. Uživatel následně na zprávy zareaguje pomocí dostupných emotikonů. \\
+  \textbf{Alternativní scénář 1:} & Uživatel otevře stránku s novinkami, ale aplikace nenalezne žádné nové zprávy o sledovaných uživatelích. Aplikace zobrazí informaci, že momentálně nejsou dostupné žádné nové zprávy o pokroku sledovaných uživatelů. \\
+\end{tabular}
+
+% Final
+\section{UC-39 Registrace pomocí účtu Google}\label{sec:uc-39}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Nepřihlášený uživatel se zaregistruje do aplikace pomocí účtu Google. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-google-auth} \\
+  \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
+  \textbf{Hlavní scénář:} & Nepřihlášený uživatel na stránce pro registraci zvolí možnost registrace pomocí účtu Google. Aplikace přesměruje uživatele na stránku, kde ověří svoji totožnost pomocí účtu Google. Po úspěšném ověření uživatele aplikace vytvoří nový účet, uživatele přihlásí a přesměruje ho na úvodní dotazník. \\
+  \textbf{Alternativní scénář 1:} & Nepřihlášený uživatel zahájí svoji registraci pomocí účtu Google, přičemž účet se stejnou e-mailovou adresou již v aplikaci existuje. Aplikace registraci neprovede, oznámí uživateli chybovou hlášku a nabídne uživateli přihlášení k existujícímu účtu. \\
+  \textbf{Alternativní scénář 2:} & Nepřihlášený uživatel při ověření přes Google zruší registraci. Aplikace ho přesměruje zpět na stránku registrace. \\
+\end{tabular}
+
+% Final
+\section{UC-40 Přihlášení pomocí účtu Google}\label{sec:uc-40}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Nepřihlášený uživatel se přihlásí do aplikace pomocí svého účtu Google. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-google-auth} \\
+  \textbf{Hlavní aktér:} & Nepřihlášený uživatel \\
+  \textbf{Hlavní scénář:} & Nepřihlášený uživatel na stránce pro přihlášení zvolí možnost přihlásit se pomocí účtu Google. Aplikace přesměruje uživatele na stránku, kde ověří svoji totožnost pomocí účtu Google. Po úspěšném ověření pomocí Google účtu aplikace uživatele přihlásí a přesměruje ho na hlavní stránku aplikace. \\
+  \textbf{Alternativní scénář 1:} & Nepřihlášený uživatel zvolí možnost přihlášení pomocí účtu Google, přičemž v aplikaci neexistuje účet propojený s daným Google účtem. Aplikace přihlášení neprovede, oznámí uživateli chybovou hlášku a nabídne uživateli registraci pomocí Google účtu. \\
+  \textbf{Alternativní scénář 2:} & Nepřihlášený uživatel při ověření přes Google zruší přihlášení nebo nepotvrdí souhlas. Aplikace ho vrátí na stránku přihlášení. \\
+\end{tabular}
+
+% Final
+\section{UC-41 Aktivace zkušební verze předplatného}\label{sec:uc-41}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel bez aktivního premium účtu aktivuje zkušební verzi předplatného. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-free-trial} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace. Aplikace mu zobrazí oznámení o dostupné zkušební verzi předplatného. Uživatel zvolí možnost vyzkoušet předplatné. Aplikace zobrazí stránku s informací, že bude uživateli zasláno oznámení dva dny před koncem zkušební doby. Uživatel zvolí možnost spustit zkušební dobu. Aplikace zobrazí uživateli formulář pro vyplnění platebních údajů. Uživatel vyplní platební údaje a potvrdí spuštění zkušební doby. Aplikace zkušební verzi aktivuje a zobrazí potvrzení o aktivaci. \\
+  \textbf{Alternativní scénář 1:} & Uživatel otevře stránku s předplatným. Na stránce předplatného zvolí možnost vyzkoušet předplatné. Scénář následně pokračuje stejným způsobem jako v hlavním scénáři krokem zobrazení informace, že bude uživateli zasláno oznámení dva dny před koncem zkušební doby.  \\
+\end{tabular}
+
+% Final
+\section{UC-42 Zrušení zkušební verze předplatného}\label{sec:uc-42}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel během zkušební doby zruší předplatné na stránce správy předplatného. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-free-trial} \\
+  \textbf{Hlavní aktér:} & Premium uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel s aktivní zkušební dobou předplatného otevře stránku pro správu předplatného a zvolí možnost zrušit předplatné. Aplikace se uživatele zeptá na důvod zrušení, uživatel vybere jednu z nabízených možností a zvolí možnost pokračovat. Aplikace se uživatele zeptá, zda chce skutečně zrušit předplatné, uživatel zrušení potvrdí a aplikace zobrazí informaci, že předplatné bylo zrušeno. \\
+\end{tabular}
+
+% Final
+\section{UC-43 Zapnutí odesílání notifikací}\label{sec:uc-43}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel povolí v aplikaci zasílání push notifikací. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-push-notifications} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře hlavní stránku aplikace. Aplikace uživateli nabídne možnost zapnout odesílání notifikací. Uživatel zvolí možnost zapnout notifikace. Prohlížeč uživatele zobrazí možnost pro udělení oprávnění k odesílání notifikací. Uživatel oprávnění potvrdí a aplikace nastavení uloží. \\
+  \textbf{Alternativní scénář 1:} & Uživatel zvolí, že nechce notifikace zapnout, nebo v systémovém dialogu oprávnění odmítne. Aplikace volbu uloží a nebude uživateli push notifikace posílat. \\
+\end{tabular}
+
+% Final
+\section{UC-44 Zobrazení notifikace}\label{sec:uc-44}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel obdrží push notifikaci vyvolanou událostí v aplikaci. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-push-notifications} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & V aplikaci nastane událost, u které má uživatel v nastavení zapnuté odesílání oznámení. Aplikace uživateli zobrazí příslušnou notifikaci. Uživatel na notifikaci klikne a aplikace ho přesměruje na hlavní stránku aplikace. \\
+  \textbf{Alternativní scénář 1:} & V aplikaci nastane událost, o které má být uživatel informován pomocí notifikace. Uživatel ovšem nemá u dané notifikace zapnuté odesílání oznámení. Aplikace notifikaci uživateli nezobrazí. \\
+\end{tabular}
+
+% Final
+\section{UC-45 Vypnutí nebo zapnutí připomínání učení}\label{sec:uc-45}
+
+% Final
+\begin{tabular}{p{0.32\linewidth}p{0.6\linewidth}}
+  \textbf{Popis:} & Uživatel v nastavení zapne nebo vypne připomínání učení. \\
+  \textbf{Požadavek:} & \nameref{sec:fp-learning-reminder} \\
+  \textbf{Hlavní aktér:} & Uživatel \\
+  \textbf{Hlavní scénář:} & Uživatel otevře nastavení aplikace v sekci oznámení a změní stav připomínání učení. Aplikace změnu uloží. Pokud je připomínání zapnuté, aplikace bude následně uživateli odesílat každý den připomenutí k učení podle požadavku \nameref{sec:fp-push-notifications}. \\
+\end{tabular}
