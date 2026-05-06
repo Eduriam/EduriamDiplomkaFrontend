@@ -5,7 +5,7 @@
 Jako první krok analýzy jsem provedl analýzu existující aplikace. V této části textu nejprve popíšu strukturu celého projektu a následně se zaměřím na analýzu kódu, existujících funkcí, testů a existujícího návrhu uživatelského rozhraní frontendové části aplikace.
 
 % Final
-Existující aplikace je webová aplikace zaměřena na výuku anglického jazyka. Frontendová část aplikace je postavena na knihovnách React a Next.js. Dále aplikace využívá knihovnu komponentů uživatelského rozhraní Material UI a nástroj Storybook pro vytvoření dokumentace jednotlivých komponentů aplikace. Celé uživatelské rozhraní včetně všech komponentů je navrženo v nástroji Figma. Aplikace je nasazena v testovacím prostředí, kde využívá mock API, a dále v produkčním prostředí, kde je napojena na reálné backendové API. \cite{Jenicek2024BachelorThesis}
+Existující aplikace je webová aplikace zaměřená na výuku anglického jazyka. Frontendová část aplikace je postavena na knihovnách React a Next.js. Dále aplikace využívá knihovnu komponentů uživatelského rozhraní Material UI a nástroj Storybook pro vytvoření dokumentace jednotlivých komponentů aplikace. Celé uživatelské rozhraní včetně všech komponentů je navrženo v nástroji Figma. Aplikace je nasazena v testovacím prostředí, kde využívá mock API, a dále v produkčním prostředí, kde je napojena na reálné backendové API. \cite{Jenicek2024BachelorThesis}
 
 % Final
 Frontend aplikace komunikuje s backendovou částí přes REST API. Kromě samotného API existuje i mock tohoto API, který byl vytvořen pomocí nástroje Mockoon. Souběžně s mou diplomovou prací, která se týká frontendové části aplikace, se kolega Bc. Jakub Vondráček věnuje vývoji backendové části aplikace v rámci své diplomové práce. Proto se v rámci této analýzy a dalších částech textu budu věnovat zejména frontendové části aplikace. \cite{Jenicek2024BachelorThesis}
@@ -50,7 +50,7 @@ Frontend aplikace v současné době neobsahuje žádné automatizované testy. 
 V aplikaci dále existují základní nástroje pro formátování a kontrolu kvality kódu Prettier a ESLint. Tyto nástroje by ovšem mohly využívat přísnější pravidla a konvence pro zamezení vzniku nejednoznačného kódu a chyb. Z tohoto důvodu navrhuji aktualizovat tyto nástroje a jejich konfigurace.
 
 % Final
-\subsubsection{Analýza návrhu uživatelského rozraní}
+\subsubsection{Analýza návrhu uživatelského rozhraní}
 
 % Final
 Návrh uživatelského rozhraní stávající aplikace jsem vytvořil v rámci mé bakalářské práce v nástroji Figma. Při analýze jsem nalezl několik příležitostí pro zlepšení tohoto návrhu.
@@ -62,13 +62,13 @@ Zaprvé, komponenty a stránky aplikace by bylo vhodné lépe zorganizovat. V so
 Značným problémem je také samotná struktura komponentů. V současném návrhu jsou komponenty tvořeny tak, že rozšiřují či upravují komponenty externí knihovny komponentů. Knihovna ovšem často obsahuje zbytečně komplexní strukturu komponentů a parametrů, které nejsou v rámci návrhu této aplikace nijak využívány. Všechny komponenty jsou tak zbytečně komplexní a práce s nimi je neefektivní. Z tohoto důvodu by bylo vhodné zvolit jiný přístup při tvorbě komponentů, například využití jiné knihovny, nebo vytvoření komponentů ručně bez využití externích knihoven.
 
 % Final
-Nakonec by bylo vhodné v rámci návrhu vytvořit stránku s přehledem stylů, barev a typografie, které aplikace využívá. Díky tomu by pak bylo možné se styly snadněji pracovat.
+Nakonec by bylo vhodné v rámci návrhu vytvořit stránku s přehledem stylů, barev a typografických pravidel, které aplikace využívá. Díky tomu by pak bylo možné se styly snadněji pracovat.
 
 % Final
 \subsection{Analýza existujících funkcí}
 
 % Final
-Jelikož bude aplikace zásadně měnit svoje zaměření z domény výuky jazyků na doménu výuky programování, je třeba odebrat některé přebytečné funkce, které již nebudou relevantní pro novou doménu. Mezi tyto funkce patří cvičení týkající se výuky jazyků, vyhledávání slovíček, stránky slovíček, přidávání lekcí a slovíček do seznamů oblíbených, správa vlastních kolekcí slovíček nebo možnost vybírání preferovaných témat slovní zásoby.
+Jelikož bude aplikace zásadně měnit své zaměření z domény výuky jazyků na doménu výuky programování, je třeba odebrat některé přebytečné funkce, které již nebudou relevantní pro novou doménu. Mezi tyto funkce patří cvičení týkající se výuky jazyků, vyhledávání slovíček, stránky slovíček, přidávání lekcí a slovíček do seznamů oblíbených, správa vlastních kolekcí slovíček nebo možnost vybírání preferovaných témat slovní zásoby.
 
 % Final
 Kromě odstranění přebytečných funkcí bude dále třeba upravit některé existující funkce. Příkladem toho je stránka kurzu, která v současné době zobrazuje lekce ve formě bodů, které jsou umístěny na čáře připomínající cestu kurzem. Pod jednotlivými body jsou pak uvedeny zkrácené názvy těchto lekcí. Přestože může být toto vyobrazení lekcí pro uživatele vizuálně poutavé, může být pro uživatele značně obtížné na první pohled poznat, co je obsahem dané lekce. Vyhledání konkrétní lekce tak může být pro uživatele velice zdlouhavé a složité. S měnící se doménou tak bude třeba změnit i strukturu kurzů a jejich sekcí a lekcí, aby je uživatelé mohli snadněji procházet a lépe se v nich orientovat.
