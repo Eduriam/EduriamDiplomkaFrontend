@@ -23,7 +23,7 @@ Při návrhu jsem kladl důraz na znovupoužitelnost komponentů a na využití 
 Jednotlivé komponenty jsem dále strukturoval tak, aby bylo možné je přímo implementovat s využitím jejich zadefinovaných parametrů v prototypu. Při návrhu jsem také často využíval funkci \textit{auto layout}, díky které je možné přesně specifikovat rozložení komponentů tak, aby byly responzivní a použitelné v různých částech UI \cite{FigmaAutolayoutGuide}.
 
 % Final
-Jako součást návrhu jsem také vytvořil dva režimy rozhraní aplikace, světlý a tmavý. Oba režimy sdílí stejné rozvržení stránek a komponentů a liší se pouze aplikovanými styly, zejména barvami pozadí, textu a stavů. Pro definici světlého a tmavého režimu jsem využil funkci módů proměnných \cite{FigmaModesForVariables}, díky které je možné pro každý režim definovat jiné hodnoty proměnných a následně snadno mezi jednotlivými režimy přepínat. Díky tomu byla opět zajištěna vyšší konzistence návrhu, jelikož není třeba pro světlý a tmavý režim navrhovat samostatné stránky, ale je možné pouze přepínat mezi aplikovanými styly.
+Jako součást návrhu jsem také vytvořil dva režimy rozhraní aplikace, světlý a tmavý. Oba režimy sdílejí stejné rozvržení stránek a komponentů a liší se pouze aplikovanými styly, zejména barvami pozadí, textu a stavů. Pro definici světlého a tmavého režimu jsem využil funkci módů proměnných \cite{FigmaModesForVariables}, díky které je možné pro každý režim definovat jiné hodnoty proměnných a následně snadno mezi jednotlivými režimy přepínat. Díky tomu byla opět zajištěna vyšší konzistence návrhu, jelikož není třeba pro světlý a tmavý režim navrhovat samostatné stránky, ale je možné pouze přepínat mezi aplikovanými styly.
 
 % Final
 Vytvořený návrh vzhledu jsem také doplnil o interakce odpovídající reálnému používání aplikace. Zaměřil jsem se zejména na navigaci mezi obrazovkami tak, aby bylo možné procházet základní scénáře používání aplikace. Díky tomu bylo možné prototyp interaktivně procházet, což mi umožnilo odhalit různé nedostatky v návrhu ještě před zahájením implementace.
@@ -83,7 +83,7 @@ Rozložení \textit{mostly fluid} například typicky pracuje s bloky obsahu, kt
 V tomto projektu jsem se rozhodl využít přístup \textit{tiny tweaks}, který spočívá v uspořádání veškerého obsahu stránky do jediného sloupce a zachování tohoto rozložení stránky napříč všemi zařízeními \cite[10]{NURResponsiveDesign}. Na stránkách jsou tak při změně velikosti displeje provedeny pouze drobné úpravy ve velikostech jednotlivých komponentů. Implementace se tak bude řídit primárně návrhem pro mobilní zařízení a na větších displejích se budou měnit především maximální šířka obsahu, odsazení a práce s volným prostorem. Kromě toho bude struktura stránek zachována a bude napříč zařízeními stejná.
 
 % Final
-Jako důsledek zvolení tohoto přístupu je tak možné udržet návrh jednoduchý a konzistentní. Zároveň díky totožnému rozložení stránek je snížené riziko rozdílného chování napříč různými velikostmi displejů. Aplikaci by tak mělo být snazší rozšiřovat, udržovat a testovat.
+Jako důsledek zvolení tohoto přístupu je tak možné udržet návrh jednoduchý a konzistentní. Zároveň díky totožnému rozložení stránek je sníženo riziko rozdílného chování napříč různými velikostmi displejů. Aplikaci by tak mělo být snazší rozšiřovat, udržovat a testovat.
 
 % Final
 \subsection{Testování a upravování prototypu}
