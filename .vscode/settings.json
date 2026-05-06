@@ -242,6 +242,7 @@
     "Lennart",
     "Regan",
     // Oficiálně správná slova podle https://prirucka.ujc.cas.cz/
+    "odemkl",
     "personalizovaně",
     "streamována",
     "upravitelný",
@@ -350,9 +351,6 @@
     "specialisation"
   ],
   "cSpell.enabled": true,
-  "cSpell.ignorePaths": [
-    "ctufit-thesis.cls",
-    "settings.json"
-  ],
+  "cSpell.ignorePaths": ["ctufit-thesis.cls", "settings.json"],
   "chatgpt.openOnStartup": true
 }
