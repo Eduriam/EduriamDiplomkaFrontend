@@ -345,7 +345,9 @@
     "Behaviour",
     "Usecase",
     "NURUI",
-    "SIGCHI"
+    "SIGCHI",
+    "pseudocodes",
+    "specialisation"
   ],
   "cSpell.enabled": true,
   "chatgpt.openOnStartup": true
