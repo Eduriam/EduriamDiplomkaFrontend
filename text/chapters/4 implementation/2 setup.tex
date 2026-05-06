@@ -8,7 +8,7 @@ V této části textu nejprve popíšu úvodní přípravu projektu a jednotliv�
 \subsection{Příprava implementace}
 
 % Final
-Před zahájením samotné implementace bylo třeba provést úvodní přípravu projektu. Tuto přípravu bylo třeba provést hned z několika důvodů. Původní aplikace byla naposledy aktivně vyvíjena v roce 2024, kdy jsem ji společně s kolegou Bc. Janem Hlaváčem vyvíjel v rámci našich bakalářských prací. Přestože jsme se projektu věnovali i po dokončení bakalářských prací, naše zaměření bylo především na části projektu které se netýkaly samotného vývoje. Vývoj tak ustál a aplikace nedostávala žádné nové aktualizace. Od roku 2024 došlo k řadě změn, kterým je nyní třeba projekt přizpůsobit.
+Před zahájením samotné implementace bylo třeba provést úvodní přípravu projektu. Tuto přípravu bylo třeba provést hned z několika důvodů. Původní aplikace byla naposledy aktivně vyvíjena v roce 2024, kdy jsem ji společně s kolegou Bc. Janem Hlaváčem vyvíjel v rámci našich bakalářských prací. Přestože jsme se projektu věnovali i po dokončení bakalářských prací, naše zaměření bylo především na části projektu, které se netýkaly samotného vývoje. Vývoj tak ustal a aplikace nedostávala žádné nové aktualizace. Od roku 2024 došlo k řadě změn, kterým je nyní třeba projekt přizpůsobit.
 
 % Final
 První změnou jsou nové verze používaných knihoven. Většina používaných knihoven od posledního vývoje vydala nové verze, které obsahují podstatné opravy a vylepšení. Jejich aktualizace tak mohou přinést řadu výhod, jako například nové funkce, efektivnější vývoj, větší bezpečnost a stabilitu funkcí.
@@ -17,7 +17,7 @@ První změnou jsou nové verze používaných knihoven. Většina používanýc
 Další zásadní změnou je nástup nástrojů umělé inteligence v oblasti softwarového inženýrství. Tyto nástroje zásadně mění, jakým způsobem lze postupovat při vývoji softwaru a umožňují vyvíjet aplikace efektivnějším způsobem. Proto je třeba projekt přizpůsobit tak, aby byl připraven pro práci s těmito nástroji.
 
 % Final
-Nakonec, došlo k zásadní změně domény, na kterou se tato vzdělávací aplikace zaměřuje. Původní aplikace byla zaměřena výhradně na výuku jazyků. Nová aplikace by měla fungovat jako obecnější rozšiřitelná vzdělávací aplikace se zaměřením na výuku programování. Z tohoto důvodu je třeba změnit strukturu některých částí aplikace tak, aby bylo možné ji v budoucnu lépe rozšiřovat a udržovat. Se změnou domény se také pojí odstranění některých zastaralých funkcí, které neodpovídají novému zaměření aplikace.
+Nakonec došlo k zásadní změně domény, na kterou se tato vzdělávací aplikace zaměřuje. Původní aplikace byla zaměřena výhradně na výuku jazyků. Nová aplikace by měla fungovat jako obecnější rozšiřitelná vzdělávací aplikace se zaměřením na výuku programování. Z tohoto důvodu je třeba změnit strukturu některých částí aplikace tak, aby bylo možné ji v budoucnu lépe rozšiřovat a udržovat. Se změnou domény se také pojí odstranění některých zastaralých funkcí, které neodpovídají novému zaměření aplikace.
 
 % Final
 V následujících částech textu tak podrobněji popíšu jednotlivé kroky přípravy projektu. Tuto přípravu jsem prováděl současně s předchozími fázemi analýzy a návrhu.
@@ -26,7 +26,7 @@ V následujících částech textu tak podrobněji popíšu jednotlivé kroky p�
 \subsubsection{Příprava knihoven komponentů}
 
 % Final
-V rámci přípravy aplikace jsem se rozhodl od aplikace oddělit některé UI komponenty a přesunout je do samostatných knihoven, které bude tato aplikace využívat. Komponenty jsem rozdělil do dvou knihoven \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}. První zmíněná knihovna bude obsahovat základní UI komponenty, jako tlačítka, textová pole, karty apod. Druhá zmíněná knihovna pak bude obsahovat komplexnější komponenty, které budou využívány jen ve specifických případech. Toto rozdělení tak reflektuje strukturu knihovny Material UI \cite{MaterialUI}, která je podobně rozdělena na knihovnu základních komponentů MUI Core a na knihovnu komplexnějších komponentů MUI X.
+V rámci přípravy aplikace jsem se rozhodl od aplikace oddělit některé UI komponenty a přesunout je do samostatných knihoven, které bude tato aplikace využívat. Komponenty jsem rozdělil do dvou knihoven \texttt{@eduriam/ui-core} a \texttt{@eduriam/ui-x}. První zmíněná knihovna bude obsahovat základní UI komponenty, jako například tlačítka, textová pole, karty apod. Druhá zmíněná knihovna pak bude obsahovat komplexnější komponenty, které budou využívány jen ve specifických případech. Toto rozdělení tak reflektuje strukturu knihovny Material UI \cite{MaterialUI}, která je podobně rozdělena na knihovnu základních komponentů MUI Core a na knihovnu komplexnějších komponentů MUI X.
 
 % Final
 Důvodů pro rozdělení aplikace do knihoven je hned několik. Vytvoření knihovny \texttt{@eduriam/ui-core} umožní postupně vytvořit jednotný design systém a knihovnu základních komponentů, kterou bude možné využívat jak v samotné aplikaci, tak v dalších částech projektu, jako například na webových stránkách, nebo v dalších interních programech. Díky tomu bude možné dodržet konzistentní design napříč všemi částmi projektu. Dalším důvodem je dodržení design principu \textit{Separation of Concerns} \cite[36]{ADPArchitectures}, který říká, že bychom při vytváření systémů měli jasně oddělit zodpovědnosti jednotlivých částí systému. Díky tomu bude možné docílit přehlednější struktury kódu a lepší testovatelnosti a udržitelnosti celého systému. V případě této aplikace jsem se tak snažil oddělit základní UI komponenty od logiky samotné aplikace.
@@ -77,10 +77,10 @@ Zmíněná pravidla jsem zavedl s cílem snížit riziko vzniku nejednoznačnéh
 \subsubsection{Zavedení nástrojů umělé inteligence}
 
 % Final
-Další částí přípravy bylo zavedení konvencí pro nástroje umělé inteligence, které mohou vývojářům pomoci s vytvářením kódu. Vycházel jsem ze standardu Agent Skills\footnote{Dostupné na: \href{https://agentskills.io/}{https://agentskills.io/}} definovaným společností Anthropic. Tento standard umožňuje s pomocí souborů ve formátu Markdown definovat instrukce a pravidla pro AI agenty, kteří na základě nich mohou v kódu vykonávat různé úkony. \cite{AgentSkills}
+Další částí přípravy bylo zavedení konvencí pro nástroje umělé inteligence, které mohou vývojářům pomoci s vytvářením kódu. Vycházel jsem ze standardu Agent Skills\footnote{Dostupné na: \href{https://agentskills.io/}{https://agentskills.io/}} definovaného společností Anthropic. Tento standard umožňuje s pomocí souborů ve formátu Markdown definovat instrukce a pravidla pro AI agenty, kteří na základě nich mohou v kódu vykonávat různé úkony. \cite{AgentSkills}
 
 % Final
-Zadefinoval jsem tak pravidla a instrukce pro tvorbu nových UI komponentů, nových stránek aplikace, tvorbu automatizovaných testů a práci s \texttt{.feature} soubory, ve kterých jsou definované funkce aplikace.
+Zadefinoval jsem tak pravidla a instrukce pro tvorbu nových UI komponentů, nových stránek aplikace, tvorbu automatizovaných testů a práci s \texttt{.feature} soubory, ve kterých jsou definovány funkce aplikace.
 
 % Final
 Výhodou využití zmíněného standardu je vysoká kompatibilita s nejpoužívanějšími nástroji umělé inteligence pro tvorbu kódu, kterými jsou například Claude Code, Cursor, Codex, Gemini CLI a další. Instrukce tak bude možné využívat napříč různými IDE, nástroji a AI modely. \cite{AgentSkills}
