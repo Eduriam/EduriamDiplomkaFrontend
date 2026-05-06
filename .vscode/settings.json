@@ -350,5 +350,9 @@
     "specialisation"
   ],
   "cSpell.enabled": true,
+  "cSpell.ignorePaths": [
+    "ctufit-thesis.cls",
+    "settings.json"
+  ],
   "chatgpt.openOnStartup": true
 }
