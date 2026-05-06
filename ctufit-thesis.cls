@@ -238,7 +238,7 @@
 \thectufitprogramlabelcapital: \thectufitprogram\\
 \thectufitspecialisationlabelcapital: \thectufitspecialisation\\
 \thectufitsupervisorlabelcapital: \thectufitsupervisor\\
-\today}\end{titlepage}
+7. května 2026}\end{titlepage}
 \restoregeometry
 }
 %title page end
