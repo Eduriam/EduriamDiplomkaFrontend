@@ -1,0 +1,119 @@
+% Final
+\chapter{Zadání uživatelského testování}\label{chapter:test-scenarios}
+
+% Final
+V této příloze lze nalézt zadání uživatelského testování použitelnosti aplikace.
+
+% Final
+\section{TS1 -- Registrace a zapsání kurzu}
+
+% Final
+\paragraph{Zadání} Otevřel jste aplikaci na učení se programování. Založte si v aplikaci účet, vyplňte úvodní dotazník a zapište si kurz \textit{HTML}. Při registraci použijte uživatelské jméno \textit{Test}, e-mail \textit{test@example.com} a heslo \textit{Test1234}.
+
+% Final
+\paragraph{Očekávaný průchod aplikací}
+
+% Final
+\begin{enumerate}
+    \item Uživatel začíná na úvodní stránce aplikace.
+    \item Uživatel se z úvodní stránky přesune na stránku registrace, vyplní registrační formulář a zvolí možnost zaregistrovat se. Aplikace přesune uživatele na stránku úvodního dotazníku.
+    \item V dotazníku uživatel vyplní svoji úroveň programování, témata, která se chce učit, a cíl, kterého chce dosáhnout.
+    \item Následně uživatel vybere jeden z doporučených kurzů.
+    \item Nakonec uživatel zvolí svůj denní cíl učení.
+    \item Aplikace oznámí uživateli, že je jeho účet připraven a uživatel zvolí možnost pokračovat, čímž se přesune na hlavní stránku aplikace.
+\end{enumerate}
+
+% Final
+\section{TS2 -- Učení se dle studijního plánu}
+
+% Final
+\paragraph{Zadání} Otevřel jste aplikaci a chcete se začít učit vámi zapsaný kurz. Spusťte nadcházející lekci kurzu a lekci dokončete.
+
+% Final
+\paragraph{Očekávaný průchod aplikací}
+
+% Final
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel zvolí možnost spustit nadcházející lekci kurzu.
+    \item Aplikace přesune uživatele na stránku učení, kde mu zobrazí látku nadcházející lekce.
+    \item Uživatel splní všechna cvičení v lekci a aplikace mu oznámí, že byla lekce dokončena.
+    \item Uživatel zvolí možnost pokračovat a aplikace ho přesměruje zpět na hlavní stránku.
+\end{enumerate}
+
+% Final
+\section{TS3 -- Zapsání nového kurzu}
+
+% Final
+\paragraph{Zadání} Chcete si zapsat nový kurz \textit{CSS}. Zapište si tento kurz a spusťte v něm první lekci. Tuto lekci dokončete.
+
+% Final
+\paragraph{Očekávaný průchod aplikací}
+
+% Final
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel zvolí ikonu studijního plánu, čímž se přesune na stránku studijního plánu.
+    \item Na stránce studijního plánu uživatel zvolí možnost přidat nový kurz, čímž se přesune na stránku s výběrem kurzů.
+    \item Na stránce výběru kurzů uživatel zvolí kurz \textit{CSS}, čímž se přesune na stránku kurzu.
+    \item Na stránce kurzu pak uživatel zvolí možnost začít kurz, čímž mu bude kurz zapsán a uživatel bude přesměrován na stránku učení první lekce kurzu.
+    \item Uživatel splní všechna cvičení v lekci a aplikace mu oznámí, že byla lekce dokončena.
+    \item Uživatel zvolí možnost pokračovat a aplikace ho přesměruje zpět na hlavní stránku.
+\end{enumerate}
+
+% Final
+\section{TS4 -- Úprava studijního plánu}
+
+% Final
+\paragraph{Zadání} Máte zapsané kurzy \textit{HTML} a \textit{CSS}, které jste se nějakou dobu učili. Nyní se chcete zaměřit pouze na kurz CSS a z kurzu HTML se již nechcete učit nové lekce. Zařiďte, aby vám aplikace na hlavní stránce již nezobrazovala nové lekce z kurzu HTML, ale abyste nepřišli o svůj pokrok v kurzu HTML.
+
+% Final
+\paragraph{Očekávaný průchod aplikací}
+
+% Final
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel zvolí ikonu studijního plánu, čímž se přesune na stránku studijního plánu.
+    \item Na stránce studijního plánu uživatel přesune kurz \textit{HTML} ze sekce Učení a opakování do sekce Pozastaveno. Aplikace mu tak na hlavní stránce přestane zobrazovat nové lekce z kurzu HTML.
+\end{enumerate}
+
+% Final
+\section{TS5 -- Spuštění konkrétní lekce}
+
+% Final
+\paragraph{Zadání} V rámci kurzu HTML se chcete naučit látku z lekce \textit{Obrázky}. Spusťte tuto konkrétní lekci a dokončete ji.
+
+% Final
+\paragraph{Očekávaný průchod aplikací}
+
+% Final
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel zvolí ikonu studijního plánu, čímž se přesune na stránku studijního plánu.
+    \item Na stránce studijního plánu uživatel zvolí kurz \textit{HTML}, čímž se přesune na stránku kurzu.
+    \item Na stránce kurzu uživatel vybere první kapitolu kurzu, čímž se přesune na stránku dané kapitoly.
+    \item Na stránce kapitoly kurzu uživatel najde lekci \textit{Obrázky} a zvolí možnost spuštění lekce.
+    \item Uživatel splní všechna cvičení v lekci a aplikace mu oznámí, že byla lekce dokončena.
+    \item Uživatel zvolí možnost pokračovat a aplikace ho přesměruje zpět na hlavní stránku.
+\end{enumerate}
+
+% Final
+\section{TS6 -- Zakoupení položky a změna vzhledu avatara}
+
+% Final
+\paragraph{Zadání} Za učení jste získali virtuální měnu. Kupte si položku v obchodě a zajistěte, aby se tato položka zobrazovala na vašem profilovém obrázku.
+
+% Final
+\paragraph{Očekávaný průchod aplikací}
+
+% Final
+\begin{enumerate}
+    \item Uživatel začíná na hlavní stránce aplikace.
+    \item Uživatel zvolí ikonu profilu, čímž se přesune na stránku profilu.
+    \item Na stránce profilu dále zvolí ikonu obchodu, čímž se přesune na stránku obchodu.
+    \item Na stránce obchodu uživatel zvolí libovolnou položku a zvolí možnost koupit položku.
+    \item Poté se uživatel kliknutím na tlačítko zpět přesune na stránku profilu.
+    \item Na stránce profilu uživatel klikne na svého avatara, čímž se přesune na stránku přizpůsobení avatara.
+    \item Na stránce přizpůsobení avatara zvolí zakoupenou položku, kterou chce přidat na svůj profilový obrázek a změnu uloží.
+    \item Aplikace uživatele přesune na stránku profilu.
+\end{enumerate}
